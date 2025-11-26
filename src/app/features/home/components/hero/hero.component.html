@@ -5,32 +5,23 @@
         
         <!-- Profile Image Container with Project Overlays -->
         <div class="profile-container" 
-             (mouseenter)="onProfileHover()" 
-             (mousemove)="onProfileHover()"
+             (mouseenter)="onProfileHover($event)" 
+             (mousemove)="onProfileHover($event)"
              (mouseleave)="onProfileLeave()">
           
           <!-- Main Profile Image with Blur Effect -->
           <div class="profile-image-wrapper">
             <img [src]="profileImage" alt="Kerllos Ayad Profile" class="profile-image">
-            <div class="profile-blur-overlay"></div>
+            <!-- <div class="profile-blur-overlay"></div> -->
           </div>
 
           <!-- Project Images Overlay (Desktop: Hover, Mobile: Visible) -->
-          <div class="project-images-container" *ngIf="!isMobile">
+          <div class="project-images-container">
             <div *ngFor="let image of projectImages" 
                  class="project-image-wrapper"
                  [class.visible]="image.visible"
                  [ngStyle]="getImageStyle(image)">
               <img [src]="image.src" [alt]="image.alt" class="project-image">
-            </div>
-          </div>
-
-          <!-- Mobile Project Images (Always Visible) -->
-          <div class="project-images-mobile" *ngIf="isMobile">
-            <div class="project-image-stack">
-              <img src="assets/images/projects/project-1.png" alt="Project 1" class="project-image-mobile project-1">
-              <img src="assets/images/projects/project-2.png" alt="Project 2" class="project-image-mobile project-2">
-              <img src="assets/images/projects/project-3.png" alt="Project 3" class="project-image-mobile project-3">
             </div>
           </div>
         </div>

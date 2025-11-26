@@ -49,24 +49,30 @@ export class HeroComponent {
   checkScreenSize(): void {
     this.isMobile = window.innerWidth < 768;
     
-    // Show all images on mobile
+    // Show all images on mobile with bottom positioning
     if (this.isMobile) {
-      this.projectImages.forEach(img => img.visible = true);
+      this.projectImages.forEach(img => {
+        img.visible = true;
+        img.position = this.getRandomBottomPosition();
+      });
     } else {
       this.projectImages.forEach(img => img.visible = false);
     }
   }
 
   initializeProjectPositions(): void {
-    this.projectImages.forEach((image) => {
-      image.position = this.getRandomPosition();
-      image.rotation = this.getRandomRotation();
-    });
+    if (this.isMobile) {
+      this.projectImages.forEach((image) => {
+        image.position = this.getRandomBottomPosition();
+        image.rotation = this.getRandomRotation();
+      });
+    }
   }
 
-  getRandomPosition(): { top: string; left: string } {
-    const top = Math.random() * 60 + 10; // 10% to 70%
-    const left = Math.random() * 60 + 10; // 10% to 70%
+  getRandomBottomPosition(): { top: string; left: string } {
+    // Position images at bottom 40% of the container
+    const top = Math.random() * 30 + 60; // 60% to 90% from top
+    const left = Math.random() * 80 + 10; // 10% to 90% from left
     return { top: `${top}%`, left: `${left}%` };
   }
 
@@ -78,22 +84,37 @@ export class HeroComponent {
     };
   }
 
-  onProfileHover(): void {
+  onProfileHover(event: MouseEvent): void {
     if (this.isMobile) return; // Don't trigger on mobile
 
     this.isHovering = true;
     
+    // Get mouse position relative to the container
+    const container = event.currentTarget as HTMLElement;
+    const rect = container.getBoundingClientRect();
+    const mouseX = event.clientX - rect.left;
+    const mouseY = event.clientY - rect.top;
+
+    // Calculate percentage position
+    const leftPercent = (mouseX / rect.width) * 100;
+    const topPercent = (mouseY / rect.height) * 100;
+
     // Hide current image if any
     if (this.currentImageIndex > 0) {
       this.projectImages[this.currentImageIndex - 1].visible = false;
     }
 
-    // Show next image
+    // Show next image at mouse position
     if (this.currentImageIndex < this.projectImages.length) {
       const currentImage = this.projectImages[this.currentImageIndex];
       
-      // Randomize position and rotation for variety
-      currentImage.position = this.getRandomPosition();
+      // Set position to mouse location
+      currentImage.position = {
+        top: `${topPercent}%`,
+        left: `${leftPercent}%`
+      };
+      
+      // Randomize rotation for variety
       currentImage.rotation = this.getRandomRotation();
       currentImage.visible = true;
       
@@ -124,6 +145,7 @@ export class HeroComponent {
       top: image.position.top,
       left: image.position.left,
       transform: `
+        translate(-50%, -50%)
         perspective(1000px) 
         rotateX(${image.rotation.x}deg) 
         rotateY(${image.rotation.y}deg) 
