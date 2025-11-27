@@ -43,7 +43,7 @@ $text-gray: #cccccc;
   padding-block: 50px;
   transform: translate(0, -50px);
   position: relative;
-  z-index: 2;
+  z-index: 4;
 
   @media screen and (max-width: 769px) {
     transform: translate(0, 0);
@@ -205,5 +205,39 @@ $text-gray: #cccccc;
         animation: none !important; // Disable all animations on mobile
       }
     }
+  }
+}
+
+// action button styles
+.action-button {
+  background-color: $primary-color;
+  color: $dark-bg;
+  border: none;
+  padding: 0.4rem 1.75rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: darken($primary-color, 20%);
+  }
+}
+
+.download-btn {
+  background-color: transparent;
+  color: $primary-color;
+  border: 2px solid $primary-color;
+  padding: 0.4rem 1.75rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+
+  &:hover {
+    background-color: $primary-color;
+    color: $dark-bg;
   }
 }
