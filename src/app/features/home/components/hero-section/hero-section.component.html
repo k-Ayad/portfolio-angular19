@@ -4,25 +4,31 @@
             <img width="100%" src="assets/images/profile.png" alt="">
             <div class="overlay"></div>
         </div>
-          <div class="project-images-container py-5 mb-4">
-            @for (skill of skillsImages; track skill.alt) {
+        
+        <div class="project-images-container py-5 mb-4">
+            @for (skill of skillsImages; track skill.alt; let i = $index) {
                 <div 
-                class="skill-image-wrapper position-absolute" 
-                [style.--desktop-top]="skill.desktopPosition.top"
-                [style.--desktop-left]="skill.desktopPosition.left"
-                [style.--mobile-top]="skill.mobilePosition.top"
-                [style.--mobile-left]="skill.mobilePosition.left"
-                [style.--desktop-width]="skill.desktopWidth"
-                [style.--mobile-width]="skill.mobileWidth"
+                    class="skill-image-wrapper position-absolute" 
+                    [style.--desktop-top]="skill.desktopPosition.top"
+                    [style.--desktop-left]="skill.desktopPosition.left"
+                    [style.--mobile-top]="skill.mobilePosition.top"
+                    [style.--mobile-left]="skill.mobilePosition.left"
+                    [style.--desktop-width]="skill.desktopWidth"
+                    [style.--mobile-width]="skill.mobileWidth"
+                    (mouseenter)="onSkillHover(i)"
+                    (mouseleave)="onSkillLeave(i)"
                 >
-                <img 
-                    [src]="skill.src" 
-                    [alt]="skill.alt"
-                    class="skill-icon opacity-50"
-                />
+                    <img 
+                        [src]="skill.src" 
+                        [alt]="skill.alt"
+                        class="skill-icon opacity-50"
+                        [class.scale-up]="skill.animationClass === 'scale-up'"
+                        [class.scale-down]="skill.animationClass === 'scale-down'"
+                    />
                 </div>
             }
-            </div>
+        </div>
+
         <div class="text-container">
             <!-- Main Heading -->
             <div class="name-wrapper position-absolute top-0 start-50 translate-middle-x d-flex align-items-center">

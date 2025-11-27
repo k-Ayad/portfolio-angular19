@@ -134,7 +134,7 @@ $text-gray: #cccccc;
 }
 
 // Skills Animation Keyframes
-@keyframes scaleUp {
+@keyframes scaleUpAnim {
   from {
     transform: scale(0) rotate(0deg);
   }
@@ -143,11 +143,11 @@ $text-gray: #cccccc;
   }
 }
 
-@keyframes scaleDown {
-  0%, 76.92% { // 76.92% = 1s out of 1.3s total (1s wait + 0.3s animation)
+@keyframes scaleDownAnim {
+  from {
     transform: scale(1) rotate(0deg);
   }
-  100% {
+  to {
     transform: scale(0) rotate(0deg);
   }
 }
@@ -176,17 +176,14 @@ $text-gray: #cccccc;
       object-fit: contain;
       filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1));
       transform: scale(0);
-      animation: none; // Default state
-    }
 
-    // On hover: scale up to 1
-    &:hover .skill-icon {
-      animation: scaleUp 0.3s ease forwards;
-    }
+      &.scale-up {
+        animation: scaleUpAnim 0.3s ease forwards;
+      }
 
-    // On hover out: wait 1s at scale(1), then scale back to 0
-    &:not(:hover) .skill-icon {
-      animation: scaleDown 1.3s ease forwards; // 1s delay + 0.3s animation
+      &.scale-down {
+        animation: scaleDownAnim 0.3s ease forwards;
+      }
     }
   }
 
