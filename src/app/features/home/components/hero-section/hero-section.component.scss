@@ -1,0 +1,190 @@
+// Variables
+$primary-color: #a8e063;
+$lime-green: #a8e063;
+$dark-bg: #0a0a0a;
+$text-white: #ffffff;
+$text-gray: #cccccc;
+
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+// Hero Section Styles
+
+.overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 101%;
+ background: TRANSPARENT;
+background: linear-gradient(
+      180deg,
+      rgba(0, 0, 0,0) 0%,
+      rgb(0, 0, 0) 99%);
+    z-index: 1;
+}
+
+.image-container{
+    max-width: 550px;
+    margin: auto;
+    position: relative;
+    z-index: 1;
+}
+.bg-black{
+    background-color: black;
+}
+.text-container{
+      padding-block: 50px;
+      transform: translate(0,-50px);
+      position: relative;
+      z-index: 2;
+
+      @media screen and (max-width:769px) {
+          transform: translate(0,0);
+      }
+}
+
+// Name with Arrows
+.name-wrapper {
+  @include flex-center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+
+  @media (max-width: 767px) {
+    margin-bottom: 0.8rem;
+  }
+
+  .arrow-left,
+  .arrow-right {
+    color: $text-gray;
+    font-size: 1.1rem;
+    font-weight: 300;
+
+    @media (max-width: 767px) {
+      font-size: 0.95rem;
+    }
+  }
+
+  .hero-name {
+    color: $lime-green;
+    font-size: 1.6rem;
+    font-weight: 500;
+    margin: 0;
+    letter-spacing: 0.5px;
+
+    @media (max-width: 767px) {
+      font-size: 1.3rem;
+    }
+  }
+}
+
+
+
+
+// Scroll Indicator
+.scroll-indicator {
+    display: flex;
+    justify-content: center;
+    padding-top: 1rem;
+  .mouse {
+    width: 24px;
+    height: 38px;
+    border: 2px solid $text-gray;
+    border-radius: 20px;
+    position: relative;
+    opacity: 0.6;
+
+    @media (max-width: 767px) {
+      width: 20px;
+      height: 32px;
+    }
+
+    .wheel {
+      width: 3px;
+      height: 7px;
+      background-color: $lime-green;
+      border-radius: 2px;
+      position: absolute;
+      top: 7px;
+      left: 50%;
+      transform: translateX(-50%);
+      animation: scroll 1.5s infinite;
+    }
+  }
+}
+
+// Scroll Animation
+@keyframes scroll {
+  0% {
+    opacity: 1;
+    top: 7px;
+  }
+  50% {
+    opacity: 0.5;
+    top: 14px;
+  }
+  100% {
+    opacity: 0;
+    top: 21px;
+  }
+}
+
+// Responsive skills
+
+.project-images-container {
+  overflow: visible;
+  z-index: 3 ;
+  // min-height: 500px; // Adjust based on your design
+  width: 100%;
+  
+  .skill-image-wrapper {
+    z-index: 2;
+    transition: all 0.3s ease;
+    
+    // Desktop positioning
+    top: var(--desktop-top);
+    left: var(--desktop-left);
+    
+    .skill-icon {
+      width: var(--desktop-width);
+      height: auto;
+      object-fit: contain;
+      filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1));
+      transform: scale(0);      
+      transition: transform 0.3s ease;
+    }
+
+    &:hover .skill-icon {
+      transform: scale(1) rotate(0deg);
+    }
+  }
+
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+  
+  // Mobile responsive
+  @media (max-width: 768px) {
+    // min-height: 400px;
+    transform: translate(0,-70%);
+  position: relative;
+  
+
+    .skill-image-wrapper {
+      top: var(--mobile-top) !important;
+      left: var(--mobile-left) !important;
+      
+      .skill-icon {
+        width: var(--mobile-width) !important;
+        transform: scale(1); 
+      }
+    }
+  }
+
+
+}

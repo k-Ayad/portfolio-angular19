@@ -1,0 +1,53 @@
+<section class="hero-section vh-100 d-flex align-items-center bg-black text-white pt-5">
+    <div class="container text-center position-relative">
+        <div class="image-container">
+            <img width="100%" src="assets/images/profile.png" alt="">
+            <div class="overlay"></div>
+        </div>
+          <div class="project-images-container py-5 mb-4">
+            @for (skill of skillsImages; track skill.alt) {
+                <div 
+                class="skill-image-wrapper position-absolute" 
+                [style.--desktop-top]="skill.desktopPosition.top"
+                [style.--desktop-left]="skill.desktopPosition.left"
+                [style.--mobile-top]="skill.mobilePosition.top"
+                [style.--mobile-left]="skill.mobilePosition.left"
+                [style.--desktop-width]="skill.desktopWidth"
+                [style.--mobile-width]="skill.mobileWidth"
+                >
+                <img 
+                    [src]="skill.src" 
+                    [alt]="skill.alt"
+                    class="skill-icon opacity-50"
+                />
+                </div>
+            }
+            </div>
+        <div class="text-container">
+            <!-- Main Heading -->
+            <div class="name-wrapper position-absolute top-0 start-50 translate-middle-x d-flex align-items-center">
+                <span class="arrow-left">&lt;</span>
+                <h2 class="hero-name">Kerllos Ayad</h2>
+                <span class="arrow-right">/ &gt;</span>
+            </div>
+            <h3 class="hero-heading">
+                Howdy! Meet Your Trusted<br>
+                Frontend Developer<br>
+                & Shopify Expert Partner,<br>
+                Crafting Strong Web Apps<span class="dot">.</span>
+            </h3>
+
+            <div class="action-btns">
+                <button class="btn-outline-light btn mx-2">Show Projects</button>
+                <button class="btn-outline-light btn mx-2">Download Resume</button>
+            </div>
+
+            <!-- Scroll Indicator -->
+            <div class="scroll-indicator">
+                <div class="mouse">
+                    <div class="wheel"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
