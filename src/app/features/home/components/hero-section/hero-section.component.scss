@@ -13,38 +13,41 @@ $text-gray: #cccccc;
 
 // Hero Section Styles
 
-.overlay{
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 101%;
- background: TRANSPARENT;
-background: linear-gradient(
-      180deg,
-      rgba(0, 0, 0,0) 0%,
-      rgb(0, 0, 0) 99%);
-    z-index: 1;
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 101%;
+  background: transparent;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0) 0%,
+    rgb(0, 0, 0) 99%
+  );
+  z-index: 1;
 }
 
-.image-container{
-    max-width: 550px;
-    margin: auto;
-    position: relative;
-    z-index: 1;
+.image-container {
+  max-width: 550px;
+  margin: auto;
+  position: relative;
+  z-index: 1;
 }
-.bg-black{
-    background-color: black;
-}
-.text-container{
-      padding-block: 50px;
-      transform: translate(0,-50px);
-      position: relative;
-      z-index: 2;
 
-      @media screen and (max-width:769px) {
-          transform: translate(0,0);
-      }
+.bg-black {
+  background-color: black;
+}
+
+.text-container {
+  padding-block: 50px;
+  transform: translate(0, -50px);
+  position: relative;
+  z-index: 2;
+
+  @media screen and (max-width: 769px) {
+    transform: translate(0, 0);
+  }
 }
 
 // Name with Arrows
@@ -81,14 +84,12 @@ background: linear-gradient(
   }
 }
 
-
-
-
 // Scroll Indicator
 .scroll-indicator {
-    display: flex;
-    justify-content: center;
-    padding-top: 1rem;
+  display: flex;
+  justify-content: center;
+  padding-top: 1rem;
+
   .mouse {
     width: 24px;
     height: 38px;
@@ -132,59 +133,77 @@ background: linear-gradient(
   }
 }
 
-// Responsive skills
+// Skills Animation Keyframes
+@keyframes scaleUp {
+  from {
+    transform: scale(0) rotate(0deg);
+  }
+  to {
+    transform: scale(1) rotate(0deg);
+  }
+}
 
+@keyframes scaleDown {
+  0%, 76.92% { // 76.92% = 1s out of 1.3s total (1s wait + 0.3s animation)
+    transform: scale(1) rotate(0deg);
+  }
+  100% {
+    transform: scale(0) rotate(0deg);
+  }
+}
+
+// Skills Images Container
 .project-images-container {
-  overflow: visible;
-  z-index: 3 ;
-  // min-height: 500px; // Adjust based on your design
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
-  
+  height: 100%;
+  overflow: visible;
+  z-index: 3;
+
   .skill-image-wrapper {
+    position: absolute;
     z-index: 2;
-    transition: all 0.3s ease;
-    
+
     // Desktop positioning
     top: var(--desktop-top);
     left: var(--desktop-left);
-    
+
     .skill-icon {
       width: var(--desktop-width);
       height: auto;
       object-fit: contain;
       filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1));
-      transform: scale(0);      
-      transition: transform 0.3s ease;
+      transform: scale(0);
+      animation: none; // Default state
     }
 
+    // On hover: scale up to 1
     &:hover .skill-icon {
-      transform: scale(1) rotate(0deg);
+      animation: scaleUp 0.3s ease forwards;
+    }
+
+    // On hover out: wait 1s at scale(1), then scale back to 0
+    &:not(:hover) .skill-icon {
+      animation: scaleDown 1.3s ease forwards; // 1s delay + 0.3s animation
     }
   }
 
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-  
   // Mobile responsive
   @media (max-width: 768px) {
-    // min-height: 400px;
-    transform: translate(0,-70%);
-  position: relative;
-  
+    position: relative;
+    transform: translate(0, -70%);
 
     .skill-image-wrapper {
       top: var(--mobile-top) !important;
       left: var(--mobile-left) !important;
-      
+
       .skill-icon {
         width: var(--mobile-width) !important;
-        transform: scale(1); 
+        transform: scale(1) !important; // Always visible on mobile
+        animation: none !important; // Disable all animations on mobile
       }
     }
   }
-
-
 }
