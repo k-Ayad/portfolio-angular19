@@ -1,8 +1,111 @@
 <section class="projects-carousel-section">
   <div class="container">
-    <div class="carousel-content">
-      <h2 class="section-title">Projects Carousel Section</h2>
-      <p class="section-subtitle">Awaiting design screenshot...</p>
+    <!-- Section Title -->
+    <div class="section-header">
+      <h1 class="section-title text-center">Projects</h1>
+    </div>
+
+    <!-- Loading State -->
+    <div *ngIf="isLoading" class="loading-state">
+      <div class="spinner"></div>
+      <p>Loading projects...</p>
+    </div>
+
+    <!-- Error State -->
+    <div *ngIf="hasError && !isLoading" class="error-state">
+      <i class="fas fa-exclamation-triangle"></i>
+      <h3>Failed to Load Projects</h3>
+      <p>Unable to load project data. Please try again.</p>
+      <button class="retry-btn" (click)="retryLoad()">
+        <i class="fas fa-redo"></i>
+        Retry
+      </button>
+    </div>
+
+    <!-- Carousel Container -->
+    <div 
+      *ngIf="!isLoading && !hasError && projects.length > 0"
+      class="carousel-container"
+      (mouseenter)="onMouseEnter()"
+      (mouseleave)="onMouseLeave()">
+      
+      <!-- Carousel Wrapper -->
+      <div class="carousel-wrapper">
+        <!-- Carousel Slides -->
+        <div 
+          *ngFor="let project of projects; let i = index"
+          class="carousel-slide"
+          [ngClass]="getSlideClass(i)"
+          [attr.aria-hidden]="i !== currentIndex">
+          
+          <div class="slide-image-wrapper">
+            <img 
+              [src]="project.image" 
+              [alt]="project.title"
+              class="slide-image"
+              loading="lazy">
+          </div>
+        </div>
+      </div>
+
+      <!-- Navigation Controls -->
+      <button 
+        class="carousel-control prev"
+        (click)="prev()"
+        aria-label="Previous slide">
+        <i class="fas fa-chevron-left"></i>
+      </button>
+      <button 
+        class="carousel-control next"
+        (click)="next()"
+        aria-label="Next slide">
+        <i class="fas fa-chevron-right"></i>
+      </button>
+
+      <!-- Carousel Indicators -->
+      <div class="carousel-indicators">
+        <button
+          *ngFor="let project of projects; let i = index"
+          class="indicator"
+          [class.active]="i === currentIndex"
+          (click)="goToSlide(i)"
+          [attr.aria-label]="'Go to slide ' + (i + 1)"
+          [attr.aria-current]="i === currentIndex ? 'true' : 'false'">
+        </button>
+      </div>
+    </div>
+
+    <!-- Active Project Details -->
+    <div 
+      *ngIf="!isLoading && !hasError && activeProject" 
+      class="project-details">
+      <div class="details-content">
+        <h2 class="project-title">{{ activeProject.title }}</h2>
+        <p class="project-description">{{ activeProject.description }}</p>
+        
+        <!-- Technologies -->
+        <div *ngIf="activeProject.technologies" class="technologies">
+          <span 
+            *ngFor="let tech of activeProject.technologies" 
+            class="tech-badge">
+            {{ tech }}
+          </span>
+        </div>
+
+        <button 
+          class="show-details-btn"
+          (click)="showDetails(activeProject)">
+          <i class="fas fa-arrow-right"></i>
+          Show Details
+        </button>
+      </div>
+    </div>
+
+    <!-- Empty State -->
+    <div *ngIf="!isLoading && !hasError && projects.length === 0" class="empty-state">
+      <i class="fas fa-folder-open"></i>
+      <h3>No Projects Found</h3>
+      <p>Projects data is empty. Please add projects to the JSON file.</p>
     </div>
   </div>
 </section>

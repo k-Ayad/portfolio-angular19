@@ -1,0 +1,172 @@
+{
+  "projects": [
+    {
+      "id": 1,
+      "title": "'Burkin Story' Shopify Integration",
+      "description": "Modules and integrations to process, Enroll into, and scale with a Mobile App. Reach 1200+ brands in 10 seconds and accelerate sales with advanced marketing automation.",
+      "image": "assets/images/projects/burkin-story.jpg",
+      "category": "Shopify",
+      "technologies": ["Shopify", "Node.js", "API Integration", "Mobile App"],
+      "link": "/project/1",
+      "featured": true,
+      "completionDate": "2024-12",
+      "client": "Burkin Story"
+    },
+    {
+      "id": 2,
+      "title": "E-Commerce Platform",
+      "description": "Full-stack e-commerce solution with advanced inventory management, payment processing, and real-time analytics dashboard. Supports multi-vendor marketplace functionality.",
+      "image": "assets/images/projects/ecommerce-platform.jpg",
+      "category": "Angular",
+      "technologies": ["Angular 19", "TypeScript", "Firebase", "Stripe"],
+      "link": "/project/2",
+      "featured": true,
+      "completionDate": "2024-11",
+      "client": "Tech Solutions Inc"
+    },
+    {
+      "id": 3,
+      "title": "Task Management System",
+      "description": "Comprehensive project management tool with drag-and-drop interface, team collaboration features, and automated workflows. Integrates with Slack and Microsoft Teams.",
+      "image": "assets/images/projects/task-management.jpg",
+      "category": "Web App",
+      "technologies": ["Angular", "RxJS", "Material UI", "WebSockets"],
+      "link": "/project/3",
+      "featured": false,
+      "completionDate": "2024-10",
+      "client": "Productivity Hub"
+    },
+    {
+      "id": 4,
+      "title": "Custom Shopify Theme",
+      "description": "Responsive and performant Shopify theme with advanced customization options, mobile-first design, and optimized checkout flow. Increased conversion rates by 35%.",
+      "image": "assets/images/projects/shopify-theme.jpg",
+      "category": "Shopify",
+      "technologies": ["Liquid", "JavaScript", "SCSS", "Shopify CLI"],
+      "link": "/project/4",
+      "featured": true,
+      "completionDate": "2024-09",
+      "client": "Fashion Boutique"
+    },
+    {
+      "id": 5,
+      "title": "Analytics Dashboard",
+      "description": "Real-time data visualization dashboard with interactive charts, custom reports, and exportable analytics for business intelligence. Handles 1M+ data points efficiently.",
+      "image": "assets/images/projects/analytics-dashboard.jpg",
+      "category": "Angular",
+      "technologies": ["Angular", "Chart.js", "Node.js", "PostgreSQL"],
+      "link": "/project/5",
+      "featured": false,
+      "completionDate": "2024-08",
+      "client": "DataViz Corp"
+    },
+    {
+      "id": 6,
+      "title": "Restaurant Ordering System",
+      "description": "Online food ordering platform with menu management, order tracking, and payment integration. Features real-time kitchen display and delivery tracking.",
+      "image": "assets/images/projects/restaurant-system.jpg",
+      "category": "Full Stack",
+      "technologies": ["Angular", "Express.js", "MongoDB", "Socket.io"],
+      "link": "/project/6",
+      "featured": false,
+      "completionDate": "2024-07",
+      "client": "FoodTech Solutions"
+    },
+    {
+      "id": 7,
+      "title": "Fitness Tracking App",
+      "description": "Progressive web app for fitness tracking with workout plans, progress tracking, and social features. Integrates with wearable devices via APIs.",
+      "image": "assets/images/projects/fitness-app.jpg",
+      "category": "PWA",
+      "technologies": ["Angular", "PWA", "IndexedDB", "Web APIs"],
+      "link": "/project/7",
+      "featured": true,
+      "completionDate": "2024-06",
+      "client": "FitLife Technologies"
+    },
+    {
+      "id": 8,
+      "title": "Real Estate Portal",
+      "description": "Property listing platform with advanced search filters, virtual tours, and integrated CRM. Features map-based search and mortgage calculator.",
+      "image": "assets/images/projects/real-estate.jpg",
+      "category": "Angular",
+      "technologies": ["Angular", "Google Maps API", "Firebase", "Cloudinary"],
+      "link": "/project/8",
+      "featured": false,
+      "completionDate": "2024-05",
+      "client": "Property Pro"
+    },
+    {
+      "id": 9,
+      "title": "Subscription Box Store",
+      "description": "Shopify store for subscription-based products with recurring billing, customizable boxes, and customer portal for managing subscriptions.",
+      "image": "assets/images/projects/subscription-box.jpg",
+      "category": "Shopify",
+      "technologies": ["Shopify", "ReCharge", "Liquid", "JavaScript"],
+      "link": "/project/9",
+      "featured": true,
+      "completionDate": "2024-04",
+      "client": "BoxIt Monthly"
+    },
+    {
+      "id": 10,
+      "title": "Learning Management System",
+      "description": "Educational platform with course management, video streaming, quizzes, and progress tracking. Supports multiple instructors and student cohorts.",
+      "image": "assets/images/projects/lms.jpg",
+      "category": "Angular",
+      "technologies": ["Angular", "Vimeo API", "Stripe", "Node.js"],
+      "link": "/project/10",
+      "featured": false,
+      "completionDate": "2024-03",
+      "client": "EduTech Academy"
+    },
+    {
+      "id": 11,
+      "title": "Inventory Management System",
+      "description": "Warehouse and inventory tracking system with barcode scanning, stock alerts, and supplier management. Reduces inventory errors by 60%.",
+      "image": "assets/images/projects/inventory-system.jpg",
+      "category": "Web App",
+      "technologies": ["Angular", "TypeScript", "Express.js", "MySQL"],
+      "link": "/project/11",
+      "featured": false,
+      "completionDate": "2024-02",
+      "client": "Warehouse Pro"
+    },
+    {
+      "id": 12,
+      "title": "Event Booking Platform",
+      "description": "Event management and ticketing platform with seat selection, QR code tickets, and organizer dashboard. Handles high-traffic events smoothly.",
+      "image": "assets/images/projects/event-platform.jpg",
+      "category": "Full Stack",
+      "technologies": ["Angular", "Node.js", "MongoDB", "Stripe"],
+      "link": "/project/12",
+      "featured": true,
+      "completionDate": "2024-01",
+      "client": "EventHub"
+    },
+    {
+      "id": 13,
+      "title": "Portfolio CMS",
+      "description": "Custom content management system for creative professionals with portfolio showcase, blog, and client testimonials. SEO optimized and lightning-fast.",
+      "image": "assets/images/projects/portfolio-cms.jpg",
+      "category": "Angular",
+      "technologies": ["Angular", "Headless CMS", "SCSS", "Netlify"],
+      "link": "/project/13",
+      "featured": false,
+      "completionDate": "2023-12",
+      "client": "Creative Studios"
+    },
+    {
+      "id": 14,
+      "title": "Healthcare Appointment System",
+      "description": "Medical appointment scheduling system with patient records, doctor availability, and automated reminders. HIPAA compliant with secure data handling.",
+      "image": "assets/images/projects/healthcare-system.jpg",
+      "category": "Web App",
+      "technologies": ["Angular", "Node.js", "PostgreSQL", "Twilio"],
+      "link": "/project/14",
+      "featured": true,
+      "completionDate": "2023-11",
+      "client": "MedCare Solutions"
+    }
+  ]
+}
