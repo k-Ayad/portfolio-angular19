@@ -2,7 +2,6 @@ import { Component, OnInit, OnDestroy, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Project } from './project.model';
 import { ProjectsService } from './projects.service';
-
 @Component({
   selector: 'app-projects-carousel',
   standalone: true,
