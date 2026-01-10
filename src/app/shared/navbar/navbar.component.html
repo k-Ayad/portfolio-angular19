@@ -1,0 +1,63 @@
+<!-- navbar.component.html -->
+<nav class="navbar" [class.scrolled]="isScrolled">
+  <div class="navbar-container">
+    <!-- Left: Logo -->
+    <div class="navbar-logo">
+      <a routerLink="/" class="logo-link" (click)="closeMobileMenu()">
+        <span class="logo-text">&lt;Ka/&gt;</span>
+      </a>
+    </div>
+
+    <!-- Desktop Menu: Navigation + Contact + Social -->
+    <div class="navbar-menu" [class.active]="isMobileMenuOpen">
+      <!-- Navigation Links -->
+      <div class="navbar-links">
+        <a 
+          *ngFor="let link of navLinks"
+          [routerLink]="link.route"
+          routerLinkActive="active"
+          class="nav-link"
+          (click)="closeMobileMenu()"
+        >
+          {{ link.label }}
+        </a>
+      </div>
+
+      <!-- Contact Info -->
+      <div class="navbar-contact">
+        <a [href]="contactInfo.emailUrl" class="contact-item">
+          {{ contactInfo.email }}
+        </a>
+        <a [href]="contactInfo.phoneUrl" class="contact-item">
+          {{ contactInfo.phone }}
+        </a>
+      </div>
+
+      <!-- Social Icons -->
+      <div class="navbar-social">
+        <a 
+          *ngFor="let social of socialLinks"
+          [href]="social.url"
+          target="_blank"
+          rel="noopener noreferrer"
+          [attr.aria-label]="social.name"
+          class="social-icon"
+        >
+          <i [class]="social.icon"></i>
+        </a>
+      </div>
+    </div>
+
+    <!-- Mobile Menu Toggle (Hamburger) -->
+    <button 
+      class="mobile-toggle" 
+      [class.active]="isMobileMenuOpen"
+      (click)="toggleMobileMenu()"
+      aria-label="Toggle mobile menu"
+    >
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </button>
+  </div>
+</nav>

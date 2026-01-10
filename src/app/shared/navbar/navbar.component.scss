@@ -1,0 +1,255 @@
+// navbar.component.scss
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: transparent;
+  padding: 1.5rem 0;
+  transition: all 0.3s ease;
+
+  // Optional: Add backdrop blur on scroll
+  &.scrolled {
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+  }
+
+  .navbar-container {
+    width: 100%;
+    // margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  // Logo
+  .navbar-logo {
+    .logo-link {
+      text-decoration: none;
+      transition: transform 0.3s ease;
+      display: inline-block;
+
+      &:hover {
+        transform: scale(1.05);
+      }
+    }
+
+    .logo-text {
+      font-family: 'CM Geom', monospace;
+      font-size: 2rem;
+      font-weight: 700;
+      color: #ffffff;
+      letter-spacing: 2px;
+    }
+  }
+
+  // Desktop Menu
+  .navbar-menu {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+  }
+
+  // Navigation Links
+  .navbar-links {
+    display: flex;
+    gap: 2rem;
+  }
+
+  .nav-link {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 400;
+    position: relative;
+    transition: color 0.3s ease;
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: #00ff88;
+      transition: width 0.3s ease;
+    }
+
+    &:hover,
+    &.active {
+      color: #ffffff;
+
+      &::after {
+        width: 100%;
+      }
+    }
+  }
+
+  // Contact Info
+  .navbar-contact {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: flex-end;
+  }
+
+  .contact-item {
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: #00ff88;
+    }
+  }
+
+  // Social Icons
+  .navbar-social {
+    display: flex;
+    gap: 1rem;
+  }
+
+  .social-icon {
+    width: 38px;
+    height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #00ff88;
+    font-size: 1.2rem;
+    border: 1px solid #00ff88;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    text-decoration: none;
+
+    &:hover {
+      background: #00ff88;
+      color: #000000;
+      transform: scale(1.1);
+      box-shadow: 0 0 20px rgba(0, 255, 136, 0.6);
+    }
+  }
+
+  // Mobile Toggle (Hidden on desktop)
+  .mobile-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    z-index: 1001;
+
+    .bar {
+      width: 28px;
+      height: 3px;
+      background: #ffffff;
+      border-radius: 3px;
+      transition: all 0.3s ease;
+    }
+
+    &.active {
+      .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+      }
+
+      .bar:nth-child(2) {
+        opacity: 0;
+      }
+
+      .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+      }
+    }
+  }
+
+  // Responsive Design
+  @media (max-width: 992px) {
+    .mobile-toggle {
+      display: flex;
+    }
+
+    .navbar-menu {
+      position: fixed;
+      top: 0;
+      right: -100%;
+      width: 320px;
+      height: 100vh;
+      background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 2rem;
+      padding: 6rem 2rem 2rem;
+      transition: right 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+      box-shadow: -5px 0 30px rgba(0, 0, 0, 0.5);
+      overflow-y: auto;
+
+      &.active {
+        right: 0;
+      }
+    }
+
+    .navbar-links {
+      flex-direction: column;
+      gap: 1.5rem;
+      width: 100%;
+    }
+
+    .nav-link {
+      font-size: 1.2rem;
+      padding: 0.5rem 0;
+      width: 100%;
+
+      &::after {
+        bottom: 0;
+      }
+    }
+
+    .navbar-contact {
+      align-items: flex-start;
+      gap: 1rem;
+      width: 100%;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      padding-top: 2rem;
+    }
+
+    .contact-item {
+      font-size: 1rem;
+    }
+
+    .navbar-social {
+      gap: 1.5rem;
+      padding-top: 1rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      width: 100%;
+    }
+
+    .social-icon {
+      width: 45px;
+      height: 45px;
+      font-size: 1.3rem;
+    }
+  }
+
+  @media (max-width: 576px) {
+    padding: 1rem 0;
+
+    .navbar-container {
+      padding: 0 1rem;
+    }
+
+    .navbar-logo .logo-text {
+      font-size: 1.5rem;
+    }
+
+    .navbar-menu {
+      width: 100%;
+    }
+  }
+}
