@@ -1,22 +1,184 @@
-<section class="contact-section">
+<section class="contact-section" id="contact">
   <div class="container">
-    <div class="contact-content">
-      <h2 class="section-title">Contact Section</h2>
-      <p class="section-subtitle">Awaiting design screenshot...</p>
+    <div class="row align-items-center">
       
-      <!-- Placeholder form structure -->
-      <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="contact-form">
-        <div class="form-group">
-          <input type="text" formControlName="name" placeholder="Name" class="form-control">
+      <!-- Left Column: Form -->
+      <div class="col-lg-6 col-md-12">
+        <div class="contact-content">
+          
+          <!-- Heading -->
+          <h2 class="contact-title">contact me</h2>
+          
+          <!-- Description -->
+          <p class="contact-description">
+            i'm always excited to work on new projects & collaborate with amazing people. 
+            whether you need a custom shopify theme, an angular application, or have any 
+            questions about web development, feel free to reach out!
+          </p>
+
+          <!-- Contact Form -->
+          <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="contact-form">
+            
+            <!-- Row 1: Full Name & Subject -->
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                <label for="fullName" class="form-label">Full name</label>
+                <input 
+                  type="text" 
+                  class="form-control" 
+                  id="fullName" 
+                  formControlName="fullName"
+                  placeholder="Mohamed Gad"
+                  [class.is-invalid]="f['fullName'].invalid && f['fullName'].touched"
+                >
+                <div class="invalid-feedback" *ngIf="f['fullName'].invalid && f['fullName'].touched">
+                  <span *ngIf="f['fullName'].errors?.['required']">Full name is required</span>
+                  <span *ngIf="f['fullName'].errors?.['minlength']">Minimum 3 characters required</span>
+                </div>
+              </div>
+
+              <div class="col-md-6 mb-3">
+                <label for="subject" class="form-label">Subject</label>
+                <input 
+                  type="text" 
+                  class="form-control" 
+                  id="subject" 
+                  formControlName="subject"
+                  placeholder="Request for Website"
+                  [class.is-invalid]="f['subject'].invalid && f['subject'].touched"
+                >
+                <div class="invalid-feedback" *ngIf="f['subject'].invalid && f['subject'].touched">
+                  <span *ngIf="f['subject'].errors?.['required']">Subject is required</span>
+                  <span *ngIf="f['subject'].errors?.['minlength']">Minimum 5 characters required</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Row 2: Email & Mobile Number -->
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                <label for="email" class="form-label">Email Address</label>
+                <input 
+                  type="email" 
+                  class="form-control" 
+                  id="email" 
+                  formControlName="email"
+                  placeholder="ex. mo.gad@domain.com"
+                  [class.is-invalid]="f['email'].invalid && f['email'].touched"
+                >
+                <div class="invalid-feedback" *ngIf="f['email'].invalid && f['email'].touched">
+                  <span *ngIf="f['email'].errors?.['required']">Email is required</span>
+                  <span *ngIf="f['email'].errors?.['email']">Please enter a valid email</span>
+                </div>
+              </div>
+
+              <div class="col-md-6 mb-3">
+                <label for="mobileNumber" class="form-label">Mobile number</label>
+                <div class="input-group">
+                  <select 
+                    class="form-select country-code-select" 
+                    formControlName="countryCode"
+                    [class.is-invalid]="f['countryCode'].invalid && f['countryCode'].touched"
+                  >
+                    <option *ngFor="let country of countryCodes" [value]="country.code">
+                      {{ country.flag }} {{ country.code }}
+                    </option>
+                  </select>
+                  <input 
+                    type="tel" 
+                    class="form-control" 
+                    id="mobileNumber" 
+                    formControlName="mobileNumber"
+                    placeholder="0101 123 1234"
+                    [class.is-invalid]="f['mobileNumber'].invalid && f['mobileNumber'].touched"
+                  >
+                </div>
+                <div class="invalid-feedback d-block" *ngIf="f['mobileNumber'].invalid && f['mobileNumber'].touched">
+                  <span *ngIf="f['mobileNumber'].errors?.['required']">Mobile number is required</span>
+                  <span *ngIf="f['mobileNumber'].errors?.['pattern']">Please enter a valid 10-digit number</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Row 3: Message -->
+            <div class="row">
+              <div class="col-12 mb-3">
+                <label for="message" class="form-label">Message</label>
+                <textarea 
+                  class="form-control" 
+                  id="message" 
+                  rows="4"
+                  formControlName="message"
+                  placeholder="Tell me about your project..."
+                  [class.is-invalid]="f['message'].invalid && f['message'].touched"
+                ></textarea>
+                <div class="invalid-feedback" *ngIf="f['message'].invalid && f['message'].touched">
+                  <span *ngIf="f['message'].errors?.['required']">Message is required</span>
+                  <span *ngIf="f['message'].errors?.['minlength']">Minimum 10 characters required</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Submit Button -->
+            <div class="row">
+              <div class="col-12">
+                <button 
+                  type="submit" 
+                  class="btn btn-request-call"
+                  [disabled]="isSubmitting"
+                >
+                  <i class="fas fa-phone-alt me-2"></i>
+                  <span *ngIf="!isSubmitting">Request A Call</span>
+                  <span *ngIf="isSubmitting">
+                    <span class="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span>
+                    Sending...
+                  </span>
+                </button>
+              </div>
+            </div>
+
+          </form>
+
         </div>
-        <div class="form-group">
-          <input type="email" formControlName="email" placeholder="Email" class="form-control">
+      </div>
+
+      <!-- Right Column: Image -->
+      <div class="col-lg-6 col-md-12">
+        <div class="contact-image-wrapper">
+          <img 
+            src="assets/images/contact/contact-image.png" 
+            alt="Person using phone and laptop" 
+            class="contact-image"
+            loading="lazy"
+          >
         </div>
-        <div class="form-group">
-          <textarea formControlName="message" placeholder="Message" class="form-control" rows="5"></textarea>
-        </div>
-        <button type="submit" class="btn-submit" [disabled]="contactForm.invalid">Send Message</button>
-      </form>
+      </div>
+
     </div>
   </div>
+
+  <!-- Success Message Overlay -->
+  <div class="message-overlay" *ngIf="showSuccessMessage" @fadeIn>
+    <div class="message-card success-card">
+      <button class="close-btn" (click)="closeSuccessMessage()">&times;</button>
+      <div class="message-icon">
+        <i class="fas fa-check-circle"></i>
+      </div>
+      <h3>Message Sent Successfully!</h3>
+      <p>Thank you for reaching out. I'll get back to you as soon as possible.</p>
+    </div>
+  </div>
+
+  <!-- Error Message Overlay -->
+  <div class="message-overlay" *ngIf="showErrorMessage" @fadeIn>
+    <div class="message-card error-card">
+      <button class="close-btn" (click)="closeErrorMessage()">&times;</button>
+      <div class="message-icon">
+        <i class="fas fa-exclamation-circle"></i>
+      </div>
+      <h3>Oops! Something went wrong</h3>
+      <p>{{ errorMessage }}</p>
+    </div>
+  </div>
+
 </section>
