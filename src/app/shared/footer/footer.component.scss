@@ -1,0 +1,65 @@
+.portfolio-footer {
+  background: radial-gradient(circle at top, #1a1a1a, #0b0b0b);
+  color: #bfbfbf;
+  font-size: 14px;
+}
+
+/* Divider line */
+.footer-divider {
+  height: 1px;
+  background: linear-gradient(to right, transparent, #3cff00, transparent);
+  opacity: 0.6;
+}
+
+/* Logo */
+.footer-logo {
+  font-size: 28px;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.footer-logo span {
+  color: #3cff00;
+}
+
+/* Titles */
+.footer-title {
+  color: #ffffff;
+  margin-bottom: 12px;
+  font-size: 15px;
+}
+
+/* Text */
+.footer-text {
+  line-height: 1.6;
+}
+
+/* Links */
+.footer-link {
+  color: #bfbfbf;
+  text-decoration: none;
+  margin-bottom: 6px;
+  display: inline-block;
+}
+
+.footer-link:hover {
+  color: #3cff00;
+}
+
+/* Social Icons */
+.social-icons a {
+  font-size: 22px;
+  color: #3cff00;
+  margin-right: 12px;
+  transition: transform 0.2s ease;
+}
+
+.social-icons a:hover {
+  transform: scale(1.15);
+}
+
+/* Bottom text */
+.footer-bottom {
+  font-size: 13px;
+  opacity: 0.6;
+}
