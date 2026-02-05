@@ -1,11 +1,85 @@
-<div class="portfolio-page">
-  <div class="container">
-    <h1 class="page-title">Portfolio Page</h1>
-    <p class="page-subtitle">Awaiting design screenshot...</p>
+<div class="all-projects-container">
+  <!-- Breadcrumb Navigation -->
+  <nav class="breadcrumb-nav" aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item">
+        <a routerLink="/">Home</a>
+      </li>
+      <li class="breadcrumb-item active" aria-current="page">All Projects</li>
+    </ol>
+  </nav>
+
+  <!-- Page Header -->
+  <header class="page-header">
+    <h1 class="page-title">AllProjects</h1>
     
-    <!-- Placeholder for project grid -->
-    <div class="projects-grid">
-      <!-- Projects will be dynamically loaded here -->
+    <!-- Filter Buttons -->
+    <div class="filter-buttons">
+      <button
+        *ngFor="let category of categories; trackBy: trackByCategory"
+        class="filter-btn"
+        [class.active]="activeFilter === category"
+        (click)="filterProjects(category)"
+        [attr.aria-pressed]="activeFilter === category"
+      >
+        <i [class]="getCategoryIcon(category)"></i>
+        {{ category }}
+      </button>
     </div>
-  </div>
+  </header>
+
+  <!-- Projects Grid -->
+  <section class="projects-grid" [@fadeIn]>
+    <article
+      *ngFor="let project of filteredProjects; trackBy: trackByProjectId"
+      class="project-card"
+      [routerLink]="['/project', project.id]"
+      tabindex="0"
+      role="link"
+    >
+      <div class="project-image-wrapper">
+        <img
+          [src]="project.image"
+          [alt]="project.title"
+          class="project-image"
+          loading="lazy"
+        />
+        <div class="project-overlay">
+          <span class="view-project">View Project →</span>
+        </div>
+      </div>
+
+      <div class="project-content">
+        <h2 class="project-title">{{ project.title }}</h2>
+        <p class="project-description">{{ project.description }}</p>
+
+        <div class="project-meta">
+          <div class="tech-stack">
+            <span class="tech-label">Tech Stack:</span>
+            <div class="tech-tags">
+              <span
+                *ngFor="let tech of project.technologies.slice(0, 3)"
+                class="tech-tag"
+              >
+                {{ tech }}
+              </span>
+              <span
+                *ngIf="project.technologies.length > 3"
+                class="tech-tag more-tech"
+              >
+                +{{ project.technologies.length - 3 }}
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- Empty State -->
+    <div *ngIf="filteredProjects.length === 0" class="empty-state">
+      <i class="fas fa-folder-open"></i>
+      <h3>No projects found</h3>
+      <p>Try selecting a different category</p>
+    </div>
+  </section>
 </div>

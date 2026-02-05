@@ -17,7 +17,7 @@ export class NavbarComponent {
   // Navigation links
   navLinks = [
     { label: 'About Me', route: '/about' },
-    { label: 'All Projects', route: '/projects' },
+    { label: 'All Projects', route: '/portfolio' },
     { label: 'Contact Me', route: '/contact' }
   ];
 

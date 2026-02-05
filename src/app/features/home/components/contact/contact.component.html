@@ -127,8 +127,8 @@
                   class="btn btn-request-call"
                   [disabled]="isSubmitting"
                 >
-                  <i class="fas fa-phone-alt me-2"></i>
-                  <span *ngIf="!isSubmitting">Request A Call</span>
+                <span *ngIf="!isSubmitting">Request A Call</span>
+                <i class="fas fa-phone-alt ms-2"></i>
                   <span *ngIf="isSubmitting">
                     <span class="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span>
                     Sending...
