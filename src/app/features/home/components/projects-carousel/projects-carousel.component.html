@@ -33,7 +33,7 @@
       <div class="carousel-wrapper">
         <!-- Carousel Slides -->
         <div 
-          *ngFor="let project of projects; let i = index"
+          *ngFor="let project of projects | slice:0:limit ;  let i = index "
           class="carousel-slide"
           [ngClass]="getSlideClass(i)"
           [attr.aria-hidden]="i !== currentIndex">
@@ -65,7 +65,7 @@
       <!-- Carousel Indicators -->
       <div class="carousel-indicators">
         <button
-          *ngFor="let project of projects; let i = index"
+          *ngFor="let project of projects | slice:0:limit ; let i = index"
           class="indicator"
           [class.active]="i === currentIndex"
           (click)="goToSlide(i)"

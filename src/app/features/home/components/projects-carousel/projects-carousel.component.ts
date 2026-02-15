@@ -13,6 +13,9 @@ export class ProjectsCarouselComponent implements OnInit, OnDestroy {
   
   private projectsService = inject(ProjectsService);
 
+  // number of projects to show in carousel (for performance)
+  limit: number = 10;
+
   // Projects loaded from JSON
   projects: Project[] = [];
   currentIndex: number = 0;
