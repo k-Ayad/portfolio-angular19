@@ -44,8 +44,10 @@
             </h3>
 
             <div class="action-btns">
-                <button class="action-button mx-2 mb-2"><i class="fa-solid fa-display"></i> Show Projects</button>
-                <button class="download-btn mx-2"><i class="fa-regular fa-file-zipper"></i> Download Resume</button>
+                <button routerLink="portfolio" class="action-button mx-2 mb-2"><i class="fa-solid fa-display"></i> Show Projects</button>
+                <button class="download-btn mx-2" (click)="downloadResume()">
+                    <i class="fa-regular fa-file-zipper"></i> Download Resume
+                </button>
             </div>
 
             <!-- Scroll Indicator -->

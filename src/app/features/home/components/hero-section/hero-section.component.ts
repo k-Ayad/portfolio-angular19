@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnDestroy } from '@angular/core';
+import { RouterLink } from "@angular/router";
 
 interface SkillImage {
   src: string;
@@ -14,7 +15,7 @@ interface SkillImage {
 
 @Component({
   selector: 'app-hero-section',
-  imports: [CommonModule],
+  imports: [CommonModule, RouterLink],
   templateUrl: './hero-section.component.html',
   styleUrl: './hero-section.component.scss'
 })
@@ -147,4 +148,11 @@ export class HeroSectionComponent implements OnDestroy {
     this.animationTimeouts.forEach(timeout => clearTimeout(timeout));
     this.animationTimeouts.clear();
   }
+
+  downloadResume(): void {
+  const link = document.createElement('a');
+  link.href = 'assets/resume/Kerllos-Ayad-Azer-Resume.pdf';
+  link.download = 'Kerllos-Ayad-Resume.pdf';
+  link.click();
+}
 }
