@@ -8,7 +8,7 @@ import { ProjectsService } from '@core/services/projects.service';
 @Component({
   selector: 'app-portfolio',
   standalone: true,
-  imports: [CommonModule , RouterLink , RouterModule],
+  imports: [CommonModule, RouterLink, RouterModule],
   templateUrl: './portfolio.component.html',
   styleUrl: './portfolio.component.scss'
 })
@@ -93,15 +93,28 @@ export class PortfolioComponent implements OnInit, OnDestroy {
   }
 
   /**
+   * Open external live project link in new tab
+   */
+  openLiveLink(event: Event, url: string): void {
+    // Prevent card click navigation
+    event.stopPropagation();
+    event.preventDefault();
+    
+    // Open link in new tab with security measures
+    window.open(url, '_blank', 'noopener,noreferrer');
+  }
+
+  /**
    * Track by function for ngFor optimization
    */
   trackByProjectId(index: number, project: Project): number {
     return project.id;
   }
+
   /**
- * Track by function for category strings
- */
-trackByCategory(index: number, category: string): string {
-  return category;
-}
+   * Track by function for category strings
+   */
+  trackByCategory(index: number, category: string): string {
+    return category;
+  }
 }

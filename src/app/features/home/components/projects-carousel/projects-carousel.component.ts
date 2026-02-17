@@ -2,6 +2,7 @@ import { Component, OnInit, OnDestroy, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Project } from './project.model';
 import { ProjectsService } from './projects.service';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-projects-carousel',
   standalone: true,
@@ -12,6 +13,7 @@ import { ProjectsService } from './projects.service';
 export class ProjectsCarouselComponent implements OnInit, OnDestroy {
   
   private projectsService = inject(ProjectsService);
+  router = inject(Router);
 
   // number of projects to show in carousel (for performance)
   limit: number = 10;
@@ -42,7 +44,7 @@ export class ProjectsCarouselComponent implements OnInit, OnDestroy {
 
     this.projectsService.getProjects().subscribe({
       next: (data) => {
-        this.projects = data;
+        this.projects = data.slice(0, this.limit); // Limit number of projects for carousel
         this.isLoading = false;
         
         // Start auto-play only if we have projects
@@ -150,7 +152,7 @@ export class ProjectsCarouselComponent implements OnInit, OnDestroy {
   showDetails(project: Project): void {
     console.log('Show details for:', project);
     // Implement navigation to project details page
-    // this.router.navigate(['/project', project.id]);
+    this.router.navigate(['/project', project.id]);
     // Or use the project.link property if available
     // window.location.href = project.link;
   }

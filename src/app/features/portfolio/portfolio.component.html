@@ -11,7 +11,7 @@
 
   <!-- Page Header -->
   <header class="page-header">
-    <h1 class="page-title">AllProjects</h1>
+    <h1 class="page-title">All Projects</h1>
     
     <!-- Filter Buttons -->
     <div class="filter-buttons">
@@ -29,7 +29,7 @@
   </header>
 
   <!-- Projects Grid -->
-  <section class="projects-grid" [@fadeIn]>
+  <section class="projects-grid">
     <article
       *ngFor="let project of filteredProjects; trackBy: trackByProjectId"
       class="project-card"
@@ -45,7 +45,20 @@
           loading="lazy"
         />
         <div class="project-overlay">
-          <span class="view-project">View Project →</span>
+          <div class="overlay-content">
+            <span class="view-details">View Details →</span>
+            
+            <!-- Live Link Button (Only shows if project has liveUrl) -->
+            <button
+              *ngIf="project.liveUrl"
+              class="live-link-btn"
+              (click)="openLiveLink($event, project.liveUrl)"
+              aria-label="View live project"
+            >
+              <i class="fas fa-external-link-alt"></i>
+              View Live
+            </button>
+          </div>
         </div>
       </div>
 

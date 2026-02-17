@@ -1,6 +1,32 @@
 {
   "projects": [
     {
+      "id": 4,
+      "title": "OR Store",
+      "description": "shopify store for OR, an Egyptian fashion brand focused on delivering trendy, everyday clothing..",
+      "image": "assets/images/projects/or-store.jpg",
+      "category": "Shopify",
+      "technologies": ["Shopify", "Liquid", "JavaScript", "Responsive Design"],
+      "link": "/project/or-store",
+      "liveUrl": "https://or-egypt.com/",
+      "featured": true,
+      "completionDate": "2025-01",
+      "client": "OR Egypt"
+    },
+    {
+      "id": 9,
+      "title": "Hechter – Premium Fashion Shopify Store",
+      "description": "Customized and optimized Shopify storefront for Hechter, a premium fashion brand. Implemented refined UI enhancements, structured collections, optimized product display, and improved mobile responsiveness to align with the brand’s high-end identity and elevate the shopping experience.",
+      "image": "assets/images/projects/hechter-store.jpg", 
+      "category": "Shopify",
+      "technologies": ["Shopify", "Liquid", "JavaScript", "SCSS", "Theme Customization", "Performance Optimization"],
+      "link": "/project/hechter",
+      "liveUrl": "https://www.hechter.com.eg/",
+      "featured": true,
+      "completionDate": "2025-04",
+      "client": "Hechter"
+    },
+    {
       "id": 1,
       "title": "MCV Bus Tender Management System",
       "description": "Enterprise tender management system built for MCV (Middle East’s largest bus manufacturer) integrated with Volvo workflows. Enables sales engineers to submit requests reviewed by costing and engineering departments with full approval lifecycle tracking.",
@@ -37,18 +63,6 @@
       "client": "Manufacturing Department" 
     },
     {
-      "id": 4,
-      "title": "OR Store Locator System",
-      "description": "Dynamic city-based store locator for OR brand in Egypt. Built structured navigation between cities and branches with scalable architecture for future expansion.",
-      "image": "assets/images/projects/or-store.jpg",
-      "category": "Shopify",
-      "technologies": ["Shopify", "Liquid", "JavaScript", "Responsive Design"],
-      "link": "/project/or-store",
-      "featured": true,
-      "completionDate": "2025-01",
-      "client": "OR Egypt"
-    },
-    {
       "id": 5,
       "title": "Side Walks - Converse",
       "description": "Advanced customization of Shopify theme including dual desktop/mobile images per slide, vertical navigation dots, performance optimization, and responsive redesign.",
@@ -56,6 +70,7 @@
       "category": "Shopify",
       "technologies": ["Shopify", "Liquid", "CSS", "JavaScript", "Theme Architecture"],
       "link": "/project/converse-rise", 
+      "liveUrl": "https://sidewalksegypt.com/",
       "featured": true,
       "completionDate": "2025-02",
       "client": "Converse (Regional Project)"
@@ -68,7 +83,8 @@
       "category": "Node.js",
       "technologies": ["Node.js", "Google Cloud", "Environment Config", "Deployment"],
       "link": "/project/google-cloud-deployment",
-      "featured": false,  
+      "featured": false,        
+      "liveUrl": "https://btklmseny.com/",
       "completionDate": "2024-08",
       "client": "Freelance Client"
     },
@@ -80,6 +96,7 @@
       "category": "Shopify",
       "technologies": ["Shopify", "Liquid", "JavaScript", "SCSS", "Responsive Design", "Performance Optimization"],
       "link": "/project/el-okaby-pharmacies",
+      "liveUrl": "https://elokaby.com/",
       "featured": true,
       "completionDate": "2025-02",
       "client": "El Okaby Pharmacies"
@@ -92,22 +109,91 @@
       "category": "Shopify",
       "technologies": ["Shopify", "Liquid", "JavaScript", "SCSS", "Responsive Design", "UX Optimization"],
       "link": "/project/zentia",
+      "liveUrl": "https://zentiaegypt.com/",
       "featured": true,
       "completionDate": "2025-03",
       "client": "Zentia"
     },
     {
-      "id": 9,
-      "title": "Hechter – Premium Fashion Shopify Store",
-      "description": "Customized and optimized Shopify storefront for Hechter, a premium fashion brand. Implemented refined UI enhancements, structured collections, optimized product display, and improved mobile responsiveness to align with the brand’s high-end identity and elevate the shopping experience.",
-      "image": "assets/images/projects/hechter-store.jpg",
+      "id": 10,
+      "title": "Style Beauty Store – Cosmetics Marketplace (Shopify)",
+      "description": "Built and managed a multi-brand cosmetics marketplace on Shopify featuring structured product categorization, promotional campaign management, conversion-focused product pages, and mobile-optimized user experience. Implemented marketplace-style navigation, advanced filtering, and performance optimization to support growing product inventory.",
+      "image": "assets/images/projects/style-beauty-store.jpg",
       "category": "Shopify",
-      "technologies": ["Shopify", "Liquid", "JavaScript", "SCSS", "Theme Customization", "Performance Optimization"],
-      "link": "/project/hechter",
+      "technologies": ["Shopify", "Liquid", "JavaScript", "SCSS", "Marketplace Architecture", "Conversion Optimization"],
+      "link": "/project/style-beauty-store",
+      "liveUrl": "https://stylebeautystore.com/",
+      "featured": true,
+      "completionDate": "2025-01",
+      "client": "Style Beauty Store"
+    },
+    {
+      "id": 11,
+      "title": "Ozone – Shopify Fashion Store",
+      "description": "Customized and optimized Shopify storefront for Ozone, focusing on modern fashion presentation, structured collections, and enhanced product discovery. Improved mobile responsiveness and refined UI components to align with brand identity while ensuring smooth checkout experience.",
+      "image": "assets/images/projects/ozone-store.jpg",
+      "category": "Shopify",
+      "technologies": ["Shopify", "Liquid", "JavaScript", "SCSS", "Responsive Design", "UX Optimization"],
+      "link": "/project/ozone",
+      "featured": false,      
+      "liveUrl": "https://ozone-egypt.com/",
+      "completionDate": "2025-02",
+      "client": "Ozone"
+    },
+    {
+      "id": 12,
+      "title": "Glitter – Beauty & Accessories Shopify Store",
+      "description": "Developed and enhanced Shopify store for Glitter, a beauty and accessories brand. Implemented custom homepage sections, optimized product layouts, improved navigation flow, and enhanced promotional campaign integration to increase customer engagement.",
+      "image": "assets/images/projects/glitter-store.jpg",
+      "category": "Shopify",
+      "technologies": ["Shopify", "Liquid", "JavaScript", "Theme Customization", "Performance Optimization"],
+      "link": "/project/glitter",
+      "liveUrl": "https://glittershop.net/",
+      "featured": true,
+      "completionDate": "2025-03",
+      "client": "Glitter"
+    },
+    {
+      "id": 13,
+      "title": "Elatusian – Premium Fashion Shopify Store",
+      "description": "Engineered and customized Shopify storefront for Elatusian with emphasis on premium brand presentation, collection filtering improvements, product page UX enhancement, and mobile-first performance optimization.",
+      "image": "assets/images/projects/elatusian-store.jpg",
+      "category": "Shopify",
+      "technologies": ["Shopify", "Liquid", "JavaScript", "SCSS", "Responsive Design", "Theme Architecture"],
+      "link": "/project/elatusian",
+      "liveUrl": "https://elatusian.com",
       "featured": true,
       "completionDate": "2025-04",
-      "client": "Hechter"
+      "client": "Elatusian"
+    },
+    {
+      "id": 14,
+      "title": "Naseej – Car accessories Shopify Store",
+      "description": "Customized and optimized Shopify storefront for Naseej, a fashion and apparel brand. Enhanced product page layouts, improved collection structure, implemented responsive UI adjustments, and optimized performance to deliver a smooth and modern shopping experience across devices.",
+      "image": "assets/images/projects/naseej-store.jpg",
+      "category": "Shopify",
+      "technologies": ["Shopify", "Liquid", "JavaScript", "SCSS", "Responsive Design", "Theme Customization"],
+      "link": "/project/naseej",
+      "liveUrl": "https://naseej-eg.co/",
+      "featured": false,
+      "completionDate": "2025-05",
+      "client": "Naseej"
+    },
+    {
+      "id": 15,
+      "title": "Cleo Dates – Premium Dates E-Commerce Store",
+      "description": "Developed and customized Shopify storefront for Cleo Dates, a premium food brand specializing in high-quality dates products. Structured collections for product variations and gift boxes, optimized product presentation, improved mobile responsiveness, and enhanced checkout flow for better conversion performance.",
+      "image": "assets/images/projects/cleo-dates-store.jpg",
+      "category": "Shopify",
+      "technologies": ["Shopify", "Liquid", "JavaScript", "SCSS", "Responsive Design", "UX Optimization"],
+      "link": "/project/cleo-dates",
+      "liveUrl": "https://cleosdates.com/",
+      "featured": true,
+      "completionDate": "2025-05",
+      "client": "Cleo Dates"
     }
+
+
 
   ]
 }
