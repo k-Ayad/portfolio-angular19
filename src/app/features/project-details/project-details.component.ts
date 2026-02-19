@@ -164,7 +164,7 @@ export class ProjectDetailsComponent implements OnInit, OnDestroy {
    * Navigate back to all projects
    */
   goBack(): void {
-    this.router.navigate(['/all-projects']);
+    this.router.navigate(['/portfolio']);
   }
 
   /**
