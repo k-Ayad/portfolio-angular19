@@ -1,6 +1,30 @@
 {
   "projects": [
     {
+      "id": 16,
+      "title": "Arya",
+      "description": "A premium Shopify e-commerce website developed for Arya, a luxury jewelry and accessories brand. The project focuses on delivering an elegant shopping experience through custom Shopify theme development, premium UI/UX, responsive design, advanced product pages, and performance optimization.",
+      "image": "assets/images/projects/arya/arya-hero.jpg",
+      "images": [
+        "assets/images/projects/arya/arya-hero.jpg",
+        "assets/images/projects/arya/arya-collection.jpg",
+        "assets/images/projects/arya/arya-product.jpg",
+        "assets/images/projects/arya/arya-product-details.jpg",
+        "assets/images/projects/arya/arya-mobile-home.jpg",
+        "assets/images/projects/arya/arya-mobile-product.jpg"
+      ],
+      "category": "Shopify",
+      "technologies": ["Shopify", "Liquid", "HTML5", "SCSS", "JavaScript", "Bootstrap", "JSON", "Judge.me", "Shopify Metafields"],
+      "link": "/project/arya",
+      "liveUrl": "https://aryaeg.com/",
+      "featured": true,
+      "completionDate": "2025-06",
+      "client": "Arya",
+      "challenges": "Arya needed a fully customized Shopify store that reflects a premium, luxury jewelry and accessories brand identity while delivering excellent performance, usability, and a strong focus on conversion rate optimization.",
+      "solution": "Delivered extensive custom Shopify theme work including custom homepage sections, advanced product page customization, custom Liquid development, Shopify metafields implementation, variant and color swatch improvements, product recommendations, Judge.me reviews integration, mobile-first responsive design, collection page enhancements, and improved cart and shopping experience — all backed by performance optimization, SEO improvements, and smooth premium animations.",
+      "results": "A fully responsive, premium luxury storefront with advanced product pages, dynamic metafields, and an optimized shopping experience that maintains a clean luxury aesthetic while driving conversions."
+    },
+    {
       "id": 4,
       "title": "OR Store",
       "description": "shopify store for OR, an Egyptian fashion brand focused on delivering trendy, everyday clothing..",
