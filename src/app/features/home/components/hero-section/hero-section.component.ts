@@ -151,8 +151,8 @@ export class HeroSectionComponent implements OnDestroy {
 
   downloadResume(): void {
   const link = document.createElement('a');
-  link.href = 'assets/resume/Kerllos-Ayad-Azer-Resume.pdf';
-  link.download = 'Kerllos-Ayad-Resume.pdf';
+  link.href = 'assets/resume/Senior-Frontend-Engineer.pdf';
+  link.download = 'Kerllos-Ayad-Senior-Frontend-Engineer.pdf';
   link.click();
 }
 }
