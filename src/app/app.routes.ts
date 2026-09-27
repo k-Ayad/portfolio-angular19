@@ -17,6 +17,12 @@ export const routes: Routes = [
     title: 'Project Details | Kerllos Portfolio'
   },
   {
+    // Not linked from any navigation; reachable only by direct URL (used as the Meta App privacy policy URL)
+    path: 'privacy-policy',
+    loadComponent: () => import('./features/privacy-policy/privacy-policy.component').then(m => m.PrivacyPolicyComponent),
+    title: 'Privacy Policy | K-Ayad'
+  },
+  {
     path: '**',
     redirectTo: '',
     pathMatch: 'full'
