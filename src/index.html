@@ -19,6 +19,269 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
 
+  <!-- Intro animation: logo font is preloaded so the name renders as soon as it appears -->
+  <link rel="preload" href="assets/fonts/cmgeom-regular.otf" as="font" type="font/otf" crossorigin>
+  <style>
+    html.intro-active,
+    html.intro-active body {
+      overflow: hidden;
+    }
+
+    html.intro-skip .intro {
+      display: none;
+    }
+
+    .intro {
+      --intro-bg: #151515;
+      --intro-paper: #ffffff;
+      --intro-text: #ededed;
+      --intro-muted: #8a8a8a;
+      --intro-red: #ef4b26;
+      --intro-yellow: #f6c21a;
+      --intro-blue: #29a8e0;
+      --intro-ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+      --intro-ease-in-out: cubic-bezier(0.77, 0, 0.18, 1);
+
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      overflow: hidden;
+      background: var(--intro-bg);
+      /* Never cover the site if the exit script fails for any reason */
+      animation: intro-failsafe 0s linear 10s forwards;
+    }
+
+    /* ---------- Stage 1: white screen cut along a diagonal and split open ---------- */
+    .intro__panel {
+      position: absolute;
+      inset: -2px;
+      background: var(--intro-paper);
+      will-change: transform;
+    }
+
+    .intro__panel--a {
+      clip-path: polygon(0 0, 58% 0, 42% 100%, 0 100%);
+      animation: intro-split-a 0.9s var(--intro-ease-in-out) 0.8s forwards;
+    }
+
+    .intro__panel--b {
+      clip-path: polygon(58% 0, 100% 0, 100% 100%, 42% 100%);
+      animation: intro-split-b 0.9s var(--intro-ease-in-out) 0.8s forwards;
+    }
+
+    .intro__seam {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+    }
+
+    .intro__seam line {
+      stroke: var(--intro-bg);
+      stroke-width: 2;
+      stroke-dasharray: 1;
+      stroke-dashoffset: 1;
+      animation:
+        intro-seam-draw 0.5s var(--intro-ease-in-out) 0.2s forwards,
+        intro-fade-out 0.25s ease 0.85s forwards;
+    }
+
+    /* ---------- Stage 2: </> logo on the dark screen ---------- */
+    .intro__content {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 1.6rem;
+      padding: 0 1rem;
+    }
+
+    .intro__logo {
+      position: relative;
+      display: flex;
+      align-items: center;
+      gap: 0.04em;
+      font-family: 'CM Geom', 'Poppins', 'Inter', system-ui, sans-serif;
+      font-size: clamp(1.9rem, 7vw, 3.75rem);
+      line-height: 1;
+      color: var(--intro-text);
+      opacity: 0;
+      transform: scale(0.8);
+      animation:
+        intro-logo-in 0.9s var(--intro-ease-out) 0.9s forwards,
+        intro-logo-gap 0.8s var(--intro-ease-in-out) 1.75s forwards;
+    }
+
+    .intro__bracket {
+      display: inline-block;
+      font-size: 0.62em;
+    }
+
+    .intro__bracket--lt {
+      transform: translateY(0.3em);
+      animation: intro-lt 0.8s var(--intro-ease-in-out) 1.75s forwards;
+    }
+
+    .intro__bracket--gt {
+      transform: translateY(-0.3em);
+      animation: intro-gt 0.8s var(--intro-ease-in-out) 1.75s forwards;
+    }
+
+    .intro__slash {
+      display: inline-block;
+      animation:
+        intro-slash 0.8s var(--intro-ease-in-out) 1.75s forwards,
+        intro-slash-glow 1.4s ease-in-out 2.6s;
+    }
+
+    /* ---------- Stage 3: the logo opens up and the name rises in between ---------- */
+    .intro__name {
+      display: grid;
+      grid-template-columns: 0fr;
+      animation: intro-name-open 0.8s var(--intro-ease-in-out) 1.75s forwards;
+    }
+
+    .intro__name-inner {
+      min-width: 0;
+      overflow: hidden;
+      white-space: nowrap;
+      padding-block: 0.12em 0.22em;
+    }
+
+    .intro__char {
+      display: inline-block;
+      opacity: 0;
+      transform: translateY(0.9em);
+      filter: blur(4px);
+      animation: intro-char 0.6s var(--intro-ease-out) calc(2.05s + var(--i) * 45ms) forwards;
+    }
+
+    .intro__char--space {
+      width: 0.28em;
+    }
+
+    .intro__underline {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: -0.45em;
+      height: 2px;
+      border-radius: 2px;
+      background: linear-gradient(90deg, var(--intro-red), var(--intro-yellow), var(--intro-blue));
+      transform: scaleX(0);
+      transform-origin: left;
+      animation: intro-underline 0.7s var(--intro-ease-in-out) 2.75s forwards;
+    }
+
+    .intro__tagline {
+      margin: 0;
+      font-family: 'Inter', system-ui, sans-serif;
+      font-size: clamp(0.65rem, 2.4vw, 0.85rem);
+      font-weight: 500;
+      letter-spacing: 0.6em;
+      text-transform: uppercase;
+      text-align: center;
+      color: var(--intro-muted);
+      opacity: 0;
+      animation: intro-tagline 0.9s var(--intro-ease-out) 3s forwards;
+    }
+
+    .intro__tagline span {
+      white-space: nowrap;
+    }
+
+    @media (max-width: 480px) {
+      .intro__tagline span {
+        display: block;
+      }
+
+      .intro__tagline .intro__tagline-dot {
+        display: none;
+      }
+    }
+
+    /* ---------- Stage 4: curtain lifts to reveal the website ---------- */
+    .intro--exit {
+      animation: intro-exit 0.9s var(--intro-ease-in-out) forwards;
+    }
+
+    .intro--exit .intro__content {
+      animation: intro-content-exit 0.6s var(--intro-ease-in-out) forwards;
+    }
+
+    @keyframes intro-seam-draw { to { stroke-dashoffset: 0; } }
+    @keyframes intro-fade-out { to { opacity: 0; } }
+    @keyframes intro-split-a { to { transform: translate(-62%, -4%); } }
+    @keyframes intro-split-b { to { transform: translate(62%, 4%); } }
+    @keyframes intro-logo-in { to { opacity: 1; transform: scale(1); } }
+    @keyframes intro-logo-gap { to { gap: 0.3em; } }
+    @keyframes intro-lt { to { transform: translateY(0.06em); color: var(--intro-red); } }
+    @keyframes intro-gt { to { transform: translateY(0.06em); color: var(--intro-blue); } }
+    @keyframes intro-slash { to { transform: scale(1.45) rotate(4deg); color: var(--intro-yellow); } }
+    @keyframes intro-slash-glow {
+      50% { text-shadow: 0 0 0.35em rgba(246, 194, 26, 0.65); }
+    }
+    @keyframes intro-name-open { to { grid-template-columns: 1fr; } }
+    @keyframes intro-char { to { opacity: 1; transform: none; filter: none; } }
+    @keyframes intro-underline { to { transform: scaleX(1); } }
+    @keyframes intro-tagline { to { opacity: 1; letter-spacing: 0.35em; } }
+    @keyframes intro-content-exit {
+      to { opacity: 0; transform: translateY(-40px) scale(0.96); filter: blur(6px); }
+    }
+    @keyframes intro-exit {
+      to {
+        transform: translateY(-100%);
+        border-radius: 0 0 50% 50% / 0 0 18vh 18vh;
+      }
+    }
+    @keyframes intro-failsafe { to { visibility: hidden; opacity: 0; } }
+  </style>
+  <script>
+    (function () {
+      var PLAY_ONCE_PER_SESSION = true; // Set to false to play the intro on every page load
+      var MIN_DURATION = 3900; // ms: the full intro timeline before the curtain lifts
+      var MAX_WAIT = 9000; // ms: lift the curtain even if the app never reports ready
+
+      var root = document.documentElement;
+      var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      var seen = false;
+      try { seen = PLAY_ONCE_PER_SESSION && sessionStorage.getItem('ka-intro-seen') === '1'; } catch (e) {}
+
+      if (seen || reduceMotion) {
+        root.classList.add('intro-skip');
+        return;
+      }
+      try { sessionStorage.setItem('ka-intro-seen', '1'); } catch (e) {}
+      root.classList.add('intro-active');
+
+      var timeUp = false;
+      var appReady = false;
+      var finished = false;
+
+      // Lift the curtain only when the animation has played AND the first page has rendered
+      function finish() {
+        if (finished || !timeUp || !appReady) return;
+        finished = true;
+        var intro = document.getElementById('intro');
+        if (!intro) {
+          root.classList.remove('intro-active');
+          return;
+        }
+        // Unlock scrolling while the curtain still covers the page, so the scrollbar returning isn't visible
+        root.classList.remove('intro-active');
+        intro.classList.add('intro--exit');
+        setTimeout(function () { intro.remove(); }, 950);
+      }
+
+      setTimeout(function () { timeUp = true; finish(); }, MIN_DURATION);
+      window.addEventListener('app-ready', function () { appReady = true; finish(); });
+      setTimeout(function () { timeUp = true; appReady = true; finish(); }, MAX_WAIT);
+    })();
+  </script>
+
   <!-- Open Graph (WhatsApp, Facebook, LinkedIn) -->
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Kerllos Ayad">
@@ -57,6 +320,28 @@
 
 </head>
 <body>
+  <!-- Intro animation (styles and timing script are in <head>) -->
+  <div id="intro" class="intro" aria-hidden="true">
+    <div class="intro__content">
+      <div class="intro__logo">
+        <span class="intro__bracket intro__bracket--lt">&lt;</span>
+        <span class="intro__name">
+          <span class="intro__name-inner"><span class="intro__char" style="--i:0">K</span><span class="intro__char" style="--i:1">e</span><span class="intro__char" style="--i:2">r</span><span class="intro__char" style="--i:3">l</span><span class="intro__char" style="--i:4">l</span><span class="intro__char" style="--i:5">o</span><span class="intro__char" style="--i:6">s</span><span class="intro__char intro__char--space" style="--i:7"> </span><span class="intro__char" style="--i:8">A</span><span class="intro__char" style="--i:9">y</span><span class="intro__char" style="--i:10">a</span><span class="intro__char" style="--i:11">d</span></span>
+        </span>
+        <span class="intro__slash">/</span>
+        <span class="intro__bracket intro__bracket--gt">&gt;</span>
+        <span class="intro__underline"></span>
+      </div>
+      <p class="intro__tagline"><span>Frontend Developer</span><span class="intro__tagline-dot"> &middot; </span><span>Shopify Expert</span></p>
+    </div>
+
+    <div class="intro__panel intro__panel--a"></div>
+    <div class="intro__panel intro__panel--b"></div>
+    <svg class="intro__seam" viewBox="0 0 100 100" preserveAspectRatio="none">
+      <line x1="58" y1="0" x2="42" y2="100" pathLength="1" vector-effect="non-scaling-stroke" />
+    </svg>
+  </div>
+
   <app-root></app-root>
 </body>
 </html>
