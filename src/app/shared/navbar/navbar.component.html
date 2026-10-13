@@ -12,15 +12,25 @@
     <div class="navbar-menu" [class.active]="isMobileMenuOpen">
       <!-- Navigation Links -->
       <div class="navbar-links">
-        <a 
-          *ngFor="let link of navLinks"
-          [routerLink]="link.route"
-          routerLinkActive="active"
-          class="nav-link"
-          (click)="closeMobileMenu()"
-        >
-          {{ link.label }}
-        </a>
+        <ng-container *ngFor="let link of navLinks">
+          <a
+            *ngIf="link.fragment"
+            [href]="'/#' + link.fragment"
+            class="nav-link"
+            (click)="scrollToSection($event, link.fragment)"
+          >
+            {{ link.label }}
+          </a>
+          <a
+            *ngIf="!link.fragment"
+            [routerLink]="link.route"
+            routerLinkActive="active"
+            class="nav-link"
+            (click)="closeMobileMenu()"
+          >
+            {{ link.label }}
+          </a>
+        </ng-container>
       </div>
 
       <!-- Contact Info -->

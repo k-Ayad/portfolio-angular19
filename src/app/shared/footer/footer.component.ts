@@ -8,5 +8,5 @@ import { RouterLink } from "@angular/router";
   styleUrl: './footer.component.scss'
 })
 export class FooterComponent {
-
+  readonly currentYear = new Date().getFullYear();
 }

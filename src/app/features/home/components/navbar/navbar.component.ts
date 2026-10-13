@@ -15,9 +15,9 @@ export class NavbarComponent implements OnInit {
 
   // Contact information
   email = 'Kerllos.Ayad@Gmail.Com';
-  phone = '0127 683 2755';
-  linkedInUrl = 'https://www.linkedin.com/in/kerllos-ayad/';
-  githubUrl = 'https://github.com/kerllosayad';
+  phone = '+20 127 683 2755';
+  linkedInUrl = 'https://www.linkedin.com/in/k-ayad';
+  githubUrl = 'https://github.com/k-ayad';
 
   ngOnInit(): void {
     // Check initial scroll position

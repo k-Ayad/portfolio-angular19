@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { ActivatedRoute, Router, RouterModule } from '@angular/router';
 import { Subject, takeUntil } from 'rxjs';
 import { ProjectsService } from '../../core/services/projects.service';
+import { SeoService } from '../../core/services/seo.service';
 import { Project } from '../../core/models/project.interface';
 
 @Component({
@@ -22,7 +23,8 @@ export class ProjectDetailsComponent implements OnInit, OnDestroy {
   constructor(
     private route: ActivatedRoute,
     private router: Router,
-    private projectsService: ProjectsService
+    private projectsService: ProjectsService,
+    private seoService: SeoService
   ) {}
 
   ngOnInit(): void {
@@ -49,6 +51,7 @@ export class ProjectDetailsComponent implements OnInit, OnDestroy {
         next: (project) => {
           if (project) {
             this.project = project;
+            this.updateSeo(project);
             this.setupCarousel();
             this.loadRelatedProjects();
           } else {
@@ -60,6 +63,22 @@ export class ProjectDetailsComponent implements OnInit, OnDestroy {
           this.router.navigate(['/all-projects']);
         }
       });
+  }
+
+  /**
+   * Set page title and meta tags for this project
+   */
+  private updateSeo(project: Project): void {
+    const description = project.description.length > 160
+      ? project.description.slice(0, 157).trimEnd() + '...'
+      : project.description;
+
+    this.seoService.setPageMeta({
+      title: `${project.title} | Kerllos Ayad`,
+      description,
+      path: `/project/${project.id}`,
+      image: project.image
+    });
   }
 
   /**

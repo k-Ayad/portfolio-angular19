@@ -4,6 +4,7 @@ import { RouterLink, RouterModule } from '@angular/router';
 import { Subject, takeUntil } from 'rxjs';
 import { Project } from '@core/models/project.interface';
 import { ProjectsService } from '@core/services/projects.service';
+import { SeoService } from '@core/services/seo.service';
 
 @Component({
   selector: 'app-portfolio',
@@ -19,9 +20,17 @@ export class PortfolioComponent implements OnInit, OnDestroy {
   activeFilter: string = 'All Projects';
   private destroy$ = new Subject<void>();
 
-  constructor(private projectsService: ProjectsService) {}
+  constructor(
+    private projectsService: ProjectsService,
+    private seoService: SeoService
+  ) {}
 
   ngOnInit(): void {
+    this.seoService.setPageMeta({
+      title: 'Projects | Kerllos Ayad',
+      description: 'Shopify stores, Angular applications and Node.js projects built by Kerllos Ayad, Senior Frontend Engineer & Shopify Specialist.',
+      path: '/portfolio'
+    });
     this.loadProjects();
     this.loadCategories();
   }
