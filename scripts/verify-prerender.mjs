@@ -3,7 +3,7 @@ import { readFile } from 'node:fs/promises';
 import { join } from 'node:path';
 
 const DIST = 'dist/portfolio/browser';
-const { projects } = JSON.parse(await readFile('src/app/core/data/projects.json', 'utf8'));
+const projects = JSON.parse(await readFile('src/app/core/data/projects.json', 'utf8')).projects.filter(p => !p.hidden);
 const site = JSON.parse(await readFile('src/app/core/data/site.json', 'utf8'));
 
 const routes = [

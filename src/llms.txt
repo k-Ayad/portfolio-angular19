@@ -26,7 +26,6 @@ Shopify, Liquid, Angular, TypeScript, JavaScript, UI/UX
 - [Glitter](https://k-ayad.com/work/glitter): Shopify store for Glitter, a beauty and accessories brand.
 - [OZAD Pharma](https://k-ayad.com/work/ozad-pharma): Shopify store for OZAD Pharma.
 - [Tactical Schnauzer](https://k-ayad.com/work/tactical-schnauzer): Shopify store with a scroll animation that plays image frames as the user scrolls.
-- [MAS Clinics](https://k-ayad.com/work/mas-clinics): Angular web project for MAS Clinics.
 - [btklmseny (بتكلم صيني)](https://k-ayad.com/work/btklmseny): Website for btklmseny, a Chinese-learning app, connected to the mobile app on Google Cloud for subscriptions.
 
 All projects: https://k-ayad.com/portfolio

@@ -22,7 +22,7 @@ app.use(compression());
 
 // Old /project/<id or slug> URLs: permanent redirect to /work/<slug> (unknown or removed projects go to /portfolio)
 const legacyProjectSlugs = new Map<string, string>(
-  projectData.projects.flatMap((project) => project.legacyIds.map((id): [string, string] => [id, project.slug])),
+  projectData.projects.filter((project) => !('hidden' in project)).flatMap((project) => project.legacyIds.map((id): [string, string] => [id, project.slug])),
 );
 
 app.get('/project/:id', (req, res) => {

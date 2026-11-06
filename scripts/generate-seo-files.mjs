@@ -3,7 +3,7 @@
 import { readFile, writeFile } from 'node:fs/promises';
 
 const site = JSON.parse(await readFile('src/app/core/data/site.json', 'utf8'));
-const { projects } = JSON.parse(await readFile('src/app/core/data/projects.json', 'utf8'));
+const projects = JSON.parse(await readFile('src/app/core/data/projects.json', 'utf8')).projects.filter(p => !p.hidden);
 const today = new Date().toISOString().slice(0, 10);
 
 const routes = [

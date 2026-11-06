@@ -15,20 +15,51 @@
         "Mobile-first responsive design, collection page enhancements and an improved cart and shopping experience",
         "Performance optimization, SEO improvements and smooth premium animations"
       ],
-      "technologies": ["Shopify", "Liquid", "HTML5", "SCSS", "JavaScript", "Bootstrap", "JSON", "Judge.me", "Shopify Metafields"],
+      "technologies": [
+        "Shopify",
+        "Liquid",
+        "HTML5",
+        "SCSS",
+        "JavaScript",
+        "Bootstrap",
+        "JSON",
+        "Judge.me",
+        "Shopify Metafields"
+      ],
       "liveUrl": "https://aryaeg.com/",
       "image": "assets/images/projects/arya/arya-hero.webp",
       "images": [
-        { "src": "assets/images/projects/arya/arya-hero.webp", "alt": "Arya jewelry store homepage hero on desktop" },
-        { "src": "assets/images/projects/arya/arya-collection.webp", "alt": "Arya jewelry collection page with product grid" },
-        { "src": "assets/images/projects/arya/arya-product.webp", "alt": "Arya jewelry product page on desktop" },
-        { "src": "assets/images/projects/arya/arya-product-details.webp", "alt": "Arya product page details section with the premium guarantee" },
-        { "src": "assets/images/projects/arya/arya-mobile-home.webp", "alt": "Arya store homepage on mobile" },
-        { "src": "assets/images/projects/arya/arya-mobile-product.webp", "alt": "Arya product page on mobile" }
+        {
+          "src": "assets/images/projects/arya/arya-hero.webp",
+          "alt": "Arya jewelry store homepage hero on desktop"
+        },
+        {
+          "src": "assets/images/projects/arya/arya-collection.webp",
+          "alt": "Arya jewelry collection page with product grid"
+        },
+        {
+          "src": "assets/images/projects/arya/arya-product.webp",
+          "alt": "Arya jewelry product page on desktop"
+        },
+        {
+          "src": "assets/images/projects/arya/arya-product-details.webp",
+          "alt": "Arya product page details section with the premium guarantee"
+        },
+        {
+          "src": "assets/images/projects/arya/arya-mobile-home.webp",
+          "alt": "Arya store homepage on mobile"
+        },
+        {
+          "src": "assets/images/projects/arya/arya-mobile-product.webp",
+          "alt": "Arya product page on mobile"
+        }
       ],
       "completionDate": "2025-06",
       "featured": true,
-      "legacyIds": ["16", "arya"]
+      "legacyIds": [
+        "16",
+        "arya"
+      ]
     },
     {
       "slug": "or-brand",
@@ -41,12 +72,20 @@
         "Built the OR store on Shopify",
         "A size chart built into the theme itself instead of a paid monthly app"
       ],
-      "technologies": ["Shopify", "Liquid", "JavaScript", "Responsive Design"],
+      "technologies": [
+        "Shopify",
+        "Liquid",
+        "JavaScript",
+        "Responsive Design"
+      ],
       "liveUrl": "https://or-egypt.com/",
       "image": "assets/images/projects/or-store.webp",
       "completionDate": "2025-01",
       "featured": true,
-      "legacyIds": ["4", "or-store"]
+      "legacyIds": [
+        "4",
+        "or-store"
+      ]
     },
     {
       "slug": "sidewalks",
@@ -59,13 +98,24 @@
         "Vertical navigation dots on the slider",
         "Performance optimization and responsive redesign"
       ],
-      "technologies": ["Shopify", "Liquid", "CSS", "JavaScript", "Theme Architecture"],
+      "technologies": [
+        "Shopify",
+        "Liquid",
+        "CSS",
+        "JavaScript",
+        "Theme Architecture"
+      ],
       "liveUrl": "https://sidewalksegypt.com/",
       "image": "assets/images/projects/converse-rise.webp",
       "completionDate": "2025-02",
       "featured": true,
-      "legacyIds": ["5", "converse-rise"],
-      "todo": ["problem: what the Sidewalks store needed before the work"]
+      "legacyIds": [
+        "5",
+        "converse-rise"
+      ],
+      "todo": [
+        "problem: what the Sidewalks store needed before the work"
+      ]
     },
     {
       "slug": "style-beauty-store",
@@ -80,12 +130,22 @@
         "Mobile UX: a bottom toolbar and collapsed contact buttons",
         "Conversion-focused product pages and performance optimization"
       ],
-      "technologies": ["Shopify", "Liquid", "JavaScript", "SCSS", "Marketplace Architecture", "Conversion Optimization"],
+      "technologies": [
+        "Shopify",
+        "Liquid",
+        "JavaScript",
+        "SCSS",
+        "Marketplace Architecture",
+        "Conversion Optimization"
+      ],
       "liveUrl": "https://stylebeautystore.com/",
       "image": "assets/images/projects/style-beauty-store.webp",
       "completionDate": "2025-01",
       "featured": true,
-      "legacyIds": ["10", "style-beauty-store"]
+      "legacyIds": [
+        "10",
+        "style-beauty-store"
+      ]
     },
     {
       "slug": "hechter-paris",
@@ -100,12 +160,22 @@
         "Optimized product display and product pages",
         "Improved mobile responsiveness"
       ],
-      "technologies": ["Shopify", "Liquid", "JavaScript", "SCSS", "Theme Customization", "Performance Optimization"],
+      "technologies": [
+        "Shopify",
+        "Liquid",
+        "JavaScript",
+        "SCSS",
+        "Theme Customization",
+        "Performance Optimization"
+      ],
       "liveUrl": "https://www.hechter.com.eg/",
       "image": "assets/images/projects/hechter-store.webp",
       "completionDate": "2025-04",
       "featured": true,
-      "legacyIds": ["9", "hechter"]
+      "legacyIds": [
+        "9",
+        "hechter"
+      ]
     },
     {
       "slug": "el-okaby-pharmacies",
@@ -120,12 +190,22 @@
         "Mobile-first responsive design",
         "Performance enhancements for smooth browsing and checkout"
       ],
-      "technologies": ["Shopify", "Liquid", "JavaScript", "SCSS", "Responsive Design", "Performance Optimization"],
+      "technologies": [
+        "Shopify",
+        "Liquid",
+        "JavaScript",
+        "SCSS",
+        "Responsive Design",
+        "Performance Optimization"
+      ],
       "liveUrl": "https://elokaby.com/",
       "image": "assets/images/projects/el-okaby-pharmacy.webp",
       "completionDate": "2025-02",
       "featured": true,
-      "legacyIds": ["7", "el-okaby-pharmacies"]
+      "legacyIds": [
+        "7",
+        "el-okaby-pharmacies"
+      ]
     },
     {
       "slug": "cleos-dates",
@@ -139,13 +219,25 @@
         "Improved mobile responsiveness",
         "Enhanced checkout flow for better conversion"
       ],
-      "technologies": ["Shopify", "Liquid", "JavaScript", "SCSS", "Responsive Design", "UX Optimization"],
+      "technologies": [
+        "Shopify",
+        "Liquid",
+        "JavaScript",
+        "SCSS",
+        "Responsive Design",
+        "UX Optimization"
+      ],
       "liveUrl": "https://cleosdates.com/",
       "image": "assets/images/projects/cleo-dates-store.webp",
       "completionDate": "2025-05",
       "featured": true,
-      "legacyIds": ["15", "cleo-dates"],
-      "todo": ["problem: what the Cleo's Dates store needed before the work"]
+      "legacyIds": [
+        "15",
+        "cleo-dates"
+      ],
+      "todo": [
+        "problem: what the Cleo's Dates store needed before the work"
+      ]
     },
     {
       "slug": "zentia",
@@ -159,13 +251,25 @@
         "Mobile-first design",
         "Streamlined checkout flow"
       ],
-      "technologies": ["Shopify", "Liquid", "JavaScript", "SCSS", "Responsive Design", "UX Optimization"],
+      "technologies": [
+        "Shopify",
+        "Liquid",
+        "JavaScript",
+        "SCSS",
+        "Responsive Design",
+        "UX Optimization"
+      ],
       "liveUrl": "https://zentiaegypt.com/",
       "image": "assets/images/projects/zentia-store.webp",
       "completionDate": "2025-03",
       "featured": true,
-      "legacyIds": ["8", "zentia"],
-      "todo": ["problem: what the Zentia store needed before the work"]
+      "legacyIds": [
+        "8",
+        "zentia"
+      ],
+      "todo": [
+        "problem: what the Zentia store needed before the work"
+      ]
     },
     {
       "slug": "ozone",
@@ -179,13 +283,25 @@
         "Improved mobile responsiveness and refined UI components",
         "A smooth checkout experience"
       ],
-      "technologies": ["Shopify", "Liquid", "JavaScript", "SCSS", "Responsive Design", "UX Optimization"],
+      "technologies": [
+        "Shopify",
+        "Liquid",
+        "JavaScript",
+        "SCSS",
+        "Responsive Design",
+        "UX Optimization"
+      ],
       "liveUrl": "https://ozone-egypt.com/",
       "image": "assets/images/projects/ozone-store.webp",
       "completionDate": "2025-02",
       "featured": false,
-      "legacyIds": ["11", "ozone"],
-      "todo": ["problem: what the Ozone store needed before the work"]
+      "legacyIds": [
+        "11",
+        "ozone"
+      ],
+      "todo": [
+        "problem: what the Ozone store needed before the work"
+      ]
     },
     {
       "slug": "glitter",
@@ -199,13 +315,24 @@
         "Improved navigation flow",
         "Promotional campaign integration"
       ],
-      "technologies": ["Shopify", "Liquid", "JavaScript", "Theme Customization", "Performance Optimization"],
+      "technologies": [
+        "Shopify",
+        "Liquid",
+        "JavaScript",
+        "Theme Customization",
+        "Performance Optimization"
+      ],
       "liveUrl": "https://glittershop.net/",
       "image": "assets/images/projects/glitter-store.webp",
       "completionDate": "2025-03",
       "featured": true,
-      "legacyIds": ["12", "glitter"],
-      "todo": ["problem: what the Glitter store needed before the work"]
+      "legacyIds": [
+        "12",
+        "glitter"
+      ],
+      "todo": [
+        "problem: what the Glitter store needed before the work"
+      ]
     },
     {
       "slug": "ozad-pharma",
@@ -214,12 +341,18 @@
       "category": "Shopify",
       "summary": "Shopify store for OZAD Pharma.",
       "built": [],
-      "technologies": ["Shopify", "Liquid"],
+      "technologies": [
+        "Shopify",
+        "Liquid"
+      ],
       "liveUrl": "https://ozadpharma.com/",
       "image": "assets/images/projects/ozad-pharma-store.webp",
       "completionDate": "2025-04",
       "featured": true,
-      "legacyIds": ["13", "elatusian"],
+      "legacyIds": [
+        "13",
+        "elatusian"
+      ],
       "todo": [
         "problem, what you built and the stack for OZAD Pharma (the old Elatusian copy described a fashion store, so it was not reused)",
         "confirm the Liquid tag and the 2025-04 completion date"
@@ -234,16 +367,24 @@
       "built": [
         "A scroll animation that plays a sequence of image frames as the user scrolls"
       ],
-      "technologies": ["Shopify", "JavaScript"],
-      "image": "assets/images/profile.webp",
+      "technologies": [
+        "Shopify",
+        "JavaScript"
+      ],
+      "image": "assets/images/projects/tactical-schnauzer-store.webp",
       "featured": false,
       "legacyIds": [],
-      "noScreenshot": true,
       "todo": [
-        "live store URL",
-        "screenshots (a placeholder profile image is used for now, and no screenshot section is shown)",
-        "problem, completion date and full stack"
-      ]
+        "problem, completion date and full stack for Tactical Schnauzer",
+        "confirm the public store URL is https://tacticalschnauzer.com/ (you sent a theme preview link, which was not used)"
+      ],
+      "images": [
+        {
+          "src": "assets/images/projects/tactical-schnauzer-store.webp",
+          "alt": "Tactical Schnauzer store scroll animation section titled \"Keep your holster\", showing a holster on a belt above compatibility notes"
+        }
+      ],
+      "liveUrl": "https://tacticalschnauzer.com/"
     },
     {
       "slug": "mas-clinics",
@@ -252,7 +393,10 @@
       "category": "Angular",
       "summary": "Angular web project for MAS Clinics.",
       "built": [],
-      "technologies": ["Angular", "TypeScript"],
+      "technologies": [
+        "Angular",
+        "TypeScript"
+      ],
       "liveUrl": "https://mas-clinic.health/",
       "image": "assets/images/profile.webp",
       "featured": false,
@@ -262,7 +406,8 @@
         "problem, what you built, completion date and full stack for MAS Clinics",
         "screenshots (a placeholder profile image is used for now, and no screenshot section is shown)",
         "confirm the live URL is https://mas-clinic.health/"
-      ]
+      ],
+      "hidden": true
     },
     {
       "slug": "btklmseny",
@@ -274,14 +419,33 @@
         "Configured and deployed the Node.js application to Google Cloud",
         "Connected the website with the mobile application to provide subscription tracking"
       ],
-      "technologies": ["Node.js", "Google Cloud", "Environment Config", "Deployment"],
+      "technologies": [
+        "Node.js",
+        "Google Cloud",
+        "Environment Config",
+        "Deployment"
+      ],
       "liveUrl": "https://btklmseny.com/",
       "image": "assets/images/projects/google-cloud-deployment.webp",
       "completionDate": "2024-08",
       "featured": false,
-      "legacyIds": ["6", "google-cloud-deployment"],
-      "todo": ["problem: what the btklmseny website/app needed before the work"]
+      "legacyIds": [
+        "6",
+        "google-cloud-deployment"
+      ],
+      "todo": [
+        "problem: what the btklmseny website/app needed before the work"
+      ]
     }
   ],
-  "removedLegacyIds": ["1", "2", "3", "14", "mcv-tender", "pms", "bom-generator", "naseej"]
+  "removedLegacyIds": [
+    "1",
+    "2",
+    "3",
+    "14",
+    "mcv-tender",
+    "pms",
+    "bom-generator",
+    "naseej"
+  ]
 }

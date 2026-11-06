@@ -7,7 +7,7 @@ import data from '../data/projects.json';
 })
 export class ProjectsService {
   // Bundled at build time, so it is available during prerendering without an HTTP call
-  private readonly projects = data.projects as Project[];
+  private readonly projects = (data.projects as Project[]).filter(project => !project.hidden);
 
   getAll(): Project[] {
     return this.projects;
