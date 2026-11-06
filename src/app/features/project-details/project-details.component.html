@@ -54,7 +54,7 @@
             [ngSrc]="image.src"
             [width]="imageSize(image.src).width"
             [height]="imageSize(image.src).height"
-            sizes="(max-width: 1200px) 100vw, 1200px"
+            sizes="100vw"
             [priority]="i === 0"
             [alt]="image.alt"
             class="carousel-image"
@@ -167,7 +167,7 @@
             [ngSrc]="relatedProject.image"
             [width]="imageSize(relatedProject.image).width"
             [height]="imageSize(relatedProject.image).height"
-            sizes="(max-width: 768px) 100vw, 400px"
+            sizes="(min-width: 769px) 33vw, 100vw"
             [alt]="'Screenshot of the ' + relatedProject.title + ' website'"
             class="related-image"
           />

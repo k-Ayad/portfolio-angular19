@@ -42,7 +42,7 @@
           [ngSrc]="project.image"
           [width]="imageSize(project.image).width"
           [height]="imageSize(project.image).height"
-          sizes="(max-width: 768px) 100vw, 400px"
+          sizes="(min-width: 769px) 33vw, 100vw"
           [priority]="i < 2"
           [alt]="'Screenshot of the ' + project.title + ' website'"
           class="project-image"
