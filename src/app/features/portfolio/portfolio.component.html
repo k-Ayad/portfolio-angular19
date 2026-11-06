@@ -31,7 +31,7 @@
   <!-- Projects Grid -->
   <section class="projects-grid">
     <article
-      *ngFor="let project of filteredProjects; trackBy: trackBySlug"
+      *ngFor="let project of filteredProjects; let i = index; trackBy: trackBySlug"
       class="project-card"
       [routerLink]="['/work', project.slug]"
       tabindex="0"
@@ -39,10 +39,13 @@
     >
       <div class="project-image-wrapper">
         <img
-          [src]="project.image"
+          [ngSrc]="project.image"
+          [width]="imageSize(project.image).width"
+          [height]="imageSize(project.image).height"
+          sizes="(max-width: 768px) 100vw, 400px"
+          [priority]="i < 2"
           [alt]="'Screenshot of the ' + project.title + ' website'"
           class="project-image"
-          loading="lazy"
         />
         <div class="project-overlay">
           <div class="overlay-content">

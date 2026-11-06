@@ -7,6 +7,20 @@ const businessId = `${site.url}/#service`;
 export const absoluteUrl = (path: string): string =>
   /^https?:\/\//.test(path) ? path : `${site.url}/${path.replace(/^\//, '')}`;
 
+const logo = {
+  '@type': 'ImageObject',
+  url: `${site.url}/assets/favicon.png`,
+  width: 192,
+  height: 192
+};
+
+const contactPoint = {
+  '@type': 'ContactPoint',
+  contactType: 'customer service',
+  email: site.email,
+  telephone: site.telephone
+};
+
 const address = {
   '@type': 'PostalAddress',
   addressLocality: site.location.city,
@@ -33,7 +47,17 @@ export function homeStructuredData(): Record<string, unknown> {
         areaServed,
         knowsAbout: site.knowsAbout,
         worksFor: { '@type': 'Organization', name: 'MCV (Manufacturing Commercial Vehicles)' },
+        mainEntityOfPage: { '@id': `${site.url}/#webpage` },
         sameAs: [site.linkedin, site.facebook]
+      },
+      {
+        '@type': 'WebPage',
+        '@id': `${site.url}/#webpage`,
+        url: `${site.url}/`,
+        name: site.homeTitle,
+        description: site.homeDescription,
+        inLanguage: 'en',
+        about: { '@id': businessId }
       },
       {
         '@type': 'ProfessionalService',
@@ -42,8 +66,10 @@ export function homeStructuredData(): Record<string, unknown> {
         description: site.homeDescription,
         url: `${site.url}/`,
         image: absoluteUrl(site.image),
+        logo,
         email: site.email,
         telephone: site.telephone,
+        contactPoint,
         address,
         areaServed,
         knowsAbout: site.knowsAbout,
@@ -88,5 +114,30 @@ export function breadcrumbs(items: { name: string; path: string }[]): Record<str
       name: item.name,
       item: `${site.url}${item.path}`
     }))
+  };
+}
+
+export function portfolioCollectionPage(projects: Project[]): Record<string, unknown> {
+  const url = `${site.url}/portfolio`;
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'CollectionPage',
+    '@id': `${url}#collection`,
+    name: 'Shopify & Angular projects by Kerllos Ayad',
+    url,
+    description: 'Shopify stores, Angular applications and Node.js projects built by Kerllos Ayad in Cairo, Egypt.',
+    inLanguage: 'en',
+    about: { '@id': personId },
+    isPartOf: { '@type': 'WebSite', name: site.name, url: `${site.url}/` },
+    mainEntity: {
+      '@type': 'ItemList',
+      numberOfItems: projects.length,
+      itemListElement: projects.map((project, index) => ({
+        '@type': 'ListItem',
+        position: index + 1,
+        url: `${site.url}/work/${project.slug}`,
+        name: project.title
+      }))
+    }
   };
 }

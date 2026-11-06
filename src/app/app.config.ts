@@ -1,10 +1,12 @@
 import { ApplicationConfig, provideZoneChangeDetection } from '@angular/core';
 import { provideRouter, withViewTransitions, withInMemoryScrolling } from '@angular/router';
 import { provideHttpClient, withFetch, withInterceptors } from '@angular/common/http';
+import { IMAGE_CONFIG, IMAGE_LOADER } from '@angular/common';
 import { provideClientHydration, withEventReplay } from '@angular/platform-browser';
-import { provideAnimations } from '@angular/platform-browser/animations';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 
 import { routes } from './app.routes';
+import { IMAGE_BREAKPOINTS, responsiveImageLoader } from './core/utils/image';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -19,6 +21,8 @@ export const appConfig: ApplicationConfig = {
     ),
     provideHttpClient(withFetch()),
     provideClientHydration(withEventReplay()),
-    provideAnimations()
+    provideAnimationsAsync(),
+    { provide: IMAGE_LOADER, useValue: responsiveImageLoader },
+    { provide: IMAGE_CONFIG, useValue: { breakpoints: IMAGE_BREAKPOINTS } }
   ]
 };

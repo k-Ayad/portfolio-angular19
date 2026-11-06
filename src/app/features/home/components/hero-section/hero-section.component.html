@@ -1,7 +1,7 @@
 <section class="hero-section vh-100 d-flex align-items-center bg-black text-white pt-5">
     <div class="container text-center position-relative">
         <div class="image-container">
-            <img width="100%" src="assets/images/profile.webp" alt="Portrait of Kerllos Ayad, Shopify developer and Senior Frontend Engineer in Cairo, Egypt" fetchpriority="high">
+            <img ngSrc="assets/images/profile.webp" width="1197" height="986" priority sizes="(max-width: 575px) 100vw, 550px" alt="Portrait of Kerllos Ayad, Shopify developer and Senior Frontend Engineer in Cairo, Egypt">
             <div class="overlay"></div>
         </div>
         
@@ -19,7 +19,10 @@
                     (mouseleave)="onSkillLeave(i)"
                 >
                     <img 
-                        [src]="skill.src" 
+                        [ngSrc]="skill.src" 
+                        width="140"
+                        height="140"
+                        disableOptimizedSrcset
                         [alt]="skill.alt"
                         class="skill-icon opacity-50"
                         [class.scale-up]="skill.animationClass === 'scale-up'"
@@ -33,7 +36,7 @@
             <!-- Main Heading -->
             <div class="name-wrapper position-absolute top-0 start-50 translate-middle-x d-flex align-items-center">
                 <span class="arrow-left">&lt;</span>
-                <h1 class="hero-name">Kerllos Ayad<span class="visually-hidden"> – Shopify Developer in Cairo, Egypt</span></h1>
+                <h1 class="hero-name">Kerllos Ayad <span class="hero-subtitle">Shopify Developer in Cairo, Egypt</span></h1>
                 <span class="arrow-right">/ &gt;</span>
             </div>
             <h2 class="hero-heading">

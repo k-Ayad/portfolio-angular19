@@ -1,6 +1,9 @@
 import { inject } from '@angular/core';
-import { Routes } from '@angular/router';
+import { CanMatchFn, Routes } from '@angular/router';
 import { ProjectsService } from '@core/services/projects.service';
+
+const projectExists: CanMatchFn = (_route, segments) =>
+  !!inject(ProjectsService).getBySlug(segments[1]?.path);
 
 // Pages set their own title and meta tags through SeoService, so routes carry no `title`
 export const routes: Routes = [
@@ -14,6 +17,8 @@ export const routes: Routes = [
   },
   {
     path: 'work/:slug',
+    // Unknown slugs fall through to the 404 page
+    canMatch: [projectExists],
     loadComponent: () => import('./features/project-details/project-details.component').then(m => m.ProjectDetailsComponent)
   },
   {
@@ -30,8 +35,8 @@ export const routes: Routes = [
     loadComponent: () => import('./features/privacy-policy/privacy-policy.component').then(m => m.PrivacyPolicyComponent)
   },
   {
+    // Unknown URLs: the server answers this route with HTTP 404 (see app.routes.server.ts)
     path: '**',
-    redirectTo: '',
-    pathMatch: 'full'
+    loadComponent: () => import('./features/not-found/not-found.component').then(m => m.NotFoundComponent)
   }
 ];

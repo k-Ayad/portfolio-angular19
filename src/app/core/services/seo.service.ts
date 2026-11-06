@@ -33,6 +33,7 @@ export class SeoService {
 
     this.title.setTitle(page.title);
     this.meta.updateTag({ name: 'description', content: page.description });
+    this.meta.updateTag({ name: 'robots', content: 'index, follow' });
 
     this.meta.updateTag({ property: 'og:title', content: page.title });
     this.meta.updateTag({ property: 'og:description', content: page.description });
@@ -45,6 +46,16 @@ export class SeoService {
     this.meta.updateTag({ name: 'twitter:image', content: image });
 
     this.setCanonicalUrl(url);
+  }
+
+  /**
+   * Page that must stay out of search results (e.g. the 404 page): noindex and no canonical URL
+   */
+  setNotFoundMeta(title: string, description: string) {
+    this.title.setTitle(title);
+    this.meta.updateTag({ name: 'description', content: description });
+    this.meta.updateTag({ name: 'robots', content: 'noindex' });
+    this.document.head.querySelector('link[rel="canonical"]')?.remove();
   }
 
   /**

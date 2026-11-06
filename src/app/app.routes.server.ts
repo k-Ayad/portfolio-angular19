@@ -1,8 +1,8 @@
 import { inject } from '@angular/core';
-import { RenderMode, ServerRoute } from '@angular/ssr';
+import { PrerenderFallback, RenderMode, ServerRoute } from '@angular/ssr';
 import { ProjectsService } from '@core/services/projects.service';
 
-// Static prerendering: every page below becomes its own HTML file at build time
+// Known pages are prerendered to HTML at build time; anything else is rendered by the server as a 404 page
 export const serverRoutes: ServerRoute[] = [
   { path: '', renderMode: RenderMode.Prerender },
   { path: 'portfolio', renderMode: RenderMode.Prerender },
@@ -10,9 +10,11 @@ export const serverRoutes: ServerRoute[] = [
   {
     path: 'work/:slug',
     renderMode: RenderMode.Prerender,
+    // Unknown slugs are not handled here, so server.ts answers them with the 404 page
+    fallback: PrerenderFallback.None,
     getPrerenderParams: async () => inject(ProjectsService).getAll().map(project => ({ slug: project.slug }))
   },
-  // Redirect-only routes are handled in the browser
-  { path: 'project/:id', renderMode: RenderMode.Client },
-  { path: '**', renderMode: RenderMode.Client }
+  // Old project URLs are 301-redirected in server.ts; this only covers in-app navigation
+  { path: 'project/:id', renderMode: RenderMode.Server },
+  { path: '**', renderMode: RenderMode.Server, status: 404 }
 ];

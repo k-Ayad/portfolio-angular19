@@ -2,3 +2,8 @@
   width: 100%;
   overflow-x: hidden;
 }
+
+// Keeps the page height stable until the contact form has loaded
+.contact-placeholder {
+  min-height: 100vh;
+}

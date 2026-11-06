@@ -1,18 +1,21 @@
 import { Component, OnInit } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule, NgOptimizedImage } from '@angular/common';
 import { RouterLink, RouterModule } from '@angular/router';
 import { Project } from '@core/models/project.interface';
 import { ProjectsService } from '@core/services/projects.service';
 import { SeoService } from '@core/services/seo.service';
+import { imageSize } from '@core/utils/image';
+import { breadcrumbs, portfolioCollectionPage } from '@core/seo/structured-data';
 
 @Component({
   selector: 'app-portfolio',
   standalone: true,
-  imports: [CommonModule, RouterLink, RouterModule],
+  imports: [CommonModule, NgOptimizedImage, RouterLink, RouterModule],
   templateUrl: './portfolio.component.html',
   styleUrl: './portfolio.component.scss'
 })
 export class PortfolioComponent implements OnInit {
+  readonly imageSize = imageSize;
   projects: Project[] = [];
   filteredProjects: Project[] = [];
   categories: string[] = [];
@@ -29,8 +32,14 @@ export class PortfolioComponent implements OnInit {
       description: 'Shopify stores, Angular applications and Node.js projects built by Kerllos Ayad, Shopify developer and Senior Frontend Engineer in Cairo, Egypt.',
       path: '/portfolio'
     });
-    this.seoService.setStructuredData();
     this.projects = this.projectsService.getAll();
+    this.seoService.setStructuredData(
+      portfolioCollectionPage(this.projects),
+      breadcrumbs([
+        { name: 'Home', path: '/' },
+        { name: 'Projects', path: '/portfolio' }
+      ])
+    );
     this.filteredProjects = this.projects;
     this.categories = this.projectsService.getCategories();
   }

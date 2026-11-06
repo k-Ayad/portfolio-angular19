@@ -29,6 +29,12 @@ $text-gray: #cccccc;
 }
 
 .image-container {
+  img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
   max-width: 550px;
   margin: auto;
   position: relative;
@@ -77,6 +83,25 @@ $text-gray: #cccccc;
     font-weight: 500;
     margin: 0;
     letter-spacing: 0.5px;
+    position: relative;
+
+    // Sits under the name without changing the layout of the name row
+    .hero-subtitle {
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      margin-top: 0.15rem;
+      white-space: nowrap;
+      color: $text-gray;
+      font-size: 0.85rem;
+      font-weight: 300;
+      letter-spacing: 1px;
+
+      @media (max-width: 767px) {
+        font-size: 0.75rem;
+      }
+    }
 
     @media (max-width: 767px) {
       font-size: 1.3rem;

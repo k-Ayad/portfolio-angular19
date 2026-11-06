@@ -1,15 +1,27 @@
 @import '../abstracts/variables';
 
+// Self-hosted, swap while loading. The fallback face is size-adjusted to CM Geom's metrics so the swap doesn't shift the layout.
 @font-face {
   font-family: 'CM Geom';
-  src: url('/assets/fonts/cmgeom-regular.otf') format('opentype');
+  src: url('/assets/fonts/cmgeom-regular.woff2') format('woff2');
   font-weight: 400;
+  font-display: swap;
 }
 
 @font-face {
   font-family: 'CM Geom';
-  src: url('/assets/fonts/cmgeom-regular.ttf') format('truetype');
+  src: url('/assets/fonts/cmgeom-bold.woff2') format('woff2');
   font-weight: 700;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'CM Geom Fallback';
+  src: local('Arial');
+  size-adjust: 126%;
+  ascent-override: 79%;
+  descent-override: 16%;
+  line-gap-override: 19%;
 }
 
 body {

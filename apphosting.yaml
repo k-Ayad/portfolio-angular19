@@ -1,0 +1,7 @@
+# Firebase App Hosting runtime settings. Angular only answers requests for these hosts;
+# add the default *.hosted.app URL here too if you want it to render pages.
+env:
+  - variable: NG_ALLOWED_HOSTS
+    value: k-ayad.com,www.k-ayad.com
+    availability:
+      - RUNTIME

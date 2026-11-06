@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+import { CommonModule, NgOptimizedImage } from '@angular/common';
 import { Component, OnDestroy } from '@angular/core';
 import { RouterLink } from "@angular/router";
 
@@ -15,7 +15,7 @@ interface SkillImage {
 
 @Component({
   selector: 'app-hero-section',
-  imports: [CommonModule, RouterLink],
+  imports: [CommonModule, NgOptimizedImage, RouterLink],
   templateUrl: './hero-section.component.html',
   styleUrl: './hero-section.component.scss'
 })

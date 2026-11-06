@@ -1,12 +1,12 @@
 import { AfterViewInit, Component, ElementRef, HostListener, PLATFORM_ID, ViewChild, inject } from '@angular/core';
-import { CommonModule, isPlatformBrowser } from '@angular/common';
+import { CommonModule, NgOptimizedImage, isPlatformBrowser } from '@angular/common';
 import { ScrollTriggerDirective } from '@shared/scroll-trigger.directive';
 import { FallingTextPipe } from '@shared/falling-text.pipe';
 
 @Component({
   selector: 'app-about',
   standalone: true,
-  imports: [CommonModule , ScrollTriggerDirective , FallingTextPipe],
+  imports: [CommonModule, NgOptimizedImage, ScrollTriggerDirective, FallingTextPipe],
   templateUrl: './about.component.html',
   styleUrl: './about.component.scss'
 })

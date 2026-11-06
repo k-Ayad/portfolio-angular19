@@ -8,7 +8,7 @@ const site = JSON.parse(await readFile('src/app/core/data/site.json', 'utf8'));
 
 const routes = [
   { path: '/', file: 'index.html', must: ['Shopify developer', 'Cairo, Egypt', '4+ years', 'Hechter Paris', 'Shopify store setup', 'Arya'], ld: ['Person', 'ProfessionalService'] },
-  { path: '/portfolio', file: 'portfolio/index.html', must: ['All Projects', 'Arya'], ld: [] },
+  { path: '/portfolio', file: 'portfolio/index.html', must: ['All Projects', 'Arya'], ld: ['CollectionPage', 'ItemList', 'BreadcrumbList'] },
   ...projects.map(p => ({
     path: `/work/${p.slug}`,
     file: `work/${p.slug}/index.html`,
@@ -37,7 +37,10 @@ for (const route of routes) {
   for (const [, body] of html.matchAll(/<script type="application\/ld\+json"[^>]*>([\s\S]*?)<\/script>/g)) {
     try {
       const json = JSON.parse(body);
-      for (const node of json['@graph'] ?? [json]) types.push(node['@type']);
+      for (const node of json['@graph'] ?? [json]) {
+        types.push(node['@type']);
+        if (node.mainEntity?.['@type']) types.push(node.mainEntity['@type']);
+      }
     } catch (e) { fail(route, `invalid JSON-LD (${e.message})`); }
   }
 

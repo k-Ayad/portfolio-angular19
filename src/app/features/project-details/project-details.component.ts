@@ -1,20 +1,22 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { ActivatedRoute, Router, RouterModule } from '@angular/router';
+import { CommonModule, NgOptimizedImage } from '@angular/common';
+import { ActivatedRoute, RouterModule } from '@angular/router';
 import { Subject, takeUntil } from 'rxjs';
 import { ProjectsService } from '../../core/services/projects.service';
 import { SeoService } from '../../core/services/seo.service';
 import { Project, ProjectImage } from '../../core/models/project.interface';
 import { breadcrumbs, projectCreativeWork } from '../../core/seo/structured-data';
+import { imageSize } from '../../core/utils/image';
 
 @Component({
   selector: 'app-project-details',
   standalone: true,
-  imports: [CommonModule, RouterModule],
+  imports: [CommonModule, NgOptimizedImage, RouterModule],
   templateUrl: './project-details.component.html',
   styleUrls: ['./project-details.component.scss']
 })
 export class ProjectDetailsComponent implements OnInit, OnDestroy {
+  readonly imageSize = imageSize;
   project?: Project;
   relatedProjects: Project[] = [];
   currentImageIndex: number = 0;
@@ -23,7 +25,6 @@ export class ProjectDetailsComponent implements OnInit, OnDestroy {
 
   constructor(
     private route: ActivatedRoute,
-    private router: Router,
     private projectsService: ProjectsService,
     private seoService: SeoService
   ) {}
@@ -45,7 +46,6 @@ export class ProjectDetailsComponent implements OnInit, OnDestroy {
   private loadProject(slug: string): void {
     const project = this.projectsService.getBySlug(slug);
     if (!project) {
-      this.router.navigate(['/portfolio']);
       return;
     }
 

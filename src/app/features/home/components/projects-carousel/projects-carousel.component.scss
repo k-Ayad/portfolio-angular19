@@ -282,27 +282,38 @@
       left: 50%;
       transform: translateX(-50%);
       display: flex;
-      gap: 12px;
+      gap: 0;
       z-index: 20;
       margin-right: 0%; 
       margin-left: 0%;
       
+      // The visible dot is drawn by ::before; the button itself is a 48px-tall touch target
       .indicator {
-        width: 12px;
-        height: 12px;
+        min-width: 24px;
+        height: 48px;
+        padding: 0 6px;
         border: none;
-        background: rgba(255, 255, 255, 0.3);
-        border-radius: 50%;
+        background: transparent;
         cursor: pointer;
-        transition: all 0.3s ease;
-        padding: 4px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
 
-        &:hover {
+        &::before {
+          content: '';
+          width: 12px;
+          height: 12px;
+          background: rgba(255, 255, 255, 0.3);
+          border-radius: 50%;
+          transition: all 0.3s ease;
+        }
+
+        &:hover::before {
           background: rgba(255, 255, 255, 0.5);
           transform: scale(1.2);
         }
 
-        &.active {
+        &.active::before {
           background: #10b981;
           width: 30px;
           border-radius: 6px;

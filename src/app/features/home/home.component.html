@@ -10,8 +10,12 @@
   <!-- Projects Carousel Section -->
   <app-projects-carousel></app-projects-carousel>
 
-  <!-- Contact Section -->
-  <app-contact></app-contact>
+  <!-- Contact Section: the form (and Angular forms/animations) loads when it nears the viewport -->
+  @defer (on viewport; prefetch on idle) {
+    <app-contact></app-contact>
+  } @placeholder {
+    <section id="contact" class="contact-placeholder"></section>
+  }
 
   <!-- Clients Feedback Section -->
   <!-- <app-clients-feedback></app-clients-feedback> -->

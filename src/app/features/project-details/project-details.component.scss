@@ -235,24 +235,35 @@
       left: 50%;
       transform: translateX(-50%);
       display: flex;
-      gap: 0.5rem;
+      gap: 0;
       z-index: 10;
 
+      // The visible dot is drawn by ::before; the button itself is a 48px-tall touch target
       .indicator {
-        width: 10px;
-        height: 10px;
-        border-radius: 50%;
-        background-color: rgba(255, 255, 255, 0.4);
+        min-width: 24px;
+        height: 48px;
+        padding: 0 7px;
         border: none;
+        background: transparent;
         cursor: pointer;
-        transition: all 0.3s ease;
-        padding: 0;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
 
-        &:hover {
+        &::before {
+          content: '';
+          width: 10px;
+          height: 10px;
+          border-radius: 50%;
+          background-color: rgba(255, 255, 255, 0.4);
+          transition: all 0.3s ease;
+        }
+
+        &:hover::before {
           background-color: rgba(255, 255, 255, 0.7);
         }
 
-        &.active {
+        &.active::before {
           background-color: $primary-green;
           width: 30px;
           border-radius: 5px;

@@ -8,9 +8,12 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "seo:files": "node scripts/generate-seo-files.mjs",
-    "prebuild": "npm run seo:files",
+    "prebuild": "npm run seo:files && npm run vendor:css",
     "build:verify": "ng build --configuration verify",
-    "optimize:images": "node scripts/optimize-images.mjs"
+    "optimize:images": "node scripts/optimize-images.mjs",
+    "serve:ssr": "node dist/portfolio/server/server.mjs",
+    "vendor:css": "node scripts/build-vendor-css.mjs",
+    "vendor:fonts": "node scripts/build-vendor-css.mjs && python3 scripts/subset-fa-fonts.py"
   },
   "private": true,
   "dependencies": {
@@ -26,14 +29,18 @@
     "@angular/ssr": "^19.2.19",
     "@fortawesome/fontawesome-free": "^7.1.0",
     "bootstrap": "^5.3.8",
+    "compression": "^1.8.2",
+    "express": "^4.22.3",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.15.0"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "^19.0.0",
-    "@angular/cli": "^19.0.0",
+    "@angular-devkit/build-angular": "^19.2.27",
+    "@angular/cli": "^19.2.27",
     "@angular/compiler-cli": "^19.0.0",
+    "@types/compression": "^1.8.1",
+    "@types/express": "^4.17.25",
     "@types/jasmine": "~5.1.0",
     "@types/node": "^18.18.0",
     "jasmine-core": "~5.1.0",
@@ -42,6 +49,7 @@
     "karma-coverage": "~2.2.0",
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.1.0",
+    "purgecss": "^7.0.2",
     "sharp": "^0.35.5",
     "typescript": "~5.6.0"
   }

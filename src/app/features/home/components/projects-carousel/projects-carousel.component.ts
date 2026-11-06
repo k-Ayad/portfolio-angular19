@@ -1,17 +1,19 @@
 import { Component, OnInit, OnDestroy, PLATFORM_ID, inject } from '@angular/core';
-import { CommonModule, isPlatformBrowser } from '@angular/common';
+import { CommonModule, NgOptimizedImage, isPlatformBrowser } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { Project } from '@core/models/project.interface';
 import { ProjectsService } from '@core/services/projects.service';
+import { imageSize } from '@core/utils/image';
 @Component({
   selector: 'app-projects-carousel',
   standalone: true,
-  imports: [CommonModule, RouterLink],
+  imports: [CommonModule, NgOptimizedImage, RouterLink],
   templateUrl: './projects-carousel.component.html',
   styleUrls: ['./projects-carousel.component.scss']
 })
 export class ProjectsCarouselComponent implements OnInit, OnDestroy {
   
+  readonly imageSize = imageSize;
   private projectsService = inject(ProjectsService);
   private isBrowser = isPlatformBrowser(inject(PLATFORM_ID));
 

@@ -39,7 +39,7 @@
     }
 
     .logo-text {
-      font-family: 'CM Geom', monospace;
+      font-family: 'CM Geom', 'CM Geom Fallback', monospace;
       font-size: 2rem;
       font-weight: 700;
       color: #ffffff;

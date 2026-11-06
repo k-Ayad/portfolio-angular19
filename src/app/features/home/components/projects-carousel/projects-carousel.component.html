@@ -23,10 +23,12 @@
           
           <div class="slide-image-wrapper">
             <img 
-              [src]="project.image" 
+              [ngSrc]="project.image" 
+              [width]="imageSize(project.image).width"
+              [height]="imageSize(project.image).height"
+              sizes="(max-width: 768px) 100vw, 800px"
               [alt]="'Screenshot of the ' + project.title + ' website'"
-              class="slide-image"
-              [attr.loading]="i === 0 ? 'eager' : 'lazy'">
+              class="slide-image">
           </div>
         </div>
       </div>

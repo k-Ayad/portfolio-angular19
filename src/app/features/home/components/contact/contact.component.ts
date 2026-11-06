@@ -1,5 +1,5 @@
 import { Component, OnInit, inject } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule, NgOptimizedImage } from '@angular/common';
 import { ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { trigger, transition, style, animate } from '@angular/animations';
@@ -8,7 +8,7 @@ import { ContactFormData, EmailJSResponse, CountryCode } from './contact.interfa
 @Component({
   selector: 'app-contact',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule],
+  imports: [CommonModule, NgOptimizedImage, ReactiveFormsModule],
   templateUrl: './contact.component.html',
   styleUrls: ['./contact.component.scss'],
   animations: [
