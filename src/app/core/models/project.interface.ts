@@ -1,24 +1,27 @@
 /**
  * Project Interface
- * Represents a portfolio project with all its details
+ * Represents a portfolio project (one /work/<slug> page)
  */
+export interface ProjectImage {
+  src: string;
+  alt: string;
+}
+
 export interface Project {
-  id: number;
+  slug: string;
   title: string;
-  description: string;
-  image: string;
-  images?: string[]; // Optional array for carousel images
-  category: string;
-  technologies: string[];
-  link: string; // Internal routing link (e.g., /project/mcv-tender)
-  liveUrl?: string; // Optional external live project URL
-  githubUrl?: string; // Optional GitHub repository URL
-  featured: boolean;
-  completionDate: string;
   client: string;
-  
-  // Optional extended details
-  challenges?: string;
-  solution?: string;
-  results?: string;
+  category: string;
+  summary: string; // One-line description
+  problem?: string; // Omitted (and marked in `todo`) when not provided
+  built: string[];
+  technologies: string[];
+  liveUrl?: string;
+  image: string; // Cover image
+  images?: ProjectImage[]; // Screenshots shown on the project page
+  noScreenshot?: boolean; // `image` is only a placeholder, so don't show it as a screenshot
+  completionDate?: string;
+  featured: boolean;
+  legacyIds: string[]; // Old /project/:id values (numeric id and old slug) that redirect here
+  todo?: string[]; // Facts still needed; never rendered
 }

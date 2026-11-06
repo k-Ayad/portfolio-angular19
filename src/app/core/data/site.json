@@ -1,0 +1,26 @@
+{
+  "url": "https://k-ayad.com",
+  "name": "Kerllos Ayad",
+  "jobTitle": "Shopify Developer & Senior Frontend Engineer",
+  "currentRole": "Senior Frontend Engineer at MCV (Manufacturing Commercial Vehicles)",
+  "location": { "city": "Cairo", "country": "Egypt", "countryCode": "EG" },
+  "areaServed": ["Egypt", "Middle East"],
+  "yearsOfExperience": "4+",
+  "email": "kerllos.ayad@gmail.com",
+  "telephone": "+201276832755",
+  "telephoneDisplay": "+20 127 683 2755",
+  "whatsappUrl": "https://wa.me/201276832755",
+  "linkedin": "https://www.linkedin.com/in/k-ayad",
+  "facebook": "https://www.facebook.com/k.ayad.dev",
+  "image": "assets/images/profile.webp",
+  "knowsAbout": ["Shopify", "Liquid", "Angular", "TypeScript", "JavaScript", "UI/UX"],
+  "services": [
+    "Shopify store setup & design",
+    "Custom Shopify themes & features",
+    "Speed & SEO optimization",
+    "Web apps & landing pages"
+  ],
+  "homeTitle": "Kerllos Ayad | Shopify Developer in Cairo, Egypt",
+  "homeDescription": "Kerllos Ayad is a Shopify developer and Senior Frontend Engineer (Angular) in Cairo, Egypt, building Shopify stores for brands in Egypt and the Middle East.",
+  "todo": ["Number of Shopify stores built (not provided yet, so it is not shown anywhere on the site)"]
+}

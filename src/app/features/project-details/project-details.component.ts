@@ -4,7 +4,8 @@ import { ActivatedRoute, Router, RouterModule } from '@angular/router';
 import { Subject, takeUntil } from 'rxjs';
 import { ProjectsService } from '../../core/services/projects.service';
 import { SeoService } from '../../core/services/seo.service';
-import { Project } from '../../core/models/project.interface';
+import { Project, ProjectImage } from '../../core/models/project.interface';
+import { breadcrumbs, projectCreativeWork } from '../../core/seo/structured-data';
 
 @Component({
   selector: 'app-project-details',
@@ -17,7 +18,7 @@ export class ProjectDetailsComponent implements OnInit, OnDestroy {
   project?: Project;
   relatedProjects: Project[] = [];
   currentImageIndex: number = 0;
-  carouselImages: string[] = [];
+  carouselImages: ProjectImage[] = [];
   private destroy$ = new Subject<void>();
 
   constructor(
@@ -30,10 +31,7 @@ export class ProjectDetailsComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.route.params
       .pipe(takeUntil(this.destroy$))
-      .subscribe(params => {
-        const projectId = +params['id'];
-        this.loadProject(projectId);
-      });
+      .subscribe(params => this.loadProject(params['slug']));
   }
 
   ngOnDestroy(): void {
@@ -44,100 +42,72 @@ export class ProjectDetailsComponent implements OnInit, OnDestroy {
   /**
    * Load project details
    */
-  private loadProject(id: number): void {
-    this.projectsService.getProjectById(id)
-      .pipe(takeUntil(this.destroy$))
-      .subscribe({
-        next: (project) => {
-          if (project) {
-            this.project = project;
-            this.updateSeo(project);
-            this.setupCarousel();
-            this.loadRelatedProjects();
-          } else {
-            this.router.navigate(['/all-projects']);
-          }
-        },
-        error: (error) => {
-          console.error('Error loading project:', error);
-          this.router.navigate(['/all-projects']);
-        }
-      });
+  private loadProject(slug: string): void {
+    const project = this.projectsService.getBySlug(slug);
+    if (!project) {
+      this.router.navigate(['/portfolio']);
+      return;
+    }
+
+    this.project = project;
+    this.currentImageIndex = 0;
+    this.updateSeo(project);
+    this.setupCarousel();
+    this.relatedProjects = this.projectsService.getRelated(project);
   }
 
   /**
-   * Set page title and meta tags for this project
+   * Set page title, meta tags and JSON-LD for this project
    */
   private updateSeo(project: Project): void {
-    const description = project.description.length > 160
-      ? project.description.slice(0, 157).trimEnd() + '...'
-      : project.description;
+    const path = `/work/${project.slug}`;
+    const description = project.summary.length > 160
+      ? project.summary.slice(0, 157).trimEnd() + '...'
+      : project.summary;
 
     this.seoService.setPageMeta({
-      title: `${project.title} | Kerllos Ayad`,
+      title: `${project.title} | ${project.category} project by Kerllos Ayad, Cairo`,
       description,
-      path: `/project/${project.id}`,
-      image: project.image
+      path,
+      image: project.noScreenshot ? undefined : project.image,
+      imageAlt: `Screenshot of the ${project.title} website`
     });
+
+    this.seoService.setStructuredData(
+      projectCreativeWork(project),
+      breadcrumbs([
+        { name: 'Home', path: '/' },
+        { name: 'Projects', path: '/portfolio' },
+        { name: project.title, path }
+      ])
+    );
   }
 
   /**
-   * Setup carousel images
+   * Setup carousel images (screenshots only, never a placeholder)
    */
   private setupCarousel(): void {
-    if (this.project) {
-      // Use project images array if available, otherwise use main image
-      this.carouselImages = this.project.images && this.project.images.length > 0
-        ? this.project.images
-        : [this.project.image];
+    if (!this.project || this.project.noScreenshot) {
+      this.carouselImages = [];
+      return;
     }
+    this.carouselImages = this.project.images?.length
+      ? this.project.images
+      : [{ src: this.project.image, alt: `Screenshot of the ${this.project.title} website` }];
   }
 
-  /**
-   * Load related projects from the same category
-   */
-  private loadRelatedProjects(): void {
-    if (!this.project) return;
-
-    this.projectsService.getAllProjects()
-      .pipe(takeUntil(this.destroy$))
-      .subscribe({
-        next: (projects) => {
-          this.relatedProjects = projects
-            .filter(p => 
-              p.category === this.project?.category && 
-              p.id !== this.project?.id
-            )
-            .slice(0, 3); // Get up to 3 related projects
-        }
-      });
-  }
-
-  /**
-   * Navigate to previous image in carousel
-   */
   previousImage(): void {
-    if (this.currentImageIndex > 0) {
-      this.currentImageIndex--;
-    } else {
-      this.currentImageIndex = this.carouselImages.length - 1;
-    }
+    this.currentImageIndex = this.currentImageIndex > 0
+      ? this.currentImageIndex - 1
+      : this.carouselImages.length - 1;
   }
 
-  /**
-   * Navigate to next image in carousel
-   */
   nextImage(): void {
-    if (this.currentImageIndex < this.carouselImages.length - 1) {
-      this.currentImageIndex++;
-    } else {
-      this.currentImageIndex = 0;
-    }
+    this.currentImageIndex = this.currentImageIndex < this.carouselImages.length - 1
+      ? this.currentImageIndex + 1
+      : 0;
   }
 
-  /**
-   * Go to specific image in carousel
-   */
   goToImage(index: number): void {
     this.currentImageIndex = index;
   }
@@ -179,30 +149,11 @@ export class ProjectDetailsComponent implements OnInit, OnDestroy {
     return 'fas fa-code';
   }
 
-  /**
-   * Navigate back to all projects
-   */
-  goBack(): void {
-    this.router.navigate(['/portfolio']);
-  }
-
-  /**
-   * Open external link
-   */
-  openLink(url: string | undefined): void {
-    if (url) {
-      window.open(url, '_blank', 'noopener,noreferrer');
-    }
-  }
-
-  /**
-   * Track by function for ngFor optimization
-   */
   trackByIndex(index: number): number {
     return index;
   }
 
-  trackByProjectId(index: number, project: Project): number {
-    return project.id;
+  trackBySlug(index: number, project: Project): string {
+    return project.slug;
   }
 }

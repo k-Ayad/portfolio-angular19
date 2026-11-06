@@ -207,6 +207,8 @@ $text-gray: #cccccc;
 
 // action button styles
 .action-button {
+  display: inline-block;
+  text-decoration: none;
   background-color: $primary-color;
   color: $dark-bg;
   border: none;

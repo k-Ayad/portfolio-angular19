@@ -2,56 +2,82 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://k-ayad.com/</loc>
+    <lastmod>2026-11-06</lastmod>
+    <priority>1.0</priority>
   </url>
   <url>
     <loc>https://k-ayad.com/portfolio</loc>
+    <lastmod>2026-11-06</lastmod>
+    <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://k-ayad.com/project/16</loc>
+    <loc>https://k-ayad.com/work/arya</loc>
+    <lastmod>2026-11-06</lastmod>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://k-ayad.com/project/4</loc>
+    <loc>https://k-ayad.com/work/or-brand</loc>
+    <lastmod>2026-11-06</lastmod>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://k-ayad.com/project/9</loc>
+    <loc>https://k-ayad.com/work/sidewalks</loc>
+    <lastmod>2026-11-06</lastmod>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://k-ayad.com/project/1</loc>
+    <loc>https://k-ayad.com/work/style-beauty-store</loc>
+    <lastmod>2026-11-06</lastmod>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://k-ayad.com/project/2</loc>
+    <loc>https://k-ayad.com/work/hechter-paris</loc>
+    <lastmod>2026-11-06</lastmod>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://k-ayad.com/project/3</loc>
+    <loc>https://k-ayad.com/work/el-okaby-pharmacies</loc>
+    <lastmod>2026-11-06</lastmod>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://k-ayad.com/project/5</loc>
+    <loc>https://k-ayad.com/work/cleos-dates</loc>
+    <lastmod>2026-11-06</lastmod>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://k-ayad.com/project/6</loc>
+    <loc>https://k-ayad.com/work/zentia</loc>
+    <lastmod>2026-11-06</lastmod>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://k-ayad.com/project/7</loc>
+    <loc>https://k-ayad.com/work/ozone</loc>
+    <lastmod>2026-11-06</lastmod>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://k-ayad.com/project/8</loc>
+    <loc>https://k-ayad.com/work/glitter</loc>
+    <lastmod>2026-11-06</lastmod>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://k-ayad.com/project/10</loc>
+    <loc>https://k-ayad.com/work/ozad-pharma</loc>
+    <lastmod>2026-11-06</lastmod>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://k-ayad.com/project/11</loc>
+    <loc>https://k-ayad.com/work/tactical-schnauzer</loc>
+    <lastmod>2026-11-06</lastmod>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://k-ayad.com/project/12</loc>
+    <loc>https://k-ayad.com/work/mas-clinics</loc>
+    <lastmod>2026-11-06</lastmod>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://k-ayad.com/project/13</loc>
-  </url>
-  <url>
-    <loc>https://k-ayad.com/project/14</loc>
-  </url>
-  <url>
-    <loc>https://k-ayad.com/project/15</loc>
+    <loc>https://k-ayad.com/work/btklmseny</loc>
+    <lastmod>2026-11-06</lastmod>
+    <priority>0.7</priority>
   </url>
 </urlset>

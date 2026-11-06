@@ -6,8 +6,11 @@ import {
   EventEmitter, 
   OnInit, 
   OnDestroy,
-  Input 
+  Input,
+  PLATFORM_ID,
+  inject
 } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
 
 @Directive({
   selector: '[appScrollTrigger]',
@@ -20,10 +23,12 @@ export class ScrollTriggerDirective implements OnInit, OnDestroy {
   
   private observer!: IntersectionObserver;
   private hasTriggered = false;
+  private isBrowser = isPlatformBrowser(inject(PLATFORM_ID));
 
   constructor(private el: ElementRef) {}
 
   ngOnInit() {
+    if (!this.isBrowser) return;
     this.setupIntersectionObserver();
   }
 

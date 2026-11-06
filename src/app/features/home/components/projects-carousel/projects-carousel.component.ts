@@ -1,63 +1,43 @@
-import { Component, OnInit, OnDestroy, inject } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { Project } from './project.model';
-import { ProjectsService } from './projects.service';
-import { Router } from '@angular/router';
+import { Component, OnInit, OnDestroy, PLATFORM_ID, inject } from '@angular/core';
+import { CommonModule, isPlatformBrowser } from '@angular/common';
+import { RouterLink } from '@angular/router';
+import { Project } from '@core/models/project.interface';
+import { ProjectsService } from '@core/services/projects.service';
 @Component({
   selector: 'app-projects-carousel',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, RouterLink],
   templateUrl: './projects-carousel.component.html',
   styleUrls: ['./projects-carousel.component.scss']
 })
 export class ProjectsCarouselComponent implements OnInit, OnDestroy {
   
   private projectsService = inject(ProjectsService);
-  router = inject(Router);
+  private isBrowser = isPlatformBrowser(inject(PLATFORM_ID));
 
   // number of projects to show in carousel (for performance)
   limit: number = 10;
 
-  // Projects loaded from JSON
+  // Projects with a real screenshot show in the carousel; every project is linked in `allProjects`
+  allProjects: Project[] = [];
   projects: Project[] = [];
   currentIndex: number = 0;
   private autoPlayInterval: any;
   private autoPlayDelay: number = 4000; // 4 seconds
   isHovered: boolean = false;
-  isLoading: boolean = true;
-  hasError: boolean = false;
 
   ngOnInit(): void {
-    this.loadProjects();
+    this.allProjects = this.projectsService.getAll();
+    this.projects = this.allProjects.filter(project => !project.noScreenshot).slice(0, this.limit);
+
+    // Auto-play only runs in the browser; a timer would keep the prerender from finishing
+    if (this.isBrowser && this.projects.length > 0) {
+      this.startAutoPlay();
+    }
   }
 
   ngOnDestroy(): void {
     this.stopAutoPlay();
-  }
-
-  /**
-   * Load projects from JSON file via service
-   */
-  loadProjects(): void {
-    this.isLoading = true;
-    this.hasError = false;
-
-    this.projectsService.getProjects().subscribe({
-      next: (data) => {
-        this.projects = data.slice(0, this.limit); // Limit number of projects for carousel
-        this.isLoading = false;
-        
-        // Start auto-play only if we have projects
-        if (this.projects.length > 0) {
-          this.startAutoPlay();
-        }
-      },
-      error: (error) => {
-        console.error('Failed to load projects:', error);
-        this.isLoading = false;
-        this.hasError = true;
-      }
-    });
   }
 
   /**
@@ -144,23 +124,5 @@ export class ProjectsCarouselComponent implements OnInit, OnDestroy {
    */
   onMouseLeave(): void {
     this.isHovered = false;
-  }
-
-  /**
-   * Show project details
-   */
-  showDetails(project: Project): void {
-    console.log('Show details for:', project);
-    // Implement navigation to project details page
-    this.router.navigate(['/project', project.id]);
-    // Or use the project.link property if available
-    // window.location.href = project.link;
-  }
-
-  /**
-   * Retry loading projects (for error state)
-   */
-  retryLoad(): void {
-    this.loadProjects();
   }
 }

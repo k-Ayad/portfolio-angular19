@@ -25,5 +25,6 @@ export class PrivacyPolicyComponent implements OnInit {
       description: 'Privacy Policy for the WhatsApp Shopify Order Confirmation application operated by Kerllos Ayad: how Shopify order data and WhatsApp Business Platform messages are processed.',
       path: '/privacy-policy'
     });
+    this.seoService.setStructuredData();
   }
 }

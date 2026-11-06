@@ -23,7 +23,7 @@ export class HeroSectionComponent implements OnDestroy {
   skillsImages: SkillImage[] = [
     {
       src: 'assets/images/skills/angular-icon.svg',
-      alt: 'Angular Icon',
+      alt: 'Angular logo',
       desktopPosition: { top: '10%', left: '0%' },
       mobilePosition: { top: '0%', left: '0%' },
       desktopWidth: '140px',
@@ -33,7 +33,7 @@ export class HeroSectionComponent implements OnDestroy {
     },
     {
       src: 'assets/images/skills/azure-icon.svg',
-      alt: 'Azure Icon',
+      alt: 'Azure logo',
       desktopPosition: { top: '15%', left: '20%' },
       mobilePosition: { top: '0%', left: '25%' },
       desktopWidth: '140px',
@@ -43,7 +43,7 @@ export class HeroSectionComponent implements OnDestroy {
     },
     {
       src: 'assets/images/skills/bootstrap-fill.svg',
-      alt: 'Bootstrap Icon',
+      alt: 'Bootstrap logo',
       desktopPosition: { top: '40%', left: '10%' },
       mobilePosition: { top: '0%', left: '50%' },
       desktopWidth: '140px',
@@ -53,7 +53,7 @@ export class HeroSectionComponent implements OnDestroy {
     },
     {
       src: 'assets/images/skills/git-icon-logo.svg',
-      alt: 'Git Icon',
+      alt: 'Git logo',
       desktopPosition: { top: '40%', left: '30%' },
       mobilePosition: { top: '0%', left: '80%' },
       desktopWidth: '140px',
@@ -63,7 +63,7 @@ export class HeroSectionComponent implements OnDestroy {
     },
     {
       src: 'assets/images/skills/node-js.svg',
-      alt: 'Node.js Icon',
+      alt: 'Node.js logo',
       desktopPosition: { top: '40%', left: '58%' },
       mobilePosition: { top: '70%', left: '12%' },
       desktopWidth: '140px',
@@ -73,7 +73,7 @@ export class HeroSectionComponent implements OnDestroy {
     },
     {
       src: 'assets/images/skills/react.svg',
-      alt: 'React Icon',
+      alt: 'React logo',
       desktopPosition: { top: '15%', left: '85%' },
       mobilePosition: { top: '70%', left: '38%' },
       desktopWidth: '140px',
@@ -83,7 +83,7 @@ export class HeroSectionComponent implements OnDestroy {
     },
     {
       src: 'assets/images/skills/shopify-logo.svg',
-      alt: 'Shopify Icon',
+      alt: 'Shopify logo',
       desktopPosition: { top: '40%', left: '80%' },
       mobilePosition: { top: '70%', left: '65%' },
       desktopWidth: '140px',
@@ -93,7 +93,7 @@ export class HeroSectionComponent implements OnDestroy {
     },
     {
       src: 'assets/images/skills/tailwind.svg',
-      alt: 'Tailwind Icon',
+      alt: 'Tailwind logo',
       desktopPosition: { top: '15%', left: '70%' },
       mobilePosition: { top: '100%', left: '50%' },
       desktopWidth: '140px',

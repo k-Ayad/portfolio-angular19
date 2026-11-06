@@ -1,6 +1,8 @@
 import { Component, OnInit, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SeoService } from '@core/services/seo.service';
+import { homeStructuredData } from '@core/seo/structured-data';
+import site from '@core/data/site.json';
 // import { HeroComponent } from './components/hero/hero.component';
 import { AboutComponent } from './components/about/about.component';
 import { ProjectsCarouselComponent } from './components/projects-carousel/projects-carousel.component';
@@ -28,9 +30,10 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
     this.seoService.setPageMeta({
-      title: 'Kerllos Ayad | Frontend Developer & Shopify Specialist',
-      description: 'Senior Frontend Engineer with 4+ years of experience in Angular, Shopify Theme Development, and modern web technologies.',
+      title: site.homeTitle,
+      description: site.homeDescription,
       path: '/'
     });
+    this.seoService.setStructuredData(homeStructuredData());
   }
 }

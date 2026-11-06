@@ -9,7 +9,7 @@
                     <div class="col-lg-6">
             <div #aboutContainer >
               <!-- <h2 class="section-title">About Section</h2> -->
-               <h2 class="about-title falling-text">
+               <h2 class="about-title falling-text" aria-label="About Me">
                 <div class="falling-text" appScrollTrigger>
                   <span *ngFor="let item of 'About Me' | fallingText:0.07"
                         [style.animation-delay.s]="item.delay">
@@ -17,14 +17,15 @@
                   </span>
                 </div>
               </h2>
-              <p #aboutText class="about-text">I'm a Senior Frontend Engineer with 4+ years of professional experience building frontend applications across multiple platforms, including Angular, ABP, Shopify, and React. I also provide backend support with technologies such as Node.js and ASP.NET.</p>
+              <!-- TODO: add the number of Shopify stores built (not provided yet), e.g. "...has built N+ Shopify stores for brands..." -->
+              <p #aboutText class="about-text">I'm Kerllos Ayad, a Shopify developer and Senior Frontend Engineer (Angular) based in Cairo, Egypt, with 4+ years of experience. I build Shopify stores for brands in Egypt and the Middle East, including OR, Arya, Hechter Paris, Sidewalks, El Okaby Pharmacies and Cleo's Dates. My services: Shopify store setup & design, custom Shopify themes & features, speed & SEO optimization, and web apps & landing pages.</p>
               <!-- <a href="#" class="btn btn-primary">Learn More</a> -->
             </div>
           </div>
 
           <div class="col-lg-6">
             <div class="about-image">
-              <img src="assets/images/about/about-image.png" alt="About Image" class="img-fluid">
+              <img src="assets/images/about/about-image.webp" alt="Developer workstation with two monitors showing code, a keyboard and a pen holder" class="img-fluid" width="1084" height="734" loading="lazy">
             </div>
           </div>
 

@@ -5,26 +5,9 @@
       <h2 class="section-title text-center">Projects</h2>
     </div>
 
-    <!-- Loading State -->
-    <div *ngIf="isLoading" class="loading-state">
-      <div class="spinner"></div>
-      <p>Loading projects...</p>
-    </div>
-
-    <!-- Error State -->
-    <div *ngIf="hasError && !isLoading" class="error-state">
-      <i class="fas fa-exclamation-triangle"></i>
-      <h3>Failed to Load Projects</h3>
-      <p>Unable to load project data. Please try again.</p>
-      <button class="retry-btn" (click)="retryLoad()">
-        <i class="fas fa-redo"></i>
-        Retry
-      </button>
-    </div>
-
     <!-- Carousel Container -->
     <div 
-      *ngIf="!isLoading && !hasError && projects.length > 0"
+      *ngIf="projects.length > 0"
       class="carousel-container"
       (mouseenter)="onMouseEnter()"
       (mouseleave)="onMouseLeave()">
@@ -41,9 +24,9 @@
           <div class="slide-image-wrapper">
             <img 
               [src]="project.image" 
-              [alt]="project.title"
+              [alt]="'Screenshot of the ' + project.title + ' website'"
               class="slide-image"
-              loading="lazy">
+              [attr.loading]="i === 0 ? 'eager' : 'lazy'">
           </div>
         </div>
       </div>
@@ -77,11 +60,11 @@
 
     <!-- Active Project Details -->
     <div 
-      *ngIf="!isLoading && !hasError && activeProject" 
+      *ngIf="activeProject" 
       class="project-details">
       <div class="details-content">
         <h2 class="project-title">{{ activeProject.title }}</h2>
-        <p class="project-description">{{ activeProject.description }}</p>
+        <p class="project-description">{{ activeProject.summary }}</p>
         
         <!-- Technologies -->
         <div *ngIf="activeProject.technologies" class="technologies">
@@ -92,20 +75,23 @@
           </span>
         </div>
 
-        <button 
+        <a
           class="show-details-btn"
-          (click)="showDetails(activeProject)">
+          [routerLink]="['/work', activeProject.slug]">
           <i class="fas fa-arrow-right"></i>
           Show Details
-        </button>
+        </a>
       </div>
     </div>
 
-    <!-- Empty State -->
-    <div *ngIf="!isLoading && !hasError && projects.length === 0" class="empty-state">
-      <i class="fas fa-folder-open"></i>
-      <h3>No Projects Found</h3>
-      <p>Projects data is empty. Please add projects to the JSON file.</p>
-    </div>
+    <!-- Plain links to every project page -->
+    <nav class="all-projects-nav" aria-label="All project pages">
+      <h3 class="all-projects-title">All Shopify &amp; web projects</h3>
+      <ul class="all-projects-list">
+        <li *ngFor="let project of allProjects">
+          <a [routerLink]="['/work', project.slug]">{{ project.title }}</a>
+        </li>
+      </ul>
+    </nav>
   </div>
 </section>

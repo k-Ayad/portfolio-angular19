@@ -1,5 +1,5 @@
-import { AfterViewInit, Component, ElementRef, HostListener, ViewChild } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { AfterViewInit, Component, ElementRef, HostListener, PLATFORM_ID, ViewChild, inject } from '@angular/core';
+import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { ScrollTriggerDirective } from '@shared/scroll-trigger.directive';
 import { FallingTextPipe } from '@shared/falling-text.pipe';
 
@@ -14,8 +14,12 @@ export class AboutComponent implements AfterViewInit {
     @ViewChild('aboutContainer') aboutContainer!: ElementRef<HTMLDivElement>;
   @ViewChild('aboutText') aboutText!: ElementRef<HTMLParagraphElement>;
   private letterSpans: HTMLSpanElement[] = [];
+  private isBrowser = isPlatformBrowser(inject(PLATFORM_ID));
 
   ngAfterViewInit() {
+    // The letter-by-letter reveal is browser-only; on the server the paragraph stays plain text
+    if (!this.isBrowser) return;
+
     setTimeout(() => {
       this.wrapLettersInSpans();
       this.handleScroll(); // Initial call
@@ -32,7 +36,6 @@ export class AboutComponent implements AfterViewInit {
 
     // Get the text content
     const text = paragraph.textContent || '';
-    console.log('Original text length:', text.length);
     
     // Clear the paragraph
     paragraph.innerHTML = '';
@@ -62,7 +65,6 @@ export class AboutComponent implements AfterViewInit {
       this.letterSpans.push(span);
     }
     
-    console.log('Letter spans created:', this.letterSpans.length);
   }
 
   @HostListener('window:scroll', [])

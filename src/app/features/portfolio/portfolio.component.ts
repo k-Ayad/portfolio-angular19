@@ -1,7 +1,6 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink, RouterModule } from '@angular/router';
-import { Subject, takeUntil } from 'rxjs';
 import { Project } from '@core/models/project.interface';
 import { ProjectsService } from '@core/services/projects.service';
 import { SeoService } from '@core/services/seo.service';
@@ -13,12 +12,11 @@ import { SeoService } from '@core/services/seo.service';
   templateUrl: './portfolio.component.html',
   styleUrl: './portfolio.component.scss'
 })
-export class PortfolioComponent implements OnInit, OnDestroy {
+export class PortfolioComponent implements OnInit {
   projects: Project[] = [];
   filteredProjects: Project[] = [];
   categories: string[] = [];
   activeFilter: string = 'All Projects';
-  private destroy$ = new Subject<void>();
 
   constructor(
     private projectsService: ProjectsService,
@@ -27,46 +25,14 @@ export class PortfolioComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.seoService.setPageMeta({
-      title: 'Projects | Kerllos Ayad',
-      description: 'Shopify stores, Angular applications and Node.js projects built by Kerllos Ayad, Senior Frontend Engineer & Shopify Specialist.',
+      title: 'Shopify & Angular Projects | Kerllos Ayad – Cairo, Egypt',
+      description: 'Shopify stores, Angular applications and Node.js projects built by Kerllos Ayad, Shopify developer and Senior Frontend Engineer in Cairo, Egypt.',
       path: '/portfolio'
     });
-    this.loadProjects();
-    this.loadCategories();
-  }
-
-  ngOnDestroy(): void {
-    this.destroy$.next();
-    this.destroy$.complete();
-  }
-
-  /**
-   * Load all projects
-   */
-  private loadProjects(): void {
-    this.projectsService.getAllProjects()
-      .pipe(takeUntil(this.destroy$))
-      .subscribe({
-        next: (projects) => {
-          this.projects = projects;
-          this.filteredProjects = projects;
-        },
-        error: (error) => console.error('Error loading projects:', error)
-      });
-  }
-
-  /**
-   * Load available categories
-   */
-  private loadCategories(): void {
-    this.projectsService.getCategories()
-      .pipe(takeUntil(this.destroy$))
-      .subscribe({
-        next: (categories) => {
-          this.categories = categories;
-        },
-        error: (error) => console.error('Error loading categories:', error)
-      });
+    this.seoService.setStructuredData();
+    this.projects = this.projectsService.getAll();
+    this.filteredProjects = this.projects;
+    this.categories = this.projectsService.getCategories();
   }
 
   /**
@@ -102,22 +68,10 @@ export class PortfolioComponent implements OnInit, OnDestroy {
   }
 
   /**
-   * Open external live project link in new tab
-   */
-  openLiveLink(event: Event, url: string): void {
-    // Prevent card click navigation
-    event.stopPropagation();
-    event.preventDefault();
-    
-    // Open link in new tab with security measures
-    window.open(url, '_blank', 'noopener,noreferrer');
-  }
-
-  /**
    * Track by function for ngFor optimization
    */
-  trackByProjectId(index: number, project: Project): number {
-    return project.id;
+  trackBySlug(index: number, project: Project): string {
+    return project.slug;
   }
 
   /**

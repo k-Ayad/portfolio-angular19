@@ -1,0 +1,39 @@
+# Kerllos Ayad – Shopify Developer in Cairo, Egypt
+
+> Kerllos Ayad is a Shopify developer and Senior Frontend Engineer (Angular) in Cairo, Egypt, building Shopify stores for brands in Egypt and the Middle East.
+
+Kerllos Ayad is a Shopify developer and Senior Frontend Engineer based in Cairo, Egypt, with 4+ years of experience. Current role: Senior Frontend Engineer at MCV (Manufacturing Commercial Vehicles). Serves clients in Egypt and Middle East.
+
+## Services
+- Shopify store setup & design
+- Custom Shopify themes & features
+- Speed & SEO optimization
+- Web apps & landing pages
+
+## Skills
+Shopify, Liquid, Angular, TypeScript, JavaScript, UI/UX
+
+## Projects
+- [Arya](https://k-ayad.com/work/arya): A premium Shopify store for Arya, a gold jewelry brand.
+- [OR](https://k-ayad.com/work/or-brand): Shopify store for OR, a well-known Egyptian fashion brand focused on trendy, everyday clothing.
+- [Sidewalks (Converse)](https://k-ayad.com/work/sidewalks): Shopify store for Sidewalks, a Converse distributor.
+- [Style Beauty Store](https://k-ayad.com/work/style-beauty-store): Multi-brand cosmetics marketplace on Shopify.
+- [Hechter Paris](https://k-ayad.com/work/hechter-paris): Premium fashion Shopify storefront for Hechter Paris.
+- [El Okaby Pharmacies](https://k-ayad.com/work/el-okaby-pharmacies): Shopify store for El Okaby Pharmacies, organized so customers find products fast.
+- [Cleo's Dates](https://k-ayad.com/work/cleos-dates): Shopify store for Cleo's Dates, a premium dates brand selling worldwide.
+- [Zentia](https://k-ayad.com/work/zentia): Shopify store for Zentia, a local fashion brand.
+- [Ozone](https://k-ayad.com/work/ozone): Shopify fashion store for Ozone.
+- [Glitter](https://k-ayad.com/work/glitter): Shopify store for Glitter, a beauty and accessories brand.
+- [OZAD Pharma](https://k-ayad.com/work/ozad-pharma): Shopify store for OZAD Pharma.
+- [Tactical Schnauzer](https://k-ayad.com/work/tactical-schnauzer): Shopify store with a scroll animation that plays image frames as the user scrolls.
+- [MAS Clinics](https://k-ayad.com/work/mas-clinics): Angular web project for MAS Clinics.
+- [btklmseny (بتكلم صيني)](https://k-ayad.com/work/btklmseny): Website for btklmseny, a Chinese-learning app, connected to the mobile app on Google Cloud for subscriptions.
+
+All projects: https://k-ayad.com/portfolio
+
+## Contact
+- Email: kerllos.ayad@gmail.com
+- WhatsApp: +20 127 683 2755 (https://wa.me/201276832755)
+- LinkedIn: https://www.linkedin.com/in/k-ayad
+- Facebook: https://www.facebook.com/k.ayad.dev
+- Website: https://k-ayad.com/

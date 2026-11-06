@@ -31,16 +31,16 @@
   <!-- Projects Grid -->
   <section class="projects-grid">
     <article
-      *ngFor="let project of filteredProjects; trackBy: trackByProjectId"
+      *ngFor="let project of filteredProjects; trackBy: trackBySlug"
       class="project-card"
-      [routerLink]="['/project', project.id]"
+      [routerLink]="['/work', project.slug]"
       tabindex="0"
       role="link"
     >
       <div class="project-image-wrapper">
         <img
           [src]="project.image"
-          [alt]="project.title"
+          [alt]="'Screenshot of the ' + project.title + ' website'"
           class="project-image"
           loading="lazy"
         />
@@ -49,22 +49,27 @@
             <span class="view-details">View Details →</span>
             
             <!-- Live Link Button (Only shows if project has liveUrl) -->
-            <button
+            <a
               *ngIf="project.liveUrl"
               class="live-link-btn"
-              (click)="openLiveLink($event, project.liveUrl)"
-              aria-label="View live project"
+              [href]="project.liveUrl"
+              target="_blank"
+              rel="noopener"
+              (click)="$event.stopPropagation()"
+              [attr.aria-label]="'Visit the live ' + project.title + ' store'"
             >
               <i class="fas fa-external-link-alt"></i>
               View Live
-            </button>
+            </a>
           </div>
         </div>
       </div>
 
       <div class="project-content">
-        <h2 class="project-title">{{ project.title }}</h2>
-        <p class="project-description">{{ project.description }}</p>
+        <h2 class="project-title">
+          <a [routerLink]="['/work', project.slug]" class="project-title-link">{{ project.title }}</a>
+        </h2>
+        <p class="project-description">{{ project.summary }}</p>
 
         <div class="project-meta">
           <div class="tech-stack">

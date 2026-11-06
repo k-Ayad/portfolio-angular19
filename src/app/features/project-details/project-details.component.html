@@ -1,4 +1,4 @@
-<div class="project-details-container" *ngIf="project">
+<article class="project-details-container" *ngIf="project">
   <!-- Breadcrumb Navigation -->
   <nav class="breadcrumb-nav" aria-label="breadcrumb">
     <ol class="breadcrumb">
@@ -6,10 +6,10 @@
         <a routerLink="/">Home</a>
       </li>
       <li class="breadcrumb-item">
-        <a routerLink="/portfolio">All Projects</a>
+        <a routerLink="/portfolio">Projects</a>
       </li>
       <li class="breadcrumb-item active" aria-current="page">
-        Project Details
+        {{ project.title }}
       </li>
     </ol>
   </nav>
@@ -17,8 +17,8 @@
   <!-- Project Header -->
   <header class="project-header">
     <h1 class="project-title">{{ project.title }}</h1>
-    
-    <p class="project-description">{{ project.description }}</p>
+
+    <p class="project-description">{{ project.summary }}</p>
 
     <!-- Technology Badges -->
     <div class="tech-badges">
@@ -26,26 +26,14 @@
         *ngFor="let tech of project.technologies"
         class="tech-badge"
       >
-        <i [class]="getTechIcon(tech)"></i>
+        <i [class]="getTechIcon(tech)" aria-hidden="true"></i>
         {{ tech }}
       </span>
     </div>
-
-    <!-- Project Links -->
-    <div class="project-links" *ngIf="relatedProjects.length > 0">
-      <a
-        *ngFor="let relatedProject of relatedProjects.slice(0, 1)"
-        [routerLink]="['/project', relatedProject.id]"
-        class="related-link"
-      >
-        {{ relatedProject.title }}
-        <i class="fas fa-arrow-right"></i>
-      </a>
-    </div>
   </header>
 
-  <!-- Image Carousel -->
-  <section class="carousel-section">
+  <!-- Screenshots -->
+  <section class="carousel-section" *ngIf="carouselImages.length > 0" aria-label="Screenshots">
     <div class="carousel-container">
       <button
         class="carousel-btn prev-btn"
@@ -53,7 +41,7 @@
         [disabled]="carouselImages.length <= 1"
         aria-label="Previous image"
       >
-        <i class="fas fa-chevron-left"></i>
+        <i class="fas fa-chevron-left" aria-hidden="true"></i>
       </button>
 
       <div class="carousel-track">
@@ -63,10 +51,11 @@
         >
           <img
             *ngFor="let image of carouselImages; let i = index; trackBy: trackByIndex"
-            [src]="image"
-            [alt]="project.title + ' - Image ' + (i + 1)"
+            [src]="image.src"
+            [alt]="image.alt"
             class="carousel-image"
-            loading="lazy"
+            [attr.loading]="i === 0 ? 'eager' : 'lazy'"
+            [attr.fetchpriority]="i === 0 ? 'high' : null"
           />
         </div>
       </div>
@@ -77,7 +66,7 @@
         [disabled]="carouselImages.length <= 1"
         aria-label="Next image"
       >
-        <i class="fas fa-chevron-right"></i>
+        <i class="fas fa-chevron-right" aria-hidden="true"></i>
       </button>
 
       <!-- Carousel Indicators -->
@@ -96,102 +85,85 @@
   <!-- Project Information -->
   <section class="project-info">
     <div class="info-grid">
-      <!-- Client Information -->
       <div class="info-card">
-        <h3 class="info-title">
-          <i class="fas fa-user"></i>
+        <h2 class="info-title">
+          <i class="fas fa-user" aria-hidden="true"></i>
           Client
-        </h3>
+        </h2>
         <p class="info-content">{{ project.client }}</p>
       </div>
 
-      <!-- Completion Date -->
-      <div class="info-card">
-        <h3 class="info-title">
-          <i class="fas fa-calendar"></i>
+      <div class="info-card" *ngIf="project.completionDate">
+        <h2 class="info-title">
+          <i class="fas fa-calendar" aria-hidden="true"></i>
           Completed
-        </h3>
+        </h2>
         <p class="info-content">{{ project.completionDate }}</p>
       </div>
 
-      <!-- Category -->
       <div class="info-card">
-        <h3 class="info-title">
-          <i class="fas fa-tag"></i>
+        <h2 class="info-title">
+          <i class="fas fa-tag" aria-hidden="true"></i>
           Category
-        </h3>
+        </h2>
         <p class="info-content">{{ project.category }}</p>
-      </div>
-
-      <!-- Project Status -->
-      <div class="info-card">
-        <h3 class="info-title">
-          <i class="fas fa-check-circle"></i>
-          Status
-        </h3>
-        <p class="info-content">{{ project.featured ? 'Featured' : 'Completed' }}</p>
       </div>
     </div>
 
-    <!-- Extended Project Details (Optional) -->
-    <div class="extended-details" *ngIf="project.challenges || project.solution || project.results">
-      <div class="detail-section" *ngIf="project.challenges">
-        <h3 class="section-title">Challenges</h3>
-        <p class="section-content">{{ project.challenges }}</p>
-      </div>
+    <!-- Problem / what I built / stack (sections with no provided facts are left out; see `todo` in projects.json) -->
+    <div class="extended-details">
+      <section class="detail-section" *ngIf="project.problem">
+        <h2 class="section-title">The problem</h2>
+        <p class="section-content">{{ project.problem }}</p>
+      </section>
 
-      <div class="detail-section" *ngIf="project.solution">
-        <h3 class="section-title">Solution</h3>
-        <p class="section-content">{{ project.solution }}</p>
-      </div>
+      <section class="detail-section" *ngIf="project.built.length > 0">
+        <h2 class="section-title">What I built</h2>
+        <ul class="section-content built-list">
+          <li *ngFor="let item of project.built">{{ item }}</li>
+        </ul>
+      </section>
 
-      <div class="detail-section" *ngIf="project.results">
-        <h3 class="section-title">Results</h3>
-        <p class="section-content">{{ project.results }}</p>
-      </div>
+      <section class="detail-section">
+        <h2 class="section-title">Stack</h2>
+        <p class="section-content">{{ project.technologies.join(', ') }}</p>
+      </section>
     </div>
 
     <!-- Action Buttons -->
     <div class="action-buttons">
-      <button
+      <a
         *ngIf="project.liveUrl"
         class="action-btn primary-btn"
-        (click)="openLink(project.liveUrl)"
+        [href]="project.liveUrl"
+        target="_blank"
+        rel="noopener"
       >
-        <i class="fas fa-external-link-alt"></i>
-        View Live Project
-      </button>
+        <i class="fas fa-external-link-alt" aria-hidden="true"></i>
+        Visit the live store
+      </a>
 
-      <button
-        *ngIf="project.githubUrl"
-        class="action-btn secondary-btn"
-        (click)="openLink(project.githubUrl)"
-      >
-        <i class="fab fa-github"></i>
-        View on GitHub
-      </button>
-
-      <button class="action-btn secondary-btn" (click)="goBack()">
-        <i class="fas fa-arrow-left"></i>
+      <a class="action-btn secondary-btn" routerLink="/portfolio">
+        <i class="fas fa-arrow-left" aria-hidden="true"></i>
         Back to Projects
-      </button>
+      </a>
     </div>
   </section>
 
   <!-- Related Projects -->
   <section class="related-projects" *ngIf="relatedProjects.length > 0">
     <h2 class="section-heading">Related Projects</h2>
-    
+
     <div class="related-grid">
-      <article
-        *ngFor="let relatedProject of relatedProjects; trackBy: trackByProjectId"
+      <a
+        *ngFor="let relatedProject of relatedProjects; trackBy: trackBySlug"
         class="related-card"
-        [routerLink]="['/project', relatedProject.id]"
+        [routerLink]="['/work', relatedProject.slug]"
       >
         <div class="related-image-wrapper">
           <img
             [src]="relatedProject.image"
-            [alt]="relatedProject.title"
+            [alt]="'Screenshot of the ' + relatedProject.title + ' website'"
             class="related-image"
             loading="lazy"
           />
@@ -200,13 +172,7 @@
           <h3 class="related-title">{{ relatedProject.title }}</h3>
           <p class="related-category">{{ relatedProject.category }}</p>
         </div>
-      </article>
+      </a>
     </div>
   </section>
-</div>
-
-<!-- Loading/Error State -->
-<div class="loading-state" *ngIf="!project">
-  <div class="spinner"></div>
-  <p>Loading project details...</p>
-</div>
+</article>
