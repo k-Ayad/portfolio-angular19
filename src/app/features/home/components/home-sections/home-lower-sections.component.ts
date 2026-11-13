@@ -4,24 +4,15 @@ import { ContentService } from '@core/services/content.service';
 import { LangService } from '@core/i18n/lang.service';
 import { UI } from '@core/i18n/ui';
 import site from '@core/data/site.json';
+import { HowIWorkComponent } from './how-i-work.component';
 
 // How I work, skills, FAQ teaser and the hire call to action. Every pillar list has the same number of items.
 @Component({
   selector: 'app-home-lower-sections',
   standalone: true,
-  imports: [RouterLink],
+  imports: [RouterLink, HowIWorkComponent],
   template: `
-    <section class="content-section" id="process">
-      <div class="container">
-        <h2>{{ ui().process.title }}</h2>
-        <p class="section-lead">{{ ui().process.intro }}</p>
-        <ol class="steps">
-          @for (step of ui().process.steps; track step.title) {
-            <li><strong>{{ step.title }}</strong><span>{{ step.text }}</span></li>
-          }
-        </ol>
-      </div>
-    </section>
+    <app-how-i-work></app-how-i-work>
 
     <section class="content-section" id="skills">
       <div class="container">

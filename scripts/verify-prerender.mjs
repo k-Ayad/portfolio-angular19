@@ -15,7 +15,7 @@ const routes = [];
 for (const lang of langs) {
   const px = prefix(lang);
   const home = lang === 'ar' ? site.ar.homeTitle : site.homeTitle;
-  routes.push({ lang, path: `${px}/`, file: lang === 'ar' ? 'ar/index.html' : 'index.html', kind: 'home', ld: ['Person', 'WebPage', 'ProfessionalService'], minWords: 0, must: lang === 'en' ? ['Shopify and Angular developer', 'Cairo, Egypt', '4+ years', 'Half of my work is Shopify', 'What I do', 'How I work', 'Hire a Shopify developer', 'Hire an Angular developer'] : ['القاهرة', 'نصف عملي', 'ماذا أقدم', 'طريقة العمل', 'وظّف مطور Shopify', 'وظّف مطور Angular'], title: home });
+  routes.push({ lang, path: `${px}/`, file: lang === 'ar' ? 'ar/index.html' : 'index.html', kind: 'home', ld: ['Person', 'WebPage', 'ProfessionalService'], minWords: 0, must: lang === 'en' ? ['Shopify and Angular developer', 'Cairo, Egypt', '4+ years', 'Half of my work is Shopify', 'What I do', 'How I work', 'Hire a Shopify developer', 'Hire an Angular developer', 'How I work', 'We discuss your design and vision first.', 'I build it and connect everything.', 'I help with your content and teach your team.', 'We go live, and I support you for free until it is stable.'] : ['القاهرة', 'نصف عملي', 'ماذا أقدم', 'وظّف مطور Shopify', 'وظّف مطور Angular', 'طريقة عملي', 'نناقش تصميمك ورؤيتك أولاً.', 'أبني المشروع وأربط كل شيء.', 'أساعدك في المحتوى وأعلّمك التقنية.', 'نطلق الموقع، وأدعمك مجاناً حتى يستقر.'], title: home });
   routes.push({ lang, path: `${px}/portfolio`, file: `${px.slice(1)}/portfolio/index.html`.replace(/^\//, ''), kind: 'portfolio', ld: ['CollectionPage', 'ItemList', 'BreadcrumbList'], must: ['Arya'] });
   routes.push({ lang, path: `${px}/services`, file: `${px.slice(1)}/services/index.html`.replace(/^\//, ''), kind: 'services', ld: ['CollectionPage', 'ItemList', 'BreadcrumbList'], must: [] });
   for (const s of services) routes.push({ lang, path: `${px}/services/${s.slug}`, file: `${px.slice(1)}/services/${s.slug}/index.html`.replace(/^\//, ''), kind: 'service', ld: ['Service', 'BreadcrumbList'], minWords: 400, title: s[lang].title, must: [s[lang].h1] });
@@ -98,7 +98,7 @@ const featured = c => projects.filter(p => p.featured && p.category === c && !p.
 balance('featured projects', featured('Shopify'), featured('Angular'));
 const faqGroups = faq.en.groups;
 balance('FAQ questions', faqGroups[1].items.length, faqGroups[2].items.length);
-if (faqGroups[0].items.length !== 4) { failures++; console.log(`  FAIL FAQ hiring group has ${faqGroups[0].items.length} questions, expected 4`); }
+if (faqGroups[0].items.length !== 5) { failures++; console.log(`  FAIL FAQ hiring group has ${faqGroups[0].items.length} questions, expected 5`); }
 if (projects.filter(p => p.category === 'Angular').length < 3) { failures++; console.log('  FAIL fewer than 3 Angular projects'); }
 for (const lang of langs) if (JSON.stringify(faq[lang].groups.map(g => g.items.length)) !== JSON.stringify(faqGroups.map(g => g.items.length))) { failures++; console.log(`  FAIL FAQ ${lang} counts differ from English`); }
 
@@ -109,6 +109,17 @@ const pillars = id => section(id).split('class="pillar"').slice(1);
 for (const [id, tag] of [['services', '<li'], ['skills', '<li'], ['faq-teaser', '<details']]) {
   const [a, b] = pillars(id).map(h => (h.match(new RegExp(tag, 'g')) || []).length);
   balance(`home ${id}`, a, b);
+}
+// "How I work": exactly four steps, real-text numbers, no free-support duration or [CONFIRM] text
+for (const [file, nums] of [['index.html', ['1', '2', '3', '4']], ...(site.arabicLive ? [['ar/index.html', ['١', '٢', '٣', '٤']]] : [])]) {
+  const html = await readFile(join(DIST, file), 'utf8');
+  const i = html.indexOf('class="content-section how-i-work"'); const j = html.indexOf('</section>', i);
+  const block = html.slice(i, j);
+  const steps = block.match(/class="how-step"/g) || [];
+  const numbers = [...block.matchAll(/class="step-number">([^<]+)</g)].map(m => m[1]);
+  if (steps.length !== 4 || numbers.join('') !== nums.join('')) { failures++; console.log(`  FAIL ${file}: how-i-work steps ${steps.length}, numbers ${numbers.join('')}`); }
+  if (/\[CONFIRM|يحتاج تأكيدك|\b\d+\s*(days|months|weeks)\b/i.test(block)) { failures++; console.log(`  FAIL ${file}: how-i-work has unconfirmed text`); }
+  if (!/<h2[^>]*>(How I work|طريقة عملي)<\/h2>/.test(block)) { failures++; console.log(`  FAIL ${file}: how-i-work heading must be an H2`); }
 }
 if ((section('hire').match(/cta-band/g) || []).length !== 2) { failures++; console.log('  FAIL home hire section needs two call-to-action blocks'); }
 for (const href of ['/services/web-apps-landing-pages']) if (homeHtml.includes(href)) { failures++; console.log(`  FAIL retired link ${href} still on the home page`); }

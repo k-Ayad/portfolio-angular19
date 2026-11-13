@@ -19,6 +19,11 @@
             "a": "Send an email or a LinkedIn message that describes your project and your goal. You get a reply with questions, a plan and an estimate. Work starts after you approve the scope."
           },
           {
+            "id": "how-we-work",
+            "q": "How does working together look?",
+            "a": "It happens in four steps. First we discuss your design and vision. Then I build the project and connect everything it needs. Next I help with your content and teach your team how to manage the site. Finally we go live, and I support you for free until it is stable."
+          },
+          {
             "id": "how-much-does-a-shopify-store-cost",
             "q": "How much does a Shopify or Angular project cost in Egypt?",
             "a": "It depends on the scope: for a store, the theme, the number of custom sections, the number of products, integrations and languages; for an Angular application, the number of screens, the logic, the integrations and the design. Defined projects are usually quoted at a fixed price, and ongoing work by the hour. The Shopify subscription and paid apps are billed by Shopify and the app makers, separately from development work."
@@ -110,6 +115,11 @@
             "id": "how-to-hire-a-shopify-or-angular-developer-in-cairo",
             "q": "كيف أوظّف مطور Shopify أو Angular في القاهرة، مصر؟",
             "a": "أرسل رسالة عبر البريد الإلكتروني أو LinkedIn تشرح فيها مشروعك وهدفك. ستصلك إجابة بأسئلة وخطة وتقدير للتكلفة، ويبدأ العمل بعد موافقتك على النطاق."
+          },
+          {
+            "id": "how-we-work",
+            "q": "كيف تتم آلية العمل معاً؟",
+            "a": "تتم على أربع خطوات. أولاً نناقش تصميمك ورؤيتك. ثم أبني المشروع وأربط كل ما يحتاجه. بعدها أساعدك في المحتوى وأعلّمك وفريقك كيف تديرون الموقع. وأخيراً نطلق الموقع وأدعمك مجاناً حتى يستقر."
           },
           {
             "id": "how-much-does-a-shopify-store-cost",

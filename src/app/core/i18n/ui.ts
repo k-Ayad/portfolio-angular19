@@ -5,7 +5,7 @@ export interface Ui {
   switchLabel: string; // label of the link to the OTHER language, written in that language
   switchAria: string;
   hero: { heading: string[]; intro: string; seeShopify: string; seeAngular: string; hire: string };
-  about: { title: string; text: string; imageAlt: string };
+  about: { title: string; text: string; imageAlt: string; process: string; processLink: string };
   whatIDo: { title: string; intro: string; shopifyTitle: string; shopifyText: string; angularTitle: string; angularText: string; more: string };
   projectsSection: { intro: string; title: string; showDetails: string; tabs: { all: string; shopify: string; angular: string }; tabsLabel: string };
   process: { intro: string; title: string; steps: { title: string; text: string }[] };
@@ -40,6 +40,8 @@ const en: Ui = {
   about: {
     title: 'About Kerllos Ayad, Shopify and Angular developer in Cairo',
     imageAlt: 'Developer workstation with two monitors showing code, a keyboard and a pen holder',
+    process: 'How we work together: we discuss your design and vision first, I build it and connect everything, I help with your content and teach your team, and we go live with free support until it is stable.',
+    processLink: 'See the four steps',
     text: "I'm Kerllos Ayad, a Shopify and Angular developer and Senior Frontend Engineer based in Cairo, Egypt, with 4+ years of experience. Half of my work is Shopify: I build stores for brands in Egypt and the Middle East, including OR, Arya, Hechter Paris, Sidewalks, El Okaby Pharmacies and Cleo's Dates. The other half is Angular: TypeScript components and prerendered pages, in projects such as the MCV bus tender system and this site. I work with your team from the first sketch to launch, writing clean Liquid, TypeScript and SCSS that is easy to maintain."
   },
   whatIDo: {
@@ -55,13 +57,13 @@ const en: Ui = {
     tabs: { all: 'All', shopify: 'Shopify', angular: 'Angular' }, tabsLabel: 'Filter projects'
   },
   process: {
-    intro: 'Every project follows the same four steps, so you always know what comes next.',
     title: 'How I work',
+    intro: 'Four steps, from your first idea to a stable launch.',
     steps: [
-      { title: 'Discovery', text: 'Your goals, products, audience and current store.' },
-      { title: 'Plan and scope', text: 'Pages, features and a fixed price or hourly estimate.' },
-      { title: 'Design and build', text: 'Liquid theme work, reviewed on a staging theme.' },
-      { title: 'Test and launch', text: 'Mobile, speed, checkout and SEO checks before going live.' }
+      { title: 'We discuss your design and vision first.', text: 'You share your point of view and your design ideas. We talk through everything before any work starts: goals, pages, features, and what success looks like. No surprises later.' },
+      { title: 'I build it and connect everything.', text: 'You give me the design, and I apply all the changes it needs. I also set up the technical integrations the project requires, such as payments, shipping, analytics, domain and SEO, so it is ready to launch.' },
+      { title: 'I help with your content and teach your team.', text: 'I help you prepare the content, and I run short learning sessions on the technology, whether it is Shopify, Angular or another platform. You will know how to manage your own site.' },
+      { title: 'We go live, and I support you for free until it is stable.', text: 'After launch I stay with you and fix issues at no cost until everything works smoothly.' }
     ]
   },
   skills: {
@@ -108,6 +110,8 @@ const ar: Ui = {
   about: {
     title: 'عن Kerllos Ayad: مطور Shopify وAngular في القاهرة',
     imageAlt: 'محطة عمل لمطور بشاشتين تعرضان كودًا ولوحة مفاتيح وحامل أقلام',
+    process: 'كيف نعمل معاً: نناقش تصميمك ورؤيتك أولاً، وأبني المشروع وأربط كل شيء، وأساعدك في المحتوى وأعلّمك التقنية، ثم نطلق الموقع وأدعمك مجاناً حتى يستقر.',
+    processLink: 'شاهد الخطوات الأربع',
     text: 'أنا Kerllos Ayad، مطور Shopify (شوبيفاي) وAngular ومهندس واجهات أمامية أول مقيم في القاهرة، مصر، بخبرة تتجاوز 4 سنوات. نصف عملي Shopify: أبني متاجر للعلامات التجارية في مصر والشرق الأوسط، منها OR وArya وHechter Paris وSidewalks وEl Okaby Pharmacies وCleo\'s Dates. والنصف الآخر Angular: مكونات TypeScript وصفحات مُولَّدة مسبقًا، في مشاريع مثل نظام مناقصات حافلات MCV وهذا الموقع. أعمل مع فريقك من أول فكرة حتى الإطلاق، وأكتب كود Liquid وTypeScript وSCSS نظيفًا يسهل صيانته.'
   },
   whatIDo: {
@@ -123,13 +127,13 @@ const ar: Ui = {
     tabs: { all: 'الكل', shopify: 'Shopify', angular: 'Angular' }, tabsLabel: 'تصفية المشاريع'
   },
   process: {
-    intro: 'كل مشروع يمر بالخطوات الأربع نفسها، لتعرف دائمًا ما الخطوة التالية.',
-    title: 'طريقة العمل',
+    title: 'طريقة عملي',
+    intro: 'أربع خطوات، من فكرتك الأولى حتى إطلاق مستقر.',
     steps: [
-      { title: 'الاستكشاف', text: 'أهدافك ومنتجاتك وجمهورك ومتجرك الحالي.' },
-      { title: 'الخطة والنطاق', text: 'الصفحات والميزات وسعر ثابت أو تقدير بالساعة.' },
-      { title: 'التصميم والتنفيذ', text: 'عمل Liquid على قالب تجريبي تراجعه قبل النشر.' },
-      { title: 'الاختبار والإطلاق', text: 'فحص الجوال والسرعة والدفع والسيو قبل النشر.' }
+      { title: 'نناقش تصميمك ورؤيتك أولاً.', text: 'تعرض عليّ وجهة نظرك وأفكارك للتصميم. نتحدث عن كل التفاصيل قبل أن نبدأ: الأهداف، الصفحات، المزايا، وما الذي يعني النجاح بالنسبة لك. لا مفاجآت لاحقاً.' },
+      { title: 'أبني المشروع وأربط كل شيء.', text: 'تسلّمني التصميم، وأنفّذ كل التعديلات المطلوبة. وأجهّز التكاملات التقنية التي يحتاجها المشروع مثل الدفع والشحن والتحليلات والدومين وتحسين محركات البحث، حتى يصبح جاهزاً للإطلاق.' },
+      { title: 'أساعدك في المحتوى وأعلّمك التقنية.', text: 'أساعدك في تجهيز المحتوى، وأقدّم جلسات تعليمية قصيرة عن التقنية، سواء كانت شوبيفاي أو Angular أو أي منصة أخرى، لتتمكن من إدارة موقعك بنفسك.' },
+      { title: 'نطلق الموقع، وأدعمك مجاناً حتى يستقر.', text: 'بعد الإطلاق أبقى معك وأصلح أي مشكلة دون تكلفة حتى يعمل كل شيء بسلاسة.' }
     ]
   },
   skills: {

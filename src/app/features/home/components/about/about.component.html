@@ -18,6 +18,7 @@
               }
               <!-- TODO: add the number of Shopify stores built (not provided yet) to the about text in core/i18n/ui.ts -->
               <p #aboutText class="about-text">{{ ui().about.text }}</p>
+              <p class="about-process">{{ ui().about.process }} <a class="text-link" [routerLink]="langService.link('/')" fragment="process">{{ ui().about.processLink }}</a></p>
               <!-- <a href="#" class="btn btn-primary">Learn More</a> -->
             </div>
           </div>

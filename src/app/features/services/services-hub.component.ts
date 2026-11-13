@@ -4,12 +4,13 @@ import { ContentService } from '@core/services/content.service';
 import { SeoService } from '@core/services/seo.service';
 import { LangService } from '@core/i18n/lang.service';
 import { UI } from '@core/i18n/ui';
+import { HowIWorkComponent } from '../home/components/home-sections/how-i-work.component';
 import { breadcrumbs, servicesCollectionPage } from '@core/seo/structured-data';
 
 @Component({
   selector: 'app-services-hub',
   standalone: true,
-  imports: [RouterLink],
+  imports: [RouterLink, HowIWorkComponent],
   template: `
     <div class="page-container">
       <nav aria-label="breadcrumb">
@@ -49,15 +50,7 @@ import { breadcrumbs, servicesCollectionPage } from '@core/seo/structured-data';
         </div>
       </div>
 
-      <section class="content-section">
-        <h2>{{ ui().process.title }}</h2>
-        <p class="section-lead">{{ ui().process.intro }}</p>
-        <ol class="steps">
-          @for (step of ui().process.steps; track step.title) {
-            <li><strong>{{ step.title }}</strong><span>{{ step.text }}</span></li>
-          }
-        </ol>
-      </section>
+      <app-how-i-work></app-how-i-work>
 
       <div class="cta-band">
         <h2>{{ ui().services.ctaTitle }}</h2>

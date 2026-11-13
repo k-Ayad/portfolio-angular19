@@ -6,13 +6,14 @@ import { ProjectsService } from '@core/services/projects.service';
 import { SeoService } from '@core/services/seo.service';
 import { LangService } from '@core/i18n/lang.service';
 import { UI } from '@core/i18n/ui';
+import { HowIWorkComponent } from '../home/components/home-sections/how-i-work.component';
 import { breadcrumbs, serviceStructuredData } from '@core/seo/structured-data';
 import { Project } from '@core/models/project.interface';
 
 @Component({
   selector: 'app-service-page',
   standalone: true,
-  imports: [RouterLink],
+  imports: [RouterLink, HowIWorkComponent],
   template: `
     @if (service()) {
       <article class="page-container">
@@ -41,15 +42,7 @@ import { Project } from '@core/models/project.interface';
           </ul>
         </section>
 
-        <section class="content-section">
-          <h2>{{ ui().process.title }}</h2>
-          <p class="section-lead">{{ ui().process.intro }}</p>
-          <ol class="steps">
-            @for (step of ui().process.steps; track step.title) {
-              <li><strong>{{ step.title }}</strong><span>{{ step.text }}</span></li>
-            }
-          </ol>
-        </section>
+        <app-how-i-work></app-how-i-work>
 
         <section class="content-section">
           <h2>{{ ui().services.related }}</h2>

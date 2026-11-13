@@ -1,5 +1,6 @@
 import { AfterViewInit, Component, ElementRef, HostListener, PLATFORM_ID, ViewChild, computed, inject } from '@angular/core';
 import { CommonModule, NgOptimizedImage, isPlatformBrowser } from '@angular/common';
+import { RouterLink } from '@angular/router';
 import { LangService } from '@core/i18n/lang.service';
 import { UI } from '@core/i18n/ui';
 import { ScrollTriggerDirective } from '@shared/scroll-trigger.directive';
@@ -8,7 +9,7 @@ import { FallingTextPipe } from '@shared/falling-text.pipe';
 @Component({
   selector: 'app-about',
   standalone: true,
-  imports: [CommonModule, NgOptimizedImage, ScrollTriggerDirective, FallingTextPipe],
+  imports: [CommonModule, NgOptimizedImage, RouterLink, ScrollTriggerDirective, FallingTextPipe],
   templateUrl: './about.component.html',
   styleUrl: './about.component.scss'
 })
