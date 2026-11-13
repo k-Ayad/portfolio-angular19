@@ -46,7 +46,7 @@
     "Approved results, store count, client quotes, timelines and starting prices",
     "Native Arabic review of every Arabic text, then set arabicLive to true"
   ],
-  "arabicLive": false,
+  "arabicLive": true,
   "ar": {
     "homeTitle": "مطور Shopify وAngular في القاهرة، مصر | Kerllos Ayad",
     "homeDescription": "مطور Shopify (شوبيفاي) وAngular في القاهرة، مصر، بخبرة 4+ سنوات. متاجر Shopify موجهة للتحويل وواجهات Angular قابلة للتوسع للعلامات التجارية في مصر والشرق الأوسط.",
