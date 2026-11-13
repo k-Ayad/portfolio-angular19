@@ -9,7 +9,7 @@
       ],
       "faqIds": [
         "how-much-does-a-shopify-store-cost",
-        "how-to-hire-a-shopify-developer-in-cairo"
+        "how-to-hire-a-shopify-or-angular-developer-in-cairo"
       ],
       "en": {
         "nav": "Shopify store setup and design",
@@ -52,7 +52,8 @@
         ],
         "pricingTitle": "المدة والتكلفة",
         "pricing": "يعتمد السعر على حجم المتجر: عدد المنتجات والمجموعات، ومقدار التصميم المخصص، والربط المطلوب مع خدمات أخرى، واللغات التي يعمل بها المتجر. غالبًا يكون إعداد المتجر المحدد بسعر ثابت. اشتراك Shopify والتطبيقات المدفوعة تُحاسب بشكل منفصل من Shopify ومن مطوري التطبيقات. أرسل لي مجموعة منتجاتك وأهدافك وسأرد عليك بخطة وتقدير للتكلفة."
-      }
+      },
+      "pillar": "shopify"
     },
     {
       "slug": "shopify-theme-customization",
@@ -106,15 +107,15 @@
         ],
         "pricingTitle": "المدة والتكلفة",
         "pricing": "يعتمد السعر على عدد الأقسام والميزات المخصصة التي تحتاجها ومقدار ما يجب تغييره في القالب. التغيير الصغير، مثل قسم جديد واحد، يُسعَّر بشكل مختلف عن قالب مخصص كامل. غالبًا يكون العمل المحدد بسعر ثابت، والتحسينات المستمرة بالساعة. أخبرني بما تريد تغييره وسأرد عليك بخطة وتقدير للتكلفة."
-      }
+      },
+      "pillar": "shopify"
     },
     {
       "slug": "shopify-speed-seo-optimization",
       "projects": [
         "arya",
         "hechter-paris",
-        "el-okaby-pharmacies",
-        "style-beauty-store"
+        "el-okaby-pharmacies"
       ],
       "faqIds": [
         "speed-up-shopify-store",
@@ -161,59 +162,172 @@
         ],
         "pricingTitle": "المدة والتكلفة",
         "pricing": "يعتمد السعر على حجم المتجر وعلى ما يظهره القياس الأول. متجر فيه بضعة تطبيقات ثقيلة عمل مختلف عن متجر بكتالوج كبير وقالب مخصص. غالبًا يكون العمل المحدد بسعر ثابت، والتحسين المستمر بالساعة. أرسل لي عنوان متجرك وسأرد عليك بما سأفحصه أولًا وبتقدير للتكلفة."
-      }
+      },
+      "pillar": "shopify"
     },
     {
-      "slug": "web-apps-landing-pages",
+      "slug": "angular-web-app-development",
+      "pillar": "angular",
       "projects": [
-        "btklmseny",
-        "tactical-schnauzer"
+        "mcv-bus-tender",
+        "pms-performance-management",
+        "bom-generator"
       ],
       "faqIds": [
         "angular-web-apps",
-        "how-to-hire-a-shopify-developer-in-cairo"
+        "angular-projects"
       ],
       "en": {
-        "nav": "Web apps and landing pages",
-        "title": "Angular Web Apps & Landing Pages | Kerllos Ayad",
-        "description": "Angular and JavaScript web apps, campaign landing pages and internal tools by a Senior Frontend Engineer in Cairo.",
-        "h1": "Angular Web Apps and Landing Pages",
-        "summary": "Angular and JavaScript front ends, campaign landing pages and internal tools.",
-        "whatYouGet": "Web apps and landing pages built with Angular, TypeScript and JavaScript by a Senior Frontend Engineer. When a store or a campaign needs more than a theme can give, I build the front end: a fast landing page for a campaign, an app that connects to your data, or an internal tool for your team. This service is for businesses that need a web interface built properly, with clean, maintainable code.",
+        "nav": "Angular web app development",
+        "title": "Angular Web App Development in Egypt | Kerllos Ayad",
+        "description": "Angular and TypeScript web applications built from clean, reusable components by a Senior Frontend Engineer in Cairo, Egypt.",
+        "h1": "Angular Web App Development in Egypt",
+        "summary": "Angular and TypeScript web applications, built from reusable components and connected to your APIs.",
+        "whatYouGet": "Web applications built with Angular and TypeScript, from the first screen to a version your team can run and extend. I build the application from small, reusable components, connect it to your back end through APIs and keep the code easy to read for the next developer. This service is for teams that need a business application, an internal tool or a customer-facing app, and want a Senior Frontend Engineer who has already built Angular systems such as a tender management system and a performance management system.",
         "includedTitle": "What is included",
         "included": [
-          "Angular and TypeScript web applications",
-          "Campaign and product landing pages",
-          "Internal tools and dashboards for teams",
-          "Responsive layouts that work on mobile first",
-          "Connecting the front end to APIs and back-end services",
-          "Deployment help, for example a Node.js application on Google Cloud (done for btklmseny)",
-          "Rich scroll animations, such as image frames that play as the visitor scrolls (done for Tactical Schnauzer)",
-          "Clean, documented code that your team can maintain"
+          "Angular and TypeScript applications built from reusable components",
+          "Approval workflows and request tracking, as in the MCV bus tender system",
+          "Charts and KPI screens with ApexCharts, as in the performance management system",
+          "File upload, data processing and Excel export, as in the BOM generator",
+          "Integration with REST APIs and back ends such as ABP Framework and .NET Core",
+          "Responsive layouts with SCSS and Bootstrap",
+          "Clean, maintainable code that your team can extend",
+          "A staging build you can review before anything goes live"
         ],
         "pricingTitle": "Timeline and pricing",
-        "pricing": "The price depends on the number of screens, how much logic and data the app handles, the integrations and the design work. A single landing page is a different job from an application with accounts and a back end. Defined projects are usually quoted at a fixed price, and ongoing work by the hour. Describe what you want to build and I will reply with a plan and an estimate."
+        "pricing": "The price depends on the number of screens, how much logic and data the application handles, the integrations with your back end and the design work. A single internal tool is a different job from an application with roles and approval flows. Defined projects are usually quoted at a fixed price, and ongoing work by the hour. Describe what you want to build and I will reply with a plan and an estimate."
       },
       "ar": {
-        "nav": "تطبيقات الويب وصفحات الهبوط",
-        "title": "تطبيقات ويب Angular وصفحات هبوط | Kerllos Ayad",
-        "description": "تطبيقات ويب بـ Angular وJavaScript وصفحات هبوط للحملات وأدوات داخلية من مهندس واجهات أمامية أول في القاهرة.",
-        "h1": "تطبيقات ويب Angular وصفحات هبوط للحملات",
-        "summary": "واجهات أمامية بـ Angular وJavaScript، وصفحات هبوط للحملات وأدوات داخلية.",
-        "whatYouGet": "تطبيقات ويب وصفحات هبوط مبنية بـ Angular وTypeScript وJavaScript على يد مهندس واجهات أمامية أول. عندما يحتاج متجر أو حملة إلى أكثر مما يعطيه القالب، أبني الواجهة الأمامية: صفحة هبوط سريعة لحملة، أو تطبيق يتصل ببياناتك، أو أداة داخلية لفريقك. هذه الخدمة للشركات التي تحتاج واجهة ويب مبنية بشكل صحيح وبكود نظيف يسهل صيانته ويعمل جيدًا على الجوال وعلى الكمبيوتر.",
+        "nav": "تطوير تطبيقات الويب بـ Angular",
+        "title": "تطوير تطبيقات ويب بـ Angular في مصر | Kerllos Ayad",
+        "description": "تطبيقات ويب بـ Angular وTypeScript مبنية من مكونات نظيفة قابلة لإعادة الاستخدام على يد مهندس واجهات أمامية أول في القاهرة، مصر.",
+        "h1": "تطوير تطبيقات الويب بـ Angular في مصر",
+        "summary": "تطبيقات ويب بـ Angular وTypeScript مبنية من مكونات قابلة لإعادة الاستخدام ومتصلة بواجهاتك البرمجية.",
+        "whatYouGet": "تطبيقات ويب مبنية بـ Angular وTypeScript، من الشاشة الأولى حتى نسخة يستطيع فريقك تشغيلها وتطويرها. أبني التطبيق من مكونات صغيرة قابلة لإعادة الاستخدام، وأربطه بالخلفية عبر واجهات برمجية، وأُبقي الكود سهل القراءة للمطور التالي. هذه الخدمة للفرق التي تحتاج تطبيق أعمال أو أداة داخلية أو تطبيقًا موجهًا للعملاء، وتريد مهندس واجهات أمامية أول سبق أن بنى أنظمة Angular مثل نظام إدارة مناقصات ونظام إدارة أداء.",
         "includedTitle": "ما يشمله العمل",
         "included": [
-          "تطبيقات ويب بـ Angular وTypeScript",
-          "صفحات هبوط للحملات والمنتجات",
-          "أدوات داخلية ولوحات متابعة للفرق",
-          "تصميم متجاوب يبدأ من الجوال",
-          "ربط الواجهة الأمامية بواجهات برمجية وخدمات خلفية",
-          "مساعدة في النشر، مثل تطبيق Node.js على Google Cloud (نُفذ لمشروع btklmseny)",
-          "حركات تمرير غنية، مثل إطارات صور تتحرك أثناء تمرير الزائر (نُفذ لمتجر Tactical Schnauzer)",
-          "كود نظيف وموثق يسهل على فريقك صيانته"
+          "تطبيقات Angular وTypeScript مبنية من مكونات قابلة لإعادة الاستخدام",
+          "مسارات موافقات وتتبع طلبات، كما في نظام مناقصات حافلات MCV",
+          "مخططات وشاشات مؤشرات أداء بـ ApexCharts، كما في نظام إدارة الأداء",
+          "رفع الملفات ومعالجة البيانات والتصدير إلى Excel، كما في مولّد BOM",
+          "الربط مع REST APIs وخلفيات مثل ABP Framework و.NET Core",
+          "تصميم متجاوب بـ SCSS وBootstrap",
+          "كود نظيف سهل الصيانة يستطيع فريقك تطويره",
+          "نسخة تجريبية تراجعها قبل أي نشر"
         ],
         "pricingTitle": "المدة والتكلفة",
-        "pricing": "يعتمد السعر على عدد الشاشات ومقدار المنطق والبيانات التي يتعامل معها التطبيق والربط مع خدمات أخرى وعمل التصميم. صفحة هبوط واحدة عمل مختلف عن تطبيق فيه حسابات وخلفية. غالبًا يكون المشروع المحدد بسعر ثابت، والعمل المستمر بالساعة. صف لي ما تريد بناءه وسأرد عليك بخطة وتقدير للتكلفة."
+        "pricing": "يعتمد السعر على عدد الشاشات ومقدار المنطق والبيانات التي يتعامل معها التطبيق والربط مع خلفيتك وعمل التصميم. أداة داخلية واحدة عمل مختلف عن تطبيق فيه صلاحيات ومسارات موافقات. غالبًا يكون المشروع المحدد بسعر ثابت، والعمل المستمر بالساعة. صف لي ما تريد بناءه وسأرد عليك بخطة وتقدير للتكلفة."
+      }
+    },
+    {
+      "slug": "angular-frontend-engineering",
+      "pillar": "angular",
+      "projects": [
+        "mcv-bus-tender",
+        "pms-performance-management",
+        "mas-clinics"
+      ],
+      "faqIds": [
+        "angular-typescript",
+        "how-to-hire-a-shopify-or-angular-developer-in-cairo"
+      ],
+      "en": {
+        "nav": "Angular front-end engineering",
+        "title": "Angular Front-End Engineering | Kerllos Ayad",
+        "description": "Senior Angular front-end engineering for your team: features, TypeScript components and enterprise screens, from Cairo, Egypt.",
+        "h1": "Angular Front-End Engineering",
+        "summary": "Senior engineering for Angular teams: new features, TypeScript components and data-heavy screens.",
+        "whatYouGet": "Senior front-end engineering for your Angular product or team. If you already have an Angular application, or a team building one, I can build features as TypeScript components and connect the front end to your back end. I work as a Senior Frontend Engineer at MCV (Manufacturing Commercial Vehicles), so I am used to long-lived enterprise applications. This service is for companies that need an experienced Angular developer on a product, rather than a finished application delivered from scratch.",
+        "includedTitle": "What is included",
+        "included": [
+          "New features built as Angular components in TypeScript",
+          "Data-heavy screens: tables, filters and forms",
+          "Charts and dashboards with ApexCharts",
+          "Front ends for enterprise back ends such as ABP Framework and .NET Core",
+          "Integration with REST APIs",
+          "Responsive styling with SCSS and Bootstrap",
+          "Clean, maintainable code that fits your team's structure",
+          "Features reviewed on a staging build before release"
+        ],
+        "pricingTitle": "Timeline and pricing",
+        "pricing": "The price depends on the scope of the work, the size of the codebase and how long you need support. A defined feature is usually quoted at a fixed price, and ongoing work with your team by the hour. Tell me about your application and the team around it, and I will reply with a plan and an estimate."
+      },
+      "ar": {
+        "nav": "هندسة الواجهات الأمامية بـ Angular",
+        "title": "هندسة الواجهات الأمامية بـ Angular | Kerllos Ayad",
+        "description": "هندسة واجهات أمامية بـ Angular لفريقك على يد مهندس أول: ميزات ومكونات TypeScript وشاشات للمؤسسات، من القاهرة، مصر.",
+        "h1": "هندسة الواجهات الأمامية بـ Angular",
+        "summary": "هندسة أولى لفرق Angular: ميزات جديدة ومكونات TypeScript وشاشات كثيفة البيانات.",
+        "whatYouGet": "هندسة واجهات أمامية أولى لمنتجك أو فريقك على Angular. إذا كان لديك تطبيق Angular بالفعل، أو فريق يبنيه، يمكنني بناء الميزات كمكونات TypeScript وربط الواجهة بخلفيتك. أعمل مهندس واجهات أمامية أول في MCV (Manufacturing Commercial Vehicles)، لذلك أعتدت على تطبيقات المؤسسات طويلة العمر. هذه الخدمة للشركات التي تحتاج مطور Angular ذا خبرة داخل منتج قائم، لا تطبيقًا كاملًا يُسلَّم من الصفر.",
+        "includedTitle": "ما يشمله العمل",
+        "included": [
+          "ميزات جديدة تُبنى كمكونات Angular بلغة TypeScript",
+          "شاشات كثيفة البيانات: جداول وفلاتر ونماذج",
+          "مخططات ولوحات متابعة بـ ApexCharts",
+          "واجهات أمامية لخلفيات المؤسسات مثل ABP Framework و.NET Core",
+          "الربط مع REST APIs",
+          "تنسيق متجاوب بـ SCSS وBootstrap",
+          "كود نظيف سهل الصيانة يناسب بنية فريقك",
+          "مراجعة الميزات على نسخة تجريبية قبل الإصدار"
+        ],
+        "pricingTitle": "المدة والتكلفة",
+        "pricing": "يعتمد السعر على نطاق العمل وحجم الكود ومدة احتياجك للدعم. غالبًا تكون الميزة المحددة بسعر ثابت، والعمل المستمر مع فريقك بالساعة. أخبرني عن تطبيقك والفريق حوله وسأرد عليك بخطة وتقدير للتكلفة."
+      }
+    },
+    {
+      "slug": "angular-seo-prerendering",
+      "pillar": "angular",
+      "projects": [
+        "k-ayad-site",
+        "mas-clinics",
+        "mcv-bus-tender"
+      ],
+      "faqIds": [
+        "angular-seo-prerendering",
+        "angular-bilingual-rtl"
+      ],
+      "en": {
+        "nav": "Angular SEO and prerendering",
+        "title": "Angular SEO & Prerendering Developer | Kerllos Ayad",
+        "description": "Make an Angular app readable by search engines and AI assistants: prerendered pages, unique meta tags and structured data.",
+        "h1": "Angular SEO and Prerendering",
+        "summary": "Prerendered Angular pages with their own titles, canonical URLs and structured data, so crawlers can read them.",
+        "whatYouGet": "Angular pages that search engines and AI assistants can read. A client-side Angular application sends crawlers an empty shell, so its content is invisible to anything that does not run JavaScript. Prerendering generates the full HTML of each route at build time, with its own title, description, canonical URL and headings. I set this up with Angular SSR and add structured data, a sitemap and a real 404 page. This site is built this way: every page is prerendered.",
+        "includedTitle": "What is included",
+        "included": [
+          "Angular SSR with every route prerendered to its own HTML",
+          "A unique title, description and canonical URL on every page",
+          "One H1 and a logical heading outline per page",
+          "JSON-LD structured data such as Service, FAQPage and BreadcrumbList",
+          "A sitemap, robots.txt and llms.txt",
+          "A real 404 page for unknown URLs",
+          "Browser-only code fixed so the server build works, such as window, document and localStorage",
+          "A bilingual setup with RTL and hreflang, as built for this site"
+        ],
+        "pricingTitle": "Timeline and pricing",
+        "pricing": "The price depends on the number of routes, whether the application already uses server rendering, how much browser-only code has to be fixed and which structured data you need. Adding prerendering to a small site is a different job from converting a large application. Defined work is usually quoted at a fixed price. Send me the address of your application and I will reply with what I would check first and an estimate."
+      },
+      "ar": {
+        "nav": "سيو Angular والتوليد المسبق للصفحات",
+        "title": "مطور Angular لتحسين السيو والتوليد المسبق | Kerllos Ayad",
+        "description": "اجعل تطبيق Angular مقروءًا لمحركات البحث ومساعدي الذكاء الاصطناعي: صفحات مُولَّدة مسبقًا وعناوين فريدة وبيانات منظمة.",
+        "h1": "تحسين السيو والتوليد المسبق (Prerendering) في Angular",
+        "summary": "صفحات Angular مُولَّدة مسبقًا بعناوين وروابط canonical وبيانات منظمة خاصة بكل صفحة، ليقرأها الزواحف.",
+        "whatYouGet": "صفحات Angular تستطيع محركات البحث ومساعدو الذكاء الاصطناعي قراءتها. تطبيق Angular الذي يعمل في المتصفح فقط يرسل للزواحف صفحة فارغة، فيصبح محتواه غير مرئي لكل ما لا يشغّل JavaScript. التوليد المسبق (Prerendering) ينشئ HTML كاملًا لكل مسار أثناء البناء، بعنوان ووصف ورابط canonical وعناوين داخلية خاصة به. أُعدّ ذلك بـ Angular SSR وأضيف بيانات منظمة وخريطة موقع وصفحة 404 حقيقية. هذا الموقع مبني بهذه الطريقة: كل صفحة فيه مُولَّدة مسبقًا.",
+        "includedTitle": "ما يشمله العمل",
+        "included": [
+          "Angular SSR مع توليد كل مسار مسبقًا كملف HTML خاص به",
+          "عنوان ووصف ورابط canonical فريد لكل صفحة",
+          "عنوان H1 واحد وبنية عناوين داخلية منطقية لكل صفحة",
+          "بيانات منظمة JSON-LD مثل Service وFAQPage وBreadcrumbList",
+          "خريطة موقع وملفا robots.txt وllms.txt",
+          "صفحة 404 حقيقية للروابط غير الموجودة",
+          "إصلاح الكود الذي يعمل في المتصفح فقط ليعمل البناء على الخادم، مثل window وdocument وlocalStorage",
+          "إعداد ثنائي اللغة مع RTL وhreflang، كما بُني لهذا الموقع"
+        ],
+        "pricingTitle": "المدة والتكلفة",
+        "pricing": "يعتمد السعر على عدد المسارات وهل يستخدم التطبيق العرض على الخادم بالفعل ومقدار الكود الذي يعمل في المتصفح فقط ويحتاج إصلاحًا والبيانات المنظمة التي تحتاجها. إضافة التوليد المسبق لموقع صغير عمل مختلف عن تحويل تطبيق كبير. غالبًا يكون العمل المحدد بسعر ثابت. أرسل لي عنوان تطبيقك وسأرد عليك بما سأفحصه أولًا وبتقدير للتكلفة."
       }
     }
   ]

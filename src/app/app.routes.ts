@@ -32,6 +32,11 @@ const pages = (): Routes => [
     loadComponent: () => import('./features/services/services-hub.component').then(m => m.ServicesHubComponent)
   },
   {
+    // Retired service page; the server also answers it with a 301
+    path: 'services/web-apps-landing-pages',
+    redirectTo: 'services/angular-web-app-development'
+  },
+  {
     path: 'services/:slug',
     canMatch: [serviceExists],
     loadComponent: () => import('./features/services/service-page.component').then(m => m.ServicePageComponent)

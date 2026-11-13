@@ -1,65 +1,193 @@
 {
   "en": {
-    "title": "Shopify Developer FAQ: Cost and Process | Kerllos Ayad",
-    "description": "Answers about hiring a Shopify developer in Cairo, Egypt: cost, Liquid, speed optimization and how a project works.",
-    "h1": "Shopify Developer FAQ: Pricing and Process",
-    "intro": "Answers to the questions clients ask most before hiring a Shopify developer in Cairo, Egypt. If your question is not here, send me a message and I will answer it.",
+    "title": "Shopify & Angular Developer FAQ: Cost and Process | Kerllos Ayad",
+    "description": "Answers about hiring a Shopify or Angular developer in Cairo, Egypt: cost, Liquid, speed, prerendering and how a project works.",
+    "h1": "Shopify and Angular Developer FAQ: Pricing and Process",
+    "intro": "Answers to the questions clients ask most before hiring a Shopify or Angular developer in Cairo, Egypt. If your question is not here, send me a message and I will answer it.",
     "groups": [
       {
         "title": "Hiring and working together",
         "items": [
-          { "id": "who-is-kerllos-ayad", "q": "Who is Kerllos Ayad and what does he do?", "a": "Kerllos Ayad is a Shopify developer and Senior Frontend Engineer (Angular) based in Cairo, Egypt, with 4+ years of experience. He builds and improves Shopify stores for brands in Egypt and the Middle East." },
-          { "id": "how-to-hire-a-shopify-developer-in-cairo", "q": "How do I hire a Shopify developer in Cairo, Egypt?", "a": "Send an email or a LinkedIn message that describes your store and your goal. You get a reply with questions, a plan and an estimate. Work starts after you approve the scope." }
+          {
+            "id": "who-is-kerllos-ayad",
+            "q": "Who is Kerllos Ayad and what does he do?",
+            "a": "Kerllos Ayad is a Shopify and Angular developer and Senior Frontend Engineer based in Cairo, Egypt, with 4+ years of experience. He builds Shopify stores and Angular front ends for brands and teams in Egypt and the Middle East."
+          },
+          {
+            "id": "how-to-hire-a-shopify-or-angular-developer-in-cairo",
+            "q": "How do I hire a Shopify or Angular developer in Cairo, Egypt?",
+            "a": "Send an email or a LinkedIn message that describes your project and your goal. You get a reply with questions, a plan and an estimate. Work starts after you approve the scope."
+          },
+          {
+            "id": "how-much-does-a-shopify-store-cost",
+            "q": "How much does a Shopify or Angular project cost in Egypt?",
+            "a": "It depends on the scope: for a store, the theme, the number of custom sections, the number of products, integrations and languages; for an Angular application, the number of screens, the logic, the integrations and the design. Defined projects are usually quoted at a fixed price, and ongoing work by the hour. The Shopify subscription and paid apps are billed by Shopify and the app makers, separately from development work."
+          },
+          {
+            "id": "both-shopify-and-angular",
+            "q": "Do you work on both Shopify and Angular projects?",
+            "a": "Yes. About half of my work is Shopify stores and half is Angular front ends and web applications. You can hire me for either one."
+          }
         ]
       },
       {
-        "title": "Cost",
+        "title": "Shopify questions",
         "items": [
-          { "id": "how-much-does-a-shopify-store-cost", "q": "How much does a Shopify store cost in Egypt?", "a": "It depends on the scope: the theme, the number of custom sections, the number of products, integrations and languages. Defined projects are usually quoted at a fixed price, and ongoing work by the hour. The Shopify subscription and paid apps are billed by Shopify and the app makers, separately from development work." }
+          {
+            "id": "what-is-shopify-liquid",
+            "q": "What is Liquid and why does it matter?",
+            "a": "Liquid is Shopify's template language. Custom sections, product page logic and dynamic content in a theme are written in Liquid, together with HTML, SCSS and JavaScript."
+          },
+          {
+            "id": "customize-existing-shopify-theme",
+            "q": "Can you customize my existing Shopify theme?",
+            "a": "Yes. I extend your current theme with custom sections and features, and build custom parts when the theme cannot do what you need."
+          },
+          {
+            "id": "speed-up-shopify-store",
+            "q": "Can you make my Shopify store faster?",
+            "a": "Yes. I review images, apps, theme code, fonts and scripts, and improve the code, page titles and structured data. I measure the store with PageSpeed before and after the work. Results vary by store."
+          },
+          {
+            "id": "apps-or-custom-code",
+            "q": "Do you use Shopify apps or custom code?",
+            "a": "Both. For example, the Arya store uses Judge.me for customer reviews. I prefer light custom code over adding apps that can slow the store down."
+          },
+          {
+            "id": "shopify-features-without-apps",
+            "q": "Can you build features without a paid app?",
+            "a": "Often yes. For the OR store, I built the size chart into the theme instead of using a paid monthly app."
+          }
         ]
       },
       {
-        "title": "Technical questions",
+        "title": "Angular questions",
         "items": [
-          { "id": "what-is-shopify-liquid", "q": "What is Liquid and why does it matter?", "a": "Liquid is Shopify's template language. Custom sections, product page logic and dynamic content in a theme are written in Liquid, together with HTML, SCSS and JavaScript." },
-          { "id": "customize-existing-shopify-theme", "q": "Can you customize my existing Shopify theme?", "a": "Yes. I extend your current theme with custom sections and features, and build custom parts when the theme cannot do what you need." },
-          { "id": "speed-up-shopify-store", "q": "Can you make my Shopify store faster?", "a": "Yes. I review images, apps, theme code, fonts and scripts, and improve the code, page titles and structured data. I measure the store with PageSpeed before and after the work. Results vary by store." },
-          { "id": "apps-or-custom-code", "q": "Do you use Shopify apps or custom code?", "a": "Both. For example, the Arya store uses Judge.me for customer reviews. I prefer light custom code over adding apps that can slow the store down." },
-          { "id": "angular-web-apps", "q": "Do you build anything other than Shopify stores?", "a": "Yes. I build Angular and TypeScript web apps, landing pages and internal tools." }
+          {
+            "id": "angular-web-apps",
+            "q": "What kind of Angular work do you do?",
+            "a": "I build Angular web applications, from internal tools to full systems. Past work includes a tender management system with approval workflows, a performance management system with KPIs and charts, a BOM generator with Excel export, and this site."
+          },
+          {
+            "id": "angular-projects",
+            "q": "Which Angular projects have you built?",
+            "a": "The MCV Bus Tender Management System (Angular 17 on ABP Framework and .NET Core), a Performance Management System with ApexCharts, a BOM Generator for bus manufacturing, MAS Clinics, and this site (Angular 19 with prerendered pages). Each one has its own page under Projects."
+          },
+          {
+            "id": "angular-typescript",
+            "q": "Do you use TypeScript with Angular?",
+            "a": "Yes. My Angular projects are written in TypeScript and split into components, together with HTML and SCSS."
+          },
+          {
+            "id": "angular-seo-prerendering",
+            "q": "Can Angular pages be found by Google?",
+            "a": "Yes, when the pages are prerendered. A client-side Angular app sends crawlers an empty page, so I prerender each route to HTML at build time, with its own title, description, canonical URL and structured data. This site is built that way."
+          },
+          {
+            "id": "angular-bilingual-rtl",
+            "q": "Can you build a bilingual Angular site with Arabic (RTL)?",
+            "a": "Yes. This site has English pages and an Arabic version with a right-to-left layout, hreflang links and a language switcher, all built in Angular."
+          }
         ]
       }
     ]
   },
   "ar": {
-    "title": "أسئلة شائعة عن مطور Shopify: التكلفة والخطوات | Kerllos Ayad",
-    "description": "إجابات عن توظيف مطور Shopify في القاهرة: التكلفة وLiquid وتسريع المتجر وكيف يسير المشروع.",
-    "h1": "أسئلة شائعة عن تطوير متاجر Shopify (شوبيفاي) وتكلفتها وخطوات العمل",
-    "intro": "إجابات عن أكثر الأسئلة التي يطرحها العملاء قبل توظيف مطور Shopify في القاهرة، مصر. إذا لم تجد سؤالك هنا، أرسل لي رسالة وسأجيبك.",
+    "title": "أسئلة شائعة عن مطور Shopify وAngular: التكلفة والخطوات | Kerllos Ayad",
+    "description": "إجابات عن توظيف مطور Shopify أو Angular في القاهرة: التكلفة وLiquid والسرعة والتوليد المسبق وكيف يسير المشروع.",
+    "h1": "أسئلة شائعة عن مطور Shopify (شوبيفاي) وAngular وتكلفة المشاريع وخطواتها",
+    "intro": "إجابات عن أكثر الأسئلة التي يطرحها العملاء قبل توظيف مطور Shopify أو Angular في القاهرة، مصر. إذا لم تجد سؤالك هنا، أرسل لي رسالة وسأجيبك.",
     "groups": [
       {
         "title": "التوظيف والتعاون",
         "items": [
-          { "id": "who-is-kerllos-ayad", "q": "من هو Kerllos Ayad وماذا يقدم؟", "a": "Kerllos Ayad مطور Shopify (شوبيفاي) ومهندس واجهات أمامية أول (Angular) مقيم في القاهرة، مصر، بخبرة تتجاوز 4 سنوات. يبني ويحسّن متاجر Shopify للعلامات التجارية في مصر والشرق الأوسط." },
-          { "id": "how-to-hire-a-shopify-developer-in-cairo", "q": "كيف أوظّف مطور Shopify في القاهرة، مصر؟", "a": "أرسل رسالة عبر البريد الإلكتروني أو LinkedIn تشرح فيها متجرك وهدفك. ستصلك إجابة بأسئلة وخطة وتقدير للتكلفة، ويبدأ العمل بعد موافقتك على النطاق." }
+          {
+            "id": "who-is-kerllos-ayad",
+            "q": "من هو Kerllos Ayad وماذا يقدم؟",
+            "a": "Kerllos Ayad مطور Shopify (شوبيفاي) وAngular ومهندس واجهات أمامية أول مقيم في القاهرة، مصر، بخبرة تتجاوز 4 سنوات. يبني متاجر Shopify وواجهات Angular الأمامية للعلامات التجارية والفرق في مصر والشرق الأوسط."
+          },
+          {
+            "id": "how-to-hire-a-shopify-or-angular-developer-in-cairo",
+            "q": "كيف أوظّف مطور Shopify أو Angular في القاهرة، مصر؟",
+            "a": "أرسل رسالة عبر البريد الإلكتروني أو LinkedIn تشرح فيها مشروعك وهدفك. ستصلك إجابة بأسئلة وخطة وتقدير للتكلفة، ويبدأ العمل بعد موافقتك على النطاق."
+          },
+          {
+            "id": "how-much-does-a-shopify-store-cost",
+            "q": "كم تكلفة مشروع Shopify أو Angular في مصر؟",
+            "a": "تعتمد التكلفة على حجم العمل: للمتجر، القالب وعدد الأقسام المخصصة وعدد المنتجات والربط مع خدمات أخرى واللغات؛ ولتطبيق Angular، عدد الشاشات والمنطق والربط والتصميم. غالبًا يكون السعر ثابتًا لنطاق محدد، وبالساعة للعمل المستمر. اشتراك Shopify والتطبيقات المدفوعة تُحاسب من Shopify ومن مطوري التطبيقات، وهي منفصلة عن أتعاب التطوير."
+          },
+          {
+            "id": "both-shopify-and-angular",
+            "q": "هل تعمل على مشاريع Shopify وAngular معًا؟",
+            "a": "نعم. نحو نصف عملي متاجر Shopify ونصفه واجهات أمامية وتطبيقات ويب بـ Angular. يمكنك توظيفي لأي منهما."
+          }
         ]
       },
       {
-        "title": "التكلفة",
+        "title": "أسئلة عن Shopify",
         "items": [
-          { "id": "how-much-does-a-shopify-store-cost", "q": "كم تكلفة إنشاء متجر Shopify في مصر؟", "a": "تعتمد التكلفة على حجم العمل: القالب وعدد الأقسام المخصصة وعدد المنتجات والربط مع خدمات أخرى واللغات. غالبًا يكون السعر ثابتًا لنطاق محدد، وبالساعة للعمل المستمر. اشتراك Shopify والتطبيقات المدفوعة تُحاسب من Shopify ومن مطوري التطبيقات، وهي منفصلة عن أتعاب التطوير." }
+          {
+            "id": "what-is-shopify-liquid",
+            "q": "ما هي Liquid ولماذا تهم؟",
+            "a": "Liquid هي لغة القوالب في Shopify. الأقسام المخصصة ومنطق صفحة المنتج والمحتوى الديناميكي داخل القالب تُكتب بـ Liquid مع HTML وSCSS وJavaScript."
+          },
+          {
+            "id": "customize-existing-shopify-theme",
+            "q": "هل يمكنك تعديل قالب Shopify الحالي؟",
+            "a": "نعم. أوسّع القالب الحالي بأقسام وميزات مخصصة، وأبني الأجزاء المخصصة عندما لا يكفي القالب لما تحتاجه."
+          },
+          {
+            "id": "speed-up-shopify-store",
+            "q": "هل يمكنك تسريع متجر Shopify الخاص بي؟",
+            "a": "نعم. أراجع الصور والتطبيقات وكود القالب والخطوط والسكربتات، وأحسّن الكود وعناوين الصفحات والبيانات المنظمة. أقيس المتجر بأداة PageSpeed قبل العمل وبعده. تختلف النتائج حسب كل متجر."
+          },
+          {
+            "id": "apps-or-custom-code",
+            "q": "هل تستخدم تطبيقات Shopify أم كودًا مخصصًا؟",
+            "a": "الاثنين معًا. مثلًا استخدمت Judge.me لتقييمات العملاء في متجر Arya. أفضّل الكود الخفيف على إضافة تطبيقات قد تبطئ المتجر."
+          },
+          {
+            "id": "shopify-features-without-apps",
+            "q": "هل يمكنك بناء ميزات دون تطبيق مدفوع؟",
+            "a": "غالبًا نعم. في متجر OR بنيت جدول المقاسات داخل القالب بدل استخدام تطبيق شهري مدفوع."
+          }
         ]
       },
       {
-        "title": "أسئلة تقنية",
+        "title": "أسئلة عن Angular",
         "items": [
-          { "id": "what-is-shopify-liquid", "q": "ما هي Liquid ولماذا تهم؟", "a": "Liquid هي لغة القوالب في Shopify. الأقسام المخصصة ومنطق صفحة المنتج والمحتوى الديناميكي داخل القالب تُكتب بـ Liquid مع HTML وSCSS وJavaScript." },
-          { "id": "customize-existing-shopify-theme", "q": "هل يمكنك تعديل قالب Shopify الحالي؟", "a": "نعم. أوسّع القالب الحالي بأقسام وميزات مخصصة، وأبني الأجزاء المخصصة عندما لا يكفي القالب لما تحتاجه." },
-          { "id": "speed-up-shopify-store", "q": "هل يمكنك تسريع متجر Shopify الخاص بي؟", "a": "نعم. أراجع الصور والتطبيقات وكود القالب والخطوط والسكربتات، وأحسّن الكود وعناوين الصفحات والبيانات المنظمة. أقيس المتجر بأداة PageSpeed قبل العمل وبعده. تختلف النتائج حسب كل متجر." },
-          { "id": "apps-or-custom-code", "q": "هل تستخدم تطبيقات Shopify أم كودًا مخصصًا؟", "a": "الاثنين معًا. مثلًا استخدمت Judge.me لتقييمات العملاء في متجر Arya. أفضّل الكود الخفيف على إضافة تطبيقات قد تبطئ المتجر." },
-          { "id": "angular-web-apps", "q": "هل تبني مشاريع غير متاجر Shopify؟", "a": "نعم. أبني تطبيقات ويب بـ Angular وTypeScript وصفحات هبوط وأدوات داخلية." }
+          {
+            "id": "angular-web-apps",
+            "q": "ما نوع عملك في Angular؟",
+            "a": "أبني تطبيقات ويب بـ Angular، من الأدوات الداخلية إلى الأنظمة الكاملة. من أعمالي نظام إدارة مناقصات بمسارات موافقات، ونظام إدارة أداء بمؤشرات ومخططات، ومولّد BOM بتصدير إلى Excel، وهذا الموقع."
+          },
+          {
+            "id": "angular-projects",
+            "q": "ما مشاريع Angular التي نفذتها؟",
+            "a": "نظام إدارة مناقصات حافلات MCV (Angular 17 فوق ABP Framework و.NET Core)، ونظام إدارة الأداء (PMS) بمخططات ApexCharts، ومولّد BOM لتصنيع الحافلات، وMAS Clinics، وهذا الموقع (Angular 19 بصفحات مُولَّدة مسبقًا). لكل مشروع صفحته ضمن المشاريع."
+          },
+          {
+            "id": "angular-typescript",
+            "q": "هل تستخدم TypeScript مع Angular؟",
+            "a": "نعم. مشاريع Angular التي أبنيها مكتوبة بـ TypeScript ومقسمة إلى مكونات، مع HTML وSCSS."
+          },
+          {
+            "id": "angular-seo-prerendering",
+            "q": "هل تستطيع محركات البحث العثور على صفحات Angular؟",
+            "a": "نعم، عندما تكون الصفحات مُولَّدة مسبقًا. تطبيق Angular الذي يعمل في المتصفح فقط يرسل للزواحف صفحة فارغة، لذلك أولّد كل مسار مسبقًا كملف HTML أثناء البناء، بعنوان ووصف ورابط canonical وبيانات منظمة خاصة به. هذا الموقع مبني بهذه الطريقة."
+          },
+          {
+            "id": "angular-bilingual-rtl",
+            "q": "هل يمكنك بناء موقع Angular ثنائي اللغة بالعربية (RTL)؟",
+            "a": "نعم. لهذا الموقع صفحات إنجليزية ونسخة عربية بتخطيط من اليمين إلى اليسار وروابط hreflang ومبدّل لغة، وكلها مبنية بـ Angular."
+          }
         ]
       }
     ]
   },
-  "held": ["work-with-clients-outside-egypt", "support-after-launch", "how-long-does-a-shopify-project-take"]
+  "held": [
+    "work-with-clients-outside-egypt",
+    "support-after-launch",
+    "how-long-does-a-shopify-project-take"
+  ]
 }

@@ -61,22 +61,34 @@ const llms = `# ${site.name} – Shopify Developer in ${site.location.city}, ${s
 
 > ${site.homeDescription}
 
-${site.name} is a Shopify developer and Senior Frontend Engineer based in ${site.location.city}, ${site.location.country}, with ${site.yearsOfExperience} years of experience. Current role: ${site.currentRole}. Serves clients in ${site.areaServed.join(' and ')}.${langLine}
+${site.name} is a Shopify and Angular developer and Senior Frontend Engineer based in ${site.location.city}, ${site.location.country}, with ${site.yearsOfExperience} years of experience. Current role: ${site.currentRole}. Serves clients in ${site.areaServed.join(' and ')}.${langLine}
 
 ## Services
-- [Services overview](${site.url}/services): the four services and how they work
-${services.map(s => `- [${s.en.nav}](${site.url}/services/${s.slug}): ${s.en.summary}`).join('\n')}
+- [Services overview](${site.url}/services): three Shopify services and three Angular services
+
+Shopify:
+${services.filter(s => s.pillar === 'shopify').map(s => `- [${s.en.nav}](${site.url}/services/${s.slug}): ${s.en.summary}`).join('\n')}
+
+Angular:
+${services.filter(s => s.pillar === 'angular').map(s => `- [${s.en.nav}](${site.url}/services/${s.slug}): ${s.en.summary}`).join('\n')}
 
 ## Skills
 ${site.knowsAbout.join(', ')}
 
 ## Projects
-${projects.map(p => `- [${p.title}](${site.url}/work/${p.slug}): ${p.summary}`).join('\n')}
+Shopify:
+${projects.filter(p => p.category === 'Shopify').map(p => `- [${p.title}](${site.url}/work/${p.slug}): ${p.summary}`).join('\n')}
+
+Angular:
+${projects.filter(p => p.category === 'Angular').map(p => `- [${p.title}](${site.url}/work/${p.slug}): ${p.summary}`).join('\n')}
+
+Other:
+${projects.filter(p => !['Shopify', 'Angular'].includes(p.category)).map(p => `- [${p.title}](${site.url}/work/${p.slug}): ${p.summary}`).join('\n')}
 
 All projects: ${site.url}/portfolio
 
 ## FAQ
-- [Shopify developer FAQ](${site.url}/faq): cost, process, Liquid, speed optimization and more
+- [Shopify and Angular developer FAQ](${site.url}/faq): cost, process, Liquid, speed, Angular and prerendering
 ${site.arabicLive ? `\n## Arabic (العربية)\n- [الصفحة الرئيسية](${site.url}/ar/): مطور Shopify في القاهرة، مصر\n- [الخدمات](${site.url}/ar/services)\n- [الأسئلة الشائعة](${site.url}/ar/faq)\n` : ''}
 ## Contact
 - Email: ${site.email}

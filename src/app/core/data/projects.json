@@ -175,7 +175,7 @@
       "liveUrl": "https://stylebeautystore.com/",
       "image": "assets/images/projects/style-beauty-store.webp",
       "completionDate": "2025-01",
-      "featured": true,
+      "featured": false,
       "legacyIds": [
         "10",
         "style-beauty-store"
@@ -215,7 +215,7 @@
       "liveUrl": "https://www.hechter.com.eg/",
       "image": "assets/images/projects/hechter-store.webp",
       "completionDate": "2025-04",
-      "featured": true,
+      "featured": false,
       "legacyIds": [
         "9",
         "hechter"
@@ -255,7 +255,7 @@
       "liveUrl": "https://elokaby.com/",
       "image": "assets/images/projects/el-okaby-pharmacy.webp",
       "completionDate": "2025-02",
-      "featured": true,
+      "featured": false,
       "legacyIds": [
         "7",
         "el-okaby-pharmacies"
@@ -294,7 +294,7 @@
       "liveUrl": "https://cleosdates.com/",
       "image": "assets/images/projects/cleo-dates-store.webp",
       "completionDate": "2025-05",
-      "featured": true,
+      "featured": false,
       "legacyIds": [
         "15",
         "cleo-dates"
@@ -335,7 +335,7 @@
       "liveUrl": "https://zentiaegypt.com/",
       "image": "assets/images/projects/zentia-store.webp",
       "completionDate": "2025-03",
-      "featured": true,
+      "featured": false,
       "legacyIds": [
         "8",
         "zentia"
@@ -416,7 +416,7 @@
       "liveUrl": "https://glittershop.net/",
       "image": "assets/images/projects/glitter-store.webp",
       "completionDate": "2025-03",
-      "featured": true,
+      "featured": false,
       "legacyIds": [
         "12",
         "glitter"
@@ -448,7 +448,7 @@
       "liveUrl": "https://ozadpharma.com/",
       "image": "assets/images/projects/ozad-pharma-store.webp",
       "completionDate": "2025-04",
-      "featured": true,
+      "featured": false,
       "legacyIds": [
         "13",
         "elatusian"
@@ -498,6 +498,200 @@
       }
     },
     {
+      "slug": "k-ayad-site",
+      "title": "k-ayad.com (this site)",
+      "client": "Kerllos Ayad",
+      "category": "Angular",
+      "summary": "This portfolio site: an Angular 19 application with prerendered pages, structured data and English and Arabic (RTL) versions.",
+      "problem": "A portfolio built as a client-side Angular app sends crawlers an empty shell, so its projects, services and answers cannot be found by search engines or AI assistants.",
+      "built": [
+        "Angular 19 and TypeScript components, with every page prerendered to its own HTML at build time",
+        "A unique title, description, canonical URL and heading outline on every page, set during prerendering",
+        "JSON-LD structured data: Person, ProfessionalService, Service, FAQPage, BreadcrumbList and CollectionPage",
+        "English pages with an Arabic (RTL) version prepared under /ar, with hreflang links and a language switcher",
+        "Responsive WebP images with NgOptimizedImage, self-hosted fonts and a real 404 page",
+        "Services, FAQ and project pages generated from data files"
+      ],
+      "technologies": [
+        "Angular 19",
+        "TypeScript",
+        "Angular SSR (prerendering)",
+        "SCSS",
+        "Bootstrap",
+        "JSON-LD"
+      ],
+      "liveUrl": "https://k-ayad.com/",
+      "image": "assets/images/projects/k-ayad-site.webp",
+      "images": [
+        {
+          "src": "assets/images/projects/k-ayad-site.webp",
+          "alt": "Home page of k-ayad.com with the heading Shopify & Angular Developer in Cairo, Egypt",
+          "altAr": "الصفحة الرئيسية لموقع k-ayad.com بعنوان مطور Shopify وAngular في القاهرة، مصر"
+        }
+      ],
+      "featured": true,
+      "legacyIds": [],
+      "ar": {
+        "summary": "موقع الأعمال هذا: تطبيق Angular 19 بصفحات مُولَّدة مسبقًا (prerendered) وبيانات منظمة ونسختين إنجليزية وعربية (RTL).",
+        "problem": "موقع أعمال مبني كتطبيق Angular يعمل في المتصفح فقط يرسل لمحركات البحث صفحة فارغة، فلا تجد مشاريعه وخدماته وإجاباته محركات البحث ولا مساعدو الذكاء الاصطناعي.",
+        "built": [
+          "مكونات Angular وTypeScript مع توليد كل صفحة كملف HTML خاص بها أثناء البناء",
+          "عنوان ووصف ورابط canonical وبنية عناوين فريدة لكل صفحة، تُضبط أثناء التوليد المسبق",
+          "بيانات منظمة بصيغة JSON-LD: Person وProfessionalService وService وFAQPage وBreadcrumbList وCollectionPage",
+          "صفحات إنجليزية ونسخة عربية (RTL) مجهزة تحت /ar مع روابط hreflang ومبدّل لغة",
+          "صور WebP متجاوبة بـ NgOptimizedImage وخطوط مستضافة ذاتيًا وصفحة 404 حقيقية",
+          "صفحات الخدمات والأسئلة والمشاريع تُولَّد من ملفات بيانات"
+        ]
+      }
+    },
+    {
+      "slug": "mcv-bus-tender",
+      "title": "MCV Bus Tender Management System",
+      "client": "MCV",
+      "category": "Angular",
+      "summary": "Tender management system for MCV, built in Angular and integrated with Volvo workflows.",
+      "problem": "Bus tenders had to move from sales engineers through costing and engineering reviews, with every approval step tracked.",
+      "built": [
+        "An Angular 17 front end on the ABP Framework and .NET Core, using REST APIs",
+        "Request submission for sales engineers",
+        "Review of each request by the costing and engineering departments",
+        "Full approval lifecycle tracking",
+        "Integration with Volvo workflows"
+      ],
+      "technologies": [
+        "Angular 17",
+        "ABP Framework",
+        ".NET Core",
+        "Bootstrap",
+        "REST APIs"
+      ],
+      "image": "assets/images/projects/mcv-bus-tender.webp",
+      "images": [
+        {
+          "src": "assets/images/projects/mcv-bus-tender.webp",
+          "alt": "Requests screen of the MCV bus tender system with summary cards and a table of requests by status",
+          "altAr": "شاشة الطلبات في نظام مناقصات حافلات MCV مع بطاقات ملخص وجدول طلبات حسب الحالة"
+        }
+      ],
+      "completionDate": "2025-01",
+      "featured": true,
+      "legacyIds": [
+        "1",
+        "mcv-tender"
+      ],
+      "todo": [
+        "GitHub repo link, if any (internal system, no live link)"
+      ],
+      "ar": {
+        "summary": "نظام إدارة المناقصات لشركة MCV، مبني بـ Angular ومتكامل مع مسارات عمل Volvo.",
+        "problem": "كان على مناقصات الحافلات أن تنتقل من مهندسي المبيعات إلى مراجعات التكلفة والهندسة مع تتبع كل خطوة موافقة.",
+        "built": [
+          "واجهة أمامية بـ Angular 17 فوق ABP Framework و.NET Core عبر REST APIs",
+          "تقديم الطلبات من مهندسي المبيعات",
+          "مراجعة كل طلب من قسمي التكلفة والهندسة",
+          "تتبع دورة الموافقات كاملة",
+          "تكامل مع مسارات عمل Volvo"
+        ]
+      }
+    },
+    {
+      "slug": "pms-performance-management",
+      "title": "Performance Management System (PMS)",
+      "client": "Enterprise internal system",
+      "category": "Angular",
+      "summary": "Employee performance evaluation system with KPI tracking, an objectives hierarchy and ApexCharts visualizations.",
+      "problem": "Evaluating employee performance needs KPIs, an objectives hierarchy and a tracked request lifecycle in one system.",
+      "built": [
+        "KPI tracking",
+        "An objectives hierarchy",
+        "Semi-donut ApexCharts visualizations",
+        "Request lifecycle management",
+        "Detailed change logs"
+      ],
+      "technologies": [
+        "Angular",
+        "ABP Suite",
+        "ApexCharts",
+        "TypeScript",
+        "Bootstrap"
+      ],
+      "image": "assets/images/projects/pms-performance-management.webp",
+      "images": [
+        {
+          "src": "assets/images/projects/pms-performance-management.webp",
+          "alt": "Objectives screen of the performance management system with semi-donut charts for appraiser and appraisee scores",
+          "altAr": "شاشة الأهداف في نظام إدارة الأداء مع مخططات نصف دائرية لتقييمات المقيِّم والمقيَّم"
+        }
+      ],
+      "completionDate": "2025-07",
+      "featured": true,
+      "legacyIds": [
+        "2",
+        "pms"
+      ],
+      "todo": [
+        "GitHub repo link, if any (internal system, no live link)"
+      ],
+      "ar": {
+        "summary": "نظام تقييم أداء الموظفين مع تتبع مؤشرات الأداء وتسلسل الأهداف ومخططات ApexCharts.",
+        "problem": "يحتاج تقييم أداء الموظفين إلى مؤشرات أداء وتسلسل أهداف ودورة طلبات متتبعة في نظام واحد.",
+        "built": [
+          "تتبع مؤشرات الأداء (KPIs)",
+          "تسلسل الأهداف",
+          "مخططات ApexCharts نصف دائرية",
+          "إدارة دورة حياة الطلبات",
+          "سجلات تغيير مفصلة"
+        ]
+      }
+    },
+    {
+      "slug": "bom-generator",
+      "title": "BOM Generator for Bus Manufacturing",
+      "client": "Manufacturing department",
+      "category": "Angular",
+      "summary": "Angular application that turns uploaded bus requirement sheets into a structured Bill of Materials, with Excel export.",
+      "problem": "Bus requirement sheets had to be turned into a structured Bill of Materials (BOM) without doing it by hand.",
+      "built": [
+        "Upload and processing of bus requirement sheets",
+        "Automatic generation of a structured Bill of Materials",
+        "Excel export",
+        "Macro sheet generation"
+      ],
+      "technologies": [
+        "Angular",
+        "TypeScript",
+        "Excel Export",
+        "Data Processing"
+      ],
+      "image": "assets/images/projects/bom-generator.webp",
+      "images": [
+        {
+          "src": "assets/images/projects/bom-generator.webp",
+          "alt": "Standard group tree screen of the BOM generator showing nested modules and part tables",
+          "altAr": "شاشة شجرة المجموعات القياسية في مولّد BOM مع وحدات متداخلة وجداول قطع"
+        }
+      ],
+      "completionDate": "2024-12",
+      "featured": false,
+      "legacyIds": [
+        "3",
+        "bom-generator"
+      ],
+      "todo": [
+        "GitHub repo link, if any (internal system, no live link)"
+      ],
+      "ar": {
+        "summary": "تطبيق Angular يحوّل أوراق متطلبات الحافلات المرفوعة إلى قائمة مواد (BOM) منظمة مع تصدير إلى Excel.",
+        "problem": "كان لا بد من تحويل أوراق متطلبات الحافلات إلى قائمة مواد (BOM) منظمة دون عمل يدوي.",
+        "built": [
+          "رفع أوراق متطلبات الحافلات ومعالجتها",
+          "توليد قائمة مواد منظمة تلقائيًا",
+          "تصدير إلى Excel",
+          "توليد أوراق الماكرو"
+        ]
+      }
+    },
+    {
       "slug": "mas-clinics",
       "title": "MAS Clinics",
       "client": "MAS Clinics",
@@ -515,10 +709,13 @@
       "noScreenshot": true,
       "todo": [
         "problem, what you built, completion date and full stack for MAS Clinics",
-        "screenshots (a placeholder profile image is used for now, and no screenshot section is shown)",
-        "confirm the live URL is https://mas-clinic.health/"
+        "screenshots (no screenshot section is shown until you send one)",
+        "GitHub repo link, if any"
       ],
-      "hidden": true
+      "ar": {
+        "summary": "مشروع ويب بـ Angular لعيادات MAS Clinics.",
+        "built": []
+      }
     },
     {
       "slug": "btklmseny",
@@ -557,13 +754,7 @@
     }
   ],
   "removedLegacyIds": [
-    "1",
-    "2",
-    "3",
     "14",
-    "mcv-tender",
-    "pms",
-    "bom-generator",
     "naseej"
   ]
 }

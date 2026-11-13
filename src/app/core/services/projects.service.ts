@@ -25,6 +25,11 @@ export class ProjectsService {
     return this.projects.find(project => project.legacyIds.includes(id))?.slug;
   }
 
+  /** The featured projects of one pillar that have a real screenshot (three per pillar) */
+  getFeatured(category: string): Project[] {
+    return this.projects.filter(project => project.featured && project.category === category && !project.noScreenshot);
+  }
+
   getCategories(): string[] {
     return ['All Projects', ...Array.from(new Set(this.projects.map(project => project.category)))];
   }

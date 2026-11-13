@@ -5,6 +5,13 @@
       <h2 class="section-title text-center">{{ ui().projectsSection.title }}</h2>
     </div>
 
+    <!-- Filter tabs: All / Shopify / Angular, three featured projects per pillar -->
+    <div class="project-tabs" role="tablist" [attr.aria-label]="ui().projectsSection.tabsLabel">
+      <button type="button" role="tab" class="project-tab" [class.active]="tab === 'all'" [attr.aria-selected]="tab === 'all'" (click)="selectTab('all')">{{ ui().projectsSection.tabs.all }}</button>
+      <button type="button" role="tab" class="project-tab" [class.active]="tab === 'Shopify'" [attr.aria-selected]="tab === 'Shopify'" (click)="selectTab('Shopify')">{{ ui().projectsSection.tabs.shopify }}</button>
+      <button type="button" role="tab" class="project-tab" [class.active]="tab === 'Angular'" [attr.aria-selected]="tab === 'Angular'" (click)="selectTab('Angular')">{{ ui().projectsSection.tabs.angular }}</button>
+    </div>
+
     <!-- Carousel Container -->
     <div 
       *ngIf="projects.length > 0"
@@ -87,15 +94,8 @@
       </div>
     </div>
 
-    <!-- Plain links to every project page -->
-    <nav class="all-projects-nav" [attr.aria-label]="ui().projectsSection.allTitle">
-      <h3 class="all-projects-title">{{ ui().projectsSection.allTitle }}</h3>
-      <p class="all-projects-intro">{{ ui().projectsSection.intro }}</p>
-      <ul class="all-projects-list">
-        <li *ngFor="let project of allProjects">
-          <a [routerLink]="langService.link('/work/' + project.slug)">{{ project.title }}</a>
-        </li>
-      </ul>
-    </nav>
+    <p class="all-projects-nav">
+      <a class="text-link" [routerLink]="langService.link('/portfolio')">{{ ui().portfolio.all }}</a>
+    </p>
   </div>
 </section>

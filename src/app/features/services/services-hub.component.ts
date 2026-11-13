@@ -22,14 +22,31 @@ import { breadcrumbs, servicesCollectionPage } from '@core/seo/structured-data';
       <h1 class="page-title">{{ ui().services.hubH1 }}</h1>
       <p class="section-lead">{{ ui().services.hubIntro }}</p>
 
-      <div class="card-grid">
-        @for (service of services; track service.slug) {
-          <a class="content-card" [routerLink]="langService.link('/services/' + service.slug)">
-            <h2>{{ service[langService.lang()].nav }}</h2>
-            <p>{{ service[langService.lang()].summary }}</p>
-            <span class="card-link">{{ ui().servicesSection.more }}</span>
-          </a>
-        }
+      <div class="pillar-grid">
+        <div class="pillar">
+          <h2>{{ ui().services.shopifyTitle }}</h2>
+          <div class="card-grid single-column">
+            @for (service of shopify; track service.slug) {
+              <a class="content-card" [routerLink]="langService.link('/services/' + service.slug)">
+                <h3>{{ service[langService.lang()].nav }}</h3>
+                <p>{{ service[langService.lang()].summary }}</p>
+                <span class="card-link">{{ ui().whatIDo.more }}</span>
+              </a>
+            }
+          </div>
+        </div>
+        <div class="pillar">
+          <h2>{{ ui().services.angularTitle }}</h2>
+          <div class="card-grid single-column">
+            @for (service of angular; track service.slug) {
+              <a class="content-card" [routerLink]="langService.link('/services/' + service.slug)">
+                <h3>{{ service[langService.lang()].nav }}</h3>
+                <p>{{ service[langService.lang()].summary }}</p>
+                <span class="card-link">{{ ui().whatIDo.more }}</span>
+              </a>
+            }
+          </div>
+        </div>
       </div>
 
       <section class="content-section">
@@ -58,6 +75,8 @@ export class ServicesHubComponent implements OnInit {
   readonly langService = inject(LangService);
   readonly ui = computed(() => UI[this.langService.lang()]);
   readonly services = inject(ContentService).getServices();
+  readonly shopify = this.services.filter(service => service.pillar === 'shopify');
+  readonly angular = this.services.filter(service => service.pillar === 'angular');
 
   ngOnInit(): void {
     const lang = this.langService.lang();

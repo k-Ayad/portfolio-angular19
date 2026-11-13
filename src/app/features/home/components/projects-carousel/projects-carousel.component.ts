@@ -24,17 +24,21 @@ export class ProjectsCarouselComponent implements OnInit, OnDestroy {
   // number of projects to show in carousel (for performance)
   limit: number = 10;
 
-  // Projects with a real screenshot show in the carousel; every project is linked in `allProjects`
-  allProjects: Project[] = [];
+  // The six featured projects (three Shopify, three Angular) with a real screenshot; the tabs filter them
+  featured: Project[] = [];
   projects: Project[] = [];
+  tab: 'all' | 'Shopify' | 'Angular' = 'all';
   currentIndex: number = 0;
   private autoPlayInterval: any;
   private autoPlayDelay: number = 4000; // 4 seconds
   isHovered: boolean = false;
 
   ngOnInit(): void {
-    this.allProjects = this.projectsService.getAll();
-    this.projects = this.allProjects.filter(project => !project.noScreenshot).slice(0, this.limit);
+    const shopify = this.projectsService.getFeatured('Shopify');
+    const angular = this.projectsService.getFeatured('Angular');
+    // Interleaved so "All" alternates between the two pillars
+    this.featured = shopify.flatMap((project, i) => (angular[i] ? [project, angular[i]] : [project]));
+    this.projects = this.featured;
 
     // Auto-play only runs in the browser; a timer would keep the prerender from finishing
     if (this.isBrowser && this.projects.length > 0) {
@@ -141,5 +145,14 @@ export class ProjectsCarouselComponent implements OnInit, OnDestroy {
 
   screenshotAlt(project: Project): string {
     return `${this.ui().project.screenshotOf} ${project.title}`;
+  }
+
+  /**
+   * Switch the filter tab; the carousel restarts on the first project of that tab
+   */
+  selectTab(tab: 'all' | 'Shopify' | 'Angular'): void {
+    this.tab = tab;
+    this.projects = tab === 'all' ? this.featured : this.featured.filter(project => project.category === tab);
+    this.currentIndex = 0;
   }
 }

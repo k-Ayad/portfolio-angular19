@@ -1,20 +1,27 @@
 # Kerllos Ayad – Shopify Developer in Cairo, Egypt
 
-> Shopify developer in Cairo, Egypt (4+ years). Custom themes, Liquid, speed optimization and store setup for brands in Egypt and the Middle East.
+> Shopify and Angular developer in Cairo, Egypt (4+ years). Conversion-focused Shopify stores and scalable Angular front ends for Egypt and the Middle East.
 
-Kerllos Ayad is a Shopify developer and Senior Frontend Engineer based in Cairo, Egypt, with 4+ years of experience. Current role: Senior Frontend Engineer at MCV (Manufacturing Commercial Vehicles). Serves clients in Egypt and Middle East.
+Kerllos Ayad is a Shopify and Angular developer and Senior Frontend Engineer based in Cairo, Egypt, with 4+ years of experience. Current role: Senior Frontend Engineer at MCV (Manufacturing Commercial Vehicles). Serves clients in Egypt and Middle East.
 
 ## Services
-- [Services overview](https://k-ayad.com/services): the four services and how they work
+- [Services overview](https://k-ayad.com/services): three Shopify services and three Angular services
+
+Shopify:
 - [Shopify store setup and design](https://k-ayad.com/services/shopify-store-setup): A new store set up properly: theme, collections, payments, shipping and a clean brand-matched design.
 - [Custom Shopify themes and features](https://k-ayad.com/services/shopify-theme-customization): Custom sections, product page logic, variant swatches and metafield-driven content, written in Liquid.
 - [Shopify speed and SEO optimization](https://k-ayad.com/services/shopify-speed-seo-optimization): Faster pages, clean markup and structured data, so the store loads quickly and can be found.
-- [Web apps and landing pages](https://k-ayad.com/services/web-apps-landing-pages): Angular and JavaScript front ends, campaign landing pages and internal tools.
+
+Angular:
+- [Angular web app development](https://k-ayad.com/services/angular-web-app-development): Angular and TypeScript web applications, built from reusable components and connected to your APIs.
+- [Angular front-end engineering](https://k-ayad.com/services/angular-frontend-engineering): Senior engineering for Angular teams: new features, TypeScript components and data-heavy screens.
+- [Angular SEO and prerendering](https://k-ayad.com/services/angular-seo-prerendering): Prerendered Angular pages with their own titles, canonical URLs and structured data, so crawlers can read them.
 
 ## Skills
 Shopify, Liquid, Angular, TypeScript, JavaScript, UI/UX
 
 ## Projects
+Shopify:
 - [Arya](https://k-ayad.com/work/arya): A premium Shopify store for Arya, a gold jewelry brand.
 - [OR](https://k-ayad.com/work/or-brand): Shopify store for OR, a well-known Egyptian fashion brand focused on trendy, everyday clothing.
 - [Sidewalks (Converse)](https://k-ayad.com/work/sidewalks): Shopify store for Sidewalks, a Converse distributor.
@@ -27,12 +34,21 @@ Shopify, Liquid, Angular, TypeScript, JavaScript, UI/UX
 - [Glitter](https://k-ayad.com/work/glitter): Shopify store for Glitter, a beauty and accessories brand.
 - [OZAD Pharma](https://k-ayad.com/work/ozad-pharma): Shopify store for OZAD Pharma.
 - [Tactical Schnauzer](https://k-ayad.com/work/tactical-schnauzer): Shopify store with a scroll animation that plays image frames as the user scrolls.
+
+Angular:
+- [k-ayad.com (this site)](https://k-ayad.com/work/k-ayad-site): This portfolio site: an Angular 19 application with prerendered pages, structured data and English and Arabic (RTL) versions.
+- [MCV Bus Tender Management System](https://k-ayad.com/work/mcv-bus-tender): Tender management system for MCV, built in Angular and integrated with Volvo workflows.
+- [Performance Management System (PMS)](https://k-ayad.com/work/pms-performance-management): Employee performance evaluation system with KPI tracking, an objectives hierarchy and ApexCharts visualizations.
+- [BOM Generator for Bus Manufacturing](https://k-ayad.com/work/bom-generator): Angular application that turns uploaded bus requirement sheets into a structured Bill of Materials, with Excel export.
+- [MAS Clinics](https://k-ayad.com/work/mas-clinics): Angular web project for MAS Clinics.
+
+Other:
 - [btklmseny (بتكلم صيني)](https://k-ayad.com/work/btklmseny): Website for btklmseny, a Chinese-learning app, connected to the mobile app on Google Cloud for subscriptions.
 
 All projects: https://k-ayad.com/portfolio
 
 ## FAQ
-- [Shopify developer FAQ](https://k-ayad.com/faq): cost, process, Liquid, speed optimization and more
+- [Shopify and Angular developer FAQ](https://k-ayad.com/faq): cost, process, Liquid, speed, Angular and prerendering
 
 ## Contact
 - Email: kerllos.ayad@gmail.com

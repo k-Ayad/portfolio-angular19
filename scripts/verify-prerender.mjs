@@ -15,7 +15,7 @@ const routes = [];
 for (const lang of langs) {
   const px = prefix(lang);
   const home = lang === 'ar' ? site.ar.homeTitle : site.homeTitle;
-  routes.push({ lang, path: `${px}/`, file: lang === 'ar' ? 'ar/index.html' : 'index.html', kind: 'home', ld: ['Person', 'WebPage', 'ProfessionalService'], minWords: 0, must: lang === 'en' ? ['Shopify developer', 'Cairo, Egypt', '4+ years', 'Hechter Paris', 'Shopify development services in Egypt', 'How I work', 'Shopify developer FAQ'] : ['القاهرة', 'Hechter Paris', 'طريقة العمل'], title: home });
+  routes.push({ lang, path: `${px}/`, file: lang === 'ar' ? 'ar/index.html' : 'index.html', kind: 'home', ld: ['Person', 'WebPage', 'ProfessionalService'], minWords: 0, must: lang === 'en' ? ['Shopify and Angular developer', 'Cairo, Egypt', '4+ years', 'Half of my work is Shopify', 'What I do', 'How I work', 'Hire a Shopify developer', 'Hire an Angular developer'] : ['القاهرة', 'نصف عملي', 'ماذا أقدم', 'طريقة العمل', 'وظّف مطور Shopify', 'وظّف مطور Angular'], title: home });
   routes.push({ lang, path: `${px}/portfolio`, file: `${px.slice(1)}/portfolio/index.html`.replace(/^\//, ''), kind: 'portfolio', ld: ['CollectionPage', 'ItemList', 'BreadcrumbList'], must: ['Arya'] });
   routes.push({ lang, path: `${px}/services`, file: `${px.slice(1)}/services/index.html`.replace(/^\//, ''), kind: 'services', ld: ['CollectionPage', 'ItemList', 'BreadcrumbList'], must: [] });
   for (const s of services) routes.push({ lang, path: `${px}/services/${s.slug}`, file: `${px.slice(1)}/services/${s.slug}/index.html`.replace(/^\//, ''), kind: 'service', ld: ['Service', 'BreadcrumbList'], minWords: 400, title: s[lang].title, must: [s[lang].h1] });
@@ -83,6 +83,35 @@ for (const route of routes) {
 
   console.log(`${route.path.padEnd(44)} ${route.lang} words=${String(words).padStart(4)} h1=${h1s} jsonld=[${types.join(',')}]`);
 }
+
+// ---- Balance rule: every list has the same count for both pillars
+const balance = (name, shopify, angular) => {
+  if (shopify !== angular) { failures++; console.log(`  FAIL balance: ${name} has ${shopify} Shopify vs ${angular} Angular`); }
+  else console.log(`balance ok: ${name} ${shopify}/${angular}`);
+};
+const shopifyServices = services.filter(x => x.pillar === 'shopify');
+const angularServices = services.filter(x => x.pillar === 'angular');
+balance('services', shopifyServices.length, angularServices.length);
+balance('service pages: included items', shopifyServices.reduce((n, x) => n + x.en.included.length, 0), angularServices.reduce((n, x) => n + x.en.included.length, 0));
+balance('service pages: related projects', shopifyServices.reduce((n, x) => n + x.projects.length, 0), angularServices.reduce((n, x) => n + x.projects.length, 0));
+const featured = c => projects.filter(p => p.featured && p.category === c && !p.noScreenshot).length;
+balance('featured projects', featured('Shopify'), featured('Angular'));
+const faqGroups = faq.en.groups;
+balance('FAQ questions', faqGroups[1].items.length, faqGroups[2].items.length);
+if (faqGroups[0].items.length !== 4) { failures++; console.log(`  FAIL FAQ hiring group has ${faqGroups[0].items.length} questions, expected 4`); }
+if (projects.filter(p => p.category === 'Angular').length < 3) { failures++; console.log('  FAIL fewer than 3 Angular projects'); }
+for (const lang of langs) if (JSON.stringify(faq[lang].groups.map(g => g.items.length)) !== JSON.stringify(faqGroups.map(g => g.items.length))) { failures++; console.log(`  FAIL FAQ ${lang} counts differ from English`); }
+
+// Home page lists, counted in the prerendered HTML
+const homeHtml = await readFile(join(DIST, 'index.html'), 'utf8');
+const section = id => { const i = homeHtml.indexOf(`id="${id}"`); const j = homeHtml.indexOf('<section', i + 1); return homeHtml.slice(i, j === -1 ? undefined : j); };
+const pillars = id => section(id).split('class="pillar"').slice(1);
+for (const [id, tag] of [['services', '<li'], ['skills', '<li'], ['faq-teaser', '<details']]) {
+  const [a, b] = pillars(id).map(h => (h.match(new RegExp(tag, 'g')) || []).length);
+  balance(`home ${id}`, a, b);
+}
+if ((section('hire').match(/cta-band/g) || []).length !== 2) { failures++; console.log('  FAIL home hire section needs two call-to-action blocks'); }
+for (const href of ['/services/web-apps-landing-pages']) if (homeHtml.includes(href)) { failures++; console.log(`  FAIL retired link ${href} still on the home page`); }
 
 console.log(failures ? `\n${failures} problem(s)` : `\nAll ${routes.length} routes OK (Arabic ${site.arabicLive ? 'on' : 'off'})`);
 process.exit(failures ? 1 : 0);

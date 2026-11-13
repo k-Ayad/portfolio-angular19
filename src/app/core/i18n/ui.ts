@@ -4,15 +4,14 @@ export interface Ui {
   nav: { home: string; services: string; projects: string; faq: string; contact: string; skip: string; menu: string };
   switchLabel: string; // label of the link to the OTHER language, written in that language
   switchAria: string;
-  hero: { heading: string[]; intro: string; seeProjects: string; hire: string; resume: string };
+  hero: { heading: string[]; intro: string; seeShopify: string; seeAngular: string; hire: string };
   about: { title: string; text: string; imageAlt: string };
-  servicesSection: { title: string; intro: string; more: string };
-  projectsSection: { intro: string; title: string; showDetails: string; all: string; allTitle: string };
-  clients: { title: string; text: string };
+  whatIDo: { title: string; intro: string; shopifyTitle: string; shopifyText: string; angularTitle: string; angularText: string; more: string };
+  projectsSection: { intro: string; title: string; showDetails: string; tabs: { all: string; shopify: string; angular: string }; tabsLabel: string };
   process: { intro: string; title: string; steps: { title: string; text: string }[] };
-  skills: { title: string; text: string };
-  faqTeaser: { title: string; seeAll: string };
-  hireCta: { title: string; text: string; email: string; linkedin: string };
+  skills: { lead: string; title: string; shopifyTitle: string; shopify: string[]; angularTitle: string; angular: string[] };
+  faqTeaser: { lead: string; title: string; shopifyTitle: string; angularTitle: string; seeAll: string };
+  hireCta: { shopifyTitle: string; shopifyText: string; shopifyEmail: string; shopifySubject: string; angularTitle: string; angularText: string; angularEmail: string; angularSubject: string; linkedin: string; resume: string };
   contact: {
     title: string; description: string; fullName: string; subject: string; email: string; mobile: string; message: string;
     placeholders: { fullName: string; subject: string; email: string; mobile: string; message: string };
@@ -22,7 +21,7 @@ export interface Ui {
   footer: { about: string; projects: string; explore: string; contact: string; rights: string; services: string; faq: string };
   portfolio: { title: string; home: string; all: string; viewDetails: string; viewLive: string; techStack: string; none: string; noneHint: string; metaTitle: string; metaDescription: string; liveAria: string };
   project: { problem: string; built: string; stack: string; client: string; completed: string; category: string; visit: string; back: string; related: string; screenshots: string; screenshotOf: string; breadcrumbProjects: string; titleSuffix: string };
-  services: { hubTitle: string; hubDescription: string; hubH1: string; hubIntro: string; breadcrumb: string; related: string; faqTitle: string; seeAllFaq: string; ctaTitle: string; ctaText: string; whatYouGet: string };
+  services: { shopifyTitle: string; angularTitle: string; hubTitle: string; hubDescription: string; hubH1: string; hubIntro: string; breadcrumb: string; related: string; faqTitle: string; seeAllFaq: string; ctaTitle: string; ctaText: string; whatYouGet: string };
   faq: { breadcrumb: string; ctaTitle: string; ctaText: string; moreTitle: string };
   notFound: { title: string; text: string; home: string; projects: string; metaTitle: string; metaDescription: string };
   home: { breadcrumb: string };
@@ -34,18 +33,27 @@ const en: Ui = {
   switchLabel: 'العربية', // shown on English pages: the other language's name, written in that language
   switchAria: 'Read this page in Arabic',
   hero: {
-    heading: ['Howdy! Meet Your Trusted', 'Shopify Developer', '& Frontend Engineer,', 'Crafting Fast Online Stores'],
-    intro: "I build fast, conversion-focused Shopify stores for brands in Egypt and the Middle East: custom themes, Liquid features, speed and SEO optimization, and Angular web apps.",
-    seeProjects: 'See my Shopify projects', hire: 'Hire me', resume: 'Download resume'
+    heading: ['Howdy! Meet Your Trusted', 'Shopify & Angular Developer,', 'Crafting Fast Stores', '& Scalable Front Ends'],
+    intro: 'I build conversion-focused Shopify stores and scalable Angular front ends for brands and teams in Egypt and the Middle East.',
+    seeShopify: 'See Shopify projects', seeAngular: 'See Angular projects', hire: 'Hire me'
   },
   about: {
-    title: 'About Kerllos Ayad, Shopify developer and Senior Frontend Engineer',
+    title: 'About Kerllos Ayad, Shopify and Angular developer in Cairo',
     imageAlt: 'Developer workstation with two monitors showing code, a keyboard and a pen holder',
-    text: "I'm Kerllos Ayad, a Shopify developer and Senior Frontend Engineer (Angular) based in Cairo, Egypt, with 4+ years of experience. I build Shopify stores for brands in Egypt and the Middle East, including OR, Arya, Hechter Paris, Sidewalks, El Okaby Pharmacies and Cleo's Dates. I work with the brand's team from the first sketch to launch, writing clean Liquid, JavaScript and SCSS that is easy for your team to maintain. My services: Shopify store setup & design, custom Shopify themes & features, speed & SEO optimization, and web apps & landing pages."
+    text: "I'm Kerllos Ayad, a Shopify and Angular developer and Senior Frontend Engineer based in Cairo, Egypt, with 4+ years of experience. Half of my work is Shopify: I build stores for brands in Egypt and the Middle East, including OR, Arya, Hechter Paris, Sidewalks, El Okaby Pharmacies and Cleo's Dates. The other half is Angular: TypeScript components and prerendered pages, in projects such as the MCV bus tender system and this site. I work with your team from the first sketch to launch, writing clean Liquid, TypeScript and SCSS that is easy to maintain."
   },
-  servicesSection: { title: 'Shopify development services in Egypt', intro: 'I offer four services to brands in Egypt and the Middle East. Each one has its own page with what is included and how pricing works.', more: 'Read more' },
-  projectsSection: { intro: 'Each project has its own page with what was built, the stack and a link to the live store.', title: 'Selected Shopify projects', showDetails: 'Show Details', all: 'All projects', allTitle: 'All Shopify & web projects' },
-  clients: { title: 'Trusted by brands in Egypt and the Middle East', text: 'Stores and web projects built for these brands:' },
+  whatIDo: {
+    title: 'What I do',
+    intro: 'Two halves of one practice: Shopify stores and Angular front ends. Each service has its own page with what is included and how pricing works.',
+    shopifyTitle: 'Shopify development', shopifyText: 'Stores for brands in Egypt and the Middle East: setup and design, custom themes and features, and speed and SEO.',
+    angularTitle: 'Angular development', angularText: 'Angular and TypeScript applications and front ends: web apps, front-end engineering, and prerendering for search.',
+    more: 'Read more'
+  },
+  projectsSection: {
+    intro: 'Each project has its own page with what was built, the stack and, where there is one, a link to the live site.',
+    title: 'Selected projects', showDetails: 'Show Details',
+    tabs: { all: 'All', shopify: 'Shopify', angular: 'Angular' }, tabsLabel: 'Filter projects'
+  },
   process: {
     intro: 'Every project follows the same four steps, so you always know what comes next.',
     title: 'How I work',
@@ -56,9 +64,18 @@ const en: Ui = {
       { title: 'Test and launch', text: 'Mobile, speed, checkout and SEO checks before going live.' }
     ]
   },
-  skills: { title: 'Skills and tools', text: 'Shopify, Liquid, Shopify Metafields, JavaScript, TypeScript, Angular, HTML5, SCSS, Bootstrap, JSON, Judge.me.' },
-  faqTeaser: { title: 'Shopify developer FAQ', seeAll: 'See all questions' },
-  hireCta: { title: 'Hire a Shopify developer in Cairo', text: 'Tell me about your store and what you want to change. I reply with a plan and an estimate.', email: 'Email me', linkedin: 'LinkedIn' },
+  skills: {
+    lead: 'The tools I use every day, one group for each half of my work.',
+    title: 'Skills and tools',
+    shopifyTitle: 'Shopify', shopify: ['Shopify', 'Liquid', 'Shopify Metafields', 'Judge.me', 'JavaScript'],
+    angularTitle: 'Angular', angular: ['Angular', 'TypeScript', 'HTML5', 'SCSS', 'Bootstrap']
+  },
+  faqTeaser: { lead: 'Short answers about cost, process, Liquid, Angular and prerendering. The full list is on the FAQ page.', title: 'Shopify and Angular developer FAQ', shopifyTitle: 'Shopify', angularTitle: 'Angular', seeAll: 'See all questions' },
+  hireCta: {
+    shopifyTitle: 'Hire a Shopify developer', shopifyText: 'Tell me about your store and what you want to change. I reply with a plan and an estimate.', shopifyEmail: 'Email me about a Shopify project', shopifySubject: 'Shopify project',
+    angularTitle: 'Hire an Angular developer', angularText: 'Tell me about your application and your team. I reply with a plan and an estimate.', angularEmail: 'Email me about an Angular project', angularSubject: 'Angular project',
+    linkedin: 'LinkedIn', resume: 'Download resume'
+  },
   contact: {
     title: 'Contact me',
     description: "I'm always excited to work on new projects & collaborate with amazing people. Whether you need a custom Shopify theme, an Angular application, or have any questions about web development, feel free to reach out!",
@@ -72,7 +89,7 @@ const en: Ui = {
   footer: { about: 'About Me', projects: 'All Projects', explore: 'Explore My Projects', contact: 'Contact Me', rights: 'all rights reserved.', services: 'Services', faq: 'FAQ' },
   portfolio: { title: 'All Projects', home: 'Home', all: 'All Projects', viewDetails: 'View Details →', viewLive: 'View Live', techStack: 'Tech Stack:', none: 'No projects found', noneHint: 'Try selecting a different category', metaTitle: 'Shopify & Angular Projects | Kerllos Ayad – Cairo, Egypt', metaDescription: 'Shopify stores, Angular applications and Node.js projects built by Kerllos Ayad, Shopify developer and Senior Frontend Engineer in Cairo, Egypt.', liveAria: 'Visit the live' },
   project: { problem: 'The problem', built: 'What I built', stack: 'Stack', client: 'Client', completed: 'Completed', category: 'Category', visit: 'Visit the live store', back: 'Back to Projects', related: 'Related Projects', screenshots: 'Screenshots', screenshotOf: 'Screenshot of the', breadcrumbProjects: 'Projects', titleSuffix: 'project by Kerllos Ayad, Cairo' },
-  services: { hubTitle: 'Shopify Development Services in Egypt | Kerllos Ayad', hubDescription: 'Shopify store setup, custom themes, speed and SEO optimization, and Angular web apps by a Shopify developer in Cairo, Egypt.', hubH1: 'Shopify Development Services in Egypt', hubIntro: 'I am a Shopify developer and Senior Frontend Engineer in Cairo, Egypt. These are the four services I offer to brands in Egypt and the Middle East. Each one has its own page with what is included, how pricing works and examples from real stores.', breadcrumb: 'Services', related: 'Related projects', faqTitle: 'Common questions', seeAllFaq: 'See all questions', ctaTitle: 'Start your project', ctaText: 'Tell me about your store and what you want to change. I reply with a plan and an estimate.', whatYouGet: 'What you get' },
+  services: { shopifyTitle: 'Shopify services', angularTitle: 'Angular services', hubTitle: 'Shopify & Angular Development Services in Egypt | Kerllos Ayad', hubDescription: 'Shopify store setup, custom themes and speed, plus Angular web apps, front-end engineering and prerendering, by a developer in Cairo, Egypt.', hubH1: 'Shopify and Angular Development Services in Egypt', hubIntro: 'I am a Shopify and Angular developer and Senior Frontend Engineer in Cairo, Egypt. These are the six services I offer to brands and teams in Egypt and the Middle East: three for Shopify and three for Angular. Each one has its own page with what is included, how pricing works and examples from real projects.', breadcrumb: 'Services', related: 'Related projects', faqTitle: 'Common questions', seeAllFaq: 'See all questions', ctaTitle: 'Start your project', ctaText: 'Tell me about your store and what you want to change. I reply with a plan and an estimate.', whatYouGet: 'What you get' },
   faq: { breadcrumb: 'FAQ', ctaTitle: 'Still have a question?', ctaText: 'Send me a message about your store and I will reply with a plan and an estimate.', moreTitle: 'Related services' },
   notFound: { title: 'Page not found', text: 'The page you are looking for does not exist or has moved.', home: 'Go to the home page', projects: 'See all projects', metaTitle: 'Page not found | Kerllos Ayad', metaDescription: 'This page does not exist. Go back to the home page or browse the Shopify and web projects by Kerllos Ayad.' },
   home: { breadcrumb: 'Home' },
@@ -84,18 +101,27 @@ const ar: Ui = {
   switchLabel: 'English',
   switchAria: 'عرض هذه الصفحة بالإنجليزية',
   hero: {
-    heading: ['أهلًا! مطور Shopify', 'ومهندس واجهات أمامية', 'تثق به،', 'يبني متاجر إلكترونية سريعة'],
-    intro: 'أبني متاجر Shopify سريعة ومصممة لزيادة المبيعات للعلامات التجارية في مصر والشرق الأوسط: قوالب مخصصة، ميزات بلغة Liquid، تحسين السرعة ومحركات البحث، وتطبيقات ويب بـ Angular.',
-    seeProjects: 'شاهد مشاريع Shopify', hire: 'تواصل معي لبدء مشروعك', resume: 'تحميل السيرة الذاتية'
+    heading: ['أهلًا! مطور Shopify', 'وAngular تثق به،', 'يبني متاجر سريعة', 'وواجهات أمامية قابلة للتوسع'],
+    intro: 'أبني متاجر Shopify موجهة للتحويل وواجهات أمامية قابلة للتوسع بـ Angular للعلامات التجارية والفرق في مصر والشرق الأوسط.',
+    seeShopify: 'شاهد مشاريع Shopify', seeAngular: 'شاهد مشاريع Angular', hire: 'تواصل معي'
   },
   about: {
-    title: 'عن Kerllos Ayad: مطور Shopify ومهندس واجهات أمامية أول',
+    title: 'عن Kerllos Ayad: مطور Shopify وAngular في القاهرة',
     imageAlt: 'محطة عمل لمطور بشاشتين تعرضان كودًا ولوحة مفاتيح وحامل أقلام',
-    text: 'أنا Kerllos Ayad، مطور Shopify (شوبيفاي) ومهندس واجهات أمامية أول (Angular) مقيم في القاهرة، مصر، بخبرة تتجاوز 4 سنوات. طورت متاجر Shopify لعلامات تجارية مثل OR وArya وHechter Paris وSidewalks وEl Okaby Pharmacies وCleo\'s Dates. أعمل مع فريق العلامة التجارية من أول فكرة حتى الإطلاق، وأكتب كود Liquid وJavaScript وSCSS نظيفًا يسهل على فريقك صيانته. خدماتي: إعداد وتصميم متاجر Shopify، وقوالب وميزات Shopify مخصصة، وتسريع المتاجر وتحسين محركات البحث، وتطبيقات الويب وصفحات الهبوط.'
+    text: 'أنا Kerllos Ayad، مطور Shopify (شوبيفاي) وAngular ومهندس واجهات أمامية أول مقيم في القاهرة، مصر، بخبرة تتجاوز 4 سنوات. نصف عملي Shopify: أبني متاجر للعلامات التجارية في مصر والشرق الأوسط، منها OR وArya وHechter Paris وSidewalks وEl Okaby Pharmacies وCleo\'s Dates. والنصف الآخر Angular: مكونات TypeScript وصفحات مُولَّدة مسبقًا، في مشاريع مثل نظام مناقصات حافلات MCV وهذا الموقع. أعمل مع فريقك من أول فكرة حتى الإطلاق، وأكتب كود Liquid وTypeScript وSCSS نظيفًا يسهل صيانته.'
   },
-  servicesSection: { title: 'خدمات تطوير Shopify في مصر', intro: 'أقدم أربع خدمات للعلامات التجارية في مصر والشرق الأوسط. لكل خدمة صفحتها التي توضح ما تشمله وكيف يتحدد السعر.', more: 'اقرأ المزيد' },
-  projectsSection: { intro: 'لكل مشروع صفحته التي توضح ما نُفذ والتقنيات المستخدمة ورابط المتجر المباشر.', title: 'مشاريع Shopify مختارة', showDetails: 'عرض التفاصيل', all: 'كل المشاريع', allTitle: 'كل مشاريع Shopify والويب' },
-  clients: { title: 'علامات تجارية وثقت بي في مصر والشرق الأوسط', text: 'متاجر ومشاريع ويب نُفذت لهذه العلامات:' },
+  whatIDo: {
+    title: 'ماذا أقدم',
+    intro: 'نصفان لممارسة واحدة: متاجر Shopify وواجهات Angular الأمامية. لكل خدمة صفحتها التي توضح ما تشمله وكيف يتحدد السعر.',
+    shopifyTitle: 'تطوير Shopify', shopifyText: 'متاجر للعلامات التجارية في مصر والشرق الأوسط: الإعداد والتصميم، والقوالب والميزات المخصصة، والسرعة والسيو.',
+    angularTitle: 'تطوير Angular', angularText: 'تطبيقات وواجهات أمامية بـ Angular وTypeScript: تطبيقات ويب، وهندسة واجهات أمامية، وتوليد مسبق للصفحات للبحث.',
+    more: 'اقرأ المزيد'
+  },
+  projectsSection: {
+    intro: 'لكل مشروع صفحته التي توضح ما نُفذ والتقنيات المستخدمة، ورابط الموقع المباشر إن وُجد.',
+    title: 'مشاريع مختارة', showDetails: 'عرض التفاصيل',
+    tabs: { all: 'الكل', shopify: 'Shopify', angular: 'Angular' }, tabsLabel: 'تصفية المشاريع'
+  },
   process: {
     intro: 'كل مشروع يمر بالخطوات الأربع نفسها، لتعرف دائمًا ما الخطوة التالية.',
     title: 'طريقة العمل',
@@ -106,9 +132,18 @@ const ar: Ui = {
       { title: 'الاختبار والإطلاق', text: 'فحص الجوال والسرعة والدفع والسيو قبل النشر.' }
     ]
   },
-  skills: { title: 'المهارات والأدوات', text: 'Shopify, Liquid, Shopify Metafields, JavaScript, TypeScript, Angular, HTML5, SCSS, Bootstrap, JSON, Judge.me.' },
-  faqTeaser: { title: 'أسئلة شائعة عن مطور Shopify', seeAll: 'شاهد كل الأسئلة' },
-  hireCta: { title: 'وظّف مطور Shopify في القاهرة', text: 'أخبرني عن متجرك وما تريد تغييره، وسأرد عليك بخطة وتقدير للتكلفة.', email: 'راسلني بالبريد', linkedin: 'LinkedIn' },
+  skills: {
+    lead: 'الأدوات التي أستخدمها يوميًا، مجموعة لكل نصف من عملي.',
+    title: 'المهارات والأدوات',
+    shopifyTitle: 'Shopify', shopify: ['Shopify', 'Liquid', 'Shopify Metafields', 'Judge.me', 'JavaScript'],
+    angularTitle: 'Angular', angular: ['Angular', 'TypeScript', 'HTML5', 'SCSS', 'Bootstrap']
+  },
+  faqTeaser: { lead: 'إجابات قصيرة عن التكلفة والخطوات وLiquid وAngular والتوليد المسبق. القائمة الكاملة في صفحة الأسئلة الشائعة.', title: 'أسئلة شائعة عن مطور Shopify وAngular', shopifyTitle: 'Shopify', angularTitle: 'Angular', seeAll: 'شاهد كل الأسئلة' },
+  hireCta: {
+    shopifyTitle: 'وظّف مطور Shopify', shopifyText: 'أخبرني عن متجرك وما تريد تغييره، وسأرد عليك بخطة وتقدير للتكلفة.', shopifyEmail: 'راسلني عن مشروع Shopify', shopifySubject: 'مشروع Shopify',
+    angularTitle: 'وظّف مطور Angular', angularText: 'أخبرني عن تطبيقك وفريقك، وسأرد عليك بخطة وتقدير للتكلفة.', angularEmail: 'راسلني عن مشروع Angular', angularSubject: 'مشروع Angular',
+    linkedin: 'LinkedIn', resume: 'تحميل السيرة الذاتية'
+  },
   contact: {
     title: 'تواصل معي',
     description: 'يسعدني دائمًا العمل على مشاريع جديدة والتعاون مع أشخاص رائعين. سواء كنت تحتاج قالب Shopify مخصصًا أو تطبيق Angular أو لديك أسئلة عن تطوير الويب، لا تتردد في التواصل!',
@@ -122,7 +157,7 @@ const ar: Ui = {
   footer: { about: 'عني', projects: 'كل المشاريع', explore: 'استعرض مشاريعي', contact: 'تواصل معي', rights: 'جميع الحقوق محفوظة.', services: 'الخدمات', faq: 'الأسئلة الشائعة' },
   portfolio: { title: 'كل المشاريع', home: 'الرئيسية', all: 'كل المشاريع', viewDetails: '← عرض التفاصيل', viewLive: 'زيارة المتجر', techStack: 'التقنيات:', none: 'لا توجد مشاريع', noneHint: 'جرّب اختيار تصنيف آخر', metaTitle: 'مشاريع Shopify وAngular | Kerllos Ayad – القاهرة، مصر', metaDescription: 'متاجر Shopify وتطبيقات Angular ومشاريع Node.js من تنفيذ Kerllos Ayad، مطور Shopify ومهندس واجهات أمامية أول في القاهرة، مصر.', liveAria: 'زيارة المتجر المباشر لمشروع' },
   project: { problem: 'المشكلة', built: 'ما نفذته', stack: 'التقنيات', client: 'العميل', completed: 'تاريخ الإنجاز', category: 'التصنيف', visit: 'زيارة المتجر المباشر', back: 'العودة إلى المشاريع', related: 'مشاريع ذات صلة', screenshots: 'لقطات الشاشة', screenshotOf: 'لقطة شاشة لموقع', breadcrumbProjects: 'المشاريع', titleSuffix: 'مشروع من تنفيذ Kerllos Ayad، القاهرة' },
-  services: { hubTitle: 'خدمات تطوير Shopify في مصر | Kerllos Ayad', hubDescription: 'إعداد متاجر Shopify وقوالب مخصصة وتسريع المتاجر وتحسين السيو وتطبيقات Angular من مطور Shopify في القاهرة، مصر.', hubH1: 'خدمات تطوير Shopify (شوبيفاي) في مصر', hubIntro: 'أنا مطور Shopify ومهندس واجهات أمامية أول في القاهرة، مصر. هذه هي الخدمات الأربع التي أقدمها للعلامات التجارية في مصر والشرق الأوسط. لكل خدمة صفحتها التي توضح ما تشمله وكيف يتحدد السعر وأمثلة من متاجر حقيقية.', breadcrumb: 'الخدمات', related: 'مشاريع ذات صلة', faqTitle: 'أسئلة شائعة', seeAllFaq: 'شاهد كل الأسئلة', ctaTitle: 'ابدأ مشروعك', ctaText: 'أخبرني عن متجرك وما تريد تغييره، وسأرد عليك بخطة وتقدير للتكلفة.', whatYouGet: 'ما الذي تحصل عليه' },
+  services: { shopifyTitle: 'خدمات Shopify', angularTitle: 'خدمات Angular', hubTitle: 'خدمات تطوير Shopify وAngular في مصر | Kerllos Ayad', hubDescription: 'إعداد متاجر Shopify وقوالب مخصصة وتسريع، إضافة إلى تطبيقات Angular وهندسة الواجهات الأمامية والتوليد المسبق، من مطور في القاهرة، مصر.', hubH1: 'خدمات تطوير Shopify (شوبيفاي) وAngular في مصر', hubIntro: 'أنا مطور Shopify وAngular ومهندس واجهات أمامية أول في القاهرة، مصر. هذه هي الخدمات الست التي أقدمها للعلامات التجارية والفرق في مصر والشرق الأوسط: ثلاث لـ Shopify وثلاث لـ Angular. لكل خدمة صفحتها التي توضح ما تشمله وكيف يتحدد السعر وأمثلة من مشاريع حقيقية.', breadcrumb: 'الخدمات', related: 'مشاريع ذات صلة', faqTitle: 'أسئلة شائعة', seeAllFaq: 'شاهد كل الأسئلة', ctaTitle: 'ابدأ مشروعك', ctaText: 'أخبرني عن متجرك وما تريد تغييره، وسأرد عليك بخطة وتقدير للتكلفة.', whatYouGet: 'ما الذي تحصل عليه' },
   faq: { breadcrumb: 'الأسئلة الشائعة', ctaTitle: 'ما زال لديك سؤال؟', ctaText: 'أرسل لي رسالة عن متجرك وسأرد عليك بخطة وتقدير للتكلفة.', moreTitle: 'خدمات ذات صلة' },
   notFound: { title: 'الصفحة غير موجودة', text: 'الصفحة التي تبحث عنها غير موجودة أو تم نقلها.', home: 'العودة إلى الرئيسية', projects: 'شاهد كل المشاريع', metaTitle: 'الصفحة غير موجودة | Kerllos Ayad', metaDescription: 'هذه الصفحة غير موجودة. عد إلى الصفحة الرئيسية أو تصفح مشاريع Shopify والويب من تنفيذ Kerllos Ayad.' },
   home: { breadcrumb: 'الرئيسية' },

@@ -1,4 +1,5 @@
 import { Component, OnInit, computed, inject } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { CommonModule, NgOptimizedImage } from '@angular/common';
 import { RouterLink, RouterModule } from '@angular/router';
 import { Project } from '@core/models/project.interface';
@@ -19,6 +20,7 @@ import { UI } from '@core/i18n/ui';
 export class PortfolioComponent implements OnInit {
   readonly imageSize = imageSize;
   readonly langService = inject(LangService);
+  private route = inject(ActivatedRoute);
   readonly ui = computed(() => UI[this.langService.lang()]);
   projects: Project[] = [];
   filteredProjects: Project[] = [];
@@ -48,6 +50,12 @@ export class PortfolioComponent implements OnInit {
     );
     this.filteredProjects = this.projects;
     this.categories = this.projectsService.getCategories();
+
+    // /portfolio?category=Angular opens with that filter selected (the canonical URL stays /portfolio)
+    const requested = this.route.snapshot.queryParamMap.get('category');
+    if (requested && this.categories.includes(requested)) {
+      this.filterProjects(requested);
+    }
   }
 
   summary(project: Project): string {

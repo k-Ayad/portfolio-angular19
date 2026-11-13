@@ -69,18 +69,20 @@ export class ProjectDetailsComponent implements OnInit, OnDestroy {
     const lang = this.langService.lang();
     const ui = UI[lang];
     const path = this.langService.link(`/work/${project.slug}`);
-    const suffix = lang === 'ar' ? 'من تنفيذ Kerllos Ayad، مطور Shopify في القاهرة، مصر.' : 'Built by Kerllos Ayad, Shopify developer in Cairo, Egypt.';
+    const suffix = lang === 'ar' ? 'من تنفيذ Kerllos Ayad، مطور Shopify وAngular في القاهرة، مصر.' : 'Built by Kerllos Ayad, Shopify and Angular developer in Cairo, Egypt.';
+    // Summary and suffix, plus what was built while it still fits in a search snippet
     let description = `${this.text.summary} ${suffix}`;
-    // Add what was built while it still fits in a search snippet
-    for (const item of this.text.built) {
-      const next = `${this.text.summary} ${item.replace(/\.$/, '')}. ${suffix}`;
-      if (next.length > 160) break;
-      description = next;
-      break;
+    const withBuilt = `${this.text.summary} ${(this.text.built[0] ?? '').replace(/\.$/, '')}. ${suffix}`;
+    if (this.text.built.length > 0 && withBuilt.length <= 160) {
+      description = withBuilt;
     }
+    if (description.length > 160) {
+      description = this.text.summary.length > 160 ? this.text.summary.slice(0, 157).trimEnd() + '...' : this.text.summary;
+    }
+    const longTitle = `${project.title} | ${project.category} ${ui.project.titleSuffix}`;
     const title = lang === 'ar'
       ? `${project.title} | ${ui.project.titleSuffix}`
-      : `${project.title} | ${project.category} ${ui.project.titleSuffix}`;
+      : longTitle.length <= 70 ? longTitle : `${project.title} | Kerllos Ayad`;
 
     this.seoService.setPageMeta({
       title,

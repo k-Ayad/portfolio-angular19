@@ -26,7 +26,17 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://k-ayad.com/services/web-apps-landing-pages</loc>
+    <loc>https://k-ayad.com/services/angular-web-app-development</loc>
+    <lastmod>2026-11-13</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://k-ayad.com/services/angular-frontend-engineering</loc>
+    <lastmod>2026-11-13</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://k-ayad.com/services/angular-seo-prerendering</loc>
     <lastmod>2026-11-13</lastmod>
     <priority>0.8</priority>
   </url>
@@ -92,6 +102,31 @@
   </url>
   <url>
     <loc>https://k-ayad.com/work/tactical-schnauzer</loc>
+    <lastmod>2026-11-13</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://k-ayad.com/work/k-ayad-site</loc>
+    <lastmod>2026-11-13</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://k-ayad.com/work/mcv-bus-tender</loc>
+    <lastmod>2026-11-13</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://k-ayad.com/work/pms-performance-management</loc>
+    <lastmod>2026-11-13</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://k-ayad.com/work/bom-generator</loc>
+    <lastmod>2026-11-13</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://k-ayad.com/work/mas-clinics</loc>
     <lastmod>2026-11-13</lastmod>
     <priority>0.7</priority>
   </url>

@@ -38,6 +38,11 @@ const legacyProjectSlugs = new Map<string, string>(
   projectData.projects.filter((project) => !('hidden' in project)).flatMap((project) => project.legacyIds.map((id): [string, string] => [id, project.slug])),
 );
 
+// The Angular/Shopify split replaced the generic web-apps service page
+app.get(['/services/web-apps-landing-pages', '/ar/services/web-apps-landing-pages'], (req, res) => {
+  res.redirect(301, req.path.startsWith('/ar/') ? '/ar/services/angular-web-app-development' : '/services/angular-web-app-development');
+});
+
 app.get('/project/:id', (req, res) => {
   const slug = legacyProjectSlugs.get(req.params['id']);
   res.redirect(301, slug ? `/work/${slug}` : '/portfolio');

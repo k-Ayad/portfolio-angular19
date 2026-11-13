@@ -1,7 +1,7 @@
 {
   "url": "https://k-ayad.com",
   "name": "Kerllos Ayad",
-  "jobTitle": "Shopify Developer & Senior Frontend Engineer",
+  "jobTitle": "Shopify Developer and Senior Frontend Engineer (Angular)",
   "currentRole": "Senior Frontend Engineer at MCV (Manufacturing Commercial Vehicles)",
   "location": {
     "city": "Cairo",
@@ -31,11 +31,13 @@
   "services": [
     "Shopify store setup & design",
     "Custom Shopify themes & features",
-    "Speed & SEO optimization",
-    "Web apps & landing pages"
+    "Shopify speed & SEO optimization",
+    "Angular web app development",
+    "Angular front-end engineering",
+    "Angular SEO & prerendering"
   ],
-  "homeTitle": "Hire a Shopify Developer in Cairo, Egypt | Kerllos Ayad",
-  "homeDescription": "Shopify developer in Cairo, Egypt (4+ years). Custom themes, Liquid, speed optimization and store setup for brands in Egypt and the Middle East.",
+  "homeTitle": "Shopify & Angular Developer in Cairo, Egypt | Kerllos Ayad",
+  "homeDescription": "Shopify and Angular developer in Cairo, Egypt (4+ years). Conversion-focused Shopify stores and scalable Angular front ends for Egypt and the Middle East.",
   "todo": [
     "Number of Shopify stores built (not provided yet, so it is not shown anywhere on the site)",
     "Arabic spelling of the name (not added to the Arabic schema yet)",
@@ -46,14 +48,16 @@
   ],
   "arabicLive": false,
   "ar": {
-    "homeTitle": "مطور شوبيفاي في القاهرة، مصر | Kerllos Ayad",
-    "homeDescription": "مطور Shopify (شوبيفاي) في القاهرة، مصر، بخبرة 4+ سنوات. قوالب مخصصة، Liquid، تسريع المتاجر وإعدادها للعلامات التجارية في مصر والشرق الأوسط.",
-    "jobTitle": "مطور Shopify ومهندس واجهات أمامية أول",
+    "homeTitle": "مطور Shopify وAngular في القاهرة، مصر | Kerllos Ayad",
+    "homeDescription": "مطور Shopify (شوبيفاي) وAngular في القاهرة، مصر، بخبرة 4+ سنوات. متاجر Shopify موجهة للتحويل وواجهات Angular قابلة للتوسع للعلامات التجارية في مصر والشرق الأوسط.",
+    "jobTitle": "مطور Shopify ومهندس واجهات أمامية أول (Angular)",
     "services": [
       "إعداد وتصميم متاجر Shopify",
       "تطوير قوالب وميزات Shopify مخصصة",
       "تسريع متاجر Shopify وتحسين محركات البحث",
-      "تطبيقات الويب وصفحات الهبوط"
+      "تطوير تطبيقات الويب بـ Angular",
+      "هندسة الواجهات الأمامية بـ Angular",
+      "سيو Angular والتوليد المسبق للصفحات"
     ]
   }
 }

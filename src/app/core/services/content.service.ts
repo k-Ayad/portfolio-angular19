@@ -7,7 +7,7 @@ export interface ServiceText {
   nav: string; title: string; description: string; h1: string; summary: string; whatYouGet: string;
   includedTitle: string; included: string[]; pricingTitle: string; pricing: string;
 }
-export interface ServiceEntry { slug: string; projects: string[]; faqIds: string[]; en: ServiceText; ar: ServiceText }
+export interface ServiceEntry { slug: string; pillar: 'shopify' | 'angular'; projects: string[]; faqIds: string[]; en: ServiceText; ar: ServiceText }
 export interface FaqItem { id: string; q: string; a: string }
 export interface FaqPage {
   title: string; description: string; h1: string; intro: string;
