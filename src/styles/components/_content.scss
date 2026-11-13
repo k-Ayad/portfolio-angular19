@@ -1,0 +1,357 @@
+// ===========================
+// Shared styles for the content pages (services, FAQ) and the new home sections.
+// Logical properties only, so the same rules serve English (LTR) and Arabic (RTL).
+// ===========================
+
+$content-accent: #10b981;
+$content-muted: rgba(255, 255, 255, 0.72);
+$content-border: rgba(255, 255, 255, 0.1);
+
+.page-container {
+  max-width: 1100px;
+  margin-inline: auto;
+  padding: 8rem 1rem 4rem;
+  color: #fff;
+}
+
+.content-section {
+  padding-block: 4rem;
+  color: #fff;
+
+  h2 {
+    font-size: clamp(1.6rem, 3vw, 2.3rem);
+    font-weight: 700;
+    margin-block-end: 1rem;
+    text-align: start;
+  }
+
+  h3 {
+    font-size: 1.2rem;
+    font-weight: 600;
+  }
+}
+
+.section-lead {
+  color: $content-muted;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  max-width: 820px;
+}
+
+.page-container .page-title {
+  font-size: clamp(2rem, 4.5vw, 3.2rem);
+  font-weight: 700;
+  margin-block-end: 1rem;
+}
+
+.breadcrumb-trail {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  padding: 0;
+  margin: 0 0 1.5rem;
+  font-size: 0.95rem;
+  color: $content-muted;
+
+  li + li::before {
+    content: '/';
+    margin-inline-end: 0.5rem;
+    opacity: 0.5;
+  }
+
+  a {
+    color: $content-accent;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+  margin-block-start: 2rem;
+}
+
+.content-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding: 1.5rem;
+  border: 1px solid $content-border;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.03);
+  color: inherit;
+  text-decoration: none;
+  transition: border-color 0.3s ease, transform 0.3s ease;
+
+  h3 {
+    margin: 0;
+  }
+
+  p {
+    margin: 0;
+    color: $content-muted;
+    line-height: 1.7;
+  }
+
+  .card-link {
+    margin-block-start: auto;
+    color: $content-accent;
+    font-weight: 600;
+  }
+
+  &:hover,
+  &:focus-visible {
+    border-color: $content-accent;
+    transform: translateY(-3px);
+  }
+}
+
+.check-list {
+  list-style: none;
+  padding: 0;
+  margin: 1.25rem 0 0;
+  display: grid;
+  gap: 0.75rem;
+
+  li {
+    position: relative;
+    padding-inline-start: 1.75rem;
+    line-height: 1.7;
+    color: $content-muted;
+
+    &::before {
+      content: '';
+      position: absolute;
+      inset-inline-start: 0;
+      top: 0.65em;
+      width: 0.8rem;
+      height: 0.4rem;
+      border-inline-start: 2px solid $content-accent;
+      border-block-end: 2px solid $content-accent;
+      transform: rotate(-45deg);
+    }
+  }
+}
+
+.steps {
+  list-style: none;
+  counter-reset: step;
+  padding: 0;
+  margin: 1.5rem 0 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 1.25rem;
+
+  li {
+    counter-increment: step;
+    padding: 1.25rem;
+    border: 1px solid $content-border;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.03);
+
+    &::before {
+      content: counter(step);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 2rem;
+      height: 2rem;
+      margin-block-end: 0.75rem;
+      border-radius: 50%;
+      background: $content-accent;
+      color: #0a0a0a;
+      font-weight: 700;
+    }
+
+    strong {
+      display: block;
+      margin-block-end: 0.35rem;
+    }
+
+    span {
+      color: $content-muted;
+      line-height: 1.6;
+    }
+  }
+}
+
+.tag-list {
+  list-style: none;
+  padding: 0;
+  margin: 1.25rem 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+
+  li {
+    padding: 0.5rem 1rem;
+    border: 1px solid $content-border;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.03);
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+
+    &:hover {
+      color: $content-accent;
+    }
+  }
+}
+
+.faq-group {
+  margin-block-start: 2.5rem;
+}
+
+.faq-item {
+  border-block-end: 1px solid $content-border;
+
+  summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    min-height: 48px;
+    padding-block: 1rem;
+    cursor: pointer;
+    font-size: 1.1rem;
+    font-weight: 600;
+    list-style: none;
+
+    &::-webkit-details-marker {
+      display: none;
+    }
+
+    &::after {
+      content: '+';
+      color: $content-accent;
+      font-size: 1.5rem;
+      line-height: 1;
+    }
+  }
+
+  &[open] summary::after {
+    content: '−';
+  }
+
+  .faq-answer {
+    margin: 0 0 1.25rem;
+    color: $content-muted;
+    line-height: 1.8;
+    max-width: 820px;
+  }
+
+  h3 {
+    margin: 0;
+    font-size: inherit;
+  }
+}
+
+.cta-band {
+  margin-block-start: 3rem;
+  padding: 2rem;
+  border: 1px solid $content-border;
+  border-radius: 16px;
+  background: rgba(16, 185, 129, 0.08);
+  text-align: center;
+
+  h2 {
+    text-align: center;
+  }
+
+  p {
+    color: $content-muted;
+    margin-block-end: 1.5rem;
+  }
+}
+
+.cta-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.btn-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 0.75rem 1.75rem;
+  border: 2px solid $content-accent;
+  border-radius: 8px;
+  font-weight: 600;
+  color: $content-accent;
+  text-decoration: none;
+  transition: background-color 0.3s ease, color 0.3s ease;
+
+  &:hover,
+  &:focus-visible {
+    background: $content-accent;
+    color: #0a0a0a;
+  }
+
+  &.primary {
+    background: $content-accent;
+    color: #0a0a0a;
+
+    &:hover,
+    &:focus-visible {
+      filter: brightness(1.1);
+    }
+  }
+}
+
+.hero-intro {
+  max-width: 640px;
+  margin: 1.25rem auto 0;
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 1.05rem;
+  line-height: 1.8;
+}
+
+.text-link {
+  color: $content-accent;
+  font-weight: 600;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+// Bootstrap's physical spacing helpers, mirrored on the Arabic pages
+html[dir='rtl'] {
+  .ms-2 {
+    margin-left: 0 !important;
+    margin-right: 0.5rem !important;
+  }
+
+  .me-2 {
+    margin-right: 0 !important;
+    margin-left: 0.5rem !important;
+  }
+}
+
+// The content pages and the new home sections sit on the site's dark background
+app-services-hub,
+app-service-page,
+app-faq {
+  display: block;
+  min-height: 100vh;
+  background-color: #1a1a1a;
+}
+
+app-services-section,
+app-home-lower-sections {
+  display: block;
+  background-color: #1a1a1a;
+  color: #fff;
+}

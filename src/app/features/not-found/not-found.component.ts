@@ -1,6 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, computed, inject } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { SeoService } from '@core/services/seo.service';
+import { LangService } from '@core/i18n/lang.service';
+import { UI } from '@core/i18n/ui';
 
 @Component({
   selector: 'app-not-found',
@@ -10,13 +12,13 @@ import { SeoService } from '@core/services/seo.service';
   styleUrl: './not-found.component.scss'
 })
 export class NotFoundComponent implements OnInit {
-  constructor(private seoService: SeoService) {}
+  private seoService = inject(SeoService);
+  readonly langService = inject(LangService);
+  readonly ui = computed(() => UI[this.langService.lang()]);
 
   ngOnInit(): void {
-    this.seoService.setNotFoundMeta(
-      'Page not found | Kerllos Ayad',
-      'This page does not exist. Go back to the home page or browse the Shopify and web projects by Kerllos Ayad.'
-    );
+    const ui = this.ui().notFound;
+    this.seoService.setNotFoundMeta(ui.metaTitle, ui.metaDescription, this.langService.lang());
     this.seoService.setStructuredData();
   }
 }

@@ -20,6 +20,16 @@ const angularApp = new AngularNodeAppEngine({
 
 app.use(compression());
 
+// Cloud Run adds X-Forwarded-Proto (and may add -Port or -Prefix). Angular only accepts proxy headers listed in
+// NG_TRUST_PROXY_HEADERS and otherwise answers every URL with the client-side shell. The app never reads them,
+// so they are dropped here and the prerendered page for each route is served whatever that variable says.
+app.use((req, _res, next) => {
+  delete req.headers['x-forwarded-proto'];
+  delete req.headers['x-forwarded-port'];
+  delete req.headers['x-forwarded-prefix'];
+  next();
+});
+
 // Old /project/<id or slug> URLs: permanent redirect to /work/<slug> (unknown or removed projects go to /portfolio)
 const legacyProjectSlugs = new Map<string, string>(
   projectData.projects.filter((project) => !('hidden' in project)).flatMap((project) => project.legacyIds.map((id): [string, string] => [id, project.slug])),

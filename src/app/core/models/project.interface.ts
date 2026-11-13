@@ -5,6 +5,7 @@
 export interface ProjectImage {
   src: string;
   alt: string;
+  altAr?: string;
 }
 
 export interface Project {
@@ -23,6 +24,7 @@ export interface Project {
   completionDate?: string;
   featured: boolean;
   legacyIds: string[]; // Old /project/:id values (numeric id and old slug) that redirect here
+  ar?: { summary: string; problem?: string; built: string[] }; // Arabic text; titles, client names and stack stay in Latin
   hidden?: boolean; // Kept in the data but left out of every page, route, sitemap and llms.txt
   todo?: string[]; // Facts still needed; never rendered
 }

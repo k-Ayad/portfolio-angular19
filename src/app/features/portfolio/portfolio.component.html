@@ -3,15 +3,15 @@
   <nav class="breadcrumb-nav" aria-label="breadcrumb">
     <ol class="breadcrumb">
       <li class="breadcrumb-item">
-        <a routerLink="/">Home</a>
+        <a [routerLink]="langService.link('/')">{{ ui().portfolio.home }}</a>
       </li>
-      <li class="breadcrumb-item active" aria-current="page">All Projects</li>
+      <li class="breadcrumb-item active" aria-current="page">{{ ui().portfolio.all }}</li>
     </ol>
   </nav>
 
   <!-- Page Header -->
   <header class="page-header">
-    <h1 class="page-title">All Projects</h1>
+    <h1 class="page-title">{{ ui().portfolio.title }}</h1>
     
     <!-- Filter Buttons -->
     <div class="filter-buttons">
@@ -23,7 +23,7 @@
         [attr.aria-pressed]="activeFilter === category"
       >
         <i [class]="getCategoryIcon(category)"></i>
-        {{ category }}
+        {{ categoryLabel(category) }}
       </button>
     </div>
   </header>
@@ -33,7 +33,7 @@
     <article
       *ngFor="let project of filteredProjects; let i = index; trackBy: trackBySlug"
       class="project-card"
-      [routerLink]="['/work', project.slug]"
+      [routerLink]="langService.link('/work/' + project.slug)"
       tabindex="0"
       role="link"
     >
@@ -44,12 +44,12 @@
           [height]="imageSize(project.image).height"
           sizes="(min-width: 769px) 33vw, 100vw"
           [priority]="i < 2"
-          [alt]="'Screenshot of the ' + project.title + ' website'"
+          [alt]="ui().project.screenshotOf + ' ' + project.title"
           class="project-image"
         />
         <div class="project-overlay">
           <div class="overlay-content">
-            <span class="view-details">View Details →</span>
+            <span class="view-details">{{ ui().portfolio.viewDetails }}</span>
             
             <!-- Live Link Button (Only shows if project has liveUrl) -->
             <a
@@ -59,10 +59,10 @@
               target="_blank"
               rel="noopener"
               (click)="$event.stopPropagation()"
-              [attr.aria-label]="'Visit the live ' + project.title + ' store'"
+              [attr.aria-label]="ui().portfolio.liveAria + ' ' + project.title"
             >
               <i class="fas fa-external-link-alt"></i>
-              View Live
+              {{ ui().portfolio.viewLive }}
             </a>
           </div>
         </div>
@@ -70,13 +70,13 @@
 
       <div class="project-content">
         <h2 class="project-title">
-          <a [routerLink]="['/work', project.slug]" class="project-title-link">{{ project.title }}</a>
+          <a [routerLink]="langService.link('/work/' + project.slug)" class="project-title-link">{{ project.title }}</a>
         </h2>
-        <p class="project-description">{{ project.summary }}</p>
+        <p class="project-description">{{ summary(project) }}</p>
 
         <div class="project-meta">
           <div class="tech-stack">
-            <span class="tech-label">Tech Stack:</span>
+            <span class="tech-label">{{ ui().portfolio.techStack }}</span>
             <div class="tech-tags">
               <span
                 *ngFor="let tech of project.technologies.slice(0, 3)"
@@ -99,8 +99,8 @@
     <!-- Empty State -->
     <div *ngIf="filteredProjects.length === 0" class="empty-state">
       <i class="fas fa-folder-open"></i>
-      <h3>No projects found</h3>
-      <p>Try selecting a different category</p>
+      <h3>{{ ui().portfolio.none }}</h3>
+      <p>{{ ui().portfolio.noneHint }}</p>
     </div>
   </section>
 </div>

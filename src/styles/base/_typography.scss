@@ -90,3 +90,51 @@ i {
 small {
   font-size: $font-size-sm;
 }
+
+// ---------- Arabic (RTL) ----------
+// Cairo covers the Arabic range only; Latin letters (brand and technology names) keep the site font.
+@font-face {
+  font-family: 'Cairo Variable';
+  src: url('/assets/fonts/cairo-arabic-wght.woff2') format('woff2-variations');
+  font-weight: 200 1000;
+  font-display: swap;
+  unicode-range: U+0600-06FF, U+0750-077F, U+0870-088E, U+0890-0891, U+0897-08E1, U+08E3-08FF, U+200C-200E, U+2010-2011, U+204F, U+2E41, U+FB50-FDFF, U+FE70-FE74, U+FE76-FEFC;
+}
+
+html[lang='ar'] {
+  body,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  a,
+  li,
+  button,
+  input,
+  select,
+  textarea,
+  label {
+    font-family: 'Cairo Variable', 'CM Geom', 'CM Geom Fallback', sans-serif;
+    // Letter-spacing breaks Arabic letter joining
+    letter-spacing: normal;
+  }
+
+  body {
+    line-height: 1.8;
+  }
+
+  // Direction-bearing icons point the other way; the logo, photos, phone numbers and code do not flip
+  .flip-rtl {
+    transform: scaleX(-1);
+  }
+}
+
+// Phone numbers, emails and code stay left-to-right inside Arabic text
+.ltr-text {
+  direction: ltr;
+  unicode-bidi: isolate;
+  display: inline-block;
+}

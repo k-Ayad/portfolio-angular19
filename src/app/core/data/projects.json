@@ -31,27 +31,33 @@
       "images": [
         {
           "src": "assets/images/projects/arya/arya-hero.webp",
-          "alt": "Arya jewelry store homepage hero on desktop"
+          "alt": "Arya jewelry store homepage hero on desktop",
+          "altAr": "الصفحة الرئيسية لمتجر Arya للمجوهرات على الكمبيوتر"
         },
         {
           "src": "assets/images/projects/arya/arya-collection.webp",
-          "alt": "Arya jewelry collection page with product grid"
+          "alt": "Arya jewelry collection page with product grid",
+          "altAr": "صفحة مجموعة منتجات في متجر Arya للمجوهرات"
         },
         {
           "src": "assets/images/projects/arya/arya-product.webp",
-          "alt": "Arya jewelry product page on desktop"
+          "alt": "Arya jewelry product page on desktop",
+          "altAr": "صفحة منتج في متجر Arya على الكمبيوتر"
         },
         {
           "src": "assets/images/projects/arya/arya-product-details.webp",
-          "alt": "Arya product page details section with the premium guarantee"
+          "alt": "Arya product page details section with the premium guarantee",
+          "altAr": "تفاصيل صفحة المنتج في متجر Arya مع ضمان الجودة"
         },
         {
           "src": "assets/images/projects/arya/arya-mobile-home.webp",
-          "alt": "Arya store homepage on mobile"
+          "alt": "Arya store homepage on mobile",
+          "altAr": "الصفحة الرئيسية لمتجر Arya على الجوال"
         },
         {
           "src": "assets/images/projects/arya/arya-mobile-product.webp",
-          "alt": "Arya product page on mobile"
+          "alt": "Arya product page on mobile",
+          "altAr": "صفحة منتج في متجر Arya على الجوال"
         }
       ],
       "completionDate": "2025-06",
@@ -59,7 +65,19 @@
       "legacyIds": [
         "16",
         "arya"
-      ]
+      ],
+      "ar": {
+        "summary": "متجر Shopify فاخر لعلامة Arya للمجوهرات الذهبية.",
+        "problem": "احتاجت Arya إلى متجر Shopify مخصص بالكامل يعكس هوية علامة مجوهرات وإكسسوارات فاخرة، مع أداء وسهولة استخدام ممتازين وتركيز قوي على رفع معدل التحويل.",
+        "built": [
+          "متجر فاخر يطابق هوية العلامة ويعرض ضمان الجودة",
+          "أقسام مخصصة للصفحة الرئيسية وتخصيص متقدم لصفحة المنتج بـ Liquid وShopify Metafields",
+          "تحسين خيارات المنتج وألوانه وتوصيات المنتجات",
+          "ربط تقييمات Judge.me",
+          "تصميم متجاوب يبدأ من الجوال وتحسين صفحات المجموعات وتجربة السلة والشراء",
+          "تحسين الأداء والسيو وحركات سلسة بطابع فاخر"
+        ]
+      }
     },
     {
       "slug": "or-brand",
@@ -85,7 +103,15 @@
       "legacyIds": [
         "4",
         "or-store"
-      ]
+      ],
+      "ar": {
+        "summary": "متجر Shopify لعلامة OR، علامة أزياء مصرية معروفة تقدم ملابس يومية عصرية.",
+        "problem": "احتاج متجر الملابس إلى جدول مقاسات، وكان التطبيق الشهري المدفوع هو الطريقة المعتادة لإضافته.",
+        "built": [
+          "بناء متجر OR على Shopify",
+          "جدول مقاسات مدمج في القالب نفسه بدل تطبيق شهري مدفوع"
+        ]
+      }
     },
     {
       "slug": "sidewalks",
@@ -115,7 +141,15 @@
       ],
       "todo": [
         "problem: what the Sidewalks store needed before the work"
-      ]
+      ],
+      "ar": {
+        "summary": "متجر Shopify لعلامة Sidewalks، موزع Converse.",
+        "built": [
+          "شريحة عرض مخصصة بصورة مختلفة لكل شريحة للجوال والكمبيوتر",
+          "نقاط تنقل عمودية على الشرائح",
+          "تحسين الأداء وإعادة تصميم متجاوب"
+        ]
+      }
     },
     {
       "slug": "style-beauty-store",
@@ -145,7 +179,17 @@
       "legacyIds": [
         "10",
         "style-beauty-store"
-      ]
+      ],
+      "ar": {
+        "summary": "سوق إلكتروني متعدد العلامات لمستحضرات التجميل على Shopify.",
+        "problem": "سوق مستحضرات تجميل متعدد العلامات ومخزونه في نمو يحتاج أن يجد العملاء المنتجات بسرعة وأن يتسع للعروض الترويجية، على الجوال وعلى الكمبيوتر.",
+        "built": [
+          "فلاتر للمنتجات وتصنيف منظم مع تنقل بطابع الأسواق الإلكترونية",
+          "إدارة الحملات الترويجية",
+          "تجربة جوال: شريط أدوات سفلي وأزرار تواصل مطوية",
+          "صفحات منتجات موجهة للتحويل وتحسين الأداء"
+        ]
+      }
     },
     {
       "slug": "hechter-paris",
@@ -175,7 +219,17 @@
       "legacyIds": [
         "9",
         "hechter"
-      ]
+      ],
+      "ar": {
+        "summary": "متجر Shopify لأزياء راقية لعلامة Hechter Paris.",
+        "problem": "احتاجت علامة أزياء راقية إلى واجهة متجر تطابق هويتها الفاخرة.",
+        "built": [
+          "تحسينات على واجهة المستخدم في المتجر كله",
+          "مجموعات منظمة",
+          "عرض محسّن للمنتجات وصفحات المنتجات",
+          "تحسين التجاوب على الجوال"
+        ]
+      }
     },
     {
       "slug": "el-okaby-pharmacies",
@@ -205,7 +259,17 @@
       "legacyIds": [
         "7",
         "el-okaby-pharmacies"
-      ]
+      ],
+      "ar": {
+        "summary": "متجر Shopify لـ El Okaby Pharmacies، منظم ليجد العملاء المنتجات بسرعة.",
+        "problem": "متجر صيدلية يضم منتجات طبية ومستحضرات تجميل ومكملات صحية يجب أن يكون منظمًا ليجد العملاء ما يحتاجونه بسرعة.",
+        "built": [
+          "تنقل منظم بين التصنيفات",
+          "صفحات منتجات محسّنة",
+          "تصميم متجاوب يبدأ من الجوال",
+          "تحسينات أداء لتصفح ودفع سلسين"
+        ]
+      }
     },
     {
       "slug": "cleos-dates",
@@ -237,7 +301,16 @@
       ],
       "todo": [
         "problem: what the Cleo's Dates store needed before the work"
-      ]
+      ],
+      "ar": {
+        "summary": "متجر Shopify لعلامة Cleo's Dates للتمور الفاخرة التي تبيع حول العالم.",
+        "built": [
+          "مجموعات منظمة لأنواع المنتجات وصناديق الهدايا",
+          "عرض محسّن للمنتجات",
+          "تحسين التجاوب على الجوال",
+          "مسار شراء محسّن لتحويل أفضل"
+        ]
+      }
     },
     {
       "slug": "zentia",
@@ -269,7 +342,16 @@
       ],
       "todo": [
         "problem: what the Zentia store needed before the work"
-      ]
+      ],
+      "ar": {
+        "summary": "متجر Shopify لعلامة Zentia، علامة أزياء محلية.",
+        "built": [
+          "عرض نظيف للعلامة التجارية",
+          "صفحات منتجات محسّنة ومجموعات منظمة",
+          "تصميم يبدأ من الجوال",
+          "مسار شراء مبسّط"
+        ]
+      }
     },
     {
       "slug": "ozone",
@@ -301,7 +383,16 @@
       ],
       "todo": [
         "problem: what the Ozone store needed before the work"
-      ]
+      ],
+      "ar": {
+        "summary": "متجر أزياء على Shopify لعلامة Ozone.",
+        "built": [
+          "عرض أزياء عصري مع مجموعات منظمة",
+          "تسهيل اكتشاف المنتجات",
+          "تحسين التجاوب على الجوال وتنقيح عناصر الواجهة",
+          "تجربة شراء سلسة"
+        ]
+      }
     },
     {
       "slug": "glitter",
@@ -332,7 +423,16 @@
       ],
       "todo": [
         "problem: what the Glitter store needed before the work"
-      ]
+      ],
+      "ar": {
+        "summary": "متجر Shopify لعلامة Glitter للجمال والإكسسوارات.",
+        "built": [
+          "أقسام مخصصة للصفحة الرئيسية",
+          "تخطيطات منتجات محسّنة",
+          "تحسين مسار التنقل",
+          "دمج الحملات الترويجية"
+        ]
+      }
     },
     {
       "slug": "ozad-pharma",
@@ -356,7 +456,11 @@
       "todo": [
         "problem, what you built and the stack for OZAD Pharma (the old Elatusian copy described a fashion store, so it was not reused)",
         "confirm the Liquid tag and the 2025-04 completion date"
-      ]
+      ],
+      "ar": {
+        "summary": "متجر Shopify لعلامة OZAD Pharma.",
+        "built": []
+      }
     },
     {
       "slug": "tactical-schnauzer",
@@ -381,10 +485,17 @@
       "images": [
         {
           "src": "assets/images/projects/tactical-schnauzer-store.webp",
-          "alt": "Tactical Schnauzer store scroll animation section titled \"Keep your holster\", showing a holster on a belt above compatibility notes"
+          "alt": "Tactical Schnauzer store scroll animation section titled \"Keep your holster\", showing a holster on a belt above compatibility notes",
+          "altAr": "لقطة شاشة لقسم حركة التمرير بعنوان \"احتفظ بحافظة مسدسك\" في متجر Tactical Schnauzer"
         }
       ],
-      "liveUrl": "https://tacticalschnauzer.com/"
+      "liveUrl": "https://tacticalschnauzer.com/",
+      "ar": {
+        "summary": "متجر Shopify بحركة تمرير تشغّل إطارات الصور أثناء تمرير الزائر.",
+        "built": [
+          "حركة تمرير تشغّل سلسلة من إطارات الصور أثناء تمرير الزائر"
+        ]
+      }
     },
     {
       "slug": "mas-clinics",
@@ -435,7 +546,14 @@
       ],
       "todo": [
         "problem: what the btklmseny website/app needed before the work"
-      ]
+      ],
+      "ar": {
+        "summary": "موقع تطبيق btklmseny لتعلم الصينية، مرتبط بتطبيق الجوال على Google Cloud لإدارة الاشتراكات.",
+        "built": [
+          "إعداد ونشر تطبيق Node.js على Google Cloud",
+          "ربط الموقع بتطبيق الجوال لتتبع الاشتراكات"
+        ]
+      }
     }
   ],
   "removedLegacyIds": [

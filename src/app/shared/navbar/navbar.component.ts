@@ -1,7 +1,10 @@
 // navbar.component.ts
-import { Component, HostListener, inject } from '@angular/core';
+import { Component, HostListener, computed, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Router, RouterLink, RouterLinkActive } from '@angular/router';
+import { LangService } from '@core/i18n/lang.service';
+import { ARABIC_LIVE, otherLang } from '@core/i18n/lang';
+import { UI } from '@core/i18n/ui';
 
 interface NavLink {
   label: string;
@@ -19,15 +22,31 @@ interface NavLink {
 export class NavbarComponent {
   private router = inject(Router);
 
+  readonly langService = inject(LangService);
+  readonly arabicLive = ARABIC_LIVE;
+  readonly ui = computed(() => UI[this.langService.lang()]);
+
   isScrolled = false;
   isMobileMenuOpen = false;
 
-  // Navigation links
-  navLinks: NavLink[] = [
-    { label: 'About Me', route: '/', fragment: 'about' },
-    { label: 'All Projects', route: '/portfolio' },
-    { label: 'Contact Me', route: '/', fragment: 'contact' }
-  ];
+  // Navigation links, in the current language
+  readonly navLinks = computed<NavLink[]>(() => {
+    const ui = this.ui().nav;
+    const link = (path: string) => this.langService.link(path);
+    return [
+      { label: ui.home, route: link('/') },
+      { label: ui.services, route: link('/services') },
+      { label: ui.projects, route: link('/portfolio') },
+      { label: ui.faq, route: link('/faq') },
+      { label: ui.contact, route: link('/'), fragment: 'contact' }
+    ];
+  });
+
+  // Same page in the other language: a real link, so crawlers follow it
+  readonly otherLang = computed(() => otherLang(this.langService.lang()));
+  switchLink(): string {
+    return this.langService.switchLink(this.router.url);
+  }
 
   // Contact info
   contactInfo = {
@@ -95,7 +114,7 @@ export class NavbarComponent {
 
     // Router anchor scrolling handles the first jump; scroll again once
     // async sections (e.g. the projects carousel) have finished loading
-    this.router.navigate(['/'], { fragment: sectionId }).then(() => {
+    this.router.navigate([this.langService.link('/')], { fragment: sectionId }).then(() => {
       setTimeout(() => {
         document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' });
       }, 500);

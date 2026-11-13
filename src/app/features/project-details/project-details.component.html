@@ -3,10 +3,10 @@
   <nav class="breadcrumb-nav" aria-label="breadcrumb">
     <ol class="breadcrumb">
       <li class="breadcrumb-item">
-        <a routerLink="/">Home</a>
+        <a [routerLink]="langService.link('/')">{{ ui().home.breadcrumb }}</a>
       </li>
       <li class="breadcrumb-item">
-        <a routerLink="/portfolio">Projects</a>
+        <a [routerLink]="langService.link('/portfolio')">{{ ui().project.breadcrumbProjects }}</a>
       </li>
       <li class="breadcrumb-item active" aria-current="page">
         {{ project.title }}
@@ -18,7 +18,7 @@
   <header class="project-header">
     <h1 class="project-title">{{ project.title }}</h1>
 
-    <p class="project-description">{{ project.summary }}</p>
+    <p class="project-description">{{ text.summary }}</p>
 
     <!-- Technology Badges -->
     <div class="tech-badges">
@@ -33,13 +33,13 @@
   </header>
 
   <!-- Screenshots -->
-  <section class="carousel-section" *ngIf="carouselImages.length > 0" aria-label="Screenshots">
-    <div class="carousel-container">
+  <section class="carousel-section" *ngIf="carouselImages.length > 0" [attr.aria-label]="ui().project.screenshots">
+    <div class="carousel-container" dir="ltr">
       <button
         class="carousel-btn prev-btn"
         (click)="previousImage()"
         [disabled]="carouselImages.length <= 1"
-        aria-label="Previous image"
+        [attr.aria-label]="langService.lang() === 'ar' ? 'الصورة السابقة' : 'Previous image'"
       >
         <i class="fas fa-chevron-left" aria-hidden="true"></i>
       </button>
@@ -56,7 +56,7 @@
             [height]="imageSize(image.src).height"
             sizes="100vw"
             [priority]="i === 0"
-            [alt]="image.alt"
+            [alt]="alt(image)"
             class="carousel-image"
           />
         </div>
@@ -66,7 +66,7 @@
         class="carousel-btn next-btn"
         (click)="nextImage()"
         [disabled]="carouselImages.length <= 1"
-        aria-label="Next image"
+        [attr.aria-label]="langService.lang() === 'ar' ? 'الصورة التالية' : 'Next image'"
       >
         <i class="fas fa-chevron-right" aria-hidden="true"></i>
       </button>
@@ -78,7 +78,7 @@
           class="indicator"
           [class.active]="i === currentImageIndex"
           (click)="goToImage(i)"
-          [attr.aria-label]="'Go to image ' + (i + 1)"
+          [attr.aria-label]="(langService.lang() === 'ar' ? 'الانتقال إلى الصورة ' : 'Go to image ') + (i + 1)"
         ></button>
       </div>
     </div>
@@ -90,7 +90,7 @@
       <div class="info-card">
         <h2 class="info-title">
           <i class="fas fa-user" aria-hidden="true"></i>
-          Client
+          {{ ui().project.client }}
         </h2>
         <p class="info-content">{{ project.client }}</p>
       </div>
@@ -98,7 +98,7 @@
       <div class="info-card" *ngIf="project.completionDate">
         <h2 class="info-title">
           <i class="fas fa-calendar" aria-hidden="true"></i>
-          Completed
+          {{ ui().project.completed }}
         </h2>
         <p class="info-content">{{ project.completionDate }}</p>
       </div>
@@ -106,29 +106,29 @@
       <div class="info-card">
         <h2 class="info-title">
           <i class="fas fa-tag" aria-hidden="true"></i>
-          Category
+          {{ ui().project.category }}
         </h2>
-        <p class="info-content">{{ project.category }}</p>
+        <p class="info-content">{{ ui().categories[project.category] || project.category }}</p>
       </div>
     </div>
 
     <!-- Problem / what I built / stack (sections with no provided facts are left out; see `todo` in projects.json) -->
     <div class="extended-details">
-      <section class="detail-section" *ngIf="project.problem">
-        <h2 class="section-title">The problem</h2>
-        <p class="section-content">{{ project.problem }}</p>
+      <section class="detail-section" *ngIf="text.problem">
+        <h2 class="section-title">{{ ui().project.problem }}</h2>
+        <p class="section-content">{{ text.problem }}</p>
       </section>
 
-      <section class="detail-section" *ngIf="project.built.length > 0">
-        <h2 class="section-title">What I built</h2>
+      <section class="detail-section" *ngIf="text.built.length > 0">
+        <h2 class="section-title">{{ ui().project.built }}</h2>
         <ul class="section-content built-list">
-          <li *ngFor="let item of project.built">{{ item }}</li>
+          <li *ngFor="let item of text.built">{{ item }}</li>
         </ul>
       </section>
 
       <section class="detail-section">
-        <h2 class="section-title">Stack</h2>
-        <p class="section-content">{{ project.technologies.join(', ') }}</p>
+        <h2 class="section-title">{{ ui().project.stack }}</h2>
+        <p class="section-content ltr-text">{{ project.technologies.join(', ') }}</p>
       </section>
     </div>
 
@@ -142,25 +142,25 @@
         rel="noopener"
       >
         <i class="fas fa-external-link-alt" aria-hidden="true"></i>
-        Visit the live store
+        {{ ui().project.visit }}
       </a>
 
-      <a class="action-btn secondary-btn" routerLink="/portfolio">
-        <i class="fas fa-arrow-left" aria-hidden="true"></i>
-        Back to Projects
+      <a class="action-btn secondary-btn" [routerLink]="langService.link('/portfolio')">
+        <i class="fas fa-arrow-left flip-rtl" aria-hidden="true"></i>
+        {{ ui().project.back }}
       </a>
     </div>
   </section>
 
   <!-- Related Projects -->
   <section class="related-projects" *ngIf="relatedProjects.length > 0">
-    <h2 class="section-heading">Related Projects</h2>
+    <h2 class="section-heading">{{ ui().project.related }}</h2>
 
     <div class="related-grid">
       <a
         *ngFor="let relatedProject of relatedProjects; trackBy: trackBySlug"
         class="related-card"
-        [routerLink]="['/work', relatedProject.slug]"
+        [routerLink]="langService.link('/work/' + relatedProject.slug)"
       >
         <div class="related-image-wrapper">
           <img
@@ -168,13 +168,13 @@
             [width]="imageSize(relatedProject.image).width"
             [height]="imageSize(relatedProject.image).height"
             sizes="(min-width: 769px) 33vw, 100vw"
-            [alt]="'Screenshot of the ' + relatedProject.title + ' website'"
+            [alt]="ui().project.screenshotOf + ' ' + relatedProject.title"
             class="related-image"
           />
         </div>
         <div class="related-content">
           <h3 class="related-title">{{ relatedProject.title }}</h3>
-          <p class="related-category">{{ relatedProject.category }}</p>
+          <p class="related-category">{{ ui().categories[relatedProject.category] || relatedProject.category }}</p>
         </div>
       </a>
     </div>

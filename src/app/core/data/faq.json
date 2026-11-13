@@ -1,0 +1,65 @@
+{
+  "en": {
+    "title": "Shopify Developer FAQ: Cost and Process | Kerllos Ayad",
+    "description": "Answers about hiring a Shopify developer in Cairo, Egypt: cost, Liquid, speed optimization and how a project works.",
+    "h1": "Shopify Developer FAQ: Pricing and Process",
+    "intro": "Answers to the questions clients ask most before hiring a Shopify developer in Cairo, Egypt. If your question is not here, send me a message and I will answer it.",
+    "groups": [
+      {
+        "title": "Hiring and working together",
+        "items": [
+          { "id": "who-is-kerllos-ayad", "q": "Who is Kerllos Ayad and what does he do?", "a": "Kerllos Ayad is a Shopify developer and Senior Frontend Engineer (Angular) based in Cairo, Egypt, with 4+ years of experience. He builds and improves Shopify stores for brands in Egypt and the Middle East." },
+          { "id": "how-to-hire-a-shopify-developer-in-cairo", "q": "How do I hire a Shopify developer in Cairo, Egypt?", "a": "Send an email or a LinkedIn message that describes your store and your goal. You get a reply with questions, a plan and an estimate. Work starts after you approve the scope." }
+        ]
+      },
+      {
+        "title": "Cost",
+        "items": [
+          { "id": "how-much-does-a-shopify-store-cost", "q": "How much does a Shopify store cost in Egypt?", "a": "It depends on the scope: the theme, the number of custom sections, the number of products, integrations and languages. Defined projects are usually quoted at a fixed price, and ongoing work by the hour. The Shopify subscription and paid apps are billed by Shopify and the app makers, separately from development work." }
+        ]
+      },
+      {
+        "title": "Technical questions",
+        "items": [
+          { "id": "what-is-shopify-liquid", "q": "What is Liquid and why does it matter?", "a": "Liquid is Shopify's template language. Custom sections, product page logic and dynamic content in a theme are written in Liquid, together with HTML, SCSS and JavaScript." },
+          { "id": "customize-existing-shopify-theme", "q": "Can you customize my existing Shopify theme?", "a": "Yes. I extend your current theme with custom sections and features, and build custom parts when the theme cannot do what you need." },
+          { "id": "speed-up-shopify-store", "q": "Can you make my Shopify store faster?", "a": "Yes. I review images, apps, theme code, fonts and scripts, and improve the code, page titles and structured data. I measure the store with PageSpeed before and after the work. Results vary by store." },
+          { "id": "apps-or-custom-code", "q": "Do you use Shopify apps or custom code?", "a": "Both. For example, the Arya store uses Judge.me for customer reviews. I prefer light custom code over adding apps that can slow the store down." },
+          { "id": "angular-web-apps", "q": "Do you build anything other than Shopify stores?", "a": "Yes. I build Angular and TypeScript web apps, landing pages and internal tools." }
+        ]
+      }
+    ]
+  },
+  "ar": {
+    "title": "أسئلة شائعة عن مطور Shopify: التكلفة والخطوات | Kerllos Ayad",
+    "description": "إجابات عن توظيف مطور Shopify في القاهرة: التكلفة وLiquid وتسريع المتجر وكيف يسير المشروع.",
+    "h1": "أسئلة شائعة عن تطوير متاجر Shopify (شوبيفاي) وتكلفتها وخطوات العمل",
+    "intro": "إجابات عن أكثر الأسئلة التي يطرحها العملاء قبل توظيف مطور Shopify في القاهرة، مصر. إذا لم تجد سؤالك هنا، أرسل لي رسالة وسأجيبك.",
+    "groups": [
+      {
+        "title": "التوظيف والتعاون",
+        "items": [
+          { "id": "who-is-kerllos-ayad", "q": "من هو Kerllos Ayad وماذا يقدم؟", "a": "Kerllos Ayad مطور Shopify (شوبيفاي) ومهندس واجهات أمامية أول (Angular) مقيم في القاهرة، مصر، بخبرة تتجاوز 4 سنوات. يبني ويحسّن متاجر Shopify للعلامات التجارية في مصر والشرق الأوسط." },
+          { "id": "how-to-hire-a-shopify-developer-in-cairo", "q": "كيف أوظّف مطور Shopify في القاهرة، مصر؟", "a": "أرسل رسالة عبر البريد الإلكتروني أو LinkedIn تشرح فيها متجرك وهدفك. ستصلك إجابة بأسئلة وخطة وتقدير للتكلفة، ويبدأ العمل بعد موافقتك على النطاق." }
+        ]
+      },
+      {
+        "title": "التكلفة",
+        "items": [
+          { "id": "how-much-does-a-shopify-store-cost", "q": "كم تكلفة إنشاء متجر Shopify في مصر؟", "a": "تعتمد التكلفة على حجم العمل: القالب وعدد الأقسام المخصصة وعدد المنتجات والربط مع خدمات أخرى واللغات. غالبًا يكون السعر ثابتًا لنطاق محدد، وبالساعة للعمل المستمر. اشتراك Shopify والتطبيقات المدفوعة تُحاسب من Shopify ومن مطوري التطبيقات، وهي منفصلة عن أتعاب التطوير." }
+        ]
+      },
+      {
+        "title": "أسئلة تقنية",
+        "items": [
+          { "id": "what-is-shopify-liquid", "q": "ما هي Liquid ولماذا تهم؟", "a": "Liquid هي لغة القوالب في Shopify. الأقسام المخصصة ومنطق صفحة المنتج والمحتوى الديناميكي داخل القالب تُكتب بـ Liquid مع HTML وSCSS وJavaScript." },
+          { "id": "customize-existing-shopify-theme", "q": "هل يمكنك تعديل قالب Shopify الحالي؟", "a": "نعم. أوسّع القالب الحالي بأقسام وميزات مخصصة، وأبني الأجزاء المخصصة عندما لا يكفي القالب لما تحتاجه." },
+          { "id": "speed-up-shopify-store", "q": "هل يمكنك تسريع متجر Shopify الخاص بي؟", "a": "نعم. أراجع الصور والتطبيقات وكود القالب والخطوط والسكربتات، وأحسّن الكود وعناوين الصفحات والبيانات المنظمة. أقيس المتجر بأداة PageSpeed قبل العمل وبعده. تختلف النتائج حسب كل متجر." },
+          { "id": "apps-or-custom-code", "q": "هل تستخدم تطبيقات Shopify أم كودًا مخصصًا؟", "a": "الاثنين معًا. مثلًا استخدمت Judge.me لتقييمات العملاء في متجر Arya. أفضّل الكود الخفيف على إضافة تطبيقات قد تبطئ المتجر." },
+          { "id": "angular-web-apps", "q": "هل تبني مشاريع غير متاجر Shopify؟", "a": "نعم. أبني تطبيقات ويب بـ Angular وTypeScript وصفحات هبوط وأدوات داخلية." }
+        ]
+      }
+    ]
+  },
+  "held": ["work-with-clients-outside-egypt", "support-after-launch", "how-long-does-a-shopify-project-take"]
+}

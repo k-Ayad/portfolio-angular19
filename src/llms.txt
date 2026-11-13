@@ -1,14 +1,15 @@
 # Kerllos Ayad – Shopify Developer in Cairo, Egypt
 
-> Kerllos Ayad is a Shopify developer and Senior Frontend Engineer (Angular) in Cairo, Egypt, building Shopify stores for brands in Egypt and the Middle East.
+> Shopify developer in Cairo, Egypt (4+ years). Custom themes, Liquid, speed optimization and store setup for brands in Egypt and the Middle East.
 
 Kerllos Ayad is a Shopify developer and Senior Frontend Engineer based in Cairo, Egypt, with 4+ years of experience. Current role: Senior Frontend Engineer at MCV (Manufacturing Commercial Vehicles). Serves clients in Egypt and Middle East.
 
 ## Services
-- Shopify store setup & design
-- Custom Shopify themes & features
-- Speed & SEO optimization
-- Web apps & landing pages
+- [Services overview](https://k-ayad.com/services): the four services and how they work
+- [Shopify store setup and design](https://k-ayad.com/services/shopify-store-setup): A new store set up properly: theme, collections, payments, shipping and a clean brand-matched design.
+- [Custom Shopify themes and features](https://k-ayad.com/services/shopify-theme-customization): Custom sections, product page logic, variant swatches and metafield-driven content, written in Liquid.
+- [Shopify speed and SEO optimization](https://k-ayad.com/services/shopify-speed-seo-optimization): Faster pages, clean markup and structured data, so the store loads quickly and can be found.
+- [Web apps and landing pages](https://k-ayad.com/services/web-apps-landing-pages): Angular and JavaScript front ends, campaign landing pages and internal tools.
 
 ## Skills
 Shopify, Liquid, Angular, TypeScript, JavaScript, UI/UX
@@ -30,9 +31,11 @@ Shopify, Liquid, Angular, TypeScript, JavaScript, UI/UX
 
 All projects: https://k-ayad.com/portfolio
 
+## FAQ
+- [Shopify developer FAQ](https://k-ayad.com/faq): cost, process, Liquid, speed optimization and more
+
 ## Contact
 - Email: kerllos.ayad@gmail.com
-- WhatsApp: +20 127 683 2755 (https://wa.me/201276832755)
 - LinkedIn: https://www.linkedin.com/in/k-ayad
 - Facebook: https://www.facebook.com/k.ayad.dev
 - Website: https://k-ayad.com/

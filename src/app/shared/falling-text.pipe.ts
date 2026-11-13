@@ -21,11 +21,13 @@ export class FallingTextPipe implements PipeTransform {
   transform(
     text: string, 
     delayIncrement: number = 0.08, 
-    startDelay: number = 0
+    startDelay: number = 0,
+    mode: 'chars' | 'words' = 'chars'
   ): FallingChar[] {
     if (!text) return [];
     
-    const chars = text.split('');
+    // 'words' keeps each word whole, so the heading stays plain readable text in the HTML
+    const chars = mode === 'words' ? text.split(/\s+/).filter(Boolean) : text.split('');
     const totalChars = chars.length;
     const middleIndex = Math.floor(totalChars / 2);
     
@@ -35,7 +37,7 @@ export class FallingTextPipe implements PipeTransform {
       const delay = startDelay + (distanceFromCenter * delayIncrement);
       
       return {
-        char: char === ' ' ? '\u00A0' : char, // Preserve spaces
+        char: mode === 'chars' && char === ' ' ? '\u00A0' : char, // Preserve spaces
         delay: delay
       };
     });

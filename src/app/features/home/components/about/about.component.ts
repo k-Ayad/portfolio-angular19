@@ -1,5 +1,7 @@
-import { AfterViewInit, Component, ElementRef, HostListener, PLATFORM_ID, ViewChild, inject } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, HostListener, PLATFORM_ID, ViewChild, computed, inject } from '@angular/core';
 import { CommonModule, NgOptimizedImage, isPlatformBrowser } from '@angular/common';
+import { LangService } from '@core/i18n/lang.service';
+import { UI } from '@core/i18n/ui';
 import { ScrollTriggerDirective } from '@shared/scroll-trigger.directive';
 import { FallingTextPipe } from '@shared/falling-text.pipe';
 
@@ -14,11 +16,14 @@ export class AboutComponent implements AfterViewInit {
     @ViewChild('aboutContainer') aboutContainer!: ElementRef<HTMLDivElement>;
   @ViewChild('aboutText') aboutText!: ElementRef<HTMLParagraphElement>;
   private letterSpans: HTMLSpanElement[] = [];
+  readonly langService = inject(LangService);
+  readonly ui = computed(() => UI[this.langService.lang()]);
   private isBrowser = isPlatformBrowser(inject(PLATFORM_ID));
 
   ngAfterViewInit() {
-    // The letter-by-letter reveal is browser-only; on the server the paragraph stays plain text
-    if (!this.isBrowser) return;
+    // The word-by-word reveal is browser-only and English-only: on the server, and on the Arabic pages,
+    // the paragraph stays plain text (Arabic text is never split, so letters keep joining)
+    if (!this.isBrowser || this.langService.lang() === 'ar') return;
 
     setTimeout(() => {
       this.wrapLettersInSpans();
@@ -30,41 +35,28 @@ export class AboutComponent implements AfterViewInit {
     const paragraph = this.aboutText.nativeElement;
     
     if (!paragraph) {
-      console.error('About text paragraph not found!');
       return;
     }
 
-    // Get the text content
     const text = paragraph.textContent || '';
-    
-    // Clear the paragraph
     paragraph.innerHTML = '';
-    
     this.letterSpans = [];
 
-    // Create a span for each character
-    for (let i = 0; i < text.length; i++) {
-      const char = text[i];
-      const span = document.createElement('span');
-      
-      span.className = 'letter-span';
-      
-      // Handle spaces
-      if (char === ' ') {
-        span.innerHTML = '&nbsp;';
-      } else {
-        span.textContent = char;
+    // One span per word; the spaces between words stay plain text
+    for (const part of text.split(/(\s+)/)) {
+      if (!part) continue;
+      if (/^\s+$/.test(part)) {
+        paragraph.appendChild(document.createTextNode(' '));
+        continue;
       }
-      
-      // Set initial styles
-      span.style.opacity = '0.2';
-      span.style.display = 'inline';
+      const span = document.createElement('span');
+      span.className = 'letter-span';
+      span.textContent = part;
+      span.style.opacity = '0.65';
       span.style.transition = 'opacity 0.3s ease';
-      
       paragraph.appendChild(span);
       this.letterSpans.push(span);
     }
-    
   }
 
   @HostListener('window:scroll', [])
@@ -116,18 +108,18 @@ export class AboutComponent implements AfterViewInit {
       const fadeRange = 0.2; // Each letter fades over 20% of the scroll range
       const fadeEnd = fadeStart + fadeRange;
       
-      let opacity = 0.2;
+      let opacity = 0.65;
       
       if (scrollProgress <= fadeStart) {
         // Before this letter's fade starts
-        opacity = 0.2;
+        opacity = 0.65;
       } else if (scrollProgress >= fadeEnd) {
         // After this letter's fade completes
         opacity = 1;
       } else {
         // During this letter's fade
         const letterProgress = (scrollProgress - fadeStart) / fadeRange;
-        opacity = 0.2 + (letterProgress * 0.8); // Fade from 0.2 to 1.0
+        opacity = 0.65 + (letterProgress * 0.35); // Fade from 0.65 to 1.0
       }
       
       span.style.opacity = opacity.toFixed(3);

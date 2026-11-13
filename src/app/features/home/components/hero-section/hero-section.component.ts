@@ -1,6 +1,8 @@
 import { CommonModule, NgOptimizedImage } from '@angular/common';
-import { Component, OnDestroy } from '@angular/core';
-import { RouterLink } from "@angular/router";
+import { Component, OnDestroy, computed, inject } from '@angular/core';
+import { RouterLink } from '@angular/router';
+import { LangService } from '@core/i18n/lang.service';
+import { UI } from '@core/i18n/ui';
 
 interface SkillImage {
   src: string;
@@ -20,6 +22,9 @@ interface SkillImage {
   styleUrl: './hero-section.component.scss'
 })
 export class HeroSectionComponent implements OnDestroy {
+  readonly langService = inject(LangService);
+  readonly ui = computed(() => UI[this.langService.lang()]);
+
   skillsImages: SkillImage[] = [
     {
       src: 'assets/images/skills/angular-icon.svg',

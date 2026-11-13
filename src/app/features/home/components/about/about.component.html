@@ -9,23 +9,22 @@
                     <div class="col-lg-6">
             <div #aboutContainer >
               <!-- <h2 class="section-title">About Section</h2> -->
-               <h2 class="about-title falling-text" aria-label="About Me">
-                <div class="falling-text" appScrollTrigger>
-                  <span *ngFor="let item of 'About Me' | fallingText:0.07"
-                        [style.animation-delay.s]="item.delay">
-                    {{ item.char }}
-                  </span>
-                </div>
-              </h2>
-              <!-- TODO: add the number of Shopify stores built (not provided yet), e.g. "...has built N+ Shopify stores for brands..." -->
-              <p #aboutText class="about-text">I'm Kerllos Ayad, a Shopify developer and Senior Frontend Engineer (Angular) based in Cairo, Egypt, with 4+ years of experience. I build Shopify stores for brands in Egypt and the Middle East, including OR, Arya, Hechter Paris, Sidewalks, El Okaby Pharmacies and Cleo's Dates. My services: Shopify store setup & design, custom Shopify themes & features, speed & SEO optimization, and web apps & landing pages.</p>
+               @if (langService.lang() === 'ar') {
+                <h2 class="about-title">{{ ui().about.title }}</h2>
+              } @else {
+                <h2 class="about-title falling-text" appScrollTrigger>
+                  @for (item of ui().about.title | fallingText:0.12:0:'words'; track $index) {<span [style.animation-delay.s]="item.delay">{{ item.char }}</span>{{ ' ' }}}
+                </h2>
+              }
+              <!-- TODO: add the number of Shopify stores built (not provided yet) to the about text in core/i18n/ui.ts -->
+              <p #aboutText class="about-text">{{ ui().about.text }}</p>
               <!-- <a href="#" class="btn btn-primary">Learn More</a> -->
             </div>
           </div>
 
           <div class="col-lg-6">
             <div class="about-image">
-              <img ngSrc="assets/images/about/about-image.webp" alt="Developer workstation with two monitors showing code, a keyboard and a pen holder" class="img-fluid" width="1084" height="734" sizes="(min-width: 992px) 45vw, 100vw">
+              <img ngSrc="assets/images/about/about-image.webp" [alt]="ui().about.imageAlt" class="img-fluid" width="1084" height="734" sizes="(min-width: 992px) 45vw, 100vw">
             </div>
           </div>
 

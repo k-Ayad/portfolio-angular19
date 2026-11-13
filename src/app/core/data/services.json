@@ -1,0 +1,220 @@
+{
+  "services": [
+    {
+      "slug": "shopify-store-setup",
+      "projects": [
+        "or-brand",
+        "arya",
+        "el-okaby-pharmacies"
+      ],
+      "faqIds": [
+        "how-much-does-a-shopify-store-cost",
+        "how-to-hire-a-shopify-developer-in-cairo"
+      ],
+      "en": {
+        "nav": "Shopify store setup and design",
+        "title": "Shopify Store Setup & Design in Egypt | Kerllos Ayad",
+        "description": "Launch your Shopify store with a developer in Cairo: theme, products, payments, shipping and a design that fits your brand.",
+        "h1": "Shopify Store Setup and Design in Egypt",
+        "summary": "A new store set up properly: theme, collections, payments, shipping and a clean brand-matched design.",
+        "whatYouGet": "A Shopify store that is ready to sell and looks like your brand. I set up the store from the first empty admin to launch: the theme, the collections, the product pages, payments, shipping and the navigation customers use to find what they want. This service is for brands in Egypt and the Middle East that are starting a new Shopify store, or rebuilding a store that no longer fits the business.",
+        "includedTitle": "What is included",
+        "included": [
+          "Theme setup and a design matched to your brand identity",
+          "Structured collections and clear category navigation",
+          "Product pages organized so customers find products fast",
+          "Mobile-first responsive layout",
+          "Payments and shipping configured",
+          "A streamlined checkout flow",
+          "Performance and SEO basics built in from the start",
+          "A reviewed staging theme before anything goes live"
+        ],
+        "pricingTitle": "Timeline and pricing",
+        "pricing": "The price depends on the size of the store: the number of products and collections, how much of the design is custom, the integrations you need and the languages the store runs in. A defined store setup is usually quoted at a fixed price. The Shopify subscription and any paid apps are billed separately by Shopify and the app makers. Send me your product range and your goals and I will reply with a plan and an estimate."
+      },
+      "ar": {
+        "nav": "إعداد وتصميم متاجر Shopify",
+        "title": "إعداد وتصميم متجر Shopify في مصر | Kerllos Ayad",
+        "description": "ابدأ متجرك على Shopify (شوبيفاي) مع مطور في القاهرة: القالب والمنتجات والدفع والشحن وتصميم يناسب علامتك.",
+        "h1": "إعداد وتصميم متجر Shopify (شوبيفاي) في مصر",
+        "summary": "متجر جديد يُعدّ بشكل صحيح: القالب والمجموعات والدفع والشحن مع تصميم نظيف يناسب هوية علامتك.",
+        "whatYouGet": "متجر Shopify جاهز للبيع ويشبه علامتك التجارية. أُعدّ المتجر من لوحة التحكم الفارغة حتى الإطلاق: القالب والمجموعات وصفحات المنتجات والدفع والشحن والتنقل الذي يستخدمه العملاء للوصول لما يريدون. هذه الخدمة للعلامات التجارية في مصر والشرق الأوسط التي تبدأ متجر Shopify جديدًا، أو تعيد بناء متجر لم يعد يناسب نشاطها.",
+        "includedTitle": "ما يشمله العمل",
+        "included": [
+          "إعداد القالب وتصميم يناسب هوية علامتك",
+          "مجموعات منظمة وتنقل واضح بين الأقسام",
+          "صفحات منتجات منظمة ليجد العملاء المنتجات بسرعة",
+          "تصميم متجاوب يبدأ من الجوال",
+          "إعداد الدفع والشحن",
+          "مسار شراء مبسّط",
+          "أساسيات السرعة ومحركات البحث من البداية",
+          "قالب تجريبي تراجعه قبل أي نشر"
+        ],
+        "pricingTitle": "المدة والتكلفة",
+        "pricing": "يعتمد السعر على حجم المتجر: عدد المنتجات والمجموعات، ومقدار التصميم المخصص، والربط المطلوب مع خدمات أخرى، واللغات التي يعمل بها المتجر. غالبًا يكون إعداد المتجر المحدد بسعر ثابت. اشتراك Shopify والتطبيقات المدفوعة تُحاسب بشكل منفصل من Shopify ومن مطوري التطبيقات. أرسل لي مجموعة منتجاتك وأهدافك وسأرد عليك بخطة وتقدير للتكلفة."
+      }
+    },
+    {
+      "slug": "shopify-theme-customization",
+      "projects": [
+        "arya",
+        "or-brand",
+        "sidewalks"
+      ],
+      "faqIds": [
+        "what-is-shopify-liquid",
+        "customize-existing-shopify-theme"
+      ],
+      "en": {
+        "nav": "Custom Shopify themes and features",
+        "title": "Custom Shopify Theme Development & Liquid | Kerllos Ayad",
+        "description": "Custom Shopify themes, sections and product page features written in Liquid, by a Shopify developer in Cairo, Egypt.",
+        "h1": "Custom Shopify Theme Development and Liquid",
+        "summary": "Custom sections, product page logic, variant swatches and metafield-driven content, written in Liquid.",
+        "whatYouGet": "Theme work that does exactly what your store needs, written in Liquid, HTML, SCSS and JavaScript. Some stores need one extra section, others need product pages that behave in a special way. I extend your current theme, or build custom parts when the theme cannot do it, and I keep the code clean so your team can maintain it. This service is for stores that have outgrown their theme or want features that no app provides well.",
+        "includedTitle": "What is included",
+        "included": [
+          "Custom homepage sections",
+          "Product page customization with Liquid and Shopify metafields",
+          "Variant and colour swatch improvements, and product recommendations",
+          "A size chart built into the theme instead of a paid monthly app (done for OR)",
+          "Custom sliders, such as a different image per slide for mobile and desktop with vertical dots (done for Sidewalks)",
+          "Mobile experience features, such as a bottom toolbar and collapsed contact buttons (done for Style Beauty Store)",
+          "Scroll-driven animations, such as image frames that play as the visitor scrolls (done for Tactical Schnauzer)",
+          "Integrations such as Judge.me customer reviews (done for Arya)"
+        ],
+        "pricingTitle": "Timeline and pricing",
+        "pricing": "The price depends on how many custom sections and features you need and how much of the theme has to change. A small change, such as one new section, is quoted differently from a custom theme. Defined work is usually quoted at a fixed price, and ongoing improvements by the hour. Tell me what you want to change and I will reply with a plan and an estimate."
+      },
+      "ar": {
+        "nav": "تطوير قوالب وميزات Shopify مخصصة",
+        "title": "تطوير قوالب Shopify مخصصة وبرمجة Liquid | Kerllos Ayad",
+        "description": "قوالب وأقسام وميزات لصفحات المنتجات مكتوبة بـ Liquid من مطور Shopify في القاهرة، مصر.",
+        "h1": "تطوير وتعديل قوالب Shopify (شوبيفاي) المخصصة",
+        "summary": "أقسام مخصصة ومنطق لصفحات المنتجات وألوان وخيارات المنتج ومحتوى مرتبط بـ Metafields، بكود Liquid.",
+        "whatYouGet": "عمل على القالب يفعل بالضبط ما يحتاجه متجرك، مكتوب بـ Liquid وHTML وSCSS وJavaScript. بعض المتاجر تحتاج قسمًا إضافيًا واحدًا، وأخرى تحتاج صفحات منتجات تتصرف بطريقة خاصة. أوسّع قالبك الحالي، أو أبني أجزاء مخصصة عندما لا يكفي القالب، وأحافظ على نظافة الكود ليسهل على فريقك صيانته. هذه الخدمة للمتاجر التي تجاوزت قالبها أو تريد ميزات لا يقدمها تطبيق بشكل جيد.",
+        "includedTitle": "ما يشمله العمل",
+        "included": [
+          "أقسام مخصصة للصفحة الرئيسية",
+          "تخصيص صفحة المنتج بـ Liquid وShopify Metafields",
+          "تحسين خيارات المنتج وألوانه وتوصيات المنتجات",
+          "جدول مقاسات مدمج في القالب بدل تطبيق شهري مدفوع (نُفذ لمتجر OR)",
+          "شرائح عرض مخصصة، مثل صورة مختلفة لكل شريحة للجوال والكمبيوتر مع نقاط تنقل عمودية (نُفذ لمتجر Sidewalks)",
+          "ميزات لتجربة الجوال، مثل شريط أدوات سفلي وأزرار تواصل مطوية (نُفذ لمتجر Style Beauty Store)",
+          "حركات مرتبطة بالتمرير، مثل إطارات صور تتحرك أثناء تمرير الزائر (نُفذ لمتجر Tactical Schnauzer)",
+          "ربط خدمات مثل تقييمات العملاء Judge.me (نُفذ لمتجر Arya)"
+        ],
+        "pricingTitle": "المدة والتكلفة",
+        "pricing": "يعتمد السعر على عدد الأقسام والميزات المخصصة التي تحتاجها ومقدار ما يجب تغييره في القالب. التغيير الصغير، مثل قسم جديد واحد، يُسعَّر بشكل مختلف عن قالب مخصص كامل. غالبًا يكون العمل المحدد بسعر ثابت، والتحسينات المستمرة بالساعة. أخبرني بما تريد تغييره وسأرد عليك بخطة وتقدير للتكلفة."
+      }
+    },
+    {
+      "slug": "shopify-speed-seo-optimization",
+      "projects": [
+        "arya",
+        "hechter-paris",
+        "el-okaby-pharmacies",
+        "style-beauty-store"
+      ],
+      "faqIds": [
+        "speed-up-shopify-store",
+        "apps-or-custom-code"
+      ],
+      "en": {
+        "nav": "Shopify speed and SEO optimization",
+        "title": "Shopify Speed & SEO Optimization | Kerllos Ayad",
+        "description": "Make your Shopify store faster and easier to find: speed fixes, clean markup, structured data and SEO improvements.",
+        "h1": "Shopify Speed and SEO Optimization",
+        "summary": "Faster pages, clean markup and structured data, so the store loads quickly and can be found.",
+        "whatYouGet": "A store that loads faster and is easier for search engines to read. I start by measuring the store with PageSpeed, then work through what slows it down: images, apps, theme code, fonts and scripts. On the SEO side I check page titles, headings, clean markup and structured data. This service is for stores whose pages feel slow, or whose product and collection pages are not being found. Results vary by store, so I measure before and after the work.",
+        "includedTitle": "What is included",
+        "included": [
+          "A PageSpeed measurement before and after the work",
+          "Image review and sizing",
+          "Review of installed apps and the scripts they add",
+          "Theme code clean-up in Liquid, JavaScript and SCSS",
+          "Font and script loading improvements",
+          "Page titles, descriptions and heading structure",
+          "Structured data for products and the store",
+          "Mobile-first checks on real product and collection pages"
+        ],
+        "pricingTitle": "Timeline and pricing",
+        "pricing": "The price depends on the size of the store and on what the first measurement shows. A store with a few heavy apps is a different job from a store with a large catalog and a custom theme. Defined work is usually quoted at a fixed price, and ongoing optimization by the hour. Send me the store address and I will reply with what I would check first and an estimate."
+      },
+      "ar": {
+        "nav": "تسريع متاجر Shopify وتحسين محركات البحث",
+        "title": "تسريع متاجر Shopify وتحسين السيو | Kerllos Ayad",
+        "description": "اجعل متجر Shopify أسرع وأسهل في الظهور في البحث: تسريع الصفحات، كود نظيف، بيانات منظمة وتحسينات سيو.",
+        "h1": "تسريع متجر Shopify (شوبيفاي) وتحسين ظهوره في البحث",
+        "summary": "صفحات أسرع وكود نظيف وبيانات منظمة، ليفتح متجرك بسرعة ويظهر في نتائج البحث.",
+        "whatYouGet": "متجر يفتح أسرع ويسهل على محركات البحث قراءته. أبدأ بقياس المتجر بأداة PageSpeed، ثم أعالج ما يبطئه: الصور والتطبيقات وكود القالب والخطوط والسكربتات. وفي جانب السيو أراجع عناوين الصفحات والعناوين الداخلية والكود النظيف والبيانات المنظمة. هذه الخدمة للمتاجر التي تبدو صفحاتها بطيئة، أو لا تظهر صفحات منتجاتها ومجموعاتها في البحث. تختلف النتائج حسب كل متجر، لذلك أقيس قبل العمل وبعده.",
+        "includedTitle": "ما يشمله العمل",
+        "included": [
+          "قياس PageSpeed قبل العمل وبعده",
+          "مراجعة الصور وأحجامها",
+          "مراجعة التطبيقات المثبتة والسكربتات التي تضيفها",
+          "تنظيف كود القالب بـ Liquid وJavaScript وSCSS",
+          "تحسين تحميل الخطوط والسكربتات",
+          "عناوين الصفحات والأوصاف وبنية العناوين الداخلية",
+          "بيانات منظمة للمنتجات والمتجر",
+          "فحوصات تبدأ من الجوال على صفحات منتجات ومجموعات حقيقية"
+        ],
+        "pricingTitle": "المدة والتكلفة",
+        "pricing": "يعتمد السعر على حجم المتجر وعلى ما يظهره القياس الأول. متجر فيه بضعة تطبيقات ثقيلة عمل مختلف عن متجر بكتالوج كبير وقالب مخصص. غالبًا يكون العمل المحدد بسعر ثابت، والتحسين المستمر بالساعة. أرسل لي عنوان متجرك وسأرد عليك بما سأفحصه أولًا وبتقدير للتكلفة."
+      }
+    },
+    {
+      "slug": "web-apps-landing-pages",
+      "projects": [
+        "btklmseny",
+        "tactical-schnauzer"
+      ],
+      "faqIds": [
+        "angular-web-apps",
+        "how-to-hire-a-shopify-developer-in-cairo"
+      ],
+      "en": {
+        "nav": "Web apps and landing pages",
+        "title": "Angular Web Apps & Landing Pages | Kerllos Ayad",
+        "description": "Angular and JavaScript web apps, campaign landing pages and internal tools by a Senior Frontend Engineer in Cairo.",
+        "h1": "Angular Web Apps and Landing Pages",
+        "summary": "Angular and JavaScript front ends, campaign landing pages and internal tools.",
+        "whatYouGet": "Web apps and landing pages built with Angular, TypeScript and JavaScript by a Senior Frontend Engineer. When a store or a campaign needs more than a theme can give, I build the front end: a fast landing page for a campaign, an app that connects to your data, or an internal tool for your team. This service is for businesses that need a web interface built properly, with clean, maintainable code.",
+        "includedTitle": "What is included",
+        "included": [
+          "Angular and TypeScript web applications",
+          "Campaign and product landing pages",
+          "Internal tools and dashboards for teams",
+          "Responsive layouts that work on mobile first",
+          "Connecting the front end to APIs and back-end services",
+          "Deployment help, for example a Node.js application on Google Cloud (done for btklmseny)",
+          "Rich scroll animations, such as image frames that play as the visitor scrolls (done for Tactical Schnauzer)",
+          "Clean, documented code that your team can maintain"
+        ],
+        "pricingTitle": "Timeline and pricing",
+        "pricing": "The price depends on the number of screens, how much logic and data the app handles, the integrations and the design work. A single landing page is a different job from an application with accounts and a back end. Defined projects are usually quoted at a fixed price, and ongoing work by the hour. Describe what you want to build and I will reply with a plan and an estimate."
+      },
+      "ar": {
+        "nav": "تطبيقات الويب وصفحات الهبوط",
+        "title": "تطبيقات ويب Angular وصفحات هبوط | Kerllos Ayad",
+        "description": "تطبيقات ويب بـ Angular وJavaScript وصفحات هبوط للحملات وأدوات داخلية من مهندس واجهات أمامية أول في القاهرة.",
+        "h1": "تطبيقات ويب Angular وصفحات هبوط للحملات",
+        "summary": "واجهات أمامية بـ Angular وJavaScript، وصفحات هبوط للحملات وأدوات داخلية.",
+        "whatYouGet": "تطبيقات ويب وصفحات هبوط مبنية بـ Angular وTypeScript وJavaScript على يد مهندس واجهات أمامية أول. عندما يحتاج متجر أو حملة إلى أكثر مما يعطيه القالب، أبني الواجهة الأمامية: صفحة هبوط سريعة لحملة، أو تطبيق يتصل ببياناتك، أو أداة داخلية لفريقك. هذه الخدمة للشركات التي تحتاج واجهة ويب مبنية بشكل صحيح وبكود نظيف يسهل صيانته ويعمل جيدًا على الجوال وعلى الكمبيوتر.",
+        "includedTitle": "ما يشمله العمل",
+        "included": [
+          "تطبيقات ويب بـ Angular وTypeScript",
+          "صفحات هبوط للحملات والمنتجات",
+          "أدوات داخلية ولوحات متابعة للفرق",
+          "تصميم متجاوب يبدأ من الجوال",
+          "ربط الواجهة الأمامية بواجهات برمجية وخدمات خلفية",
+          "مساعدة في النشر، مثل تطبيق Node.js على Google Cloud (نُفذ لمشروع btklmseny)",
+          "حركات تمرير غنية، مثل إطارات صور تتحرك أثناء تمرير الزائر (نُفذ لمتجر Tactical Schnauzer)",
+          "كود نظيف وموثق يسهل على فريقك صيانته"
+        ],
+        "pricingTitle": "المدة والتكلفة",
+        "pricing": "يعتمد السعر على عدد الشاشات ومقدار المنطق والبيانات التي يتعامل معها التطبيق والربط مع خدمات أخرى وعمل التصميم. صفحة هبوط واحدة عمل مختلف عن تطبيق فيه حسابات وخلفية. غالبًا يكون المشروع المحدد بسعر ثابت، والعمل المستمر بالساعة. صف لي ما تريد بناءه وسأرد عليك بخطة وتقدير للتكلفة."
+      }
+    }
+  ]
+}

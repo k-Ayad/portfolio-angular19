@@ -8,37 +8,38 @@
 
       <!-- Logo -->
       <div class="col-12 col-md-3">
-        <div class="footer-logo">
+        <div class="footer-logo" dir="ltr">
           &lt;<span>Ka</span>/&gt;
         </div>
       </div>
 
       <!-- About Me -->
       <div class="col-12 col-md-3">
-        <p class="footer-title">About Me</p>
+        <p class="footer-title">{{ ui().footer.about }}</p>
         <p class="footer-text">
-          I’m a Shopify developer and Senior Frontend Engineer in Cairo, Egypt,
-          with 4+ years of experience building Shopify stores and web apps.
+          {{ langService.lang() === 'ar'
+            ? 'مطور Shopify ومهندس واجهات أمامية أول في القاهرة، مصر، بخبرة 4+ سنوات في بناء متاجر Shopify وتطبيقات الويب.'
+            : 'I’m a Shopify developer and Senior Frontend Engineer in Cairo, Egypt, with 4+ years of experience building Shopify stores and web apps.' }}
         </p>
       </div>
 
       <!-- Projects -->
       <div class="col-12 col-md-3">
-        <p class="footer-title">All Projects</p>
-        <a routerLink="/portfolio" class="footer-link">
-          Explore My Projects
-        </a>
+        <p class="footer-title">{{ ui().footer.projects }}</p>
+        <a [routerLink]="langService.link('/services')" class="footer-link d-block">{{ ui().footer.services }}</a>
+        <a [routerLink]="langService.link('/portfolio')" class="footer-link d-block">{{ ui().footer.explore }}</a>
+        <a [routerLink]="langService.link('/faq')" class="footer-link d-block">{{ ui().footer.faq }}</a>
       </div>
 
       <!-- Contact -->
       <div class="col-12 col-md-3">
-        <p class="footer-title">Contact Me</p>
+        <p class="footer-title">{{ ui().footer.contact }}</p>
 
-        <a href="mailto:kerllos.ayad@gmail.com" class="footer-link d-block">
+        <a href="mailto:kerllos.ayad@gmail.com" class="footer-link d-block ltr-text">
           Kerllos.Ayad&#64;gmail.com
         </a>
 
-        <a href="tel:+201276832755" class="footer-link d-block">
+        <a href="tel:+201276832755" class="footer-link d-block ltr-text">
           +20 127 683 2755
         </a>
 
@@ -56,7 +57,7 @@
 
     <!-- Bottom -->
     <div class="footer-bottom text-center mt-5">
-      © {{ currentYear }} kero ayad | all rights reserved.
+      © {{ currentYear }} Kerllos Ayad | {{ ui().footer.rights }}
     </div>
 
   </div>

@@ -2,6 +2,7 @@ import { Inject, Injectable } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
 import { Meta, Title } from '@angular/platform-browser';
 import { absoluteUrl } from '../seo/structured-data';
+import { ARABIC_LIVE, Lang, langFromUrl, localize, stripLang } from '../i18n/lang';
 import site from '../data/site.json';
 
 export interface PageMeta {
@@ -10,6 +11,7 @@ export interface PageMeta {
   path: string; // Route path starting with '/', e.g. '/work/arya'
   image?: string; // Absolute URL or path relative to the site root
   imageAlt?: string;
+  alternates?: boolean; // false for pages with no twin in the other language
 }
 
 @Injectable({
@@ -28,7 +30,8 @@ export class SeoService {
    * Update title, description, canonical URL, Open Graph and Twitter tags for a page
    */
   setPageMeta(page: PageMeta) {
-    const url = this.siteUrl + (page.path === '/' ? '/' : page.path);
+    const lang = langFromUrl(page.path);
+    const url = this.siteUrl + page.path;
     const image = absoluteUrl(page.image ?? site.image);
 
     this.title.setTitle(page.title);
@@ -46,13 +49,17 @@ export class SeoService {
     this.meta.updateTag({ name: 'twitter:image', content: image });
 
     this.setCanonicalUrl(url);
+    this.setLanguage(lang);
+    this.setAlternates(page.alternates === false ? undefined : page.path, lang);
   }
 
   /**
    * Page that must stay out of search results (e.g. the 404 page): noindex and no canonical URL
    */
-  setNotFoundMeta(title: string, description: string) {
+  setNotFoundMeta(title: string, description: string, lang: Lang = 'en') {
     this.title.setTitle(title);
+    this.setLanguage(lang);
+    this.setAlternates(undefined, lang);
     this.meta.updateTag({ name: 'description', content: description });
     this.meta.updateTag({ name: 'robots', content: 'noindex' });
     this.document.head.querySelector('link[rel="canonical"]')?.remove();
@@ -75,6 +82,53 @@ export class SeoService {
       script.textContent = JSON.stringify(block).replace(/</g, '\\u003c');
       this.document.head.appendChild(script);
     }
+  }
+
+  /**
+   * `lang` and `dir` on <html>, and the Open Graph locale
+   */
+  private setLanguage(lang: Lang) {
+    const root = this.document.documentElement;
+    root.setAttribute('lang', lang);
+    root.setAttribute('dir', lang === 'ar' ? 'rtl' : 'ltr');
+    this.meta.updateTag({ property: 'og:locale', content: lang === 'ar' ? 'ar_AR' : 'en_US' });
+
+    // The Arabic font is preloaded on Arabic pages so text doesn't shift when it arrives
+    this.document.head.querySelectorAll('link[data-arabic-font]').forEach(node => node.remove());
+    if (lang === 'ar') {
+      const link = this.document.createElement('link');
+      link.setAttribute('rel', 'preload');
+      link.setAttribute('as', 'font');
+      link.setAttribute('type', 'font/woff2');
+      link.setAttribute('crossorigin', '');
+      link.setAttribute('href', '/assets/fonts/cairo-arabic-wght.woff2');
+      link.setAttribute('data-arabic-font', '');
+      this.document.head.appendChild(link);
+    }
+  }
+
+  /**
+   * Reciprocal hreflang links (en, ar, x-default) for a page and its twin. Only exists while Arabic is live.
+   */
+  private setAlternates(path: string | undefined, lang: Lang) {
+    this.document.head.querySelectorAll('link[rel="alternate"][hreflang]').forEach(node => node.remove());
+    this.meta.removeTag('property="og:locale:alternate"');
+    if (!ARABIC_LIVE || !path) return;
+
+    const englishPath = stripLang(path);
+    const links: [string, string][] = [
+      ['en', this.siteUrl + localize(englishPath, 'en')],
+      ['ar', this.siteUrl + localize(englishPath, 'ar')],
+      ['x-default', this.siteUrl + localize(englishPath, 'en')]
+    ];
+    for (const [hreflang, href] of links) {
+      const link = this.document.createElement('link');
+      link.setAttribute('rel', 'alternate');
+      link.setAttribute('hreflang', hreflang);
+      link.setAttribute('href', href);
+      this.document.head.appendChild(link);
+    }
+    this.meta.addTag({ property: 'og:locale:alternate', content: lang === 'ar' ? 'en_US' : 'ar_AR' });
   }
 
   private setCanonicalUrl(url: string) {

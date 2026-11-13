@@ -1,9 +1,11 @@
-import { Component, OnInit, OnDestroy, PLATFORM_ID, inject } from '@angular/core';
+import { Component, OnInit, OnDestroy, PLATFORM_ID, computed, inject } from '@angular/core';
 import { CommonModule, NgOptimizedImage, isPlatformBrowser } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { Project } from '@core/models/project.interface';
 import { ProjectsService } from '@core/services/projects.service';
 import { imageSize } from '@core/utils/image';
+import { LangService } from '@core/i18n/lang.service';
+import { UI } from '@core/i18n/ui';
 @Component({
   selector: 'app-projects-carousel',
   standalone: true,
@@ -14,6 +16,8 @@ import { imageSize } from '@core/utils/image';
 export class ProjectsCarouselComponent implements OnInit, OnDestroy {
   
   readonly imageSize = imageSize;
+  readonly langService = inject(LangService);
+  readonly ui = computed(() => UI[this.langService.lang()]);
   private projectsService = inject(ProjectsService);
   private isBrowser = isPlatformBrowser(inject(PLATFORM_ID));
 
@@ -126,5 +130,16 @@ export class ProjectsCarouselComponent implements OnInit, OnDestroy {
    */
   onMouseLeave(): void {
     this.isHovered = false;
+  }
+
+  /**
+   * Summary of the active project in the current language
+   */
+  get activeSummary(): string {
+    return this.activeProject ? this.projectsService.text(this.activeProject, this.langService.lang()).summary : '';
+  }
+
+  screenshotAlt(project: Project): string {
+    return `${this.ui().project.screenshotOf} ${project.title}`;
   }
 }

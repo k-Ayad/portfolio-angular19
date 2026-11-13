@@ -34,22 +34,23 @@
 
         <div class="text-container">
             <!-- Main Heading -->
-            <div class="name-wrapper position-absolute top-0 start-50 translate-middle-x d-flex align-items-center">
+            <div class="name-wrapper position-absolute top-0 start-50 translate-middle-x d-flex align-items-center" dir="ltr">
                 <span class="arrow-left">&lt;</span>
-                <h1 class="hero-name">Kerllos Ayad <span class="hero-subtitle">Shopify Developer in Cairo, Egypt</span></h1>
+                <h1 class="hero-name">Kerllos Ayad <span class="hero-subtitle" [attr.dir]="langService.lang() === 'ar' ? 'rtl' : null">{{ langService.lang() === 'ar' ? 'مطور Shopify في القاهرة، مصر' : 'Shopify Developer in Cairo, Egypt' }}</span></h1>
                 <span class="arrow-right">/ &gt;</span>
             </div>
             <h2 class="hero-heading">
-                Howdy! Meet Your Trusted<br>
-                Frontend Developer<br>
-                & Shopify Expert Partner,<br>
-                Crafting Strong Web Apps<span class="dot">.</span>
+                @for (line of ui().hero.heading; track $index; let last = $last) {
+                    {{ line }}@if (last) {<span class="dot">.</span>} @else {<br>}
+                }
             </h2>
+            <p class="hero-intro">{{ ui().hero.intro }}</p>
 
             <div class="action-btns">
-                <a routerLink="/portfolio" class="action-button mx-2 mb-2"><i class="fa-solid fa-display"></i> Show Projects</a>
+                <a [routerLink]="langService.link('/portfolio')" class="action-button mx-2 mb-2"><i class="fa-solid fa-display" aria-hidden="true"></i> {{ ui().hero.seeProjects }}</a>
+                <a [routerLink]="langService.link('/')" fragment="contact" class="action-button hire-btn mx-2 mb-2">{{ ui().hero.hire }}</a>
                 <button class="download-btn mx-2" (click)="downloadResume()">
-                    <i class="fa-regular fa-file-zipper"></i> Download Resume
+                    <i class="fa-regular fa-file-zipper" aria-hidden="true"></i> {{ ui().hero.resume }}
                 </button>
             </div>
 

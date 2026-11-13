@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, computed, inject } from '@angular/core';
 import { CommonModule, NgOptimizedImage } from '@angular/common';
 import { RouterLink, RouterModule } from '@angular/router';
 import { Project } from '@core/models/project.interface';
@@ -6,6 +6,8 @@ import { ProjectsService } from '@core/services/projects.service';
 import { SeoService } from '@core/services/seo.service';
 import { imageSize } from '@core/utils/image';
 import { breadcrumbs, portfolioCollectionPage } from '@core/seo/structured-data';
+import { LangService } from '@core/i18n/lang.service';
+import { UI } from '@core/i18n/ui';
 
 @Component({
   selector: 'app-portfolio',
@@ -16,6 +18,8 @@ import { breadcrumbs, portfolioCollectionPage } from '@core/seo/structured-data'
 })
 export class PortfolioComponent implements OnInit {
   readonly imageSize = imageSize;
+  readonly langService = inject(LangService);
+  readonly ui = computed(() => UI[this.langService.lang()]);
   projects: Project[] = [];
   filteredProjects: Project[] = [];
   categories: string[] = [];
@@ -27,21 +31,31 @@ export class PortfolioComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    const lang = this.langService.lang();
+    const ui = UI[lang];
     this.seoService.setPageMeta({
-      title: 'Shopify & Angular Projects | Kerllos Ayad – Cairo, Egypt',
-      description: 'Shopify stores, Angular applications and Node.js projects built by Kerllos Ayad, Shopify developer and Senior Frontend Engineer in Cairo, Egypt.',
-      path: '/portfolio'
+      title: ui.portfolio.metaTitle,
+      description: ui.portfolio.metaDescription,
+      path: this.langService.link('/portfolio')
     });
     this.projects = this.projectsService.getAll();
     this.seoService.setStructuredData(
-      portfolioCollectionPage(this.projects),
+      portfolioCollectionPage(this.projects, lang),
       breadcrumbs([
-        { name: 'Home', path: '/' },
-        { name: 'Projects', path: '/portfolio' }
+        { name: ui.home.breadcrumb, path: this.langService.link('/') },
+        { name: ui.project.breadcrumbProjects, path: this.langService.link('/portfolio') }
       ])
     );
     this.filteredProjects = this.projects;
     this.categories = this.projectsService.getCategories();
+  }
+
+  summary(project: Project): string {
+    return this.projectsService.text(project, this.langService.lang()).summary;
+  }
+
+  categoryLabel(category: string): string {
+    return this.ui().categories[category] ?? category;
   }
 
   /**

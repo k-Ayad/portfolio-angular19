@@ -3,8 +3,15 @@
   "name": "Kerllos Ayad",
   "jobTitle": "Shopify Developer & Senior Frontend Engineer",
   "currentRole": "Senior Frontend Engineer at MCV (Manufacturing Commercial Vehicles)",
-  "location": { "city": "Cairo", "country": "Egypt", "countryCode": "EG" },
-  "areaServed": ["Egypt", "Middle East"],
+  "location": {
+    "city": "Cairo",
+    "country": "Egypt",
+    "countryCode": "EG"
+  },
+  "areaServed": [
+    "Egypt",
+    "Middle East"
+  ],
   "yearsOfExperience": "4+",
   "email": "kerllos.ayad@gmail.com",
   "telephone": "+201276832755",
@@ -13,14 +20,40 @@
   "linkedin": "https://www.linkedin.com/in/k-ayad",
   "facebook": "https://www.facebook.com/k.ayad.dev",
   "image": "assets/images/profile.webp",
-  "knowsAbout": ["Shopify", "Liquid", "Angular", "TypeScript", "JavaScript", "UI/UX"],
+  "knowsAbout": [
+    "Shopify",
+    "Liquid",
+    "Angular",
+    "TypeScript",
+    "JavaScript",
+    "UI/UX"
+  ],
   "services": [
     "Shopify store setup & design",
     "Custom Shopify themes & features",
     "Speed & SEO optimization",
     "Web apps & landing pages"
   ],
-  "homeTitle": "Kerllos Ayad | Shopify Developer in Cairo, Egypt",
-  "homeDescription": "Kerllos Ayad is a Shopify developer and Senior Frontend Engineer (Angular) in Cairo, Egypt, building Shopify stores for brands in Egypt and the Middle East.",
-  "todo": ["Number of Shopify stores built (not provided yet, so it is not shown anywhere on the site)"]
+  "homeTitle": "Hire a Shopify Developer in Cairo, Egypt | Kerllos Ayad",
+  "homeDescription": "Shopify developer in Cairo, Egypt (4+ years). Custom themes, Liquid, speed optimization and store setup for brands in Egypt and the Middle East.",
+  "todo": [
+    "Number of Shopify stores built (not provided yet, so it is not shown anywhere on the site)",
+    "Arabic spelling of the name (not added to the Arabic schema yet)",
+    "Freelance/contract availability, countries and time zones",
+    "Shopify Partner status (partner wording removed)",
+    "Approved results, store count, client quotes, timelines and starting prices",
+    "Native Arabic review of every Arabic text, then set arabicLive to true"
+  ],
+  "arabicLive": false,
+  "ar": {
+    "homeTitle": "مطور شوبيفاي في القاهرة، مصر | Kerllos Ayad",
+    "homeDescription": "مطور Shopify (شوبيفاي) في القاهرة، مصر، بخبرة 4+ سنوات. قوالب مخصصة، Liquid، تسريع المتاجر وإعدادها للعلامات التجارية في مصر والشرق الأوسط.",
+    "jobTitle": "مطور Shopify ومهندس واجهات أمامية أول",
+    "services": [
+      "إعداد وتصميم متاجر Shopify",
+      "تطوير قوالب وميزات Shopify مخصصة",
+      "تسريع متاجر Shopify وتحسين محركات البحث",
+      "تطبيقات الويب وصفحات الهبوط"
+    ]
+  }
 }

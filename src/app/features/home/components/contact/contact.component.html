@@ -7,14 +7,10 @@
         <div class="contact-content">
           
           <!-- Heading -->
-          <h2 class="contact-title">contact me</h2>
+          <h2 class="contact-title">{{ ui().contact.title }}</h2>
           
           <!-- Description -->
-          <p class="contact-description">
-            i'm always excited to work on new projects & collaborate with amazing people. 
-            whether you need a custom shopify theme, an angular application, or have any 
-            questions about web development, feel free to reach out!
-          </p>
+          <p class="contact-description">{{ ui().contact.description }}</p>
 
           <!-- Contact Form -->
           <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="contact-form">
@@ -22,34 +18,34 @@
             <!-- Row 1: Full Name & Subject -->
             <div class="row">
               <div class="col-md-6 mb-3">
-                <label for="fullName" class="form-label">Full name</label>
+                <label for="fullName" class="form-label">{{ ui().contact.fullName }}</label>
                 <input 
                   type="text" 
                   class="form-control" 
                   id="fullName" 
                   formControlName="fullName"
-                  placeholder="Mohamed Gad"
+                  [placeholder]="ui().contact.placeholders.fullName"
                   [class.is-invalid]="f['fullName'].invalid && f['fullName'].touched"
                 >
                 <div class="invalid-feedback" *ngIf="f['fullName'].invalid && f['fullName'].touched">
-                  <span *ngIf="f['fullName'].errors?.['required']">Full name is required</span>
-                  <span *ngIf="f['fullName'].errors?.['minlength']">Minimum 3 characters required</span>
+                  <span *ngIf="f['fullName'].errors?.['required']">{{ ui().contact.errors.fullNameRequired }}</span>
+                  <span *ngIf="f['fullName'].errors?.['minlength']">{{ ui().contact.errors.fullNameMin }}</span>
                 </div>
               </div>
 
               <div class="col-md-6 mb-3">
-                <label for="subject" class="form-label">Subject</label>
+                <label for="subject" class="form-label">{{ ui().contact.subject }}</label>
                 <input 
                   type="text" 
                   class="form-control" 
                   id="subject" 
                   formControlName="subject"
-                  placeholder="Request for Website"
+                  [placeholder]="ui().contact.placeholders.subject"
                   [class.is-invalid]="f['subject'].invalid && f['subject'].touched"
                 >
                 <div class="invalid-feedback" *ngIf="f['subject'].invalid && f['subject'].touched">
-                  <span *ngIf="f['subject'].errors?.['required']">Subject is required</span>
-                  <span *ngIf="f['subject'].errors?.['minlength']">Minimum 5 characters required</span>
+                  <span *ngIf="f['subject'].errors?.['required']">{{ ui().contact.errors.subjectRequired }}</span>
+                  <span *ngIf="f['subject'].errors?.['minlength']">{{ ui().contact.errors.subjectMin }}</span>
                 </div>
               </div>
             </div>
@@ -57,26 +53,26 @@
             <!-- Row 2: Email & Mobile Number -->
             <div class="row">
               <div class="col-md-6 mb-3">
-                <label for="email" class="form-label">Email Address</label>
+                <label for="email" class="form-label">{{ ui().contact.email }}</label>
                 <input 
                   type="email" 
                   class="form-control" 
                   id="email" 
                   formControlName="email"
-                  placeholder="ex. mo.gad@domain.com"
+                  [placeholder]="ui().contact.placeholders.email" dir="ltr"
                   [class.is-invalid]="f['email'].invalid && f['email'].touched"
                 >
                 <div class="invalid-feedback" *ngIf="f['email'].invalid && f['email'].touched">
-                  <span *ngIf="f['email'].errors?.['required']">Email is required</span>
-                  <span *ngIf="f['email'].errors?.['email']">Please enter a valid email</span>
+                  <span *ngIf="f['email'].errors?.['required']">{{ ui().contact.errors.emailRequired }}</span>
+                  <span *ngIf="f['email'].errors?.['email']">{{ ui().contact.errors.emailInvalid }}</span>
                 </div>
               </div>
 
               <div class="col-md-6 mb-3">
-                <label for="mobileNumber" class="form-label">Mobile number</label>
+                <label for="mobileNumber" class="form-label">{{ ui().contact.mobile }}</label>
                 <div class="input-group">
                   <select 
-                    aria-label="Country code"
+                    [attr.aria-label]="ui().contact.countryCode"
                     class="form-select country-code-select" 
                     formControlName="countryCode"
                     [class.is-invalid]="f['countryCode'].invalid && f['countryCode'].touched"
@@ -90,13 +86,13 @@
                     class="form-control" 
                     id="mobileNumber" 
                     formControlName="mobileNumber"
-                    placeholder="0101 123 1234"
+                    [placeholder]="ui().contact.placeholders.mobile" dir="ltr"
                     [class.is-invalid]="f['mobileNumber'].invalid && f['mobileNumber'].touched"
                   >
                 </div>
                 <div class="invalid-feedback d-block" *ngIf="f['mobileNumber'].invalid && f['mobileNumber'].touched">
-                  <span *ngIf="f['mobileNumber'].errors?.['required']">Mobile number is required</span>
-                  <span *ngIf="f['mobileNumber'].errors?.['pattern']">Please enter a valid 10-digit number</span>
+                  <span *ngIf="f['mobileNumber'].errors?.['required']">{{ ui().contact.errors.mobileRequired }}</span>
+                  <span *ngIf="f['mobileNumber'].errors?.['pattern']">{{ ui().contact.errors.mobileInvalid }}</span>
                 </div>
               </div>
             </div>
@@ -104,18 +100,18 @@
             <!-- Row 3: Message -->
             <div class="row">
               <div class="col-12 mb-3">
-                <label for="message" class="form-label">Message</label>
+                <label for="message" class="form-label">{{ ui().contact.message }}</label>
                 <textarea 
                   class="form-control" 
                   id="message" 
                   rows="4"
                   formControlName="message"
-                  placeholder="Tell me about your project..."
+                  [placeholder]="ui().contact.placeholders.message"
                   [class.is-invalid]="f['message'].invalid && f['message'].touched"
                 ></textarea>
                 <div class="invalid-feedback" *ngIf="f['message'].invalid && f['message'].touched">
-                  <span *ngIf="f['message'].errors?.['required']">Message is required</span>
-                  <span *ngIf="f['message'].errors?.['minlength']">Minimum 10 characters required</span>
+                  <span *ngIf="f['message'].errors?.['required']">{{ ui().contact.errors.messageRequired }}</span>
+                  <span *ngIf="f['message'].errors?.['minlength']">{{ ui().contact.errors.messageMin }}</span>
                 </div>
               </div>
             </div>
@@ -128,11 +124,11 @@
                   class="btn btn-request-call"
                   [disabled]="isSubmitting"
                 >
-                <span *ngIf="!isSubmitting">Request A Call</span>
+                <span *ngIf="!isSubmitting">{{ ui().contact.submit }}</span>
                 <i class="fas fa-phone-alt ms-2"></i>
                   <span *ngIf="isSubmitting">
                     <span class="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span>
-                    Sending...
+                    {{ ui().contact.sending }}
                   </span>
                 </button>
               </div>
@@ -146,7 +142,7 @@
       <!-- Right Column: Image -->
       <div class="col-lg-6 col-md-12">
         <div class="contact-image-wrapper">
-          <img ngSrc="assets/images/contact/contact-image.webp" alt="Person using phone and laptop" class="contact-image" width="1084" height="734" sizes="(min-width: 992px) 45vw, 100vw">
+          <img ngSrc="assets/images/contact/contact-image.webp" [alt]="ui().contact.imageAlt" class="contact-image" width="1084" height="734" sizes="(min-width: 992px) 45vw, 100vw">
         </div>
       </div>
 
@@ -160,8 +156,8 @@
       <div class="message-icon">
         <i class="fas fa-check-circle"></i>
       </div>
-      <h3>Message Sent Successfully!</h3>
-      <p>Thank you for reaching out. I'll get back to you as soon as possible.</p>
+      <h3>{{ ui().contact.successTitle }}</h3>
+      <p>{{ ui().contact.successText }}</p>
     </div>
   </div>
 
@@ -172,7 +168,7 @@
       <div class="message-icon">
         <i class="fas fa-exclamation-circle"></i>
       </div>
-      <h3>Oops! Something went wrong</h3>
+      <h3>{{ ui().contact.errorTitle }}</h3>
       <p>{{ errorMessage }}</p>
     </div>
   </div>

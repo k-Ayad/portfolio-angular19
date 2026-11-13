@@ -51,13 +51,14 @@
   .navbar-menu {
     display: flex;
     align-items: center;
-    gap: 3rem;
+    gap: 2rem;
   }
 
   // Navigation Links
   .navbar-links {
     display: flex;
-    gap: 2rem;
+    align-items: center;
+    gap: 1.5rem;
   }
 
   .nav-link {
@@ -72,7 +73,7 @@
       content: '';
       position: absolute;
       bottom: -5px;
-      left: 0;
+      inset-inline-start: 0;
       width: 0;
       height: 2px;
       background: #00ff88;
@@ -250,6 +251,30 @@
 
     .navbar-menu {
       width: 100%;
+    }
+  }
+}
+
+// Arabic (RTL): the mobile menu slides in from the left, and the underline grows from the right
+html[dir='rtl'] .navbar {
+  .navbar-contact {
+    align-items: flex-start;
+  }
+
+  @media (max-width: 992px) {
+    .navbar-menu {
+      right: auto;
+      left: -100%;
+      transition: left 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+      box-shadow: 5px 0 30px rgba(0, 0, 0, 0.5);
+
+      &.active {
+        left: 0;
+      }
+    }
+
+    .navbar-contact {
+      align-items: flex-start;
     }
   }
 }

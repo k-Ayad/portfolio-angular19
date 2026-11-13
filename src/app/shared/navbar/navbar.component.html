@@ -1,10 +1,10 @@
 <!-- navbar.component.html -->
-<nav class="navbar" [class.scrolled]="isScrolled">
+<nav class="navbar" [class.scrolled]="isScrolled" [attr.aria-label]="ui().nav.menu">
   <div class="navbar-container">
-    <!-- Left: Logo -->
+    <!-- Left: Logo (always left-to-right, never translated or mirrored) -->
     <div class="navbar-logo">
-      <a routerLink="/" class="logo-link" (click)="closeMobileMenu()">
-        <span class="logo-text" >&lt; <span style="color: yellow;">Ka</span>/&gt;</span>
+      <a [routerLink]="langService.link('/')" class="logo-link" (click)="closeMobileMenu()">
+        <span class="logo-text" dir="ltr">&lt; <span style="color: yellow;">Ka</span>/&gt;</span>
       </a>
     </div>
 
@@ -12,10 +12,10 @@
     <div class="navbar-menu" [class.active]="isMobileMenuOpen">
       <!-- Navigation Links -->
       <div class="navbar-links">
-        <ng-container *ngFor="let link of navLinks">
+        <ng-container *ngFor="let link of navLinks()">
           <a
             *ngIf="link.fragment"
-            [href]="'/#' + link.fragment"
+            [href]="link.route + '#' + link.fragment"
             class="nav-link"
             (click)="scrollToSection($event, link.fragment)"
           >
@@ -25,20 +25,34 @@
             *ngIf="!link.fragment"
             [routerLink]="link.route"
             routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: link.route === '/' || link.route === '/ar/' }"
+            ariaCurrentWhenActive="page"
             class="nav-link"
             (click)="closeMobileMenu()"
           >
             {{ link.label }}
           </a>
         </ng-container>
+
+        <!-- Language switcher: the label is written in the language it switches to -->
+        <a
+          *ngIf="arabicLive"
+          class="nav-link lang-switch"
+          [routerLink]="switchLink()"
+          [attr.hreflang]="otherLang()"
+          [attr.lang]="otherLang()"
+          (click)="closeMobileMenu()"
+        >
+          {{ ui().switchLabel }}
+        </a>
       </div>
 
       <!-- Contact Info -->
       <div class="navbar-contact">
-        <a [href]="contactInfo.emailUrl" class="contact-item">
+        <a [href]="contactInfo.emailUrl" class="contact-item ltr-text">
           {{ contactInfo.email }}
         </a>
-        <a [href]="contactInfo.phoneUrl" class="contact-item">
+        <a [href]="contactInfo.phoneUrl" class="contact-item ltr-text">
           {{ contactInfo.phone }}
         </a>
       </div>
@@ -53,7 +67,7 @@
           [attr.aria-label]="social.name"
           class="social-icon"
         >
-          <i [class]="social.icon"></i>
+          <i [class]="social.icon" aria-hidden="true"></i>
         </a>
       </div>
     </div>
@@ -63,7 +77,8 @@
       class="mobile-toggle" 
       [class.active]="isMobileMenuOpen"
       (click)="toggleMobileMenu()"
-      aria-label="Toggle mobile menu"
+      [attr.aria-label]="ui().nav.menu"
+      [attr.aria-expanded]="isMobileMenuOpen"
     >
       <span class="bar"></span>
       <span class="bar"></span>

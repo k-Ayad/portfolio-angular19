@@ -23,7 +23,8 @@ export class PrivacyPolicyComponent implements OnInit {
     this.seoService.setPageMeta({
       title: 'Privacy Policy | K-Ayad',
       description: 'Privacy Policy for the WhatsApp Shopify Order Confirmation application operated by Kerllos Ayad: how Shopify order data and WhatsApp Business Platform messages are processed.',
-      path: '/privacy-policy'
+      path: '/privacy-policy',
+      alternates: false
     });
     this.seoService.setStructuredData();
   }

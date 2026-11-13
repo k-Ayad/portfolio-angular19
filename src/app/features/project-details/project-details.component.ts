@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, computed, inject } from '@angular/core';
 import { CommonModule, NgOptimizedImage } from '@angular/common';
 import { ActivatedRoute, RouterModule } from '@angular/router';
 import { Subject, takeUntil } from 'rxjs';
@@ -7,6 +7,8 @@ import { SeoService } from '../../core/services/seo.service';
 import { Project, ProjectImage } from '../../core/models/project.interface';
 import { breadcrumbs, projectCreativeWork } from '../../core/seo/structured-data';
 import { imageSize } from '../../core/utils/image';
+import { LangService } from '../../core/i18n/lang.service';
+import { UI } from '../../core/i18n/ui';
 
 @Component({
   selector: 'app-project-details',
@@ -17,6 +19,9 @@ import { imageSize } from '../../core/utils/image';
 })
 export class ProjectDetailsComponent implements OnInit, OnDestroy {
   readonly imageSize = imageSize;
+  readonly langService = inject(LangService);
+  readonly ui = computed(() => UI[this.langService.lang()]);
+  text: { summary: string; problem?: string; built: string[] } = { summary: '', built: [] };
   project?: Project;
   relatedProjects: Project[] = [];
   currentImageIndex: number = 0;
@@ -50,6 +55,7 @@ export class ProjectDetailsComponent implements OnInit, OnDestroy {
     }
 
     this.project = project;
+    this.text = this.projectsService.text(project, this.langService.lang());
     this.currentImageIndex = 0;
     this.updateSeo(project);
     this.setupCarousel();
@@ -60,27 +66,43 @@ export class ProjectDetailsComponent implements OnInit, OnDestroy {
    * Set page title, meta tags and JSON-LD for this project
    */
   private updateSeo(project: Project): void {
-    const path = `/work/${project.slug}`;
-    const description = project.summary.length > 160
-      ? project.summary.slice(0, 157).trimEnd() + '...'
-      : project.summary;
+    const lang = this.langService.lang();
+    const ui = UI[lang];
+    const path = this.langService.link(`/work/${project.slug}`);
+    const suffix = lang === 'ar' ? 'من تنفيذ Kerllos Ayad، مطور Shopify في القاهرة، مصر.' : 'Built by Kerllos Ayad, Shopify developer in Cairo, Egypt.';
+    let description = `${this.text.summary} ${suffix}`;
+    // Add what was built while it still fits in a search snippet
+    for (const item of this.text.built) {
+      const next = `${this.text.summary} ${item.replace(/\.$/, '')}. ${suffix}`;
+      if (next.length > 160) break;
+      description = next;
+      break;
+    }
+    const title = lang === 'ar'
+      ? `${project.title} | ${ui.project.titleSuffix}`
+      : `${project.title} | ${project.category} ${ui.project.titleSuffix}`;
 
     this.seoService.setPageMeta({
-      title: `${project.title} | ${project.category} project by Kerllos Ayad, Cairo`,
+      title,
       description,
       path,
       image: project.noScreenshot ? undefined : project.image,
-      imageAlt: `Screenshot of the ${project.title} website`
+      imageAlt: `${ui.project.screenshotOf} ${project.title}`
     });
 
     this.seoService.setStructuredData(
-      projectCreativeWork(project),
+      projectCreativeWork(project, lang),
       breadcrumbs([
-        { name: 'Home', path: '/' },
-        { name: 'Projects', path: '/portfolio' },
+        { name: ui.home.breadcrumb, path: this.langService.link('/') },
+        { name: ui.project.breadcrumbProjects, path: this.langService.link('/portfolio') },
         { name: project.title, path }
       ])
     );
+  }
+
+  /** Alt text of a screenshot in the current language */
+  alt(image: ProjectImage): string {
+    return this.langService.lang() === 'ar' && image.altAr ? image.altAr : image.alt;
   }
 
   /**
@@ -93,7 +115,7 @@ export class ProjectDetailsComponent implements OnInit, OnDestroy {
     }
     this.carouselImages = this.project.images?.length
       ? this.project.images
-      : [{ src: this.project.image, alt: `Screenshot of the ${this.project.title} website` }];
+      : [{ src: this.project.image, alt: `Screenshot of the ${this.project.title} website`, altAr: `${UI.ar.project.screenshotOf} ${this.project.title}` }];
   }
 
   previousImage(): void {

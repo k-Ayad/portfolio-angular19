@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Project } from '../models/project.interface';
+import { Lang } from '../i18n/lang';
 import data from '../data/projects.json';
 
 @Injectable({
@@ -32,5 +33,15 @@ export class ProjectsService {
     return this.projects
       .filter(p => p.category === project.category && p.slug !== project.slug)
       .slice(0, limit);
+  }
+
+  /**
+   * Text of a project in the given language. Titles, client names and the stack stay in Latin letters.
+   */
+  text(project: Project, lang: Lang): { summary: string; problem?: string; built: string[] } {
+    if (lang === 'ar' && project.ar) {
+      return project.ar;
+    }
+    return { summary: project.summary, problem: project.problem, built: project.built };
   }
 }

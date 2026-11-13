@@ -1,9 +1,11 @@
-import { Component, OnInit, inject } from '@angular/core';
+import { Component, OnInit, computed, inject } from '@angular/core';
 import { CommonModule, NgOptimizedImage } from '@angular/common';
 import { ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { trigger, transition, style, animate } from '@angular/animations';
 import { ContactFormData, EmailJSResponse, CountryCode } from './contact.interface';
+import { LangService } from '@core/i18n/lang.service';
+import { UI } from '@core/i18n/ui';
 
 @Component({
   selector: 'app-contact',
@@ -26,6 +28,8 @@ import { ContactFormData, EmailJSResponse, CountryCode } from './contact.interfa
 export class ContactComponent implements OnInit {
   private fb = inject(FormBuilder);
   private http = inject(HttpClient);
+  readonly langService = inject(LangService);
+  readonly ui = computed(() => UI[this.langService.lang()]);
 
   contactForm!: FormGroup;
   isSubmitting = false;
@@ -131,7 +135,7 @@ export class ContactComponent implements OnInit {
       error: (error) => {
         this.isSubmitting = false;
         this.showErrorMessage = true;
-        this.errorMessage = 'Something went wrong. Please try again.';
+        this.errorMessage = this.ui().contact.errorText;
         console.error('EmailJS Error:', error);
         
         // Hide error message after 5 seconds
