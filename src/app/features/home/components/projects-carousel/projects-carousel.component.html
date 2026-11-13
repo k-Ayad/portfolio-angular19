@@ -1,9 +1,8 @@
-<section class="projects-carousel-section">
+<section class="projects-carousel-section" id="projects">
   <div class="container">
     <!-- Section Title -->
     <div class="section-header">
       <h2 class="section-title text-center">{{ ui().projectsSection.title }}</h2>
-      <p class="hero-intro text-center">{{ ui().projectsSection.intro }}</p>
     </div>
 
     <!-- Carousel Container -->
@@ -91,6 +90,7 @@
     <!-- Plain links to every project page -->
     <nav class="all-projects-nav" [attr.aria-label]="ui().projectsSection.allTitle">
       <h3 class="all-projects-title">{{ ui().projectsSection.allTitle }}</h3>
+      <p class="all-projects-intro">{{ ui().projectsSection.intro }}</p>
       <ul class="all-projects-list">
         <li *ngFor="let project of allProjects">
           <a [routerLink]="langService.link('/work/' + project.slug)">{{ project.title }}</a>

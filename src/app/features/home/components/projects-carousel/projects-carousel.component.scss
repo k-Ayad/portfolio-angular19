@@ -13,19 +13,20 @@
 
   // Section Header
   .section-header {
-    margin-bottom: 0px;
+    margin-bottom: 40px;
     text-align: left;
     padding: 0 20px;
     position: relative;
     z-index: 10;
 
     .section-title {
-      font-size: clamp(90px, 17vw, 180px);
+      // Sized for a full sentence-style heading ("Selected Shopify projects"), not a single word
+      font-size: clamp(34px, 5.5vw, 72px);
       font-weight: 700;
       color: #ffffff;
       margin: 0;
-      line-height: 1;
-      letter-spacing: -2px;
+      line-height: 1.05;
+      letter-spacing: -1px;
       text-transform: capitalize;
       
       // Add subtle text shadow for depth
@@ -575,6 +576,14 @@
       text-transform: uppercase;
       color: rgba(255, 255, 255, 0.6);
       margin-bottom: 1rem;
+    }
+
+    .all-projects-intro {
+      max-width: 640px;
+      margin: 0 auto 1rem;
+      color: rgba(255, 255, 255, 0.65);
+      font-size: 0.95rem;
+      line-height: 1.7;
     }
 
     .all-projects-list {
