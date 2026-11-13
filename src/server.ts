@@ -20,13 +20,16 @@ const angularApp = new AngularNodeAppEngine({
 
 app.use(compression());
 
-// Cloud Run adds X-Forwarded-Proto (and may add -Port or -Prefix). Angular only accepts proxy headers listed in
-// NG_TRUST_PROXY_HEADERS and otherwise answers every URL with the client-side shell. The app never reads them,
-// so they are dropped here and the prerendered page for each route is served whatever that variable says.
+// Cloud Run adds X-Forwarded-For, -Proto and others. Angular only accepts proxy headers listed in NG_TRUST_PROXY_HEADERS
+// and answers every URL with the client-side shell as soon as one untrusted X-Forwarded-* header arrives. The app never
+// reads them, so they are all dropped here and each route is served its own prerendered page whatever that variable says.
+// The Host header (a run.app or hosted.app address) is still checked against NG_ALLOWED_HOSTS.
 app.use((req, _res, next) => {
-  delete req.headers['x-forwarded-proto'];
-  delete req.headers['x-forwarded-port'];
-  delete req.headers['x-forwarded-prefix'];
+  for (const name of Object.keys(req.headers)) {
+    if (name.startsWith('x-forwarded-')) {
+      delete req.headers[name];
+    }
+  }
   next();
 });
 
