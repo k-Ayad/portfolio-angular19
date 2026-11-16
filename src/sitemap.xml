@@ -4,140 +4,448 @@
     <loc>https://k-ayad.com/</loc>
     <lastmod>2026-11-13</lastmod>
     <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://k-ayad.com/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://k-ayad.com/ar/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://k-ayad.com/"/>
+  </url>
+  <url>
+    <loc>https://k-ayad.com/ar/</loc>
+    <lastmod>2026-11-13</lastmod>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://k-ayad.com/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://k-ayad.com/ar/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://k-ayad.com/"/>
   </url>
   <url>
     <loc>https://k-ayad.com/services</loc>
     <lastmod>2026-11-13</lastmod>
     <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://k-ayad.com/services"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://k-ayad.com/ar/services"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://k-ayad.com/services"/>
+  </url>
+  <url>
+    <loc>https://k-ayad.com/ar/services</loc>
+    <lastmod>2026-11-13</lastmod>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://k-ayad.com/services"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://k-ayad.com/ar/services"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://k-ayad.com/services"/>
   </url>
   <url>
     <loc>https://k-ayad.com/services/shopify-store-setup</loc>
     <lastmod>2026-11-13</lastmod>
     <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://k-ayad.com/services/shopify-store-setup"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://k-ayad.com/ar/services/shopify-store-setup"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://k-ayad.com/services/shopify-store-setup"/>
+  </url>
+  <url>
+    <loc>https://k-ayad.com/ar/services/shopify-store-setup</loc>
+    <lastmod>2026-11-13</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://k-ayad.com/services/shopify-store-setup"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://k-ayad.com/ar/services/shopify-store-setup"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://k-ayad.com/services/shopify-store-setup"/>
   </url>
   <url>
     <loc>https://k-ayad.com/services/shopify-theme-customization</loc>
     <lastmod>2026-11-13</lastmod>
     <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://k-ayad.com/services/shopify-theme-customization"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://k-ayad.com/ar/services/shopify-theme-customization"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://k-ayad.com/services/shopify-theme-customization"/>
+  </url>
+  <url>
+    <loc>https://k-ayad.com/ar/services/shopify-theme-customization</loc>
+    <lastmod>2026-11-13</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://k-ayad.com/services/shopify-theme-customization"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://k-ayad.com/ar/services/shopify-theme-customization"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://k-ayad.com/services/shopify-theme-customization"/>
   </url>
   <url>
     <loc>https://k-ayad.com/services/shopify-speed-seo-optimization</loc>
     <lastmod>2026-11-13</lastmod>
     <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://k-ayad.com/services/shopify-speed-seo-optimization"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://k-ayad.com/ar/services/shopify-speed-seo-optimization"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://k-ayad.com/services/shopify-speed-seo-optimization"/>
+  </url>
+  <url>
+    <loc>https://k-ayad.com/ar/services/shopify-speed-seo-optimization</loc>
+    <lastmod>2026-11-13</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://k-ayad.com/services/shopify-speed-seo-optimization"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://k-ayad.com/ar/services/shopify-speed-seo-optimization"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://k-ayad.com/services/shopify-speed-seo-optimization"/>
   </url>
   <url>
     <loc>https://k-ayad.com/services/angular-web-app-development</loc>
     <lastmod>2026-11-13</lastmod>
     <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://k-ayad.com/services/angular-web-app-development"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://k-ayad.com/ar/services/angular-web-app-development"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://k-ayad.com/services/angular-web-app-development"/>
+  </url>
+  <url>
+    <loc>https://k-ayad.com/ar/services/angular-web-app-development</loc>
+    <lastmod>2026-11-13</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://k-ayad.com/services/angular-web-app-development"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://k-ayad.com/ar/services/angular-web-app-development"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://k-ayad.com/services/angular-web-app-development"/>
   </url>
   <url>
     <loc>https://k-ayad.com/services/angular-frontend-engineering</loc>
     <lastmod>2026-11-13</lastmod>
     <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://k-ayad.com/services/angular-frontend-engineering"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://k-ayad.com/ar/services/angular-frontend-engineering"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://k-ayad.com/services/angular-frontend-engineering"/>
+  </url>
+  <url>
+    <loc>https://k-ayad.com/ar/services/angular-frontend-engineering</loc>
+    <lastmod>2026-11-13</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://k-ayad.com/services/angular-frontend-engineering"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://k-ayad.com/ar/services/angular-frontend-engineering"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://k-ayad.com/services/angular-frontend-engineering"/>
   </url>
   <url>
     <loc>https://k-ayad.com/services/angular-seo-prerendering</loc>
     <lastmod>2026-11-13</lastmod>
     <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://k-ayad.com/services/angular-seo-prerendering"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://k-ayad.com/ar/services/angular-seo-prerendering"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://k-ayad.com/services/angular-seo-prerendering"/>
+  </url>
+  <url>
+    <loc>https://k-ayad.com/ar/services/angular-seo-prerendering</loc>
+    <lastmod>2026-11-13</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://k-ayad.com/services/angular-seo-prerendering"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://k-ayad.com/ar/services/angular-seo-prerendering"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://k-ayad.com/services/angular-seo-prerendering"/>
   </url>
   <url>
     <loc>https://k-ayad.com/portfolio</loc>
     <lastmod>2026-11-13</lastmod>
     <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://k-ayad.com/portfolio"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://k-ayad.com/ar/portfolio"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://k-ayad.com/portfolio"/>
+  </url>
+  <url>
+    <loc>https://k-ayad.com/ar/portfolio</loc>
+    <lastmod>2026-11-13</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://k-ayad.com/portfolio"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://k-ayad.com/ar/portfolio"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://k-ayad.com/portfolio"/>
   </url>
   <url>
     <loc>https://k-ayad.com/work/arya</loc>
     <lastmod>2026-11-13</lastmod>
     <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://k-ayad.com/work/arya"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://k-ayad.com/ar/work/arya"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://k-ayad.com/work/arya"/>
+  </url>
+  <url>
+    <loc>https://k-ayad.com/ar/work/arya</loc>
+    <lastmod>2026-11-13</lastmod>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://k-ayad.com/work/arya"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://k-ayad.com/ar/work/arya"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://k-ayad.com/work/arya"/>
   </url>
   <url>
     <loc>https://k-ayad.com/work/or-brand</loc>
     <lastmod>2026-11-13</lastmod>
     <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://k-ayad.com/work/or-brand"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://k-ayad.com/ar/work/or-brand"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://k-ayad.com/work/or-brand"/>
+  </url>
+  <url>
+    <loc>https://k-ayad.com/ar/work/or-brand</loc>
+    <lastmod>2026-11-13</lastmod>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://k-ayad.com/work/or-brand"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://k-ayad.com/ar/work/or-brand"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://k-ayad.com/work/or-brand"/>
   </url>
   <url>
     <loc>https://k-ayad.com/work/sidewalks</loc>
     <lastmod>2026-11-13</lastmod>
     <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://k-ayad.com/work/sidewalks"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://k-ayad.com/ar/work/sidewalks"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://k-ayad.com/work/sidewalks"/>
+  </url>
+  <url>
+    <loc>https://k-ayad.com/ar/work/sidewalks</loc>
+    <lastmod>2026-11-13</lastmod>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://k-ayad.com/work/sidewalks"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://k-ayad.com/ar/work/sidewalks"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://k-ayad.com/work/sidewalks"/>
   </url>
   <url>
     <loc>https://k-ayad.com/work/style-beauty-store</loc>
     <lastmod>2026-11-13</lastmod>
     <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://k-ayad.com/work/style-beauty-store"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://k-ayad.com/ar/work/style-beauty-store"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://k-ayad.com/work/style-beauty-store"/>
+  </url>
+  <url>
+    <loc>https://k-ayad.com/ar/work/style-beauty-store</loc>
+    <lastmod>2026-11-13</lastmod>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://k-ayad.com/work/style-beauty-store"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://k-ayad.com/ar/work/style-beauty-store"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://k-ayad.com/work/style-beauty-store"/>
   </url>
   <url>
     <loc>https://k-ayad.com/work/hechter-paris</loc>
     <lastmod>2026-11-13</lastmod>
     <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://k-ayad.com/work/hechter-paris"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://k-ayad.com/ar/work/hechter-paris"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://k-ayad.com/work/hechter-paris"/>
+  </url>
+  <url>
+    <loc>https://k-ayad.com/ar/work/hechter-paris</loc>
+    <lastmod>2026-11-13</lastmod>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://k-ayad.com/work/hechter-paris"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://k-ayad.com/ar/work/hechter-paris"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://k-ayad.com/work/hechter-paris"/>
   </url>
   <url>
     <loc>https://k-ayad.com/work/el-okaby-pharmacies</loc>
     <lastmod>2026-11-13</lastmod>
     <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://k-ayad.com/work/el-okaby-pharmacies"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://k-ayad.com/ar/work/el-okaby-pharmacies"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://k-ayad.com/work/el-okaby-pharmacies"/>
+  </url>
+  <url>
+    <loc>https://k-ayad.com/ar/work/el-okaby-pharmacies</loc>
+    <lastmod>2026-11-13</lastmod>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://k-ayad.com/work/el-okaby-pharmacies"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://k-ayad.com/ar/work/el-okaby-pharmacies"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://k-ayad.com/work/el-okaby-pharmacies"/>
   </url>
   <url>
     <loc>https://k-ayad.com/work/cleos-dates</loc>
     <lastmod>2026-11-13</lastmod>
     <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://k-ayad.com/work/cleos-dates"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://k-ayad.com/ar/work/cleos-dates"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://k-ayad.com/work/cleos-dates"/>
+  </url>
+  <url>
+    <loc>https://k-ayad.com/ar/work/cleos-dates</loc>
+    <lastmod>2026-11-13</lastmod>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://k-ayad.com/work/cleos-dates"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://k-ayad.com/ar/work/cleos-dates"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://k-ayad.com/work/cleos-dates"/>
   </url>
   <url>
     <loc>https://k-ayad.com/work/zentia</loc>
     <lastmod>2026-11-13</lastmod>
     <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://k-ayad.com/work/zentia"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://k-ayad.com/ar/work/zentia"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://k-ayad.com/work/zentia"/>
+  </url>
+  <url>
+    <loc>https://k-ayad.com/ar/work/zentia</loc>
+    <lastmod>2026-11-13</lastmod>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://k-ayad.com/work/zentia"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://k-ayad.com/ar/work/zentia"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://k-ayad.com/work/zentia"/>
   </url>
   <url>
     <loc>https://k-ayad.com/work/ozone</loc>
     <lastmod>2026-11-13</lastmod>
     <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://k-ayad.com/work/ozone"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://k-ayad.com/ar/work/ozone"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://k-ayad.com/work/ozone"/>
+  </url>
+  <url>
+    <loc>https://k-ayad.com/ar/work/ozone</loc>
+    <lastmod>2026-11-13</lastmod>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://k-ayad.com/work/ozone"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://k-ayad.com/ar/work/ozone"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://k-ayad.com/work/ozone"/>
   </url>
   <url>
     <loc>https://k-ayad.com/work/glitter</loc>
     <lastmod>2026-11-13</lastmod>
     <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://k-ayad.com/work/glitter"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://k-ayad.com/ar/work/glitter"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://k-ayad.com/work/glitter"/>
+  </url>
+  <url>
+    <loc>https://k-ayad.com/ar/work/glitter</loc>
+    <lastmod>2026-11-13</lastmod>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://k-ayad.com/work/glitter"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://k-ayad.com/ar/work/glitter"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://k-ayad.com/work/glitter"/>
   </url>
   <url>
     <loc>https://k-ayad.com/work/ozad-pharma</loc>
     <lastmod>2026-11-13</lastmod>
     <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://k-ayad.com/work/ozad-pharma"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://k-ayad.com/ar/work/ozad-pharma"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://k-ayad.com/work/ozad-pharma"/>
+  </url>
+  <url>
+    <loc>https://k-ayad.com/ar/work/ozad-pharma</loc>
+    <lastmod>2026-11-13</lastmod>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://k-ayad.com/work/ozad-pharma"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://k-ayad.com/ar/work/ozad-pharma"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://k-ayad.com/work/ozad-pharma"/>
   </url>
   <url>
     <loc>https://k-ayad.com/work/tactical-schnauzer</loc>
     <lastmod>2026-11-13</lastmod>
     <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://k-ayad.com/work/tactical-schnauzer"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://k-ayad.com/ar/work/tactical-schnauzer"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://k-ayad.com/work/tactical-schnauzer"/>
+  </url>
+  <url>
+    <loc>https://k-ayad.com/ar/work/tactical-schnauzer</loc>
+    <lastmod>2026-11-13</lastmod>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://k-ayad.com/work/tactical-schnauzer"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://k-ayad.com/ar/work/tactical-schnauzer"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://k-ayad.com/work/tactical-schnauzer"/>
   </url>
   <url>
     <loc>https://k-ayad.com/work/k-ayad-site</loc>
     <lastmod>2026-11-13</lastmod>
     <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://k-ayad.com/work/k-ayad-site"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://k-ayad.com/ar/work/k-ayad-site"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://k-ayad.com/work/k-ayad-site"/>
+  </url>
+  <url>
+    <loc>https://k-ayad.com/ar/work/k-ayad-site</loc>
+    <lastmod>2026-11-13</lastmod>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://k-ayad.com/work/k-ayad-site"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://k-ayad.com/ar/work/k-ayad-site"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://k-ayad.com/work/k-ayad-site"/>
   </url>
   <url>
     <loc>https://k-ayad.com/work/mcv-bus-tender</loc>
     <lastmod>2026-11-13</lastmod>
     <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://k-ayad.com/work/mcv-bus-tender"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://k-ayad.com/ar/work/mcv-bus-tender"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://k-ayad.com/work/mcv-bus-tender"/>
+  </url>
+  <url>
+    <loc>https://k-ayad.com/ar/work/mcv-bus-tender</loc>
+    <lastmod>2026-11-13</lastmod>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://k-ayad.com/work/mcv-bus-tender"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://k-ayad.com/ar/work/mcv-bus-tender"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://k-ayad.com/work/mcv-bus-tender"/>
   </url>
   <url>
     <loc>https://k-ayad.com/work/pms-performance-management</loc>
     <lastmod>2026-11-13</lastmod>
     <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://k-ayad.com/work/pms-performance-management"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://k-ayad.com/ar/work/pms-performance-management"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://k-ayad.com/work/pms-performance-management"/>
+  </url>
+  <url>
+    <loc>https://k-ayad.com/ar/work/pms-performance-management</loc>
+    <lastmod>2026-11-13</lastmod>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://k-ayad.com/work/pms-performance-management"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://k-ayad.com/ar/work/pms-performance-management"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://k-ayad.com/work/pms-performance-management"/>
   </url>
   <url>
     <loc>https://k-ayad.com/work/bom-generator</loc>
     <lastmod>2026-11-13</lastmod>
     <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://k-ayad.com/work/bom-generator"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://k-ayad.com/ar/work/bom-generator"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://k-ayad.com/work/bom-generator"/>
+  </url>
+  <url>
+    <loc>https://k-ayad.com/ar/work/bom-generator</loc>
+    <lastmod>2026-11-13</lastmod>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://k-ayad.com/work/bom-generator"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://k-ayad.com/ar/work/bom-generator"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://k-ayad.com/work/bom-generator"/>
   </url>
   <url>
     <loc>https://k-ayad.com/work/mas-clinics</loc>
     <lastmod>2026-11-13</lastmod>
     <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://k-ayad.com/work/mas-clinics"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://k-ayad.com/ar/work/mas-clinics"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://k-ayad.com/work/mas-clinics"/>
+  </url>
+  <url>
+    <loc>https://k-ayad.com/ar/work/mas-clinics</loc>
+    <lastmod>2026-11-13</lastmod>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://k-ayad.com/work/mas-clinics"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://k-ayad.com/ar/work/mas-clinics"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://k-ayad.com/work/mas-clinics"/>
   </url>
   <url>
     <loc>https://k-ayad.com/work/btklmseny</loc>
     <lastmod>2026-11-13</lastmod>
     <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://k-ayad.com/work/btklmseny"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://k-ayad.com/ar/work/btklmseny"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://k-ayad.com/work/btklmseny"/>
+  </url>
+  <url>
+    <loc>https://k-ayad.com/ar/work/btklmseny</loc>
+    <lastmod>2026-11-13</lastmod>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://k-ayad.com/work/btklmseny"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://k-ayad.com/ar/work/btklmseny"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://k-ayad.com/work/btklmseny"/>
   </url>
   <url>
     <loc>https://k-ayad.com/faq</loc>
     <lastmod>2026-11-13</lastmod>
     <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://k-ayad.com/faq"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://k-ayad.com/ar/faq"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://k-ayad.com/faq"/>
+  </url>
+  <url>
+    <loc>https://k-ayad.com/ar/faq</loc>
+    <lastmod>2026-11-13</lastmod>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://k-ayad.com/faq"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://k-ayad.com/ar/faq"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://k-ayad.com/faq"/>
   </url>
 </urlset>

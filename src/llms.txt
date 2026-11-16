@@ -3,6 +3,7 @@
 > Shopify and Angular developer in Cairo, Egypt (4+ years). Conversion-focused Shopify stores and scalable Angular front ends for Egypt and the Middle East.
 
 Kerllos Ayad is a Shopify and Angular developer and Senior Frontend Engineer based in Cairo, Egypt, with 4+ years of experience. Current role: Senior Frontend Engineer at MCV (Manufacturing Commercial Vehicles). Serves clients in Egypt and Middle East.
+Languages: English (https://k-ayad.com/) and Arabic (https://k-ayad.com/ar/).
 
 ## Services
 - [Services overview](https://k-ayad.com/services): three Shopify services and three Angular services
@@ -49,6 +50,11 @@ All projects: https://k-ayad.com/portfolio
 
 ## FAQ
 - [Shopify and Angular developer FAQ](https://k-ayad.com/faq): cost, process, Liquid, speed, Angular and prerendering
+
+## Arabic (العربية)
+- [الصفحة الرئيسية](https://k-ayad.com/ar/): مطور Shopify في القاهرة، مصر
+- [الخدمات](https://k-ayad.com/ar/services)
+- [الأسئلة الشائعة](https://k-ayad.com/ar/faq)
 
 ## Contact
 - Email: kerllos.ayad@gmail.com

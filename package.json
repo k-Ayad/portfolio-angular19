@@ -13,7 +13,8 @@
     "optimize:images": "node scripts/optimize-images.mjs",
     "serve:ssr": "node dist/portfolio/server/server.mjs",
     "vendor:css": "node scripts/build-vendor-css.mjs",
-    "vendor:fonts": "node scripts/build-vendor-css.mjs && python3 scripts/subset-fa-fonts.py"
+    "vendor:fonts": "node scripts/build-vendor-css.mjs && python3 scripts/subset-fa-fonts.py",
+    "icons": "node scripts/generate-favicons.mjs"
   },
   "private": true,
   "dependencies": {
